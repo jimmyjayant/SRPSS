@@ -1,0 +1,249 @@
+/*Start of CSS of home.php*/
+html {
+font-size:62.5%;
+}
+
+body {
+margin:0;
+padding:0;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+* {
+box-sizing:border-box;
+}
+
+.header {
+background-color:#7f8c8d;
+padding:2rem 0;
+margin:0;
+text-align:center;
+}
+
+.header h1 {
+font-size:5rem;
+}
+
+.navbar {
+background-color:#555;
+margin:0;
+padding:0;
+display:flex;
+flex-wrap:wrap;
+}
+
+.navbar a {
+display:block;
+text-decoration:none;
+font-size:2.5rem;
+color:white;
+font-weight:bold;
+text-align:center;
+padding:0.8rem 1.6rem;
+margin:0;
+}
+
+.navbar  a:hover {
+background-color:#333;
+}
+
+.dropdown {
+position:relative;
+}
+
+.dropdown:hover .dropdown-content {
+display:block;
+}
+
+.dropdown:hover .dropbtn {
+background-color:#333;
+}
+
+.dropdown-content {
+display:none;
+position:absolute;
+background-color:#555;
+box-shadow:0px 0px 3px 2px rgba(0,0,0,0.20), 0px 0px 1px 1px rgba(0,0,0,0.10);
+z-index:1;
+}
+
+.main {
+margin:0;
+padding:3rem;
+text-align:center;
+flex:1;
+line-height:1.5;
+}
+
+.main .part1 {
+margin:0;
+padding:3rem;
+text-align:center;
+line-height:1.5;
+}
+
+h2 {
+margin:0;
+padding:2rem;
+font-size:3rem;
+}
+
+p {
+margin:0;
+padding:1rem;
+font-size:2rem;
+}
+
+img {
+max-width:100%;
+}
+
+.main .part2 {
+margin:0;
+padding:3rem;
+text-align:center;
+line-height:1.5;
+}
+
+.main .part3, .part4, .part5, .part6, .part7, .part82  {
+margin:0;
+padding:3rem;
+text-align:center;
+line-height:1.5;
+display:flex;
+flex-wrap:wrap;
+}
+
+.part3 div {
+flex:1;
+}
+
+.main a {
+display:inline-block;
+padding:1rem 2rem;
+font-size:2rem;
+text-decoration:none;
+text-align:center;
+background-color:#00b894;
+color:white;
+border-radius:20px;
+}
+
+.main a:hover {
+background-color:#55efc4;
+}
+
+.part4 div {
+flex:1;
+}
+
+.part5 div {
+flex:1;
+}
+
+.part6 div {
+flex:1;
+}
+
+.part7 div {
+flex:1;
+}
+
+.main .part8 {
+margin:0;
+padding:3rem;
+text-align:center;
+line-height:1.5;
+}
+
+.part82 div {
+flex:30%;
+}
+
+.footer div {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+background-color:#555;
+overflow:hidden;
+}
+
+.footer a {
+display:block;
+text-decoration:none;
+font-size:2rem;
+color:white;
+font-weight:bold;
+text-align:center;
+padding:0.8rem 1.6rem;
+margin:0;
+overflow:hidden;
+}
+
+.footer a:hover {
+background-color:#f1f1f1;
+color:black;
+}
+
+/*Media queries or breakpoints*/
+@media only screen and (max-width:600px) {
+.navbar {
+        flex-direction:column;
+}
+
+.dropdown-content {
+        width:100%;
+}
+
+.part3 {
+        flex-direction:column;
+}
+}
+/*End of CSS of home.php*/
+
+/*Start of CSS of form*/
+.main form {
+    margin:0;
+    padding:3rem;
+}
+
+form label, legend {
+    margin:0;
+    padding:1rem;
+    font-size:2rem;
+}
+
+form input, select {
+    font-size:1.5rem;
+    padding:1rem;
+    margin:0;
+    margin-left:10px;
+}
+/*End of CSS of form*/
+
+/*Start of CSS of tables*/
+table {
+    width:50%;
+    border:0.1rem solid black;
+    border-collapse:collapse;
+    font-size:2rem;
+    margin:auto;
+}
+
+table tr {
+    height:3rem;
+}
+
+table tr:nth-child(even) {
+    background-color:#f1f1f1;
+}
+
+table td {
+    padding:0.5rem;
+    text-align:center;
+}
+/*End of CSS of tables*/
+
+
