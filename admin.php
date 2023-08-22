@@ -22,10 +22,27 @@
         </title>
     </head>
     <body>
-        <div class="header">
-            <h1>
-                Scientific Research Paper Submission System (SRPSS)  
-            </h1>
+    <div class="header">
+            <div class="logo">
+                <a href="home.php" alt=" Website Logo">
+                  SRPSS 
+                  <!--<img src="images/srpss.png" alt="SRPSS Logo">-->
+                </a>
+            </div>
+
+            <div class="heading">
+                <h1>
+                  Scientific Research Paper Submission System (SRPSS)  
+                </h1>
+            </div>
+            
+            <div class="login">
+                <img src="images/login user.png" alt="Logged In User">
+                <div class="currentstatus">
+                    <a href="login.php" alt="Login">Login</a>
+                    <a href="register.php" alt="Register">Signup</a>
+                </div>
+            </div>
         </div>
 
         <div class="navbar">
