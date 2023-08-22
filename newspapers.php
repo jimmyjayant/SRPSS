@@ -7,6 +7,8 @@
         <meta name="keywords" content="science, research, papers, engineering, research paper">
         <meta name="description" content="Scientific Research Paper Submission System (SRPSS) online platform allows you to submit and view research papers">
         <link rel="stylesheet" href="style.css">
+        <!-- Load an icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="script.js"></script>
         <title>
             Scientific Research Paper Submission System (SRPSS) 
@@ -28,14 +30,14 @@
             </div>
             
             <div class="login">
-                <img src="images/login user.png" alt="Logged In User">
+                <i class="fa fa-fw fa-user"></i>
+                <!--<img src="images/login user.png" alt="Logged In User">-->
                 <div class="currentstatus">
                     <a href="login.php" alt="Login">Login</a>
                     <a href="register.php" alt="Register">Signup</a>
                 </div>
             </div>
         </div>
-
         <div class="navbar">
             <a href="home.php">Home</a>
             <a href="register.php">Register</a>
