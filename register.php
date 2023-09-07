@@ -1,3 +1,56 @@
+<?php
+  // Start the session
+  session_start();
+?>
+
+<?php
+    if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
+
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+        $firstname = test_input($_POST['firstname']);
+        $lastname = test_input($_POST['lastname']);
+        $gender = test_input($_POST['gender']);
+        $date = test_input($_POST['date']);
+        $address = test_input($_POST['address']);
+        $mobile = test_input($_POST['mobile']);
+        $email = test_input($_POST['email']);
+        $category = test_input($_POST['category']);
+        $twitter = test_input($_POST['twitter']);
+        $facebook = test_input($_POST['facebook']);
+        $linkedin = test_input($_POST['linkedin']);
+        $user_password = test_input($_POST['password']);
+
+        // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
+
+        include('databaseconnection.php');
+
+        $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
+        VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$user_password')";
+
+        // Perform query
+        $result = $conn->query($sql);
+
+        if($result === TRUE) {
+            $regsuccess = "<p style='color:green;'>You are successfully registered.</p>";
+            //header("Refresh: 5;url= login.php");
+            header("Location: login.php", true, 301);
+            exit();
+        }
+        else {
+            $regerror = "<p style='color:red;'>Please enter UNIQUE registration details.</p>";
+        }
+
+        // Close the connection
+        $conn->close();
+    }
+?>
+
 <?php 
 require 'headerandnavbar.php';
 ?>
@@ -106,57 +159,17 @@ require 'headerandnavbar.php';
                 <input type="reset" value="Reset">
             </form>
 
-           <?php
-
-            if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
-
-                function test_input($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
+            <?php
+                if(isset($regsuccess))
+                {
+                    echo $regsuccess;
                 }
-
-
-                    $firstname = test_input($_POST['firstname']);
-                    $lastname = test_input($_POST['lastname']);
-                    $gender = test_input($_POST['gender']);
-                    $date = test_input($_POST['date']);
-                    $address = test_input($_POST['address']);
-                    $mobile = test_input($_POST['mobile']);
-                    $email = test_input($_POST['email']);
-                    $category = test_input($_POST['category']);
-                    $twitter = test_input($_POST['twitter']);
-                    $facebook = test_input($_POST['facebook']);
-                    $linkedin = test_input($_POST['linkedin']);
-                    $password = test_input($_POST['password']);    
-
-
-
-
-                // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
-
-                include('databaseconnection.php');
-
-                $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
-                VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$password')";
-
-
-                // Perform query
-                $result = $conn->query($sql);
-
-                if($result === TRUE) {
-                    echo "<p style='color:green;'>Your are successfully registered.</p>";
+                else if(isset($regerror))
+                {
+                    echo $regerror;
                 }
-                else {
-                    echo "<p style='color:red;'>Please enter UNIQUE registration details.</p>";
-                }
+            ?>
 
-
-                // Close the connection
-                $conn->close();
-            }
-           ?>
         </div>
 
         <?php require 'footer.php'; ?>

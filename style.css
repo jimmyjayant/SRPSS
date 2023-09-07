@@ -1,4 +1,4 @@
-/*Start of CSS of home.php*/
+/*Start of CSS of index.php*/
 html {
 font-size:62.5%;
 }
@@ -6,7 +6,9 @@ font-size:62.5%;
 body {
 margin:0;
 padding:0;
+display: -webkit-flex;
 display:flex;
+-webkit-flex-direction:column;
 flex-direction:column;
 min-height:100vh;
 }
@@ -16,6 +18,7 @@ box-sizing:border-box;
 }
 
 .header {
+display: -webkit-flex;
 display:flex;
 flex-wrap:wrap;
 justify-content:space-around;
@@ -56,8 +59,26 @@ margin:0;
     box-shadow: 0 8px 16px 0;
   }
 
+  /*
 i.fa.fa-fw.fa-user {
   font-size:5rem;
+}
+*/
+
+.head {
+  background:black;
+  height:2.5rem;
+  width:2.5rem;
+  border-radius:50%;
+  margin:auto;
+}
+
+.body {
+  background:black;
+  height:2.5rem;
+  width:5rem;
+  border-radius:3rem 3rem 0 0;
+  margin:auto;
 }
 
 .login {
@@ -65,7 +86,7 @@ position:relative;
 display:inline-block;
 }
 
-.currentstatus {
+/*.currentstatus, */ .userstatus {
 position:absolute;
 display:none;
 background-color:#f1f1f1;
@@ -75,10 +96,11 @@ right:0;
 box-shadow: 0 8px 16px 0;
 }
 
-.login:hover .currentstatus {
+/*.login:hover .currentstatus, */ .login:hover .userstatus {
 display:block;
 }
 
+/*
 .login .currentstatus a {
 display:block;
 text-decoration:none;
@@ -88,8 +110,25 @@ font-weight:bold;
 text-align:center;
 padding:0.8rem 1.6rem;
 }
+*/
 
+.login .userstatus a {
+display:block;
+text-decoration:none;
+color:black;
+font-size:2.5rem;
+font-weight:bold;
+text-align:center;
+padding:0.8rem 1.6rem;
+}
+
+/*
 .currentstatus a:hover {
+  background-color:#d1d1d1;
+}
+*/
+
+.userstatus a:hover {
   background-color:#d1d1d1;
 }
 
@@ -97,6 +136,7 @@ padding:0.8rem 1.6rem;
 background-color:#555;
 margin:0;
 padding:0;
+display: -webkit-flex;
 display:flex;
 flex-wrap:wrap;
 }
@@ -115,6 +155,12 @@ margin:0;
 .navbar  a:hover {
 background-color:#333;
 }
+
+
+.active {
+background-color:#111;
+}
+
 
 .dropdown {
 position:relative;
@@ -140,6 +186,8 @@ z-index:1;
 margin:0;
 padding:3rem;
 text-align:center;
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 line-height:1.5;
 }
@@ -179,11 +227,14 @@ margin:0;
 padding:3rem;
 text-align:center;
 line-height:1.5;
+display:-webkit-flex;
 display:flex;
 flex-wrap:wrap;
 }
 
 .part3 div {
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 }
 
@@ -203,18 +254,26 @@ background-color:#55efc4;
 }
 
 .part4 div {
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 }
 
 .part5 div {
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 }
 
 .part6 div {
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 }
 
 .part7 div {
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 }
 
@@ -226,10 +285,13 @@ line-height:1.5;
 }
 
 .part82 div {
+-webkit-flex:30%;
+-ms-flex:30%;
 flex:30%;
 }
 
 .footer div {
+display:-webkit-flex;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
@@ -257,6 +319,7 @@ color:black;
 /*Media queries or breakpoints*/
 @media only screen and (max-width:600px) {
 .navbar {
+  -webkit-flex-direction:column;
         flex-direction:column;
 }
 
@@ -265,10 +328,11 @@ color:black;
 }
 
 .main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82 {
+  -webkit-flex-direction:column;
         flex-direction:column;
 }
 }
-/*End of CSS of home.php*/
+/*End of CSS of index.php*/
 
 /*Start of CSS of form*/
 .main form {

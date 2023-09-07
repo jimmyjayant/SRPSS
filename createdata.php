@@ -12,6 +12,8 @@ $conn = new mysqli($servername, $username, $password);
 
 // Check connection
 if($conn->connect_error) {
+    $createdataerror = "<p style='color:red;font-weight:bold;background:yellow;'>Error Connecting Server.</p><br>";
+    echo $createdataerror;
     die("Connection failed: " . $conn->connect_error);
 }
 
@@ -21,6 +23,10 @@ $sql = "CREATE DATABASE IF NOT EXISTS srpss";
 // Create database 
 $conn->query($sql);
 
+if(!($conn->query($sql) === TRUE))
+{
+  echo "<p style='color:red;font-weight:bold;background:yellow;'>Error Creating database.</p><br>";
+}
 
 // Close the connection
 $conn->close();

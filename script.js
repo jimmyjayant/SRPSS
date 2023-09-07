@@ -1,6 +1,59 @@
-// home.php javascript 
+
+// Current active link
+
+/*
+const activePage = window.location.pathname;
+//console.log(activePage);
+const x = document.getElementById("nav");
+const y = x.getElementsByTagName("a");
+if(y)
+{
+const navLinks = Array.from(y); // Convert HTMLCollection to Array 
+navLinks.forEach(link => {
+if(link.href.includes(activePage)) {
+   //console.log(`${activePage}`);
+   link.classList.add('active');
+}
+});
+}
+*/
+
+document.addEventListener("DOMContentLoaded", function() {
+   const x = document.getElementsByClassName("navbar")[0];
+   const y = x.getElementsByTagName("a");
+   const activePage = window.location.pathname;
+
+   Array.from(y).forEach(link => {
+       if (link.href.includes(activePage)) {
+           link.classList.add('active');
+       }
+       else {
+         link.classList.remove('active'); // Remove 'active' class from non-matching links
+     }
+   });
+});
+
+
+
+
+
+
+
+
+
+
+// index.php javascript 
 function CreateData() {
     var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCreateDataStatus = document.getElementById("CreateDataStatus");
+         if(showCreateDataStatus)
+         {
+           showCreateDataStatus.innerHTML = this.responseText;
+         }
+      }
+    };
     xmlhttp.open("GET", "createdata.php", true);
     xmlhttp.send();
     }
@@ -11,149 +64,238 @@ CreateData();
 // researchsites.php javascript
 function showResearchSitesData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("researchsites").innerHTML = this.responseText;
+         var showResearchSitesData = document.getElementById("researchsites");
+          if(showResearchSitesData)
+          {
+            showResearchSitesData.innerHTML = this.responseText;
+          }
        }
     };
     xmlhttp.open("GET", "getresearchsitedata.php", true);
     xmlhttp.send();
   }
 
-showResearchSitesData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showResearchSitesData();
+});
+
+//showResearchSitesData();
 
 
 // view.php javascript
 function viewPapers() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("viewpapers").innerHTML = this.responseText;
+         var viewPapers = document.getElementById("viewpapers");
+           if(viewPapers)
+           {
+            viewPapers.innerHTML = this.responseText;
+           }
+          
        }
     };
     xmlhttp.open("GET", "getpapersdata.php", true);
     xmlhttp.send();
   }
 
-viewPapers();
+  document.addEventListener("DOMContentLoaded", function() {
+   viewPapers();
+});
+
+//viewPapers();
 
 
 // magazines.php javascript
 function showMagazinesData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("magazines").innerHTML = this.responseText;
+         var showMagazinesData = document.getElementById("magazines");
+         if(showMagazinesData)
+         {
+            showMagazinesData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getmagazinedata.php", true);
     xmlhttp.send();
   }
 
-  showMagazinesData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showMagazinesData();
+});
+
+  //showMagazinesData();
 
   function showJournalsData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("journals").innerHTML = this.responseText;
+         var showJournalsData = document.getElementById("journals");
+         if(showJournalsData)
+         {
+            showJournalsData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getjournaldata.php", true);
     xmlhttp.send();
   }
 
-  showJournalsData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showJournalsData();
+});
+
+  //showJournalsData();
 
 
 // newspapers.php javascript
 function showNewspapersData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("newspapers").innerHTML = this.responseText;
+         var showNewspapersData = document.getElementById("newspapers");
+         if(showNewspapersData)
+         {
+            showNewspapersData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getnewspaperdata.php", true);
     xmlhttp.send();
   }
 
-  showNewspapersData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showNewspapersData();
+});
+
+  //showNewspapersData();
 
 
 // conferences.php javascript
 function showConferencesData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("conferences").innerHTML = this.responseText;
+         var showConferencesData = document.getElementById("conferences");
+         if(showConferencesData)
+         {
+            showConferencesData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getconferencedata.php", true);
     xmlhttp.send();
   }
 
-  showConferencesData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showConferencesData();
+});
+
+  //showConferencesData();
 
 
 // channel.php javascript
 function showYouTubeChannelsData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("ytchannels").innerHTML = this.responseText;
+         var showYouTubeChannelsData = document.getElementById("ytchannels");
+         if(showYouTubeChannelsData)
+         {
+            showYouTubeChannelsData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getytchanneldata.php", true);
     xmlhttp.send();
   }
 
-showYouTubeChannelsData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showYouTubeChannelsData();
+});
+
+//showYouTubeChannelsData();
 
 
 
 // scientist.php javascript
 function showScientistsData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("scientists").innerHTML = this.responseText;
+         var showScientistsData = document.getElementById("scientists");
+         if(showScientistsData)
+         {
+            showScientistsData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp.open("GET", "getscientistdata.php", true);
     xmlhttp.send();
   }
 
-showScientistsData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showScientistsData();
+});
+
+//showScientistsData();
 
 
 
 // movies.php javascript
 function showMoviesData() {
     var xmlhttp1 = new XMLHttpRequest();
-    xmlhttp1.onreadystatechange = function() {
+    xmlhttp1.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("movies").innerHTML = this.responseText;
+         var showMoviesData = document.getElementById("movies");
+         if(showMoviesData) 
+         {
+            showMoviesData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp1.open("GET", "getmoviedata.php", true);
     xmlhttp1.send();
   }
 
-showMoviesData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showMoviesData();
+});
+
+//showMoviesData();
 
   function showWebSeriesData() {
     var xmlhttp2 = new XMLHttpRequest();
-    xmlhttp2.onreadystatechange = function() {
+    xmlhttp2.onload = function() {
        if(this.readyState == 4 && this.status == 200) {
-          document.getElementById("webseries").innerHTML = this.responseText;
+         var showWebSeriesData = document.getElementById("webseries");
+         if(showWebSeriesData)
+         {
+            showWebSeriesData.innerHTML = this.responseText;
+         }
+          
        }
     };
     xmlhttp2.open("GET", "getwebseriesdata.php", true);
     xmlhttp2.send();
   }
 
-showWebSeriesData();
+  document.addEventListener("DOMContentLoaded", function() {
+   showWebSeriesData();
+});
+
+//showWebSeriesData();
 
 
 

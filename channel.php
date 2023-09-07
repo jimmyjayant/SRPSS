@@ -1,3 +1,9 @@
+<?php
+// Start the session
+session_start();
+?>
+
+
 <?php 
 require 'headerandnavbar.php';
 ?>
