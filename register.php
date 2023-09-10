@@ -1,8 +1,6 @@
 <?php
-  // Start the session
-  session_start();
+require 'sessionstart.php';
 ?>
-
 <?php
     if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
 
@@ -37,7 +35,7 @@
         $result = $conn->query($sql);
 
         if($result === TRUE) {
-            $regsuccess = "<p style='color:green;'>You are successfully registered.</p>";
+            //$regsuccess = "<p style='color:green;'>You are successfully registered.</p>";
             //header("Refresh: 5;url= login.php");
             header("Location: login.php", true, 301);
             exit();

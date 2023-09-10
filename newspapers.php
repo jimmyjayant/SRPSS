@@ -1,8 +1,6 @@
 <?php
-// Start the session
-session_start();
+require 'sessionstart.php';
 ?>
-
 <?php 
 require 'headerandnavbar.php';
 ?>

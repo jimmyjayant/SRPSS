@@ -105,8 +105,6 @@ function viewPapers() {
    viewPapers();
 });
 
-//viewPapers();
-
 
 // magazines.php javascript
 function showMagazinesData() {

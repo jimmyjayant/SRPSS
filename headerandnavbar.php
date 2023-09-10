@@ -8,8 +8,6 @@
         <meta name="description" content="Scientific Research Paper Submission System (SRPSS) online platform allows you to submit and view research papers">
         <link rel="icon" type="image/x-icon" href="Images/SRPSS.png">
         <link rel="stylesheet" href="style.css">
-        <!-- Load an icon library -->
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
         <script src="script.js"></script>
         <title>
             Scientific Research Paper Submission System (SRPSS) 
@@ -20,7 +18,6 @@
             <div class="logo">
                 <a href="index.php" alt=" Website Logo">
                   SRPSS 
-                  <!--<img src="images/srpss.png" alt="SRPSS Logo">-->
                 </a>
             </div>
 
@@ -30,16 +27,7 @@
                 </h1>
             </div>
             
-            <div class="login">
-                <!--<i class="fa fa-fw fa-user"></i>-->
-                <!--<img src="images/login user.png" alt="Logged In User">-->
-                
-                <!--
-                <div class="currentstatus" >
-                    
-                </div>
-                -->
-                
+            <div class="login">                
                 <div class="container">
                     <div class="head"></div>
                     <div class="body"></div>
@@ -94,11 +82,30 @@
 
         <div class="navbar" id="nav">
             <a href="index.php">Home</a>
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
+            <a href="register.php"
+            <?php
+            if(isset($_SESSION['username']))
+            {
+                echo "style='display:none;";
+            }
+            ?>>Register</a>
+            <a href="login.php"
+            <?php
+            if(isset($_SESSION['username']))
+            {
+                echo "style='display:none;";
+            }
+            ?>>Login</a>
             <a href="researchsites.php">Research Sites</a>
             <a href="submit.php">Submit</a>
             <a href="view.php">View</a>
+            <a href="chat.php"
+            <?php
+            if(!isset($_SESSION['username']))
+            {
+                echo "style='display:none;'";
+            }
+            ?>>Chat</a>
             <div class="dropdown">
               <a href="culture.php" class="dropbtn">Culture</a>
                  <div class="dropdown-content">

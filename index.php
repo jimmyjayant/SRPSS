@@ -1,6 +1,5 @@
 <?php
-  // Start the session
-  session_start();
+require 'sessionstart.php';
 ?>
 
 <?php 
@@ -19,7 +18,7 @@ require 'headerandnavbar.php';
                     <br>
                     The Indian Researchers from various fields of Science and Technology can publish their research work on this platform. 
                     <br>
-                    They will also be able to view others research work on this platform. 
+                    They will also be able to view others research work on this platform. And will also be able to chat with other researchers also. 
                     <br>
                     Besides that, there is a whole culture of science and technology dedicated to this platform such as Newspapers, Magazines, Conferences, and Youtube Channels. 
                     <br>
@@ -49,7 +48,13 @@ require 'headerandnavbar.php';
              </p>
             </div>
             
-            <div class="part3">
+            <div class="part3"
+                <?php
+                if(isset($_SESSION['username']))
+                {
+                    echo "style='display:none;'";
+                }
+                ?>>
                 <div class="part31">
                     <h2>
                         Register  
@@ -70,7 +75,13 @@ require 'headerandnavbar.php';
                 </div>
             </div>
 
-            <div class="part4">
+            <div class="part4"
+                <?php
+                if(isset($_SESSION['username']))
+                {
+                    echo "style='display:none;'";
+                }
+                ?>>
                 <div class="part41">
                     <h2>
                         Login  

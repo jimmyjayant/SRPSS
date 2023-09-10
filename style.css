@@ -59,12 +59,6 @@ margin:0;
     box-shadow: 0 8px 16px 0;
   }
 
-  /*
-i.fa.fa-fw.fa-user {
-  font-size:5rem;
-}
-*/
-
 .head {
   background:black;
   height:2.5rem;
@@ -86,7 +80,7 @@ position:relative;
 display:inline-block;
 }
 
-/*.currentstatus, */ .userstatus {
+.userstatus {
 position:absolute;
 display:none;
 background-color:#f1f1f1;
@@ -96,21 +90,9 @@ right:0;
 box-shadow: 0 8px 16px 0;
 }
 
-/*.login:hover .currentstatus, */ .login:hover .userstatus {
+.login:hover .userstatus {
 display:block;
 }
-
-/*
-.login .currentstatus a {
-display:block;
-text-decoration:none;
-color:black;
-font-size:2.5rem;
-font-weight:bold;
-text-align:center;
-padding:0.8rem 1.6rem;
-}
-*/
 
 .login .userstatus a {
 display:block;
@@ -121,12 +103,6 @@ font-weight:bold;
 text-align:center;
 padding:0.8rem 1.6rem;
 }
-
-/*
-.currentstatus a:hover {
-  background-color:#d1d1d1;
-}
-*/
 
 .userstatus a:hover {
   background-color:#d1d1d1;
@@ -288,6 +264,44 @@ line-height:1.5;
 -webkit-flex:30%;
 -ms-flex:30%;
 flex:30%;
+}
+
+
+.part9 {
+display:flex;
+flex-wrap:wrap;
+flex-direction:column;
+}
+
+
+.part91 {
+background:#f1f1f1;
+}
+
+.part92 {
+background:darkgrey;
+flex:1;
+overflow-x:auto;
+overflow-y:scroll;
+
+}
+
+#groupchat {
+position:relative;
+}
+
+.part93 {
+background:#d1d1d1;
+overflow:auto;
+}
+
+.part93 form {
+padding:0.5rem;
+margin:0.3rem;
+}
+
+#send {
+margin:1rem;
 }
 
 .footer div {

@@ -2368,6 +2368,17 @@ $sql = "CREATE TABLE IF NOT EXISTS feedback (
 // perform query
 $conn->query($sql);
 
+// sql to create table chat 'store query in a variable'
+$sql = "CREATE TABLE IF NOT EXISTS chat (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(100) NOT NULL,
+        chatmsg VARCHAR(1000) NOT NULL,
+        dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+// perform query
+$conn->query($sql);
+
 // Close the connection
 $conn->close();
 ?>
