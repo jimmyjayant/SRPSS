@@ -11,26 +11,22 @@ $sql = "SELECT * FROM chat";
 // perform query and store result in a variable
 $result = $conn->query($sql);
 
-
-
 while($row = $result->fetch_assoc()) {
-   //echo "<div style='position:relative;margin:2rem 0;'>";
+   echo "<div class='chat'>";
    if($row['username'] == $_SESSION['username'])
    {
-      echo "<p style='text-align:right;background:#55efc4;margin:1rem 0.5rem;border-radius:1rem;display:inline-block;width:50%;'>";
+      echo "<div class='chatmsg' style='float:left;text-align:left;'>";
    }
    else 
    {
-      echo "<p style='text-align:left;background:#55efc4;margin:1rem 0.5rem;border-radius:1rem;display:inline-block;width:50%;'>";
+      echo "<div class='chatmsg' style='float:right;text-align:right;'>";
    }
    echo $row['chatmsg'];
    echo "<br>";
    echo "<span style='color:white;font-size:1.5rem;'>" . $row['username']. ", " . $row['dt'] . "</span>";
-   echo "</p><br>";
-  // echo "</div>";
+   echo "</div>";
+   echo "</div>";   
 }
-
-
 
 // close the connection
 $conn->close();

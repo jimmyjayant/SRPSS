@@ -280,19 +280,35 @@ background:#f1f1f1;
 
 .part92 {
 background:darkgrey;
+-webkit-flex:1;
+-ms-flex:1;
 flex:1;
 overflow-x:auto;
 overflow-y:scroll;
-
 }
 
-#groupchat {
-position:relative;
+.chat {
+margin:1rem 0;
+padding:1rem;
+}
+
+.chatmsg {
+display:inline-block;
+background:#55efc4;
+border-radius:1rem;
+padding:1rem;
+font-size:2rem;
+width:30%;
+}
+
+.chat::after {
+  content:"";
+  clear:both;
+  display:table;
 }
 
 .part93 {
 background:#d1d1d1;
-overflow:auto;
 }
 
 .part93 form {
