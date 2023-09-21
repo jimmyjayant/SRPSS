@@ -407,4 +407,57 @@ table td {
 }
 /*End of CSS of tables*/
 
+/*Start of CSS of 404 error page*/
 
+.image {
+  position:relative;
+  border:1rem solid black;
+  border-radius:50%;
+  width:20rem;
+  height:20rem;
+  margin:4rem auto;
+}
+
+.eye1 {
+  position:absolute;
+  border:1rem solid black;
+  border-radius:50%;
+  background:black;
+  width:2rem;
+  height:2rem;
+  top:3rem;
+  left:4rem;
+}
+
+.eye2 {
+  position:absolute;
+  border:1rem solid black;
+  border-radius:50%;
+  background:black;
+  width:2rem;
+  height:2rem;
+  top:3rem;
+  right:4rem;
+}
+
+.smile {
+  position:absolute;
+  border-top:solid 1rem;
+  border-radius:50%;
+  width:12rem;
+  height:8rem;
+  bottom:2rem;
+  left:3rem;
+}
+
+.msg h1 {
+  font-size:6rem;
+  margin:0;
+}
+
+.msg h3 {
+  font-size:3rem;
+  margin:1rem;
+}
+
+/* End of CSS of 404 error page*/
