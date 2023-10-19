@@ -1,44 +1,14 @@
-
-// Current active link
-
-/*
-const activePage = window.location.pathname;
-//console.log(activePage);
-const x = document.getElementById("nav");
-const y = x.getElementsByTagName("a");
-if(y)
-{
-const navLinks = Array.from(y); // Convert HTMLCollection to Array 
-navLinks.forEach(link => {
-if(link.href.includes(activePage)) {
-   //console.log(`${activePage}`);
-   link.classList.add('active');
-}
-});
-}
-*/
-
 document.addEventListener("DOMContentLoaded", function() {
    const x = document.getElementsByClassName("navbar")[0];
    const y = x.getElementsByTagName("a");
    const activePage = window.location.pathname;
-
+   
    Array.from(y).forEach(link => {
-       if (link.href.includes(activePage)) {
-           link.classList.add('active');
-       }
-       else {
-         link.classList.remove('active'); // Remove 'active' class from non-matching links
-     }
+       if (window.location.href == link.href) {
+         link.classList.add('active');
+         }
    });
 });
-
-
-
-
-
-
-
 
 
 
