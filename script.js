@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
    const x = document.getElementsByClassName("navbar")[0];
    const y = x.getElementsByTagName("a");
-   const activePage = window.location.pathname;
    
    Array.from(y).forEach(link => {
        if (window.location.href == link.href) {
