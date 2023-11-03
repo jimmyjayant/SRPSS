@@ -86,18 +86,24 @@
             <?php
             if(isset($_SESSION['username']))
             {
-                echo "style='display:none;";
+                echo "style='display:none;'";
             }
             ?>>Register</a>
             <a href="login.php"
             <?php
             if(isset($_SESSION['username']))
             {
-                echo "style='display:none;";
+                echo "style='display:none;'";
             }
             ?>>Login</a>
             <a href="researchsites.php">Research Sites</a>
-            <a href="submit.php">Submit</a>
+            <a href="submit.php" 
+            <?php
+            if(!isset($_SESSION['username']))
+            {
+                echo "style='display:none;'";
+            }
+            ?>>Submit</a>
             <a href="view.php">View</a>
             <a href="chat.php"
             <?php

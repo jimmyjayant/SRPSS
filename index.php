@@ -123,7 +123,13 @@ require 'headerandnavbar.php';
                 </div>
             </div>
 
-            <div class="part6">
+            <div class="part6" 
+            <?php
+                if(!isset($_SESSION['username']))
+                {
+                    echo "style='display:none;'";
+                }
+                ?>>
                 <div class="part61">
                    <h2>
                     Submit Research Papers 
