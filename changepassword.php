@@ -11,33 +11,33 @@ require 'sessionstart.php';
             $data = htmlspecialchars($data);
             return $data;
         }
-
-        $email = test_input($_POST['email']);
-        $user_password = test_input($_POST['password']);
+        
+        //$email = test_input($_POST['email']);
+        $oldpass = test_input($_POST['oldpass']);
+        $newpass = test_input($_POST['newpass']);
 
         // Create connection using MySQLi Object-Oriented
 
         require('databaseconnection.php');
 
-        $sql = "SELECT * FROM researchers WHERE email='$email' AND pass='$user_password'";
+        $email = $_SESSION['email'];
+
+        $sql = "SELECT * FROM researchers WHERE email='$email' AND pass='$oldpass';";
 
         $result = $conn->query($sql);
         
         if($result->num_rows > 0)
         {
-            $row = $result->fetch_assoc();
-            $_SESSION['username'] = $row['firstname'];
-            $_SESSION['email'] = $row['email'];
+            $sql1 = "UPDATE researchers SET pass='$newpass' WHERE email='$email'";
+            $result1 = $conn->query($sql1);
             
-            if($_SESSION['username'] == "admin")
+            if($result1)
             {
-                header("Location: admin.php", true, 301);
-                exit();
+                $status = "<p style='color:green;'>Your Password is changed Successfully.</p>";
             }
-            else
+            else 
             {
-                header("Location: index.php", true, 301);
-                exit();
+                $status = "<p style='color:red;'>Error Changing Password.</p>";
             }
         }
         else 
@@ -56,22 +56,29 @@ require 'sessionstart.php';
  require 'headerandnavbar.php';
 ?>
 
-    <div class="main">
+<div class="main">
         <h2>
-            Log In 
+            Change Password  
         </h2>
 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
-            <label for="email">Email</label>
+            <!--<label for="email">Email</label>
             <br>
             <input type="email" id="email" name="email" placeholder="Enter your email here" validate required>
 
             <br>
             <br>
-            
-            <label for="password">Password</label>
+-->
+            <label for="oldpass">Old Password</label>
             <br>
-            <input type="password" id="password" name="password" placeholder="Enter your password here" minlength="8" maxlength="30" required>
+            <input type="password" id="oldpass" name="oldpass" placeholder="Enter your old password here" minlength="8" maxlength="30" required>
+
+            <br>
+            <br>
+            
+            <label for="newpass">New Password</label>
+            <br>
+            <input type="password" id="newpass" name="newpass" placeholder="Enter your new password here" minlength="8" maxlength="30" required>
 
             <br>
             <br>
@@ -79,14 +86,14 @@ require 'sessionstart.php';
             <input type="submit" value="Submit" name="submit">
             <input type="reset" value="Reset">
         </form> 
-
+        
         <?php
             if(isset($status))
             {
                 echo $status;
             }
         ?>
-             
+
     </div>
 
         <?php require 'footer.php'; ?>

@@ -67,6 +67,15 @@
                                 }
                             ?>
                         </a>
+                        <a href="changepassword.php" alt="Change Password" 
+                        <?php 
+                        if(!isset($_SESSION['username']))
+                        {
+                            echo "style='display:none;'";
+                        }
+                        ?>>
+                        Change Password 
+                        </a>
                         <a href="logout.php" alt="Logout" 
                             <?php
                                 if(!(isset($_SESSION['username'])))
