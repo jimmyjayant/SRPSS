@@ -12,7 +12,7 @@ require 'sessionstart.php';
             return $data;
         }
         
-        //$email = test_input($_POST['email']);
+        
         $oldpass = test_input($_POST['oldpass']);
         $newpass = test_input($_POST['newpass']);
 
