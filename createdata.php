@@ -2350,11 +2350,13 @@ $sql = "CREATE TABLE IF NOT EXISTS researchpapers (
         category VARCHAR(150) NOT NULL,
         topic VARCHAR(300) NOT NULL,
         paper VARCHAR(500) NOT NULL,
+        approved INT(6) DEFAULT 0,
         CONSTRAINT FK_loggeduser FOREIGN KEY (loggeduser) REFERENCES researchers(firstname)
 )";
 
 // perform query
 $conn->query($sql);
+
 
 // sql to create table feedback 'store query in a variable'
 $sql = "CREATE TABLE IF NOT EXISTS feedback (

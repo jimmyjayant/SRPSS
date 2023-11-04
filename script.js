@@ -75,6 +75,30 @@ function viewPapers() {
 });
 
 
+//viewpapersadmin  javascript
+function viewPapersAdmin() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+        var viewPapersAdmin = document.getElementById("viewpapersadmin");
+          if(viewPapersAdmin)
+          {
+           viewPapersAdmin.innerHTML = this.responseText;
+          }
+         
+      }
+   };
+   xmlhttp.open("GET", "getpapersdataforadmin.php", true);
+   xmlhttp.send();
+ }
+
+ document.addEventListener("DOMContentLoaded", function() {
+  viewPapersAdmin();
+});
+
+
+
+
 // magazines.php javascript
 function showMagazinesData() {
     var xmlhttp = new XMLHttpRequest();

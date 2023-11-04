@@ -146,7 +146,7 @@ require 'headerandnavbar.php';
             <br>
             <br>
             <!-- Data from Database will be listed here -->
-            <div id="viewpapers">
+            <div id="viewpapersadmin">
           
             </div>
 
@@ -184,6 +184,52 @@ require 'headerandnavbar.php';
  
                  if($result === TRUE) {
                      echo "<p style='color:green;'>No. " . $delete . " research paper deleted.</p>";
+                 }
+                 else {
+                     echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                 }
+
+                 // Close the connection
+                 $conn->close();
+              }
+           ?>
+
+           <br>
+           <br>
+
+           <h2>
+                Approve Entry 
+           </h2>
+
+           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+              <label for="approve">Approve Entry:- </label>
+              <br>
+              <input type="number" id="approve" name="approve" min="1" size="20" placeholder="Enter the entry number" required>
+
+              <br>
+              <br>
+
+              <input type="submit" name="approve-research-paper" value="Approve">
+              <input type="reset" value="Reset">
+            </form>
+
+            <?php
+              if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['approve-research-paper'])))
+              {
+                 $approve = test_input($_POST['approve']);
+ 
+                 // Connect to 'srpss' database and enter necessary information
+                 include('databaseconnection.php');
+ 
+                 $sql = "UPDATE researchpapers
+                 SET approved = 1 
+                 WHERE id = $approve";
+ 
+                 // Perform query
+                 $result = $conn->query($sql);
+ 
+                 if($result === TRUE) {
+                     echo "<p style='color:green;'>No. " . $approve . " research paper approved.</p>";
                  }
                  else {
                      echo "<p style='color:red;'>Please enter UNIQUE number.</p>";

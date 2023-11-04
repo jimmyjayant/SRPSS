@@ -121,6 +121,13 @@
                 echo "style='display:none;'";
             }
             ?>>Chat</a>
+            <a href="admin.php"
+            <?php
+            if(!(isset($_SESSION['username']) && ($_SESSION['username'] == "admin")))
+            {
+                echo "style='display:none;'";
+            }
+            ?>>Admin Panel</a>
             <div class="dropdown">
               <a href="culture.php" class="dropbtn">Culture</a>
                  <div class="dropdown-content">

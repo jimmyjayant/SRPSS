@@ -2,13 +2,11 @@
 include('databaseconnection.php');
 
 // store query in a variable
-$sql = "SELECT * FROM researchpapers WHERE approved = 1 ORDER BY id ASC";
+$sql = "SELECT * FROM researchpapers ORDER BY id ASC";
 
 // perform query and store result in a variable
 $result = $conn->query($sql);
 
-if($result->num_rows > 0)
-{
 echo "<table>
 <tr>
 <th>S.N.</th>
@@ -32,11 +30,6 @@ while($row = $result->fetch_assoc()) {
    echo "</tr>";
 }
 echo "</table>";
-}
-else 
-{
-   echo "<p style='color:red;'>No Research Papers Approved.</p>";
-}
 
 $result->free_result();
 
