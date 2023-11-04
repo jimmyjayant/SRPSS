@@ -46,6 +46,7 @@ require 'sessionstart.php';
            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES['upload']['name'])) {
             $category = ($_POST['category']);
             $papername = test_input($_POST['papername']);
+            $loggeduser = $_SESSION['username'];
 
             if(isset($_FILES['upload']['name']))
             {
@@ -60,8 +61,8 @@ require 'sessionstart.php';
 
                 include('databaseconnection.php');
 
-                $sql = "INSERT INTO researchpapers(category, topic, paper)
-                      VALUES ('$category', '$papername', '$file_name')";
+                $sql = "INSERT INTO researchpapers(loggeduser, category, topic, paper)
+                      VALUES ('$loggeduser', '$category', '$papername', '$file_name')";
 
                 $result = $conn->query($sql);
                 

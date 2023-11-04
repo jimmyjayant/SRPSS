@@ -2346,9 +2346,11 @@ $conn->query($sql);
 // sql to create table researchpapers 'store query in a variable'
 $sql = "CREATE TABLE IF NOT EXISTS researchpapers (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        loggeduser VARCHAR(150), 
         category VARCHAR(150) NOT NULL,
         topic VARCHAR(300) NOT NULL,
-        paper VARCHAR(500) NOT NULL 
+        paper VARCHAR(500) NOT NULL,
+        CONSTRAINT FK_loggeduser FOREIGN KEY (loggeduser) REFERENCES researchers(firstname)
 )";
 
 // perform query

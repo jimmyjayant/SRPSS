@@ -11,6 +11,7 @@ echo "<table>
 <tr>
 <th>S.N.</th>
 <th>Category</th>
+<th>Researcher</th>
 <th>Topic</th>
 <th>Paper</th>
 </tr>";
@@ -19,6 +20,7 @@ while($row = $result->fetch_assoc()) {
    echo "<tr>";
    echo "<td>" . $row['id'] . "</td>";
    echo "<td>" . $row['category'] . "</td>";
+   echo "<td>" . $row['loggeduser'] . "</td>";
    echo "<td>" . $row['topic'] . "</td>";
    echo "<td>";
    echo "<a href='" .  "displaypaperdata.php?pdf=" . $row['paper'] . "' target='_blank'>"  . $row['topic'] . "</a>";
