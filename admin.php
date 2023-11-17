@@ -1011,6 +1011,206 @@ require 'headerandnavbar.php';
                 }
            ?>
           </div>
+          
+          <hr>
+          <br>
+          <br>
+          <hr>
+
+          <!-- Feedback -->
+          <div class="class10">
+            <h2>
+                User Feedback Data 
+            </h2>
+
+            <br>
+            <br>
+            <!-- Data from Database will be listed here -->
+            <div id="feedback">
+                
+            </div>
+
+            <br>
+            <br>
+
+            <h2>
+                Approve Feedback  
+            </h2>
+
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+             <label for="approvefeedbacknum">Approve Entry:- </label>
+             <br>
+             <input type="number" id="approvefeedbacknum" name="approvefeedbacknum" min="1" size="30" placeholder="Enter the Feedback No." required>
+
+             <br>
+             <br>
+             <input type="submit" name="submit-feedback" value="Approve">
+             <input type="reset" value="Reset">
+            </form>
+
+            <?php
+                if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-feedback'])))
+                {
+                $approvefeedbacknum = test_input($_POST['approvefeedbacknum']);
+
+                // Connect to 'srpss' database and enter necessary information
+                include('databaseconnection.php');
+                
+                $sql = "SELECT id FROM feedback";
+                $result = $conn->query($sql);
+
+                // Error Variable 
+                $res = 2;
+
+                while($row = $result->fetch_assoc())
+                {
+                    if($approvefeedbacknum == $row['id'])
+                    {
+                        $sql1 = "UPDATE feedback SET approved = 1 WHERE id = $approvefeedbacknum";
+                        $result1 = $conn->query($sql1);
+        
+                        if($result1 === TRUE) {
+                            echo "<p style='color:green;'>No. " . $approvefeedbacknum . " Feedback approved.</p>";
+                            $res = 0;
+                        }
+                        else {
+                            echo "<p style='color:red;'>Error Approving Feedback.</p>";
+                            $res = 1;
+                        }
+                    }
+                }
+                
+                if($res != 0 && $res != 1)
+                    {
+                        echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
+                    }
+
+                // Close the connection
+                $conn->close();
+                }
+            ?>
+
+           <br>
+           <br>
+
+           <h2>
+            Reject Feedback  
+           </h2>
+
+           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+            <label for="rejfeedbacknum">Delete Entry:- </label>
+            <br>
+            <input type="number" id="rejfeedbacknum" name="rejfeedbacknum" min="1" size="50" placeholder="Enter the Feedback No." required>
+
+            <br>
+            <br>
+            <input type="submit" name="delete-feedback" value="Reject">
+            <input type="reset" value="Reset">
+           </form>
+
+           <?php
+                if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-feedback'])))
+                {
+                $rejfeedbacknum = test_input($_POST['rejfeedbacknum']);
+
+                // Connect to 'srpss' database and enter necessary information
+                include('databaseconnection.php');
+
+                // Perform query
+                $result = $conn->query($sql);
+
+                if($result === TRUE) {
+                    echo "<p style='color:green;'>No. " . $delete . " Webseries deleted.</p>";
+                }
+                else {
+                    echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                }
+
+                // Close the connection
+                $conn->close();
+
+                }
+           ?>
+          </div>
+
+          <hr>
+          <br>
+          <br>
+          <hr>
+
+          <!-- Export MySQL Data to 'srpss.sql' File-->
+          <div class="class11">
+            <h2>
+               Export MySQL Data to File 
+            </h2>
+
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+            <input type="submit" name="export-mysqldata" value="Export">
+            </form>
+
+            <?php
+                if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['export-mysqldata'])))
+                {
+
+                // Connect to 'srpss' database and enter necessary information
+                include('databaseconnection.php');
+
+                // Path to sql file in which mysql database is exported
+                $file = 'srpss.sql';
+
+                // Get the list of tables
+                $result = $conn->query("SHOW TABLES");
+                $tables = [];
+                while($row = $result->fetch_row())
+                {
+                    $tables[] = $row[0];
+                }
+
+                // Create SQL file or open it if it already exists
+                $handle = fopen($file, "w");
+
+                if($handle === false)
+                {
+                    die("Error opening output file.");
+                }
+
+                // Iterate through tables and export structure and data
+                foreach($tables as $table)
+                {
+                    // Structure
+                    $structure = $conn->query("SHOW CREATE TABLE $table");
+                    if($structure === false)
+                    {
+                        die("Error getting structure for table $table: " . $conn->error);
+                    }
+                    $createTableSQL = $structure->fetch_row()[1];
+                    fwrite($handle, "$createTableSQL;\n");
+
+                    // Data
+                    $data = $conn->query("SELECT * FROM $table");
+                    if($data === false)
+                    {
+                        die("Error getting data for table $table: " . $conn->error);
+                    }
+                    while($row = $data->fetch_assoc())
+                    {
+                        $values = implode("', '", array_map([$conn, 'real_escape_string'], $row));
+                        fwrite($handle, "INSERT INTO $table VALUES ('$values');\n");
+                    }
+                }
+
+                fclose($handle);
+                
+
+                // Close the connection
+                $conn->close();
+
+                echo "<p style='color:green'>Export Successful to srpss.sql file!</p>";
+
+                }
+           ?>
+
+          </div>
         </div>
 
         <?php require 'footer.php'; ?>

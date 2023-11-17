@@ -71,14 +71,14 @@ require 'sessionstart.php';
 -->
             <label for="oldpass">Old Password</label>
             <br>
-            <input type="password" id="oldpass" name="oldpass" placeholder="Enter your old password here" minlength="8" maxlength="30" required>
+            <input type="password" id="oldpass" name="oldpass" placeholder="Enter your old password" minlength="8" maxlength="30" required>
 
             <br>
             <br>
             
             <label for="newpass">New Password</label>
             <br>
-            <input type="password" id="newpass" name="newpass" placeholder="Enter your new password here" minlength="8" maxlength="30" required>
+            <input type="password" id="newpass" name="newpass" placeholder="Enter your new password" minlength="8" maxlength="30" required>
 
             <br>
             <br>

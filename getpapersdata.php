@@ -16,7 +16,6 @@ echo "<table>
 <th>Researcher</th>
 <th>Topic</th>
 <th>Paper</th>
-<th>Approved</th>
 </tr>";
 
 while($row = $result->fetch_assoc()) {
@@ -28,7 +27,6 @@ while($row = $result->fetch_assoc()) {
    echo "<td>";
    echo "<a href='" .  "displaypaperdata.php?pdf=" . $row['paper'] . "' target='_blank'>"  . $row['topic'] . "</a>";
    echo "</td>";
-   echo "<td>" . $row['approved'] . "</td>";
    echo "</tr>";
 }
 echo "</table>";
