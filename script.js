@@ -306,6 +306,177 @@ document.addEventListener("DOMContentLoaded", function() {
    showFeedbackData();
 });
 
+//admin.php
+var class1 = document.getElementsByClassName("class1");
+var class2 = document.getElementsByClassName("class2");
+var class3 = document.getElementsByClassName("class3");
+var class4 = document.getElementsByClassName("class4");
+var class5 = document.getElementsByClassName("class5");
+var class6 = document.getElementsByClassName("class6");
+var class7 = document.getElementsByClassName("class7");
+var class8 = document.getElementsByClassName("class8");
+var class9 = document.getElementsByClassName("class9");
+var class10 = document.getElementsByClassName("class10");
+var class11 = document.getElementsByClassName("class11");
+
+function myFunction1() {
+   class1[0].style.display="block";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction2() {
+   class1[0].style.display="none";
+   class2[0].style.display="block";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction3() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="block";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction4() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="block";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction5() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="block";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction6() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="block";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction7() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="block";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction8() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="block";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction9() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="block";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+}
+
+function myFunction10() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="block";
+   class11[0].style.display="none";
+}
+
+function myFunction11() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="block";
+}
+
+
+
+
+
 
 
 

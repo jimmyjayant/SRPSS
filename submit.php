@@ -2,6 +2,16 @@
 require 'sessionstart.php';
 ?>
 
+<?php
+// Access Denied for Web page DIRECT ACCESS 
+if(!isset($_SESSION['username']))
+{
+    header("location: login.php");
+    die();
+}
+?>
+
+
 <?php 
  require 'headerandnavbar.php';
 ?>

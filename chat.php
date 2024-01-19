@@ -3,6 +3,16 @@
 ?>
 
 <?php
+// Access Denied for Web page DIRECT ACCESS 
+if(!isset($_SESSION['username']))
+{
+    header("location: login.php");
+    die();
+}
+?>
+
+
+<?php
   if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['send'])))
   {
     function test_input($data) {
