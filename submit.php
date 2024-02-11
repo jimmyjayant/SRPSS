@@ -57,6 +57,7 @@ if(!isset($_SESSION['username']))
             $category = ($_POST['category']);
             $papername = test_input($_POST['papername']);
             $loggeduser = $_SESSION['username'];
+            $loggeduseremail = $_SESSION['email'];
 
             if(isset($_FILES['upload']['name']))
             {
@@ -71,8 +72,8 @@ if(!isset($_SESSION['username']))
 
                 include('databaseconnection.php');
 
-                $sql = "INSERT INTO researchpapers(loggeduser, category, topic, paper)
-                      VALUES ('$loggeduser', '$category', '$papername', '$file_name')";
+                $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
+                      VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
 
                 $result = $conn->query($sql);
                 
