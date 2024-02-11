@@ -67,6 +67,15 @@
                                 }
                             ?>
                         </a>
+                        <a href="dashboard.php" alt="User Dashboard"
+                            <?php
+                                if(!isset($_SESSION['username']) || ($_SESSION['username'] === "admin"))
+                                {
+                                    echo "style='display:none;'";
+                                }
+                            ?>>
+                            Dashboard
+                        </a>
                         <a href="changepassword.php" alt="Change Password" 
                         <?php 
                         if(!isset($_SESSION['username']))
