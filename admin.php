@@ -26,17 +26,18 @@ require 'headerandnavbar.php';
 
         <div class="main" id="adminbody">
             <div class="navbar1">
-                <a href="#" onclick="myFunction1()">Research Sites</a>
-                <a href="#" onclick="myFunction2()">Research Papers</a>
-                <a href="#" onclick="myFunction3()">Magazines</a>
-                <a href="#" onclick="myFunction4()">Newspapers</a>
-                <a href="#" onclick="myFunction5()">Conference</a>
-                <a href="#" onclick="myFunction6()">YouTube Channels</a>
-                <a href="#" onclick="myFunction7()">Indian Scientists</a>
-                <a href="#" onclick="myFunction8()">Indian Scientific Movies</a>
-                <a href="#" onclick="myFunction9()">Indian Scientific Web Series</a>
-                <a href="#" onclick="myFunction10()">User Feedback</a>
-                <a href="#" onclick="myFunction11()">Export MySQL Data to File</a>
+                <a href="#" onclick="adminnavbar1()">Research Sites</a>
+                <a href="#" onclick="adminnavbar2()">Research Papers</a>
+                <a href="#" onclick="adminnavbar3()">Magazines</a>
+                <a href="#" onclick="adminnavbar4()">Newspapers</a>
+                <a href="#" onclick="adminnavbar5()">Conference</a>
+                <a href="#" onclick="adminnavbar6()">YouTube Channels</a>
+                <a href="#" onclick="adminnavbar7()">Indian Scientists</a>
+                <a href="#" onclick="adminnavbar8()">Indian Scientific Movies</a>
+                <a href="#" onclick="adminnavbar9()">Indian Scientific Web Series</a>
+                <a href="#" onclick="adminnavbar10()">User Feedback</a>
+                <a href="#" onclick="adminnavbar11()">Export MySQL Data to File</a>
+                <a href="#" onclick="adminnavbar12()">User Notifications</a>
             </div>
             <div class="adminpanel">
                 <h2>
@@ -1249,6 +1250,13 @@ require 'headerandnavbar.php';
                         }
                 ?>
 
+                </div>
+
+                <!-- User Notifications -->
+                <div class="class12" id="usernotificationadminpanel">
+                  <h2>
+                    User Notifications 
+                  </h2>
                 </div>
             </div>
         </div>

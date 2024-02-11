@@ -512,6 +512,55 @@ table td {
 
 /* End of CSS of admin panel page*/
 
+/* Start of CSS of user dashboard page*/
+
+.class12, .class13 {
+  display:none;
+}
+
+#userdashboard {
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:stretch;
+}
+
+.main .navbar2 {
+  background-color:#333;
+  margin:0;
+  padding:0;
+  display: -webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+  }
+  
+.main  .navbar2 a {
+  display:block;
+  background:#333;
+  text-decoration:none;
+  font-size:2.5rem;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  padding:0.8rem 1.6rem;
+  margin:0;
+  border-radius:0;
+  }
+  
+ .main .navbar2  a:hover {
+  background-color:#111;
+  }
+  
+  .userpanel {
+    flex:0.75;
+    text-align:center;
+  }
+  
+
+/* End of CSS of user dashboard page*/
+
 /* Start of CSS of sitemap page*/
 
 .part101 {

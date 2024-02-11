@@ -319,7 +319,7 @@ var class9 = document.getElementsByClassName("class9");
 var class10 = document.getElementsByClassName("class10");
 var class11 = document.getElementsByClassName("class11");
 
-function myFunction1() {
+function adminnavbar1() {
    class1[0].style.display="block";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -333,7 +333,7 @@ function myFunction1() {
    class11[0].style.display="none";
 }
 
-function myFunction2() {
+function adminnavbar2() {
    class1[0].style.display="none";
    class2[0].style.display="block";
    class3[0].style.display="none";
@@ -347,7 +347,7 @@ function myFunction2() {
    class11[0].style.display="none";
 }
 
-function myFunction3() {
+function adminnavbar3() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="block";
@@ -361,7 +361,7 @@ function myFunction3() {
    class11[0].style.display="none";
 }
 
-function myFunction4() {
+function adminnavbar4() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -375,7 +375,7 @@ function myFunction4() {
    class11[0].style.display="none";
 }
 
-function myFunction5() {
+function adminnavbar5() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -389,7 +389,7 @@ function myFunction5() {
    class11[0].style.display="none";
 }
 
-function myFunction6() {
+function adminnavbar6() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -403,7 +403,7 @@ function myFunction6() {
    class11[0].style.display="none";
 }
 
-function myFunction7() {
+function adminnavbar7() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -417,7 +417,7 @@ function myFunction7() {
    class11[0].style.display="none";
 }
 
-function myFunction8() {
+function adminnavbar8() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -431,7 +431,7 @@ function myFunction8() {
    class11[0].style.display="none";
 }
 
-function myFunction9() {
+function adminnavbar9() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -445,7 +445,7 @@ function myFunction9() {
    class11[0].style.display="none";
 }
 
-function myFunction10() {
+function adminnavbar10() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -459,7 +459,7 @@ function myFunction10() {
    class11[0].style.display="none";
 }
 
-function myFunction11() {
+function adminnavbar11() {
    class1[0].style.display="none";
    class2[0].style.display="none";
    class3[0].style.display="none";
@@ -472,6 +472,77 @@ function myFunction11() {
    class10[0].style.display="none";
    class11[0].style.display="block";
 }
+
+function adminnavbar12() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+   class12[0].style.display="block";
+}
+
+// dashboard.php
+var class12 = document.getElementsByClassName("class12");
+var class13 = document.getElementsByClassName("class13");
+
+function usernavbar1()
+{
+   class12[0].style.display="block";
+   class13[0].style.display="none";
+}
+
+function usernavbar2()
+{
+   class12[0].style.display="none";
+   class13[0].style.display="block";
+}
+
+// User notifications in dashboard.php
+function showUserNotificationsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showUserNotificationsData = document.getElementById("usernotifications");
+         if(showUserNotificationsData)
+         {
+            showUserNotificationsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getusernotifications.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showUserNotificationsData();
+});
+
+// Submitted Research Papers in dashboard.php 
+function showSubmittedResearchPapersData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSubmittedResearchPapersData = document.getElementById("papersubmittedbyuser");
+         if(showSubmittedResearchPapersData)
+         {
+            showSubmittedResearchPapersData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsubmittedpapersdata.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showSubmittedResearchPapersData();
+});
 
 
 
