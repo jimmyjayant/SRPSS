@@ -2,6 +2,17 @@
 require 'sessionstart.php';
 ?>
 
+<?php
+if(isset($_SESSION['username']))
+{
+   $none = 'style="display:none;"';   
+}
+else
+{
+   $none = NULL;
+}
+?>
+
 <?php 
  require 'headerandnavbar.php';
 ?>
@@ -12,12 +23,20 @@ require 'sessionstart.php';
             </h2>
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self">
-                <label for="name">Name</label>
+                <div <?php echo $none; ?>>
+                <label for="name" >Name</label>
                 <br>
-                <input type="text" placeholder="Enter Your Name here" id="name" name="name" maxlength="50" required>
+                <input type="text" placeholder="Enter Your Name here" id="name" name="name" maxlength="50" required
+                <?php 
+                 if(isset($_SESSION['username']))
+                 {
+                    echo 'value="' . $_SESSION['username'] . " " . $_SESSION['username1'] . '"';
+                 }
+                ?>>
 
                 <br>
                 <br>
+                </div>
 
                 <label for="subject">Subject</label>
                 <br>
@@ -26,19 +45,32 @@ require 'sessionstart.php';
                 <br>
                 <br>
 
+                <div <?php echo $none; ?>>
                 <label for="mobile">Mobile Number</label>
                 <br>
-                <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required>
+                <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required <?php 
+                 if(isset($_SESSION['username']))
+                 {
+                    echo 'value="' . $_SESSION['mobno']. '"';
+                 }
+                ?>>
 
                 <br>
                 <br>
-
+                
                 <label for="email">Email</label>
                 <br>
-                <input type="email" placeholder="Enter your email here" id="email" name="email" validate required>
-
+                <input type="email" placeholder="Enter your email here" id="email" name="email" validate required 
+                <?php 
+                 if(isset($_SESSION['username']))
+                 {
+                    echo 'value="' . $_SESSION['email']. '"';
+                 }
+                ?>>
+                
                 <br>
                 <br>
+                </div>
 
                 <label for="message">Message</label>
                 <br>
