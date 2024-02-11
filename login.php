@@ -28,6 +28,9 @@ require 'sessionstart.php';
             $row = $result->fetch_assoc();
             $_SESSION['username'] = $row['firstname'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['username1'] = $row['lastname'];
+            $_SESSION['mobno'] = $row['contact'];
+            
             
             if($_SESSION['username'] == "admin")
             {
