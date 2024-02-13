@@ -153,14 +153,6 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
-
-
                 <!-- View Submitted Papers -->
                 <div class="class2" id="researchpaperdata">
                     <h2>
@@ -264,13 +256,6 @@ require 'headerandnavbar.php';
                     }
                 ?>
                 </div>
-
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
 
                 <!-- Magazines -->
                 <div class="class3" id="magazinedata">
@@ -381,13 +366,6 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
-
                 <!-- Newspapers -->
                 <div class="class4" id="newspapersdata">
                     <h2>
@@ -497,13 +475,6 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
-
                 <!-- Conferences -->
                 <div class="class5" id="conferencedata">
                     <h2>
@@ -605,13 +576,6 @@ require 'headerandnavbar.php';
                         }
                 ?>
                 </div>
-
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
 
                 <!-- Channels -->
                 <div class="class6" id="youtubechannelsdata">
@@ -715,13 +679,6 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
-
                 <!-- Scientists -->
                 <div class="class7" id="indianscientistdata">
                     <h2>
@@ -823,13 +780,6 @@ require 'headerandnavbar.php';
                         }
                 ?>
                 </div>
-
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
 
                 <!-- Movies -->
                 <div class="class8" id="indianscientificmoviesdata">
@@ -938,13 +888,6 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
-
                 <!-- Web Series -->
                 <div class="class9" id="indianscientificwebseriesdata">
                     <h2>
@@ -1047,13 +990,6 @@ require 'headerandnavbar.php';
                         }
                 ?>
                 </div>
-                
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
 
                 <!-- Feedback -->
                 <div class="class10" id="userfeedbackdata">
@@ -1123,6 +1059,9 @@ require 'headerandnavbar.php';
                                 echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
                             }
 
+                        $result->free_result();
+                        //$result1->free_result();
+
                         // Close the connection
                         $conn->close();
                         }
@@ -1154,15 +1093,41 @@ require 'headerandnavbar.php';
                         // Connect to 'srpss' database and enter necessary information
                         include('databaseconnection.php');
 
+                        $sql = "SELECT id FROM feedback";
+
                         // Perform query
                         $result = $conn->query($sql);
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " Webseries deleted.</p>";
+                        // Error Variable 
+                        $res1 = 2;
+
+                        while($row = $result->fetch_assoc())
+                        {
+                            if($rejfeedbacknum == $row['id'])
+                            {
+                                $sql1 = "UPDATE feedback SET approved = -1 WHERE id = $rejfeedbacknum";
+                                $result1 = $conn->query($sql1);
+                
+                                if($result1 === TRUE) {
+                                    echo "<p style='color:green;'>No. " . $rejfeedbacknum . " Feedback rejected.</p>";
+                                    $res1 = 0;
+                                }
+                                else {
+                                    echo "<p style='color:red;'>Error Rejecting Feedback.</p>";
+                                    $res1 = 1;
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
+                        
+                        if($res1 != 0 && $res1 != 1)
+                            {
+                                echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
+                            }
+
+                        $result->free_result();
+                        //$result1->free_result();
+
+                       
 
                         // Close the connection
                         $conn->close();
@@ -1170,13 +1135,6 @@ require 'headerandnavbar.php';
                         }
                 ?>
                 </div>
-
-                <!--
-                <hr>
-                <br>
-                <br>
-                <hr>
-                -->
 
                 <!-- Export MySQL Data to 'srpss.sql' File-->
                 <div class="class11" id="exportmysqltofile">
@@ -1248,7 +1206,7 @@ require 'headerandnavbar.php';
                         echo "<p style='color:green'>Export Successful to srpss.sql file!</p>";
 
                         }
-                ?>
+                    ?>
 
                 </div>
 
@@ -1257,6 +1215,150 @@ require 'headerandnavbar.php';
                   <h2>
                     User Notifications 
                   </h2>
+
+                  <p>
+                    Please select an individual user or multiple users from the dropdown below or select the checkbox to select all users:- 
+                  </p>
+
+                  <?php
+                    // define Error messages variables and set to empty values
+                    $textareaErr = "";
+                    $selectedUsersErr = "";
+
+                    // define user notification send status message
+                    $sendmessage = "";
+                    
+                    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['sendnotification'])))
+                    {
+                      if(empty($_POST['allregisteredusers']) && empty($_POST['selectallusers']))
+                      {
+                        $selectedUsersErr = "No User Selected. Please select users through Dropdown or Checkbox.";
+                      }
+                      else if(!empty($_POST['allregisteredusers']) && !empty($_POST['selectallusers']))
+                      {
+                        $selectedUsersErr = "You cannot select BOTH Dropdown and Checkbox. Please select one."; 
+                      }
+                      
+                      else if(($_POST['notificationmessage']) == "")
+                      {
+                        $textareaErr = "Please provide notification message.";
+                      }
+                      
+                      else if(!empty($_POST['allregisteredusers']))
+                      {
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $usernotification = test_input($_POST['notificationmessage']);
+
+                        $usrs = ($_POST['allregisteredusers']);
+                        foreach($usrs as $key => $value)
+                        {
+                            // store query in a variable
+                            $sql = "SELECT firstname, lastname FROM researchers WHERE email='$value'";
+
+                            // perform query and store result in a variable
+                            $result = $conn->query($sql);
+
+                            if($result->num_rows > 0)
+                            {
+                                while($row = $result->fetch_assoc())
+                                {
+                                    // store query in a variable
+                                    $sql3 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
+                                             VALUES ('{$row['firstname']}', '{$row['lastname']}', '$value', '$usernotification')";
+
+                                    // perform query and store the result in a variable
+                                    $result2 = $conn->query($sql3);
+
+                                    /*
+                                    if($result2 === TRUE)
+                                    {
+
+                                    }
+                                    */
+                                    
+                                }
+                            }
+                        }
+                        $sendmessage = "Users Notifications Send Successfully.";
+                      }
+
+                      else if(!empty($_POST['selectallusers']))
+                      {
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $usernotification = test_input($_POST['notificationmessage']);
+
+                        // store query in a variable
+                        $sql4 = "SELECT firstname, lastname, email FROM researchers";
+
+                        // perform query and store the result in a variable
+                        $result4 = $conn->query($sql4);
+
+                        if($result4->num_rows > 0)
+                        {
+                            while($row = $result4->fetch_assoc())
+                            {
+                              // skip the admin
+                              if($row['firstname'] == "admin")
+                              continue;
+                              // store query in a variable
+                              $sql5 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
+                                       VALUES ('{$row['firstname']}', '{$row['lastname']}', '{$row['email']}', '$usernotification')";
+
+                              // perform query and store result in a variable
+                              $result5 = $conn->query($sql5);
+                            }
+                        }
+                        $sendmessage = "Users Notifications Send Successfully.";
+                      }
+                    }
+                  ?>
+                  
+
+                  <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="_self">
+                    <label for="allregisteredusers">
+                      Dropdown menu containing all registered users:- 
+                      <br>
+                      [Hold down the Ctrl(Windows)/Command(Mac) for multiple selection]
+                    </label>
+
+                    <br>
+                    <br>
+
+                    <select id="allregisteredusers" name="allregisteredusers[]" multiple></select>
+
+                    <br>
+                    <br>
+
+                    <label>OR</label>
+
+                    <br>
+                    <br>
+
+                    <label for="selectallusers">Select All</label>
+                    <br>
+                    <input type="checkbox" id="selectallusers" name="selectallusers" value="allusers">
+                    <br>
+                    <span style='color:red'><?php echo $selectedUsersErr; ?></span>
+
+                    <br>
+                    <br>
+
+                    <textarea name="notificationmessage" id="notificationmessage" rows="10" cols="50"></textarea>
+                    <br>
+                    <span style='color:red'><?php echo $textareaErr; ?></span>
+                    <br>
+                    <br>
+
+                    <input type="submit" name="sendnotification" value="Send" id="sendnotification">
+                    <input type="reset" name="resetnotificationform" value="Reset" id="resetnotificationform">
+                    <br>
+                    <p style='color:green;'><?php echo $sendmessage; ?></p>
+                  </form>
+
                 </div>
             </div>
         </div>

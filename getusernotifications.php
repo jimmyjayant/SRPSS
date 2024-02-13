@@ -11,7 +11,7 @@ $sql = "SELECT * FROM usernotif ORDER BY timestmp DESC WHERE firstname=" . $_SES
 email=" . $_SESSION['email'] . "";
 */
 
-$sql = "SELECT notification FROM usernotif WHERE firstname='{$_SESSION['username']}' AND lastname='{$_SESSION['username1']}' AND
+$sql = "SELECT usrnotification FROM usernotif WHERE firstname='{$_SESSION['username']}' AND lastname='{$_SESSION['username1']}' AND
 email= '{$_SESSION['email']}' ORDER BY timestmp DESC";
 
 // perform query and store result in a variable
@@ -19,11 +19,11 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0)
 {
+    $i = 1;
     while($row = $result->fetch_assoc())
     {
-        $i = 1;
         echo "<p>";
-        echo "$i. " . "{$row['notification']}";
+        echo "$i. " . "{$row['usrnotification']}";
         echo "</p>";
         $i++;
     }

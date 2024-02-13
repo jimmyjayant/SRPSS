@@ -62,10 +62,10 @@ CREATE TABLE `feedback` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `fname` (`fname`,`contact`,`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-INSERT INTO feedback VALUES ('2', 'JIMMY JAYANT', 'add more info to research sites table', '2147483647', 'jayantjimmy23@gmail.com', 'Please add more information to research sites table.', '0', '2024-02-10 00:55:03');
+INSERT INTO feedback VALUES ('2', 'JIMMY JAYANT', 'add more info to research sites table', '2147483647', 'jayantjimmy23@gmail.com', 'Please add more information to research sites table.', '-1', '2024-02-13 00:19:58');
 INSERT INTO feedback VALUES ('5', 'JOHN DOE', 'movie database', '2147483647', 'jayantjimmy49@gmail.com', 'Please add more information to movie database.', '0', '2024-02-10 00:55:03');
 INSERT INTO feedback VALUES ('7', 'nimmy', 'newspapers', '2147483647', 'nimmynishan19@gmail.com', 'Please add more information to newspapers section.', '0', '2024-02-10 00:55:03');
-INSERT INTO feedback VALUES ('8', 'peter parker', 'culture', '2147483647', 'peterparker@gmail.com', 'Please add more info to culture section.', '0', '2024-02-10 00:55:03');
+INSERT INTO feedback VALUES ('8', 'peter parker', 'culture', '2147483647', 'peterparker@gmail.com', 'Please add more info to culture section.', '1', '2024-02-13 00:19:49');
 INSERT INTO feedback VALUES ('14', 'Jimmy Jayant', 'dhfghsfth', '2147483647', 'jayantjimmy49@gmail.com', 'zdhsdfhsdhsrh', '0', '2024-02-10 00:55:03');
 CREATE TABLE `journals` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
@@ -417,7 +417,7 @@ CREATE TABLE `usernotif` (
   `firstname` varchar(100) DEFAULT NULL,
   `lastname` varchar(100) DEFAULT NULL,
   `email` varchar(150) DEFAULT NULL,
-  `notification` varchar(255) DEFAULT NULL,
+  `usrnotification` varchar(255) DEFAULT NULL,
   `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `firstname` (`firstname`),
@@ -426,7 +426,20 @@ CREATE TABLE `usernotif` (
   CONSTRAINT `fk_usernotif_email` FOREIGN KEY (`email`) REFERENCES `researchers` (`email`),
   CONSTRAINT `fk_usernotif_lastname` FOREIGN KEY (`lastname`) REFERENCES `researchers` (`lastname`),
   CONSTRAINT `usernotif_ibfk_1` FOREIGN KEY (`firstname`) REFERENCES `researchers` (`firstname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO usernotif VALUES ('43', 'Jimmy', 'Jayant', 'jayantjimmy49@gmail.com', 'cjxfgjxfgjxfg', '2024-02-13 16:22:37');
+INSERT INTO usernotif VALUES ('44', 'Armaan', 'Malik', 'armaanmalik11@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('45', 'Ashu', 'Kumar', 'ashu@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('46', 'Avneet', 'Kaur', 'avneetkaur.01@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('47', 'Gaurav', 'Bhalla', 'gauravbhalla@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('48', 'Jimmy', 'Jayant', 'jayantjimmy49@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('49', 'Manoj', 'Kumar', 'manoj@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('50', 'Prashant', 'Sharma', 'prashant22@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('51', 'Puneet', 'Kumar', 'puneetkumar@yahoo.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('52', 'Ramesh', 'Singh', 'ramesh@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('53', 'Sanjeev', 'Verma', 'sanjee.verma@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('54', 'Simmy', 'Prashant', 'simmyprashant01@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+INSERT INTO usernotif VALUES ('55', 'Yash', 'Sharma', 'yashsharma02@outlook.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 CREATE TABLE `webseries` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `webseriesname` varchar(150) NOT NULL,

@@ -488,6 +488,26 @@ function adminnavbar12() {
    class12[0].style.display="block";
 }
 
+// Users notifications in admin navbar
+function showAllRegUsersData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAllRegUsersData = document.getElementById("allregisteredusers");
+         if(showAllRegUsersData)
+         {
+            showAllRegUsersData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "showallregusers.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showAllRegUsersData();
+});
+
 // dashboard.php
 var class12 = document.getElementsByClassName("class12");
 var class13 = document.getElementsByClassName("class13");
