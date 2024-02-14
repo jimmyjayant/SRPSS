@@ -19,6 +19,7 @@ require 'headerandnavbar.php';
     <div class="navbar2">
         <a href="#" onclick="usernavbar1()">User Notifications</a>
         <a href="#" onclick="usernavbar2()">Submitted Research Papers</a>
+        <a href="#" onclick="usernavbar3()">Feedback</a>
     </div>
     <div class="userpanel">
         <h2>
@@ -34,7 +35,7 @@ require 'headerandnavbar.php';
             <br>
             <br>
 
-            <!-- Data from Database will be listed here -->
+            <!-- Data from 'usernotif' table will be listed here -->
             <div id="usernotifications">
 
             </div>
@@ -51,6 +52,21 @@ require 'headerandnavbar.php';
 
             <!-- Data from Database will be listed here -->
             <div id="papersubmittedbyuser">
+
+            </div>
+        </div>
+
+        <!-- Feedback by the User -->
+        <div class="class14">
+            <h2>
+                Submitted Feedback 
+            </h2>
+
+            <br>
+            <br>
+
+            <!-- Data from 'feedback' table will be listed here -->
+            <div id="feedbackbyuser">
 
             </div>
         </div>

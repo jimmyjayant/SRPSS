@@ -511,17 +511,27 @@ document.addEventListener("DOMContentLoaded", function() {
 // dashboard.php
 var class12 = document.getElementsByClassName("class12");
 var class13 = document.getElementsByClassName("class13");
+var class14 = document.getElementsByClassName("class14");
 
 function usernavbar1()
 {
    class12[0].style.display="block";
    class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function usernavbar2()
 {
    class12[0].style.display="none";
    class13[0].style.display="block";
+   class14[0].style.display="none";
+}
+
+function usernavbar3()
+{
+   class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="block";
 }
 
 // User notifications in dashboard.php
@@ -564,7 +574,25 @@ document.addEventListener("DOMContentLoaded", function() {
    showSubmittedResearchPapersData();
 });
 
+// Submitted Feedback by User in dashboard.php 
+function showSubmittedFeedbackData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSubmittedFeedbackData = document.getElementById("feedbackbyuser");
+         if(showSubmittedFeedbackData)
+         {
+            showSubmittedFeedbackData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsubmittedfeedbackdata.php", true);
+   xmlhttp.send();
+}
 
+document.addEventListener("DOMContentLoaded", function() {
+   showSubmittedFeedbackData();
+});
 
 
 

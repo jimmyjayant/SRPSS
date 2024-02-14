@@ -59,14 +59,13 @@ CREATE TABLE `feedback` (
   `mess` varchar(1000) NOT NULL,
   `approved` int(1) DEFAULT 0,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `fname` (`fname`,`contact`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 INSERT INTO feedback VALUES ('2', 'JIMMY JAYANT', 'add more info to research sites table', '2147483647', 'jayantjimmy23@gmail.com', 'Please add more information to research sites table.', '-1', '2024-02-13 00:19:58');
-INSERT INTO feedback VALUES ('5', 'JOHN DOE', 'movie database', '2147483647', 'jayantjimmy49@gmail.com', 'Please add more information to movie database.', '0', '2024-02-10 00:55:03');
 INSERT INTO feedback VALUES ('7', 'nimmy', 'newspapers', '2147483647', 'nimmynishan19@gmail.com', 'Please add more information to newspapers section.', '0', '2024-02-10 00:55:03');
 INSERT INTO feedback VALUES ('8', 'peter parker', 'culture', '2147483647', 'peterparker@gmail.com', 'Please add more info to culture section.', '1', '2024-02-13 00:19:49');
 INSERT INTO feedback VALUES ('14', 'Jimmy Jayant', 'dhfghsfth', '2147483647', 'jayantjimmy49@gmail.com', 'zdhsdfhsdhsrh', '0', '2024-02-10 00:55:03');
+INSERT INTO feedback VALUES ('17', 'Jimmy Jayant', 'Research Papers Approval', '2147483647', 'jayantjimmy49@gmail.com', 'Please approve research papers as soon as possible.', '0', '2024-02-15 00:23:51');
 CREATE TABLE `journals` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `journalname` varchar(150) NOT NULL,
