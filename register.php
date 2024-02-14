@@ -1,6 +1,7 @@
 <?php
 require 'sessionstart.php';
 ?>
+
 <?php
     if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
 
@@ -24,28 +25,31 @@ require 'sessionstart.php';
         $linkedin = test_input($_POST['linkedin']);
         $user_password = test_input($_POST['password']);
 
+        // converting the entered password into a password hash
+        $hashedpassword = password_hash($user_password, PASSWORD_DEFAULT);
+
         // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
 
         include('databaseconnection.php');
-
+        
         $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
-        VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$user_password')";
+        VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
 
         // Perform query
         $result = $conn->query($sql);
 
         if($result === TRUE) {
-            //$regsuccess = "<p style='color:green;'>You are successfully registered.</p>";
-            //header("Refresh: 5;url= login.php");
+            // Close the connection
+            $conn->close();
             header("Location: login.php", true, 301);
             exit();
         }
         else {
+            // Close the connection
+            $conn->close();
+
             $regerror = "<p style='color:red;'>Please enter UNIQUE registration details.</p>";
         }
-
-        // Close the connection
-        $conn->close();
     }
 ?>
 
@@ -148,7 +152,7 @@ require 'headerandnavbar.php';
 
                 <label for="password">Password</label>
                 <br>
-                <input type="password" id="password" name="password" size="30" maxlength="30" placeholder="Enter your password here">
+                <input type="password" id="password" name="password" size="30" maxlength="30" placeholder="Enter your password here" required>
 
                 <br>
                 <br>
@@ -158,13 +162,10 @@ require 'headerandnavbar.php';
             </form>
 
             <?php
-                if(isset($regsuccess))
-                {
-                    echo $regsuccess;
-                }
-                else if(isset($regerror))
+                if(isset($regerror))
                 {
                     echo $regerror;
+                    $regerror = NULL;
                 }
             ?>
 

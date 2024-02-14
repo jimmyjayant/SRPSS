@@ -3,9 +3,23 @@ require 'sessionstart.php';
 ?>
 
 <?php
+// Check if can login again
+if(isset($_SESSION['attempt_again']))
+{
+    $now = time();
+    if($now >= $_SESSION['attempt_again'])
+    {
+        $_SESSION['attempt'] = NULL;
+        $_SESSION['attempt_again'] = NULL;
+    }
+} 
+?>
+
+<?php
     if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit'])))
     {
-        function test_input($data) {
+        function test_input($data) 
+        {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
@@ -19,39 +33,82 @@ require 'sessionstart.php';
 
         require('databaseconnection.php');
 
-        $sql = "SELECT * FROM researchers WHERE email='$email' AND pass='$user_password'";
-
-        $result = $conn->query($sql);
-        
-        if($result->num_rows > 0)
+        // set login attempts if not set
+        if(!isset($_SESSION['attempt']))
         {
-            $row = $result->fetch_assoc();
-            $_SESSION['username'] = $row['firstname'];
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['username1'] = $row['lastname'];
-            $_SESSION['mobno'] = $row['contact'];
-            
-            
-            if($_SESSION['username'] == "admin")
+            $_SESSION['attempt'] = 0;
+        }
+
+        // check if 3 attempts are done
+        if($_SESSION['attempt'] == 3)
+        {
+            $_SESSION['error'] = "<p style='color:red;'>Attempt Limit Reach. Please try again after 5 mins.</p>";
+        }
+        else
+        {
+            // store query in a variable
+            $sql = "SELECT * FROM researchers WHERE email='$email'";
+
+            // perform query and store result in a variable
+            $result = $conn->query($sql);
+
+            if($result->num_rows > 0)
             {
-                header("Location: admin.php", true, 301);
-                exit();
+                while($row = $result->fetch_assoc())
+                {
+                // verify password
+                // password_verify() function will work only if the password in database is stored as hash
+                // it will not work on plaintext stored password in database 
+                if(password_verify($user_password, $row['pass']))
+                //if($user_password == $row['pass'])
+                {
+                    // action after a successful attempt
+                    $_SESSION['attempt'] = NULL;
+
+                    $_SESSION['username'] = $row['firstname'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['username1'] = $row['lastname'];
+                    $_SESSION['mobno'] = $row['contact'];
+
+                    // free the result
+                    //$result->free_result();
+
+                    // Close the connection
+                    //$conn->close();
+
+                    // redirects the user to respective pages
+                    if($_SESSION['username'] == "admin")
+                    {
+                        header("Location: admin.php", true, 301);
+                        exit();
+                    }
+                    else
+                    {
+                        header("Location: index.php", true, 301);
+                        exit();
+                    }
+                }
+                else
+                {
+                    $_SESSION['error'] = "<p style='color:red;'>Password Incorrect!</p>";
+
+                    // this is where we put our 3 attempt limit
+                    $_SESSION['attempt'] += 1;
+
+                    // set time limit to login if third attempt is reach
+                    if($_SESSION['attempt'] == 3)
+                    {
+                        // if attempt limit is reached, then set 4th attempt after 5 mins. 
+                        $_SESSION['attempt_again'] = time() + (5*60);
+                    }
+                }
+                }
             }
             else
             {
-                header("Location: index.php", true, 301);
-                exit();
+                $_SESSION['error'] = "<p style='color:red;'>No account with that email.</p>";
             }
-        }
-        else 
-        {
-            $status = "<p style='color:red;'>Your Email or Password is Invalid.</p>";
-        }
-
-        $result->free_result();
-
-        // Close the connection
-        $conn->close();
+        }        
     }
 ?>
 
@@ -84,9 +141,10 @@ require 'sessionstart.php';
         </form> 
 
         <?php
-            if(isset($status))
+            if(isset($_SESSION['error']))
             {
-                echo $status;
+                echo $_SESSION['error'];
+                $_SESSION['error'] = NULL;
             }
         ?>
              
