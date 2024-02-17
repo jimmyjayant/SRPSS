@@ -614,6 +614,25 @@ document.addEventListener("DOMContentLoaded", function() {
    showAwardsData();
 });
 
+// observatories.php
+function showObservatoryData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showObservatoryData = document.getElementById("observatory");
+         if(showObservatoryData)
+         {
+            showObservatoryData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getobservatories.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showObservatoryData();
+});
 
 
 
