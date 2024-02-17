@@ -1,3 +1,25 @@
+CREATE TABLE `awards` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `awardsname` varchar(100) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO awards VALUES ('1', 'India Science Award', '2024-02-17 23:48:18');
+INSERT INTO awards VALUES ('2', 'Shanti Swarup Bhatnagar Prize for Science and Technology', '2024-02-17 23:48:58');
+INSERT INTO awards VALUES ('3', 'G. D. Birla Award for Scientific Research', '2024-02-17 23:52:04');
+INSERT INTO awards VALUES ('4', 'H. K. Firodia Awards', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('5', 'VASVIK Industrial Research Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('6', 'Om Prakash Bhasin Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('7', 'SASTRA-CNR Rao Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('8', 'National Bioscience Award for Career Development', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('9', 'SASTRA Ramanujan Prize', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('10', 'Aryabhata Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('11', 'Kalinga Prize', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('12', 'Infosys Prize', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('13', 'Vigyan Gaurav Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('14', 'Jamnalal Bajaj Award', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('15', 'Faculty Research Awards', '2024-02-18 00:05:37');
+INSERT INTO awards VALUES ('16', 'Dr. B. C. Roy Award', '2024-02-18 00:05:37');
 CREATE TABLE `chat` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
@@ -64,7 +86,7 @@ CREATE TABLE `feedback` (
 INSERT INTO feedback VALUES ('2', 'JIMMY JAYANT', 'add more info to research sites table', '2147483647', 'jayantjimmy23@gmail.com', 'Please add more information to research sites table.', '-1', '2024-02-13 00:19:58');
 INSERT INTO feedback VALUES ('7', 'nimmy', 'newspapers', '2147483647', 'nimmynishan19@gmail.com', 'Please add more information to newspapers section.', '0', '2024-02-10 00:55:03');
 INSERT INTO feedback VALUES ('8', 'peter parker', 'culture', '2147483647', 'peterparker@gmail.com', 'Please add more info to culture section.', '1', '2024-02-13 00:19:49');
-INSERT INTO feedback VALUES ('14', 'Jimmy Jayant', 'dhfghsfth', '2147483647', 'jayantjimmy49@gmail.com', 'zdhsdfhsdhsrh', '0', '2024-02-10 00:55:03');
+INSERT INTO feedback VALUES ('14', 'Jimmy Jayant', 'dhfghsfth', '2147483647', 'jayantjimmy49@gmail.com', 'zdhsdfhsdhsrh', '-1', '2024-02-17 22:49:43');
 INSERT INTO feedback VALUES ('17', 'Jimmy Jayant', 'Research Papers Approval', '2147483647', 'jayantjimmy49@gmail.com', 'Please approve research papers as soon as possible.', '0', '2024-02-15 00:23:51');
 CREATE TABLE `journals` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
@@ -263,6 +285,31 @@ INSERT INTO newspapers VALUES ('2', 'Hindu', 'https://www.thehindu.com/', '2024-
 INSERT INTO newspapers VALUES ('3', 'Hindustan Times', 'https://www.hindustantimes.com/', '2024-02-10 01:00:16');
 INSERT INTO newspapers VALUES ('4', 'Indian Express', 'https://indianexpress.com/', '2024-02-10 01:00:16');
 INSERT INTO newspapers VALUES ('5', 'Times Of India', 'https://timesofindia.indiatimes.com/us', '2024-02-10 01:00:16');
+CREATE TABLE `observatory` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `observatoryname` varchar(200) NOT NULL,
+  `dt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO observatory VALUES ('1', 'Kodaikanal Solar Observatory Museum', '2024-02-18 00:39:41');
+INSERT INTO observatory VALUES ('2', 'Gauribidanuru Radio Observatory', '2024-02-18 00:39:41');
+INSERT INTO observatory VALUES ('3', 'Vainu Bappu Observatory', '2024-02-18 00:39:41');
+INSERT INTO observatory VALUES ('4', 'Madras Observatory', '2024-02-18 00:39:41');
+INSERT INTO observatory VALUES ('5', 'Girawali Observatory - IUCAA', '2024-02-18 00:39:41');
+INSERT INTO observatory VALUES ('6', 'Allahabad Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('7', 'Mount Abu InfraRed Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('8', 'Devasthal Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('9', 'Aryabhatta Research Institute of Observational Sciences', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('10', 'Colaba Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('11', 'Giant Metrewave Radio Telescope', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('12', 'Indian Astronomical Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('13', 'International Liquid Mirror Telescope', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('14', 'Madhava Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('15', 'Major Atmospheric Cerenkov Experiment Telescope', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('16', 'Pachmarhi Telescope Array', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('17', 'Trivandrum Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('18', 'Udaipur Solar Observatory', '2024-02-18 01:00:35');
+INSERT INTO observatory VALUES ('19', 'Ooty Radio Telescope', '2024-02-18 01:00:35');
 CREATE TABLE `researchers` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,

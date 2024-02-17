@@ -594,6 +594,26 @@ document.addEventListener("DOMContentLoaded", function() {
    showSubmittedFeedbackData();
 });
 
+// awards.php
+function showAwardsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAwardsData = document.getElementById("awards");
+         if(showAwardsData)
+         {
+            showAwardsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getawards.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showAwardsData();
+});
+
 
 
 
