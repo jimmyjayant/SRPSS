@@ -129,7 +129,7 @@ require 'headerandnavbar.php';
                         </h2>
 
                         <p>
-                            Check out the Movies and Documentaries  
+                            Check out the Movies, Documentaries and Web Series 
 
                             <br>
                             <br>
@@ -140,6 +140,66 @@ require 'headerandnavbar.php';
                             <br>
                             
                             <img src="Images/movies.jpg" width="300px" height="300px" alt="Movies">
+                        </p>
+                    </div>
+
+                    <div class="part827">
+                        <h2>
+                            Awards   
+                        </h2>
+
+                        <p>
+                            Check out the Scientific Awards   
+
+                            <br>
+                            <br>
+
+                            <a href="awards.php">Awards</a>
+
+                            <br>
+                            <br>
+                            
+                            <img src="Images/awards.jpg" width="300px" height="300px" alt="Awards">
+                        </p>
+                    </div>
+
+                    <div class="part828">
+                        <h2>
+                            Observatories   
+                        </h2>
+
+                        <p>
+                            Check out the Observatories    
+
+                            <br>
+                            <br>
+
+                            <a href="observatories.php">Observatories</a>
+
+                            <br>
+                            <br>
+                            
+                            <img src="Images/observatories.jpg" width="300px" height="300px" alt="Observatories">
+                        </p>
+                    </div>
+
+                    <div class="part820">
+                        <h2>
+                            Science Exhibition    
+                        </h2>
+
+                        <p>
+                            Check out the Science Exhibition    
+
+                            <br>
+                            <br>
+
+                            <a href="scienceexhibition.php">Science Exhibition</a>
+
+                            <br>
+                            <br>
+                            
+                            <img src="Images/exhibition.jpg" width="300px" height="300px" alt="Science Exhibition">
                         </p>
                     </div>
                 </div>

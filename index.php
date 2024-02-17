@@ -183,10 +183,15 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
+                        <a href="culture.php">Culture</a>
+
+                        <br>
+                        <br>
+
                         <img src="Images/culture.webp" alt="Scientific Culture">
                     </p>
                 </div>
-
+<!--
                 <div class="part82">
                     <div class="part821">
                         <h2>
@@ -306,6 +311,7 @@ require 'headerandnavbar.php';
                             <img src="Images/movies.jpg" width="300px" height="300px" alt="Movies">
                         </p>
                     </div>
+            -->
                 </div>
             </div>
         </div>
