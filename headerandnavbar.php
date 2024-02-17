@@ -146,6 +146,9 @@
                     <a href="channel.php">Youtube Channel</a>
                     <a href="scientist.php">Scientist</a>
                     <a href="movies.php">Movies</a>
+                    <a href="awards.php">Awards</a>
+                    <a href="observatories.php">Observatories</a>
+                    <a href="scienceexhibition.php">Science Exhibition</a>
                  </div>
             </div>
         </div>
