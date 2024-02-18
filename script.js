@@ -286,6 +286,48 @@ function showMoviesData() {
    showWebSeriesData();
 });
 
+// awards.php
+function showAwardsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAwardsData = document.getElementById("awards");
+         if(showAwardsData)
+         {
+            showAwardsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getawards.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showAwardsData();
+});
+
+// observatories.php
+function showObservatoryData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showObservatoryData = document.getElementById("observatory");
+         if(showObservatoryData)
+         {
+            showObservatoryData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getobservatories.php", true);
+   xmlhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   showObservatoryData();
+});
+
+
+
 //feedback.php
 function showFeedbackData() {
    var xmlhttp = new XMLHttpRequest();
@@ -318,6 +360,7 @@ var class8 = document.getElementsByClassName("class8");
 var class9 = document.getElementsByClassName("class9");
 var class10 = document.getElementsByClassName("class10");
 var class11 = document.getElementsByClassName("class11");
+var class12 = document.getElementsByClassName("class12");
 
 function adminnavbar1() {
    class1[0].style.display="block";
@@ -331,6 +374,7 @@ function adminnavbar1() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar2() {
@@ -345,6 +389,7 @@ function adminnavbar2() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar3() {
@@ -359,6 +404,7 @@ function adminnavbar3() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar4() {
@@ -373,6 +419,7 @@ function adminnavbar4() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar5() {
@@ -387,6 +434,7 @@ function adminnavbar5() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar6() {
@@ -401,6 +449,7 @@ function adminnavbar6() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar7() {
@@ -415,6 +464,7 @@ function adminnavbar7() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar8() {
@@ -429,6 +479,7 @@ function adminnavbar8() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar9() {
@@ -443,6 +494,7 @@ function adminnavbar9() {
    class9[0].style.display="block";
    class10[0].style.display="none";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar10() {
@@ -457,6 +509,7 @@ function adminnavbar10() {
    class9[0].style.display="none";
    class10[0].style.display="block";
    class11[0].style.display="none";
+   class12[0].style.display="none";
 }
 
 function adminnavbar11() {
@@ -471,6 +524,7 @@ function adminnavbar11() {
    class9[0].style.display="none";
    class10[0].style.display="none";
    class11[0].style.display="block";
+   class12[0].style.display="none";
 }
 
 function adminnavbar12() {
@@ -509,29 +563,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // dashboard.php
-var class12 = document.getElementsByClassName("class12");
 var class13 = document.getElementsByClassName("class13");
 var class14 = document.getElementsByClassName("class14");
+var class15 = document.getElementsByClassName("class15");
 
 function usernavbar1()
 {
-   class12[0].style.display="block";
-   class13[0].style.display="none";
+   class13[0].style.display="block";
    class14[0].style.display="none";
+   class15[0].style.display="none";
 }
 
 function usernavbar2()
 {
-   class12[0].style.display="none";
-   class13[0].style.display="block";
-   class14[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="block";
+   class15[0].style.display="none";
 }
 
 function usernavbar3()
 {
-   class12[0].style.display="none";
    class13[0].style.display="none";
-   class14[0].style.display="block";
+   class14[0].style.display="none";
+   class15[0].style.display="block";
 }
 
 // User notifications in dashboard.php
@@ -594,45 +648,6 @@ document.addEventListener("DOMContentLoaded", function() {
    showSubmittedFeedbackData();
 });
 
-// awards.php
-function showAwardsData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showAwardsData = document.getElementById("awards");
-         if(showAwardsData)
-         {
-            showAwardsData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getawards.php", true);
-   xmlhttp.send();
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-   showAwardsData();
-});
-
-// observatories.php
-function showObservatoryData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showObservatoryData = document.getElementById("observatory");
-         if(showObservatoryData)
-         {
-            showObservatoryData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getobservatories.php", true);
-   xmlhttp.send();
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-   showObservatoryData();
-});
 
 
 

@@ -464,7 +464,7 @@ table td {
 
 /* Start of CSS of admin panel page*/
 
-.class1, .class2, .class3, .class4, .class5, .class6, .class7, .class8, .class9, .class10, .class11 {
+.class1, .class2, .class3, .class4, .class5, .class6, .class7, .class8, .class9, .class10, .class11, .class12 {
   display:none;
 }
 
@@ -514,7 +514,7 @@ table td {
 
 /* Start of CSS of user dashboard page*/
 
-.class12, .class13 {
+.class13, .class14, .class15 {
   display:none;
 }
 

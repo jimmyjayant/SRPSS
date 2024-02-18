@@ -7,7 +7,7 @@ require 'headerandnavbar.php';
 ?>
 
 <div class="main">
-<h2>
+    <h2>
     List of Scientific Observatory in India  
     </h2>
 
