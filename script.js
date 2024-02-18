@@ -361,6 +361,8 @@ var class9 = document.getElementsByClassName("class9");
 var class10 = document.getElementsByClassName("class10");
 var class11 = document.getElementsByClassName("class11");
 var class12 = document.getElementsByClassName("class12");
+var class13 = document.getElementsByClassName("class13");
+var class14 = document.getElementsByClassName("class14");
 
 function adminnavbar1() {
    class1[0].style.display="block";
@@ -375,6 +377,8 @@ function adminnavbar1() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar2() {
@@ -390,6 +394,8 @@ function adminnavbar2() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar3() {
@@ -405,6 +411,8 @@ function adminnavbar3() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar4() {
@@ -420,6 +428,8 @@ function adminnavbar4() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar5() {
@@ -435,6 +445,8 @@ function adminnavbar5() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar6() {
@@ -450,6 +462,8 @@ function adminnavbar6() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar7() {
@@ -465,6 +479,8 @@ function adminnavbar7() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar8() {
@@ -480,6 +496,8 @@ function adminnavbar8() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar9() {
@@ -495,6 +513,8 @@ function adminnavbar9() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar10() {
@@ -510,6 +530,8 @@ function adminnavbar10() {
    class10[0].style.display="block";
    class11[0].style.display="none";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar11() {
@@ -525,6 +547,8 @@ function adminnavbar11() {
    class10[0].style.display="none";
    class11[0].style.display="block";
    class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
 }
 
 function adminnavbar12() {
@@ -540,6 +564,42 @@ function adminnavbar12() {
    class10[0].style.display="none";
    class11[0].style.display="none";
    class12[0].style.display="block";
+   class13[0].style.display="none";
+   class14[0].style.display="none";
+}
+
+function adminnavbar13() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+   class12[0].style.display="none";
+   class13[0].style.display="block";
+   class14[0].style.display="none";
+}
+
+function adminnavbar14() {
+   class1[0].style.display="none";
+   class2[0].style.display="none";
+   class3[0].style.display="none";
+   class4[0].style.display="none";
+   class5[0].style.display="none";
+   class6[0].style.display="none";
+   class7[0].style.display="none";
+   class8[0].style.display="none";
+   class9[0].style.display="none";
+   class10[0].style.display="none";
+   class11[0].style.display="none";
+   class12[0].style.display="none";
+   class13[0].style.display="none";
+   class14[0].style.display="block";
 }
 
 // Users notifications in admin navbar
@@ -563,29 +623,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // dashboard.php
-var class13 = document.getElementsByClassName("class13");
-var class14 = document.getElementsByClassName("class14");
-var class15 = document.getElementsByClassName("class15");
+var class20 = document.getElementsByClassName("class20");
+var class21 = document.getElementsByClassName("class21");
+var class22 = document.getElementsByClassName("class22");
 
 function usernavbar1()
 {
-   class13[0].style.display="block";
-   class14[0].style.display="none";
-   class15[0].style.display="none";
+   class20[0].style.display="block";
+   class21[0].style.display="none";
+   class22[0].style.display="none";
 }
 
 function usernavbar2()
 {
-   class13[0].style.display="none";
-   class14[0].style.display="block";
-   class15[0].style.display="none";
+   class20[0].style.display="none";
+   class21[0].style.display="block";
+   class22[0].style.display="none";
 }
 
 function usernavbar3()
 {
-   class13[0].style.display="none";
-   class14[0].style.display="none";
-   class15[0].style.display="block";
+   class20[0].style.display="none";
+   class21[0].style.display="none";
+   class22[0].style.display="block";
 }
 
 // User notifications in dashboard.php

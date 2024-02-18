@@ -35,9 +35,11 @@ require 'headerandnavbar.php';
                 <a href="#" onclick="adminnavbar7()">Indian Scientists</a>
                 <a href="#" onclick="adminnavbar8()">Indian Scientific Movies</a>
                 <a href="#" onclick="adminnavbar9()">Indian Scientific Web Series</a>
-                <a href="#" onclick="adminnavbar10()">User Feedback</a>
-                <a href="#" onclick="adminnavbar11()">Export MySQL Data to File</a>
-                <a href="#" onclick="adminnavbar12()">User Notifications</a>
+                <a href="#" onclick="adminnavbar10()">Awards</a>
+                <a href="#" onclick="adminnavbar11()">Observatories</a>
+                <a href="#" onclick="adminnavbar12()">User Feedback</a>
+                <a href="#" onclick="adminnavbar13()">Export MySQL Data to File</a>
+                <a href="#" onclick="adminnavbar14()">User Notifications</a>
             </div>
             <div class="adminpanel">
                 <h2>
@@ -991,8 +993,214 @@ require 'headerandnavbar.php';
                 ?>
                 </div>
 
+                <!-- Awards -->
+                <div class="class10" id="indianscientificawardsdata">
+                <h2>
+                        Indian Scientific Awards Data 
+                    </h2>
+
+                    <br>
+                    <br>
+                    <!-- Data from Database will be listed here -->
+                    <div id="awards">
+                        
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <h2>
+                        Insert New Entry 
+                    </h2>
+
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <label for="awardname">Name of Award:- </label>
+                    <br>
+                    <input type="text" id="awardname" name="awardname" maxlength="100" size="30" placeholder="Enter the new Award here" required>
+
+                    <br>
+                    <br>
+                    <input type="submit" name="submit-award" value="Submit">
+                    <input type="reset" value="Reset">
+                    </form>
+
+                    <?php
+                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-award'])))
+                        {
+                        $awardname = test_input($_POST['awardname']);
+
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $sql = "INSERT IGNORE INTO awards (awardsname)
+                        VALUES ('$awardname')";
+
+                        // Perform query
+                        $result = $conn->query($sql);
+
+                        if($result === TRUE) {
+                            echo "<p style='color:green;'>New Award inserted.</p>";
+                        }
+                        else {
+                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                        }
+
+                        // Close the connection
+                        $conn->close();
+                        }
+                    ?>
+
+                <br>
+                <br>
+
+                <h2>
+                    Delete Entry 
+                </h2>
+
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <label for="deleteaward">Delete Award:- </label>
+                    <br>
+                    <input type="number" id="deleteaward" name="deleteaward" min="1" size="20" placeholder="Enter the entry number" required>
+
+                    <br>
+                    <br>
+                    <input type="submit" name="delete-award" value="Delete">
+                    <input type="reset" value="Reset">
+                </form>
+
+                <?php
+                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-award'])))
+                        {
+                        $deleteaward = test_input($_POST['deleteaward']);
+
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $sql = "DELETE FROM awards      
+                        WHERE id='$deleteaward'";
+
+                        // Perform query
+                        $result = $conn->query($sql);
+
+                        if($result === TRUE) {
+                            echo "<p style='color:green;'>No. " . $deleteaward . " Award deleted.</p>";
+                        }
+                        else {
+                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        }
+
+                        // Close the connection
+                        $conn->close();
+
+                        }
+                ?>
+                </div>
+
+                <!-- Observatories -->
+                <div class="class11" id="indianscientificobservatoriesdata">
+                <h2>
+                        Indian Scientific Observatories Data 
+                    </h2>
+
+                    <br>
+                    <br>
+                    <!-- Data from Database will be listed here -->
+                    <div id="observatory">
+                        
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <h2>
+                        Insert New Entry 
+                    </h2>
+
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <label for="observatoryname">Name of Observatory:- </label>
+                    <br>
+                    <input type="text" id="observatoryname" name="observatoryname" maxlength="100" size="30" placeholder="Enter the new Observatory here" required>
+
+                    <br>
+                    <br>
+                    <input type="submit" name="submit-observatory" value="Submit">
+                    <input type="reset" value="Reset">
+                    </form>
+
+                    <?php
+                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-observatory'])))
+                        {
+                        $observatoryname = test_input($_POST['observatoryname']);
+
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $sql = "INSERT IGNORE INTO observatory (observatoryname)
+                        VALUES ('$observatoryname')";
+
+                        // Perform query
+                        $result = $conn->query($sql);
+
+                        if($result === TRUE) {
+                            echo "<p style='color:green;'>New Observatory inserted.</p>";
+                        }
+                        else {
+                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                        }
+
+                        // Close the connection
+                        $conn->close();
+                        }
+                    ?>
+
+                <br>
+                <br>
+
+                <h2>
+                    Delete Entry 
+                </h2>
+
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <label for="deleteobservatory">Delete Entry:- </label>
+                    <br>
+                    <input type="number" id="deleteobservatory" name="deleteobservatory" min="1" size="20" placeholder="Enter the entry number" required>
+
+                    <br>
+                    <br>
+                    <input type="submit" name="delete-observatory" value="Delete">
+                    <input type="reset" value="Reset">
+                </form>
+
+                <?php
+                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-observatory'])))
+                        {
+                        $deleteobservatory = test_input($_POST['deleteobservatory']);
+
+                        // Connect to 'srpss' database and enter necessary information
+                        include('databaseconnection.php');
+
+                        $sql = "DELETE FROM observatory      
+                        WHERE id='$deleteobservatory'";
+
+                        // Perform query
+                        $result = $conn->query($sql);
+
+                        if($result === TRUE) {
+                            echo "<p style='color:green;'>No. " . $deleteobservatory . " Observatory deleted.</p>";
+                        }
+                        else {
+                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        }
+
+                        // Close the connection
+                        $conn->close();
+
+                        }
+                ?>
+                </div>
+
                 <!-- Feedback -->
-                <div class="class10" id="userfeedbackdata">
+                <div class="class12" id="userfeedbackdata">
                     <h2>
                         User Feedback Data 
                     </h2>
@@ -1137,7 +1345,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Export MySQL Data to 'srpss.sql' File-->
-                <div class="class11" id="exportmysqltofile">
+                <div class="class13" id="exportmysqltofile">
                     <h2>
                     Export MySQL Data to File 
                     </h2>
@@ -1211,7 +1419,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- User Notifications -->
-                <div class="class12" id="usernotificationadminpanel">
+                <div class="class14" id="usernotificationadminpanel">
                   <h2>
                     User Notifications 
                   </h2>

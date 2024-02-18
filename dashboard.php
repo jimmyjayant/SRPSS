@@ -27,7 +27,7 @@ require 'headerandnavbar.php';
         </h2>
 
         <!-- User Notifications -->
-        <div class="class13">
+        <div class="class20">
             <h2>
                 User Notifications 
             </h2>
@@ -42,7 +42,7 @@ require 'headerandnavbar.php';
         </div>
 
         <!-- Submitted Research Papers by the User -->
-        <div class="class14">
+        <div class="class21">
             <h2>
                 Submitted Research Papers 
             </h2>
@@ -57,7 +57,7 @@ require 'headerandnavbar.php';
         </div>
 
         <!-- Feedback by the User -->
-        <div class="class15">
+        <div class="class22">
             <h2>
                 Submitted Feedback 
             </h2>
