@@ -4,7 +4,18 @@
             <a href="#">Terms of Use</a>
             <a href="#">Trademarks</a>
             <a href="#">&copy;SRPSS 2024</a>
-            <a href="feedback.php">Feedback</a>
+            <a href="feedback.php">
+                <?php
+                if(isset($_SESSION['username']))
+                {
+                    echo "Feedback";
+                } 
+                else
+                {
+                    echo "Contact Us";
+                }
+                ?>
+            </a>
             <a href="sitemap.php">Site Map</a>
             </div>
             <div>

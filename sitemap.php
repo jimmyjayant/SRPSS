@@ -34,6 +34,10 @@ require 'headerandnavbar.php';
                         <li><a href="channel.php">YouTube Channel</a></li>
                         <li><a href="scientist.php">Scientist</a></li>
                         <li><a href="movies.php">Movies</a></li>
+                        <li><a href="awards.php">Awards</a></li>
+                        <li><a href="observatories.php">Observatories</a></li>
+                        <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                        <li><a href="astronomy.php">Astronomy</a></li>
                     </ul>
                 </li>
                 <li>
@@ -47,7 +51,18 @@ require 'headerandnavbar.php';
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">Trademarks</a></li>
                 <li><a href="#">&copy;SRPSS 2024</a></li>
-                <li><a href="feedback.php">Feedback</a></li>
+                <li><a href="feedback.php">
+                <?php
+                if(isset($_SESSION['username']))
+                {
+                    echo "Feedback";
+                } 
+                else
+                {
+                    echo "Contact Us";
+                }
+                ?>
+                </a></li>
                 <li><a href="sitemap.php">Site Map</a></li>
                 
             </ul>
@@ -112,8 +127,11 @@ require 'headerandnavbar.php';
                             <li>Indian Scientists</li>
                             <li>Indian Scientific Movies</li>
                             <li>Indian Scientific Web Series</li>
+                            <li>Awards</li>
+                            <li>Observatories</li>
                             <li>User Feedback</li>
                             <li>Export MySQL Data to File</li>
+                            <li>User Notifications</li>
                         </ul>
                     </li>
                     <li>
@@ -127,6 +145,10 @@ require 'headerandnavbar.php';
                             <li><a href="channel.php">YouTube Channel</a></li>
                             <li><a href="scientist.php">Scientist</a></li>
                             <li><a href="movies.php">Movies</a></li>
+                            <li><a href="awards.php">Awards</a></li>
+                            <li><a href="observatories.php">Observatories</a></li>
+                            <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                            <li><a href="astronomy.php">Astronomy</a></li>
                         </ul>
                     </li>
                     <li>
@@ -213,11 +235,66 @@ require 'headerandnavbar.php';
                             <li><a href="channel.php">YouTube Channel</a></li>
                             <li><a href="scientist.php">Scientist</a></li>
                             <li><a href="movies.php">Movies</a></li>
+                            <li><a href="awards.php">Awards</a></li>
+                            <li><a href="observatories.php">Observatories</a></li>
+                            <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                            <li><a href="astronomy.php">Astronomy</a></li>
                         </ul>
                 </li>
                 <li>
                     User Logo 
                     <ul>
+                        <li><a href="
+                        <?php
+                            if(isset($_SESSION['username']))
+                            {
+                                echo "dashboard.php";
+                            }
+                            else
+                            {
+                                echo "login.php";
+                            }
+                            ?>
+                        ">Dashboard</a>
+                        <ul>
+                            <li><a href="
+                            <?php
+                            if(isset($_SESSION['username']))
+                            {
+                                echo "dashboard.php";
+                            }
+                            else
+                            {
+                                echo "login.php";
+                            }
+                            ?>
+                            ">User Notifications</a></li>
+                            <li><a href="
+                            <?php
+                            if(isset($_SESSION['username']))
+                            {
+                                echo "dashboard.php";
+                            }
+                            else
+                            {
+                                echo "login.php";
+                            }
+                            ?>
+                            ">Submitted Research Papers</a></li>
+                            <li><a href="
+                            <?php
+                            if(isset($_SESSION['username']))
+                            {
+                                echo "dashboard.php";
+                            }
+                            else
+                            {
+                                echo "login.php";
+                            }
+                            ?>
+                            ">Feedback</a></li>
+                        </ul>
+                        </li>
                         <li><a href="
                         <?php
                             if(isset($_SESSION['username']))

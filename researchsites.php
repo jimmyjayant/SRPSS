@@ -12,7 +12,7 @@ require 'headerandnavbar.php';
          </h2>
 
          <p>
-            The development of a country depends on the availability of research centres in various fields. There are several research centers in India in many diversified fields. Every centre plays its very crucial role in its key area. Research centres like Indian Agriculture Research Institute, Tata Institute of Fundamental Research, ISRO, BARC etc are playing very crucial role in the holistic development of the country.
+            The development of a country depends on the availability of research centres in various fields. There are several research centers in India in many diversified fields. Every centre plays its very crucial role in its key area. 
 
             <br>
             <br>

@@ -19,7 +19,16 @@ else
 
         <div class="main">
             <h2>
-                Feedback Form 
+                <?php
+                if(isset($_SESSION['username']))
+                {
+                    echo "Feedback Form";
+                }
+                else
+                {
+                    echo "Contact Us";
+                }
+                ?>
             </h2>
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self">
