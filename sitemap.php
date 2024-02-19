@@ -37,7 +37,13 @@ require 'headerandnavbar.php';
                         <li><a href="awards.php">Awards</a></li>
                         <li><a href="observatories.php">Observatories</a></li>
                         <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                        <li><a href="astronomy.php">Astronomy</a></li>
+                        <li><a href="astronomy.php">Astronomy</a>
+                            <ul>
+                                <li><a href="telescopemaking.php">Telescope Making</a></li>
+                                <li><a href="starparty.php">Star Party</a></li>
+                                <li><a href="astrophotography.php">Astrophotography</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -148,7 +154,13 @@ require 'headerandnavbar.php';
                             <li><a href="awards.php">Awards</a></li>
                             <li><a href="observatories.php">Observatories</a></li>
                             <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                            <li><a href="astronomy.php">Astronomy</a></li>
+                            <li><a href="astronomy.php">Astronomy</a>
+                                <ul>
+                                    <li><a href="telescopemaking.php">Telescope Making</a></li>
+                                    <li><a href="starparty.php">Star Party</a></li>
+                                    <li><a href="astrophotography.php">Astrophotography</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -238,7 +250,13 @@ require 'headerandnavbar.php';
                             <li><a href="awards.php">Awards</a></li>
                             <li><a href="observatories.php">Observatories</a></li>
                             <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                            <li><a href="astronomy.php">Astronomy</a></li>
+                            <li><a href="astronomy.php">Astronomy</a>
+                                <ul>
+                                    <li><a href="telescopemaking.php">Telescope Making</a></li>
+                                    <li><a href="starparty.php">Star Party</a></li>
+                                    <li><a href="astrophotography.php">Astrophotography</a></li>
+                                </ul>
+                            </li>
                         </ul>
                 </li>
                 <li>

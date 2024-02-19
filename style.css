@@ -198,7 +198,7 @@ text-align:center;
 line-height:1.5;
 }
 
-.main .part3, .main .part4, .part5, .part6, .part7, .part82  {
+.main .part3, .main .part4, .part5, .part6, .part7, .part82, .part112  {
 margin:0;
 padding:3rem;
 text-align:center;
@@ -253,14 +253,14 @@ flex:1;
 flex:1;
 }
 
-.main .part8 {
+.main .part8, .main .part11 {
 margin:0;
 padding:3rem;
 text-align:center;
 line-height:1.5;
 }
 
-.part82 div {
+.part82 div, .part112 div {
 -webkit-flex:30%;
 -ms-flex:30%;
 flex:30%;
@@ -357,7 +357,7 @@ color:black;
         width:100%;
 }
 
-.main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82 {
+.main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82, .main .part112 {
   -webkit-flex-direction:column;
         flex-direction:column;
 }
