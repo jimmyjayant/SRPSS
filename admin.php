@@ -47,7 +47,7 @@ require 'headerandnavbar.php';
                 </h2>
                 
                 <!-- Research Sites -->
-                <div class="class1" id="researchsitedata">
+                <div class="class1 hide" id="researchsitedata">
                 <h2>
                     Research Sites Data 
                 </h2>
@@ -156,7 +156,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- View Submitted Papers -->
-                <div class="class2" id="researchpaperdata">
+                <div class="class2 hide" id="researchpaperdata">
                     <h2>
                         Research Paper Data 
                     </h2>
@@ -260,7 +260,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Magazines -->
-                <div class="class3" id="magazinedata">
+                <div class="class3 hide" id="magazinedata">
                     <h2>
                         Magazines Data 
                     </h2>
@@ -369,7 +369,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Newspapers -->
-                <div class="class4" id="newspapersdata">
+                <div class="class4 hide" id="newspapersdata">
                     <h2>
                         Newspapers Data 
                     </h2>
@@ -478,7 +478,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Conferences -->
-                <div class="class5" id="conferencedata">
+                <div class="class5 hide" id="conferencedata">
                     <h2>
                         Conferences Data 
                     </h2>
@@ -580,7 +580,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Channels -->
-                <div class="class6" id="youtubechannelsdata">
+                <div class="class6 hide" id="youtubechannelsdata">
                     <h2>
                         YouTube Channels Data 
                     </h2>
@@ -682,7 +682,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Scientists -->
-                <div class="class7" id="indianscientistdata">
+                <div class="class7 hide" id="indianscientistdata">
                     <h2>
                         Indian Scientists Data 
                     </h2>
@@ -784,7 +784,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Movies -->
-                <div class="class8" id="indianscientificmoviesdata">
+                <div class="class8 hide" id="indianscientificmoviesdata">
                     <h2>
                         Indian Scientific Movies Data 
                     </h2>
@@ -891,7 +891,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Web Series -->
-                <div class="class9" id="indianscientificwebseriesdata">
+                <div class="class9 hide" id="indianscientificwebseriesdata">
                     <h2>
                         Indian Scientific Web Series Data 
                     </h2>
@@ -994,7 +994,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Awards -->
-                <div class="class10" id="indianscientificawardsdata">
+                <div class="class10 hide" id="indianscientificawardsdata">
                 <h2>
                         Indian Scientific Awards Data 
                     </h2>
@@ -1097,7 +1097,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Observatories -->
-                <div class="class11" id="indianscientificobservatoriesdata">
+                <div class="class11 hide" id="indianscientificobservatoriesdata">
                 <h2>
                         Indian Scientific Observatories Data 
                     </h2>
@@ -1200,7 +1200,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Feedback -->
-                <div class="class12" id="userfeedbackdata">
+                <div class="class12 hide" id="userfeedbackdata">
                     <h2>
                         User Feedback Data 
                     </h2>
@@ -1345,7 +1345,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- Export MySQL Data to 'srpss.sql' File-->
-                <div class="class13" id="exportmysqltofile">
+                <div class="class13 hide" id="exportmysqltofile">
                     <h2>
                     Export MySQL Data to File 
                     </h2>
@@ -1419,7 +1419,7 @@ require 'headerandnavbar.php';
                 </div>
 
                 <!-- User Notifications -->
-                <div class="class14" id="usernotificationadminpanel">
+                <div class="class14 hide" id="usernotificationadminpanel">
                   <h2>
                     User Notifications 
                   </h2>

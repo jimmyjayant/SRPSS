@@ -535,16 +535,6 @@ function adminnavbar10() {
 }
 
 function adminnavbar11() {
-   class1[0].style.display="none";
-   class2[0].style.display="none";
-   class3[0].style.display="none";
-   class4[0].style.display="none";
-   class5[0].style.display="none";
-   class6[0].style.display="none";
-   class7[0].style.display="none";
-   class8[0].style.display="none";
-   class9[0].style.display="none";
-   class10[0].style.display="none";
    class11[0].style.display="block";
    class12[0].style.display="none";
    class13[0].style.display="none";
@@ -552,17 +542,6 @@ function adminnavbar11() {
 }
 
 function adminnavbar12() {
-   class1[0].style.display="none";
-   class2[0].style.display="none";
-   class3[0].style.display="none";
-   class4[0].style.display="none";
-   class5[0].style.display="none";
-   class6[0].style.display="none";
-   class7[0].style.display="none";
-   class8[0].style.display="none";
-   class9[0].style.display="none";
-   class10[0].style.display="none";
-   class11[0].style.display="none";
    class12[0].style.display="block";
    class13[0].style.display="none";
    class14[0].style.display="none";
