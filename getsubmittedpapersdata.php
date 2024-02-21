@@ -20,6 +20,7 @@ if($result->num_rows > 0)
     <th>Researcher</th>
     <th>Topic</th>
     <th>Paper</th>
+    <th>Approved</th>
     </tr>";
     while($row = $result->fetch_assoc())
     {
@@ -31,6 +32,20 @@ if($result->num_rows > 0)
         echo "<td>";
         echo "<a href='" .  "displaypaperdata.php?pdf=" . $row['paper'] . "' target='_blank'>"  . $row['topic'] . "</a>";
         echo "</td>";
+        if($row['approved'] == 0)
+        {
+            echo "<td>" . "No" . "</td>";
+        }
+        if($row['approved'] == 1)
+        {
+            echo "<td style='color:green;'>" . "Yes" . "</td>";
+        }
+        if($row['approved'] == -1)
+        {
+            echo "<td style='color:red;'>" . "Rejected" . "</td>";
+        }
+        
+        
         echo "</tr>";
     }
     echo "</table>";
