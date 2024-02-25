@@ -37,6 +37,7 @@ require 'headerandnavbar.php';
                         <li><a href="awards.php">Awards</a></li>
                         <li><a href="observatories.php">Observatories</a></li>
                         <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                        <li><a href="sciencefair.php">Science Fair</a></li>
                         <li><a href="astronomy.php">Astronomy</a>
                             <ul>
                                 <li><a href="telescopemaking.php">Telescope Making</a></li>
@@ -154,6 +155,7 @@ require 'headerandnavbar.php';
                             <li><a href="awards.php">Awards</a></li>
                             <li><a href="observatories.php">Observatories</a></li>
                             <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                            <li><a href="sciencefair.php">Science Fair</a></li>
                             <li><a href="astronomy.php">Astronomy</a>
                                 <ul>
                                     <li><a href="telescopemaking.php">Telescope Making</a></li>
@@ -250,6 +252,7 @@ require 'headerandnavbar.php';
                             <li><a href="awards.php">Awards</a></li>
                             <li><a href="observatories.php">Observatories</a></li>
                             <li><a href="scienceexhibition.php">Science Exhibition</a></li>
+                            <li><a href="sciencefair.php">Science Fair</a></li>
                             <li><a href="astronomy.php">Astronomy</a>
                                 <ul>
                                     <li><a href="telescopemaking.php">Telescope Making</a></li>

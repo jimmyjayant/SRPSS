@@ -459,6 +459,29 @@ INSERT INTO scientists VALUES ('42', 'Agnikumar G. Vedeshwar', '2024-02-10 01:02
 INSERT INTO scientists VALUES ('43', 'Gautam Radhakrishna Desiraju', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('44', 'Kedareswar Banerjee', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('45', 'Manjula Reddy', '2024-02-10 01:02:03');
+CREATE TABLE `telescopeworkshop` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `workshopname` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `workshopname` (`workshopname`),
+  UNIQUE KEY `link` (`link`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO telescopeworkshop VALUES ('1', 'Vigyan Prasar', 'https://vigyanprasar.gov.in/workshop-on-astronomical-telescope-making/');
+INSERT INTO telescopeworkshop VALUES ('2', 'Nehru Centre Mumbai', 'https://www.nehrucentremumbai.in/');
+INSERT INTO telescopeworkshop VALUES ('3', 'Association of Bangalore Amateur Astronomers', 'https://abaaonline.blogspot.com/');
+INSERT INTO telescopeworkshop VALUES ('4', 'CESSI', 'http://www.cessi.in/tmw/');
+INSERT INTO telescopeworkshop VALUES ('5', 'IUCAA', 'https://scipop.iucaa.in/Amateurs/telemaking.html');
+INSERT INTO telescopeworkshop VALUES ('6', 'Indian Centre for Space Physics', 'https://csp.res.in/index.php?name=VnR4TzhWS1k4SlA2cE4ralRFaGE5dz09OjoxMjM0NTY3ODkxMjM0NTY3');
+INSERT INTO telescopeworkshop VALUES ('7', 'AXSX', 'https://axsx.in/telescope-making/');
+INSERT INTO telescopeworkshop VALUES ('8', 'Ecoskool Astronomy', 'https://ecoskoolastronomy.com/workshop/');
+INSERT INTO telescopeworkshop VALUES ('9', 'Skywatchers India', 'http://www.skywatchersindia.com/workshops.html');
+INSERT INTO telescopeworkshop VALUES ('10', 'IIT Kanpur', 'https://ifacet.iitk.ac.in/product/make-your-own-telescope/');
+INSERT INTO telescopeworkshop VALUES ('11', 'Unstop', 'https://unstop.com/workshops-webinars/refractive-telescope-making-workshop-brahmand-tesseract-70-pandit-deendayal-energy-university-gandhinagar-274646');
+INSERT INTO telescopeworkshop VALUES ('12', 'Chinmaya Vidyalaya', 'https://blog.openspacefoundation.in/telescope-construction-workshop-chinmaya-vidyalaya-nagapattinam/');
+INSERT INTO telescopeworkshop VALUES ('13', 'Astron', 'https://astron-soc.in/asi2019/workshop2');
+INSERT INTO telescopeworkshop VALUES ('14', 'AICASE', 'https://aicase.in/telescope-training/');
+INSERT INTO telescopeworkshop VALUES ('15', 'Aperture Telescope', 'https://aperturetelescopes.com/contact/');
 CREATE TABLE `usernotif` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) DEFAULT NULL,

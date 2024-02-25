@@ -149,6 +149,7 @@
                     <a href="awards.php">Awards</a>
                     <a href="observatories.php">Observatories</a>
                     <a href="scienceexhibition.php">Science Exhibition</a>
+                    <a href="sciencefair.php">Science Fair</a>
                     <a href="astronomy.php">Astronomy</a>
                  </div>
             </div>
