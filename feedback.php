@@ -13,6 +13,10 @@ else
 }
 ?>
 
+<?php
+require 'sessiontimeout.php';
+?>
+
 <?php 
  require 'headerandnavbar.php';
 ?>

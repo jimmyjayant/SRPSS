@@ -9,6 +9,10 @@ if(!isset($_SESSION['username']) || ($_SESSION['username'] !== "admin"))
     header("location: login.php");
     die();
 }
+else
+{
+    require 'sessiontimeout.php';
+}
 ?>
 
 <?php

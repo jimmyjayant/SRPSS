@@ -11,6 +11,10 @@ if(!isset($_SESSION['username']))
 }
 ?>
 
+<?php
+require 'sessiontimeout.php';
+?>
+
 
 <?php 
  require 'headerandnavbar.php';

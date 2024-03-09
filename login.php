@@ -69,12 +69,9 @@ if(isset($_SESSION['attempt_again']))
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username1'] = $row['lastname'];
                     $_SESSION['mobno'] = $row['contact'];
+                    // Login time is stored in a session variable 
+                    $_SESSION['login_time_stamp'] = time();
 
-                    // free the result
-                    //$result->free_result();
-
-                    // Close the connection
-                    //$conn->close();
 
                     // redirects the user to respective pages
                     if($_SESSION['username'] == "admin")

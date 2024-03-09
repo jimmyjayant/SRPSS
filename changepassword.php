@@ -11,6 +11,9 @@ if(!isset($_SESSION['username']))
 }
 ?>
 
+<?php
+require 'sessiontimeout.php';
+?>
 
 <?php
     if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit'])))
