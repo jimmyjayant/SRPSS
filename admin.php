@@ -1400,7 +1400,12 @@ require 'headerandnavbar.php';
                             }
                             while($row = $data->fetch_assoc())
                             {
-                                $values = implode("', '", array_map([$conn, 'real_escape_string'], $row));
+                                // Escape each value in $row if it's not null
+                                $escaped_row = array_map(function($value) use ($conn) {
+                                    return ($value !== null) ? $conn->real_escape_string($value) : 'NULL';
+                                }, $row);
+                                $values = implode("', '", $escaped_row);
+                                //$values = implode("', '", array_map([$conn, 'real_escape_string'], $row));
                                 fwrite($handle, "INSERT INTO $table VALUES ('$values');\n");
                             }
                         }
