@@ -709,7 +709,22 @@ document.addEventListener("DOMContentLoaded", function() {
    showSubmittedFeedbackData();
 });
 
+function checklogin()
+{
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         if(this.responseText == "logout")
+         {
+            window.location.href = "logout.php";
+         }
+      }
+   };
+   xmlhttp.open("GET", "checklogin.php", true);
+   xmlhttp.send();
+}
 
+setInterval(function() {checklogin(); }, 10000);
 
 
 

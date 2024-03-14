@@ -29,9 +29,7 @@ if(isset($_SESSION['attempt_again']))
         $email = test_input($_POST['email']);
         $user_password = test_input($_POST['password']);
 
-        // Create connection using MySQLi Object-Oriented
-
-        require('databaseconnection.php');
+        
 
         // set login attempts if not set
         if(!isset($_SESSION['attempt']))
@@ -46,6 +44,10 @@ if(isset($_SESSION['attempt_again']))
         }
         else
         {
+            // Create connection using MySQLi Object-Oriented
+
+            require('databaseconnection.php');
+
             // store query in a variable
             $sql = "SELECT * FROM researchers WHERE email='$email'";
 
@@ -60,18 +62,27 @@ if(isset($_SESSION['attempt_again']))
                 // password_verify() function will work only if the password in database is stored as hash
                 // it will not work on plaintext stored password in database 
                 if(password_verify($user_password, $row['pass']))
-                //if($user_password == $row['pass'])
                 {
                     // action after a successful attempt
                     $_SESSION['attempt'] = NULL;
-
+                    // store current session id of a particular user
+                    session_regenerate_id();
+                    $_SESSION['sessionid'] = session_id();
+                    
                     $_SESSION['username'] = $row['firstname'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username1'] = $row['lastname'];
                     $_SESSION['mobno'] = $row['contact'];
-                    // Login time is stored in a session variable 
-                    $_SESSION['login_time_stamp'] = time();
 
+                    if(isset($_SESSION['sessionid']) && isset($_SESSION['email']))
+                    {
+                        // store query in a variable
+                        $sql1 = "UPDATE researchers 
+                                SET usersessionid = '{$_SESSION['sessionid']}'
+                                WHERE email = '{$_SESSION['email']}'";
+
+                        $result1 = $conn->query($sql1);
+                    }
 
                     // redirects the user to respective pages
                     if($_SESSION['username'] == "admin")
