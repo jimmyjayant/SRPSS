@@ -3,7 +3,7 @@
             <a href="#">Privacy</a>
             <a href="#">Terms of Use</a>
             <a href="#">Trademarks</a>
-            <a href="#">&copy;SRPSS 2024</a>
+            <a href="#">&copy;SRPSS <?php echo date("Y"); ?></a>
             <a href="feedback.php">
                 <?php
                 if(isset($_SESSION['username']))
