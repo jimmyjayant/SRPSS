@@ -180,18 +180,18 @@ require 'headerandnavbar.php';
                             }
                             ?>
                             ">Change Password</a></li>
-                            <li><a href="
+                            <li><a 
                             <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "logout.php";
+                                echo "onclick='logout()' style='cursor:pointer;'";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "href='login.php' style='cursor:pointer;'";
                             }
                             ?>
-                            ">Logout</a></li>
+                            >Logout</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Privacy</a></li>
@@ -328,18 +328,18 @@ require 'headerandnavbar.php';
                             }
                             ?>
                         ">Change Password</a></li>
-                        <li><a href="
-                        <?php
+                        <li><a 
+                            <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "logout.php";
+                                echo "onclick='logout()' style='cursor:pointer;'";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "href='login.php' style='cursor:pointer;'";
                             }
                             ?>
-                        ">Logout</a></li>
+                        >Logout</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Privacy</a></li>

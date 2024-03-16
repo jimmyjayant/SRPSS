@@ -726,3 +726,11 @@ function checklogin()
 
 // function to prevent concurrent logins 
 setInterval(function() {checklogin(); }, 10000);
+
+// logout
+function logout()
+{
+   clearInterval(x);
+   localStorage.clear();
+   window.location.href="logout.php";
+}

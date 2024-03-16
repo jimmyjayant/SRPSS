@@ -17,21 +17,27 @@
             }
             else
             {
-                echo false;
+                echo (int)false;
             }
             ?>;
-            console.log(starttimer);
 
             if(starttimer)
             {
-                var countDowntime = new Date().getTime() + (10*60*1000);
+                var expiretime = localStorage.getItem("expire");
+
+                if (!expiretime) {
+                    // If expiretime is not set in localStorage, set it now
+                    var countDowntime = new Date().getTime() + (10 * 60 * 1000);
+                    localStorage.setItem("expire", countDowntime);
+                    expiretime = countDowntime;
+                }
 
                 // countdown timer when user logged in
                 function timer()
                 {
                 var now = new Date().getTime();
-                
-                var distance = countDowntime - now;
+
+                var distance = expiretime - now;
 
                 var minutes = Math.floor(distance / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -47,11 +53,13 @@
                 {
                     clearInterval(x);
                     timerelement.innerHTML = "EXPIRED";
+                    localStorage.clear();
+                    window.location.href = "logout.php";
                 }
                 }
-            }
 
-            var x = setInterval(function() { timer(); }, 1000);
+                var x = setInterval(function() { timer(); }, 1000);
+            }
         </script>
         <title>
             Scientific Research Paper Submission System (SRPSS) 
@@ -129,13 +137,13 @@
                         ?>>
                         Change Password 
                         </a>
-                        <a href="logout.php" alt="Logout" 
+                        <a alt="Logout" 
                             <?php
                                 if(!(isset($_SESSION['username'])))
                                 {
                                     echo "style='display:none;'";
                                 }
-                            ?>>
+                            ?> onclick="logout()" style='cursor:pointer;'>
                             Logout
                         </a>
                 </div>
