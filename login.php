@@ -73,6 +73,8 @@ if(isset($_SESSION['attempt_again']))
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username1'] = $row['lastname'];
                     $_SESSION['mobno'] = $row['contact'];
+                    
+                    $_SESSION['sessionactive'] = true;
 
                     if(isset($_SESSION['sessionid']) && isset($_SESSION['email']))
                     {

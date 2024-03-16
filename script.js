@@ -724,10 +724,5 @@ function checklogin()
    xmlhttp.send();
 }
 
+// function to prevent concurrent logins 
 setInterval(function() {checklogin(); }, 10000);
-
-
-
-
-
-

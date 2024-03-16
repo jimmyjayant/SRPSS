@@ -9,6 +9,50 @@
         <link rel="icon" type="image/x-icon" href="Images/SRPSS.png">
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
+        <script>
+            var starttimer = <?php 
+            if(isset($_SESSION['sessionactive']))
+            {
+                echo $_SESSION['sessionactive']; 
+            }
+            else
+            {
+                echo false;
+            }
+            ?>;
+            console.log(starttimer);
+
+            if(starttimer)
+            {
+                var countDowntime = new Date().getTime() + (10*60*1000);
+
+                // countdown timer when user logged in
+                function timer()
+                {
+                var now = new Date().getTime();
+                
+                var distance = countDowntime - now;
+
+                var minutes = Math.floor(distance / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                var timerelement = document.getElementById('timer');
+
+                if(timerelement)
+                {
+                    timerelement.innerHTML = minutes + "m " + seconds + "s";
+                }
+
+                if(distance < 0)
+                {
+                    clearInterval(x);
+                    timerelement.innerHTML = "EXPIRED";
+                }
+                }
+            }
+
+            var x = setInterval(function() { timer(); }, 1000);
+        </script>
         <title>
             Scientific Research Paper Submission System (SRPSS) 
         </title>
@@ -154,6 +198,17 @@
                  </div>
             </div>
             <a href="world.php"><img src="Images/transparent globe.png" alt="Scientific Websites from around the World" style="width:30px;height:30px;padding:0;"></a>
+            <a href="" alt="User Session Timer" 
+            <?php
+            if(isset($_SESSION['sessionactive']))
+            {
+                echo "id='timer'";
+            }
+            else
+            {
+                echo "style='display:none;'";
+            }
+            ?>></a>
         </div>
 
         <div id="CreateDataStatus"></div>
