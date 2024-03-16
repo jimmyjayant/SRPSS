@@ -52,13 +52,18 @@
                 if(distance < 0)
                 {
                     clearInterval(x);
+                    clearInterval(y);
                     timerelement.innerHTML = "EXPIRED";
                     localStorage.clear();
                     window.location.href = "logout.php";
                 }
                 }
-
+                // function to display countdown timer in horizontal navbar 
                 var x = setInterval(function() { timer(); }, 1000);
+
+                
+                // function to prevent concurrent logins 
+                var y = setInterval(function() {checklogin(); }, 10000);
             }
         </script>
         <title>
