@@ -348,7 +348,7 @@ color:black;
 
 /*Media queries or breakpoints*/
 @media only screen and (max-width:600px) {
-.navbar {
+.navbar, .footer div {
   -webkit-flex-direction:column;
         flex-direction:column;
 }
