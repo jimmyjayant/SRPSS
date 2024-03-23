@@ -2,6 +2,10 @@
 require 'sessionstart.php';
 ?>
 
+<?php
+require 'visitor.php';
+?>
+
 <?php 
 require 'headerandnavbar.php';
 ?>

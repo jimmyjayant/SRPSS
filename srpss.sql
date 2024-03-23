@@ -331,8 +331,8 @@ CREATE TABLE `researchers` (
   KEY `idx_lastname` (`lastname`),
   KEY `idx_email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-INSERT INTO researchers VALUES ('40', 'Jimmy', 'Jayant', 'Male', '1993-08-06', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'jayantjimmy49@gmail.com', 'science', '', '', 'https://www.linkedin.com/in/jimmy-jayant-8b79b61a9/', '$2y$10$NJkmU67s3kQIuIOyAbq1uuMHlSvzDWUwJhMOsLLRtnYJvgVcTVKdS', '2024-03-15 01:24:27', 'aiks40b0eedln1i5ae2pueaufq');
-INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-03-15 01:32:19', 'qbuo01rhiff2522ma6bffe1tuf');
+INSERT INTO researchers VALUES ('40', 'Jimmy', 'Jayant', 'Male', '1993-08-06', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'jayantjimmy49@gmail.com', 'science', '', '', 'https://www.linkedin.com/in/jimmy-jayant-8b79b61a9/', '$2y$10$NJkmU67s3kQIuIOyAbq1uuMHlSvzDWUwJhMOsLLRtnYJvgVcTVKdS', '2024-03-23 10:05:41', 'da64d1gm5iqcn9fbiqkicqq70k');
+INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-03-23 10:21:57', '875crit4vuja1lf3db7hpfi60s');
 INSERT INTO researchers VALUES ('42', 'Simmy', 'Prashant', 'Male', '1995-10-13', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'simmyprashant01@gmail.com', 'science', '', '', '', '$2y$10$IC5PT7GDpOgVfJEaA7qATutTlHIBjL6sV2t7dlxZOWceUE3S25b3q', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('43', 'Ramesh', 'Singh', 'Male', '1970-01-01', 'Rohtak', '2147483647', 'ramesh@gmail.com', 'science', '', '', '', '$2y$10$6t0LODG.aev9o1vL9I3JN.LsmH7PhJ.Mf5N3jExLVtcg.g/mpM1R6', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('44', 'Puneet', 'Kumar', 'Male', '2000-01-01', 'Samalkha', '2147483647', 'puneetkumar@yahoo.com', 'mathematics', '', '', '', '$2y$10$ncKLrJ2NjaAy4ldlgceCCeEiTxJHt7C4KVGyqVIet3KisDdZP2SXW', '2024-02-14 23:29:18', 'NULL');
@@ -511,6 +511,21 @@ INSERT INTO usernotif VALUES ('52', 'Ramesh', 'Singh', 'ramesh@gmail.com', 'The 
 INSERT INTO usernotif VALUES ('53', 'Sanjeev', 'Verma', 'sanjee.verma@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('54', 'Simmy', 'Prashant', 'simmyprashant01@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('55', 'Yash', 'Sharma', 'yashsharma02@outlook.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+CREATE TABLE `visitors` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `device` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `port` int(6) NOT NULL,
+  `requesttime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO visitors VALUES ('7', 'dell-vostro-15', '127.0.0.1', '56960', '2024-03-23 10:20:38', 'visitor', '');
+INSERT INTO visitors VALUES ('8', 'dell-vostro-15', '127.0.0.1', '57063', '2024-03-23 10:21:10', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('9', 'dell-vostro-15', '127.0.0.1', '57113', '2024-03-23 10:21:26', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('10', 'dell-vostro-15', '127.0.0.1', '57286', '2024-03-23 10:21:44', 'visitor', '');
+INSERT INTO visitors VALUES ('11', 'dell-vostro-15', '127.0.0.1', '57313', '2024-03-23 10:21:50', 'visitor', '');
 CREATE TABLE `webseries` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `webseriesname` varchar(150) NOT NULL,
