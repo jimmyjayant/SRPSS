@@ -35,13 +35,13 @@ body {
   flex-wrap:wrap;
   justify-content:space-around;
   background-color:#7f8c8d;
-  padding:1rem 0;
+  padding:1rem;
   margin:0;
   text-align:center;
 }
 
 .header h1 {
-  font-size:2rem;
+  font-size:clamp(1.5rem, 2rem, 3rem);
   margin:0;
 }
 
@@ -377,9 +377,12 @@ img {
 /*End of CSS of index.php*/
 
 /*Start of CSS of form*/
+
 .main form {
-    margin:0;
+    margin:0 auto;
     padding:1rem;
+    border: 2px solid #d3d3d3;
+    width:clamp(300px, 50%, 600px);
 }
 
 form label, legend {
@@ -423,43 +426,39 @@ table td {
 
 .image {
   position:relative;
-  border:1rem solid black;
+  border:0.5rem solid black;
   border-radius:50%;
-  width:5rem;
-  height:5rem;
+  width:10rem;
+  height:10rem;
   margin:1rem auto;
 }
 
-.eye1 {
+.eye1, .eye2 {
   position:absolute;
-  border:0.5rem solid black;
+  border:0.1rem solid black;
   border-radius:50%;
   background:black;
   width:1rem;
   height:1rem;
   top:1rem;
-  left:1rem;
+}
+
+.eye1 {
+  left:2rem;
 }
 
 .eye2 {
-  position:absolute;
-  border:0.5rem solid black;
-  border-radius:50%;
-  background:black;
-  width:1rem;
-  height:1rem;
-  top:1rem;
-  right:1rem;
+  right:2rem;
 }
 
 .smile {
   position:absolute;
-  border-top:solid 1rem;
+  border-top:solid 0.7rem;
   border-radius:50%;
   width:4rem;
   height:3rem;
   bottom:2rem;
-  left:3rem;
+  left:2.5rem;
 }
 
 .msg h1 {
@@ -487,7 +486,6 @@ table td {
   flex-wrap:wrap;
   align-items:stretch;
 }
-
 
 .main .navbar1 {
     background-color:#333;
@@ -600,3 +598,12 @@ table td {
 }
 
 /* End of CSS of sitemap page*/
+
+/* Start of CSS of contact us page */
+
+#message {
+  width:clamp(200px, 50%, 500px);
+  height:clamp(100px, 20vh, 300px);
+}
+
+/* End of CSS of contact us page */

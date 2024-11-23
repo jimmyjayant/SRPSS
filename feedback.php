@@ -31,7 +31,7 @@ else
                 ?>
             </h2>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self" id="contactusform">
                 <div <?php echo $none; ?>>
                 <label for="name" >Name</label>
                 <br>
@@ -83,7 +83,7 @@ else
 
                 <label for="message">Message</label>
                 <br>
-                <textarea id="message" name="message" rows="10" cols="50" required></textarea>
+                <textarea id="message" name="message" required></textarea>
 
                 <br>
                 <br>
