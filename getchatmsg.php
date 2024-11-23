@@ -23,7 +23,7 @@ while($row = $result->fetch_assoc()) {
    }
    echo $row['chatmsg'];
    echo "<br>";
-   echo "<span style='color:white;font-size:1.5rem;'>" . $row['username']. ", " . $row['dt'] . "</span>";
+   echo "<span style='color:white;font-size:1rem;'>" . $row['username']. ", " . $row['dt'] . "</span>";
    echo "</div>";
    echo "</div>";   
 }

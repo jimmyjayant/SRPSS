@@ -1,36 +1,48 @@
 /*Start of CSS of index.php*/
 html {
-font-size:62.5%;
+font-size:16px; /* Default Font Size */
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size:14px; /* For Tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size:12px; /* For Mobile Phones */
+  }
 }
 
 body {
-margin:0;
-padding:0;
-display: -webkit-flex;
-display:flex;
--webkit-flex-direction:column;
-flex-direction:column;
-min-height:100vh;
+  margin:0;
+  padding:0;
+  display: -webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 * {
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 .header {
-display: -webkit-flex;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-around;
-background-color:#7f8c8d;
-padding:2rem 0;
-margin:0;
-text-align:center;
+  display: -webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  background-color:#7f8c8d;
+  padding:1rem 0;
+  margin:0;
+  text-align:center;
 }
 
 .header h1 {
-font-size:5rem;
-margin:0;
+  font-size:2rem;
+  margin:0;
 }
 
 
@@ -39,13 +51,13 @@ margin:0;
     border:2px solid black;
     text-align:center;
     margin:0;
-    padding:1.5rem 0;
+    padding:0.5rem 0;
   }
   
   .logo a {
     text-decoration:none;
-    font-size:2rem;
-    padding:2rem 1rem;
+    font-size:1rem;
+    padding:1rem;
     color:black;
     font-weight:bold;
   }
@@ -56,52 +68,52 @@ margin:0;
   
   .logo:hover {
     border-color:white;
-    box-shadow: 0 8px 16px 0;
+    box-shadow: 0 8px 8px 0;
   }
 
 .head {
   background:black;
-  height:2.5rem;
-  width:2.5rem;
+  height:1rem;
+  width:1rem;
   border-radius:50%;
   margin:auto;
 }
 
 .body {
   background:black;
-  height:2.5rem;
-  width:5rem;
-  border-radius:3rem 3rem 0 0;
+  height:1rem;
+  width:2rem;
+  border-radius:1rem 1rem 0 0;
   margin:auto;
 }
 
 .login {
-position:relative;
-display:inline-block;
+  position:relative;
+  display:inline-block;
 }
 
 .userstatus {
-position:absolute;
-display:none;
-background-color:#f1f1f1;
-z-index:1;
-min-width:160px;
-right:0;
-box-shadow: 0 8px 16px 0;
+  position:absolute;
+  display:none;
+  background-color:#f1f1f1;
+  z-index:1;
+  min-width:160px;
+  right:0;
+  box-shadow: 0 8px 16px 0;
 }
 
 .login:hover .userstatus {
-display:block;
+  display:block;
 }
 
 .login .userstatus a {
-display:block;
-text-decoration:none;
-color:black;
-font-size:2.5rem;
-font-weight:bold;
-text-align:center;
-padding:0.8rem 1.6rem;
+  display:block;
+  text-decoration:none;
+  color:black;
+  font-size:1rem;
+  font-weight:bold;
+  text-align:center;
+  padding:0.8rem;
 }
 
 .userstatus a:hover {
@@ -109,196 +121,196 @@ padding:0.8rem 1.6rem;
 }
 
 .navbar {
-background-color:#555;
-margin:0;
-padding:0;
-display: -webkit-flex;
-display:flex;
-flex-wrap:wrap;
+  background-color:#555;
+  margin:0;
+  padding:0;
+  display: -webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
 }
 
 .navbar a {
-display:block;
-text-decoration:none;
-font-size:2.5rem;
-color:white;
-font-weight:bold;
-text-align:center;
-padding:0.8rem 1.6rem;
-margin:0;
+  display:block;
+  text-decoration:none;
+  font-size:1rem;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  padding:0.5rem 1rem;
+  margin:0;
 }
 
 .navbar  a:hover {
-background-color:#333;
+  background-color:#333;
 }
 
 
 .active {
-background-color:#111;
+  background-color:#111;
 }
 
 
 .dropdown {
-position:relative;
+  position:relative;
 }
 
 .dropdown:hover .dropdown-content {
-display:block;
+  display:block;
 }
 
 .dropdown:hover .dropbtn {
-background-color:#333;
+  background-color:#333;
 }
 
 .dropdown-content {
-display:none;
-position:absolute;
-background-color:#555;
-box-shadow:0px 0px 3px 2px rgba(0,0,0,0.20), 0px 0px 1px 1px rgba(0,0,0,0.10);
-z-index:1;
+  display:none;
+  position:absolute;
+  background-color:#555;
+  box-shadow:0px 0px 3px 2px rgba(0,0,0,0.20), 0px 0px 1px 1px rgba(0,0,0,0.10);
+  z-index:1;
 }
 
 .main {
-margin:0;
-padding:3rem;
-text-align:center;
--webkit-flex:1;
--ms-flex:1;
-flex:1;
-line-height:1.5;
+  margin:0;
+  padding:1rem;
+  text-align:center;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
+  line-height:1.5;
 }
 
 .main .part1 {
-margin:0;
-padding:3rem;
-text-align:center;
-line-height:1.5;
+  margin:0;
+  padding:1rem;
+  text-align:center;
+  line-height:1.5;
 }
 
 h2 {
-margin:0;
-padding:2rem;
-font-size:3rem;
+  margin:0;
+  padding:1rem;
+  font-size:1.5rem;
 }
 
 p {
-margin:0;
-padding:1rem;
-font-size:2rem;
+  margin:0;
+  padding:1rem;
+  font-size:1rem;
 }
 
 img {
-max-width:100%;
+  max-width:100%;
 }
 
 .main .part2 {
-margin:0;
-padding:3rem;
-text-align:center;
-line-height:1.5;
+  margin:0;
+  padding:1rem;
+  text-align:center;
+  line-height:1.5;
 }
 
 .main .part3, .main .part4, .part5, .part6, .part7, .part82, .part112  {
-margin:0;
-padding:3rem;
-text-align:center;
-line-height:1.5;
-display:-webkit-flex;
-display:flex;
-flex-wrap:wrap;
+  margin:0;
+  padding:1rem;
+  text-align:center;
+  line-height:1.5;
+  display:-webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
 }
 
 .part3 div {
--webkit-flex:1;
--ms-flex:1;
-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
 }
 
 .main a {
-display:inline-block;
-padding:1rem 2rem;
-font-size:2rem;
-text-decoration:none;
-text-align:center;
-background-color:#00b894;
-color:white;
-border-radius:20px;
+  display:inline-block;
+  padding:0.5rem 1rem;
+  font-size:1rem;
+  text-decoration:none;
+  text-align:center;
+  background-color:#00b894;
+  color:white;
+  border-radius:1rem;
 }
 
 .main a:hover {
-background-color:#55efc4;
+  background-color:#55efc4;
 }
 
 .part4 div {
--webkit-flex:1;
--ms-flex:1;
-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
 }
 
 .part5 div {
--webkit-flex:1;
--ms-flex:1;
-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
 }
 
 .part6 div {
--webkit-flex:1;
--ms-flex:1;
-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
 }
 
 .part7 div {
--webkit-flex:1;
--ms-flex:1;
-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
 }
 
 .main .part8, .main .part11 {
-margin:0;
-padding:3rem;
-text-align:center;
-line-height:1.5;
+  margin:0;
+  padding:1rem;
+  text-align:center;
+  line-height:1.5;
 }
 
 .part82 div, .part112 div {
--webkit-flex:30%;
--ms-flex:30%;
-flex:30%;
+  -webkit-flex:30%;
+  -ms-flex:30%;
+  flex:30%;
 }
 
 
 .part9 {
-display:flex;
-flex-wrap:wrap;
-flex-direction:column;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
 }
 
 
 .part91 {
-background:#f1f1f1;
+  background:#f1f1f1;
 }
 
 .part92 {
-background:darkgrey;
--webkit-flex:1;
--ms-flex:1;
-flex:1;
-overflow-x:auto;
-overflow-y:scroll;
+  background:darkgrey;
+  -webkit-flex:1;
+  -ms-flex:1;
+  flex:1;
+  overflow-x:auto;
+  overflow-y:scroll;
 }
 
 .chat {
-margin:1rem 0;
-padding:1rem;
+  margin:1rem 0;
+  padding:1rem;
 }
 
 .chatmsg {
-display:inline-block;
-background:#55efc4;
-border-radius:1rem;
-padding:1rem;
-font-size:2rem;
-width:30%;
+  display:inline-block;
+  background:#55efc4;
+  border-radius:1rem;
+  padding:0.5rem;
+  font-size:0.8rem;
+  width:30vw;
 }
 
 .chat::after {
@@ -308,58 +320,58 @@ width:30%;
 }
 
 .part93 {
-background:#d1d1d1;
+  background:#d1d1d1;
 }
 
 .part93 form {
-padding:0.5rem;
-margin:0.3rem;
+  padding:0.5rem;
+  margin:0.3rem;
 }
 
 #send {
-margin:1rem;
+  margin:1rem;
 }
 
 .footer div {
-display:-webkit-flex;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-background-color:#555;
-overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background-color:#555;
+  overflow:hidden;
 }
 
 .footer a {
-display:block;
-text-decoration:none;
-font-size:2rem;
-color:white;
-font-weight:bold;
-text-align:center;
-padding:0.8rem 1.6rem;
-margin:0;
-overflow:hidden;
+  display:block;
+  text-decoration:none;
+  font-size:1rem;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  padding:0.5rem;
+  margin:0;
+  overflow:hidden;
 }
 
 .footer a:hover {
-background-color:#f1f1f1;
-color:black;
+  background-color:#f1f1f1;
+  color:black;
 }
 
 /*Media queries or breakpoints*/
 @media only screen and (max-width:600px) {
 .navbar, .footer div {
   -webkit-flex-direction:column;
-        flex-direction:column;
+  flex-direction:column;
 }
 
 .dropdown-content {
-        width:100%;
+  width:100%;
 }
 
 .main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82, .main .part112 {
   -webkit-flex-direction:column;
-        flex-direction:column;
+  flex-direction:column;
 }
 }
 /*End of CSS of index.php*/
@@ -367,18 +379,18 @@ color:black;
 /*Start of CSS of form*/
 .main form {
     margin:0;
-    padding:3rem;
+    padding:1rem;
 }
 
 form label, legend {
     margin:0;
     padding:1rem;
-    font-size:2rem;
+    font-size:1rem;
 }
 
 form input, select {
-    font-size:1.5rem;
-    padding:1rem;
+    font-size:0.9rem;
+    padding:0.5rem;
     margin:0;
     margin-left:10px;
 }
@@ -389,12 +401,12 @@ table {
     width:50%;
     border:0.1rem solid black;
     border-collapse:collapse;
-    font-size:2rem;
+    font-size:1rem;
     margin:auto;
 }
 
 table tr {
-    height:3rem;
+    height:2rem;
 }
 
 table tr:nth-child(even) {
@@ -413,51 +425,51 @@ table td {
   position:relative;
   border:1rem solid black;
   border-radius:50%;
-  width:20rem;
-  height:20rem;
-  margin:4rem auto;
+  width:5rem;
+  height:5rem;
+  margin:1rem auto;
 }
 
 .eye1 {
   position:absolute;
-  border:1rem solid black;
+  border:0.5rem solid black;
   border-radius:50%;
   background:black;
-  width:2rem;
-  height:2rem;
-  top:3rem;
-  left:4rem;
+  width:1rem;
+  height:1rem;
+  top:1rem;
+  left:1rem;
 }
 
 .eye2 {
   position:absolute;
-  border:1rem solid black;
+  border:0.5rem solid black;
   border-radius:50%;
   background:black;
-  width:2rem;
-  height:2rem;
-  top:3rem;
-  right:4rem;
+  width:1rem;
+  height:1rem;
+  top:1rem;
+  right:1rem;
 }
 
 .smile {
   position:absolute;
   border-top:solid 1rem;
   border-radius:50%;
-  width:12rem;
-  height:8rem;
+  width:4rem;
+  height:3rem;
   bottom:2rem;
   left:3rem;
 }
 
 .msg h1 {
-  font-size:6rem;
+  font-size:2rem;
   margin:0;
 }
 
 .msg h3 {
-  font-size:3rem;
-  margin:1rem;
+   font-size:1.3rem;
+   margin:1rem;
 }
 
 /* End of CSS of 404 error page*/
@@ -478,30 +490,30 @@ table td {
 
 
 .main .navbar1 {
-  background-color:#333;
-  margin:0;
-  padding:0;
-  display: -webkit-flex;
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction:column;
+    background-color:#333;
+    margin:0;
+    padding:0;
+    display: -webkit-flex;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
   }
   
 .main  .navbar1 a {
-  display:block;
-  background:#333;
-  text-decoration:none;
-  font-size:2.5rem;
-  color:white;
-  font-weight:bold;
-  text-align:center;
-  padding:0.8rem 1.6rem;
-  margin:0;
-  border-radius:0;
+    display:block;
+    background:#333;
+    text-decoration:none;
+    font-size:1rem;
+    color:white;
+    font-weight:bold;
+    text-align:center;
+    padding:0.8rem;
+    margin:0;
+    border-radius:0;
   }
   
  .main .navbar1  a:hover {
-  background-color:#111;
+    background-color:#111;
   }
   
 
@@ -536,21 +548,21 @@ table td {
   flex-direction:column;
   }
   
-.main  .navbar2 a {
-  display:block;
-  background:#333;
-  text-decoration:none;
-  font-size:2.5rem;
-  color:white;
-  font-weight:bold;
-  text-align:center;
-  padding:0.8rem 1.6rem;
-  margin:0;
-  border-radius:0;
+  .main  .navbar2 a {
+    display:block;
+    background:#333;
+    text-decoration:none;
+    font-size:1rem;
+    color:white;
+    font-weight:bold;
+    text-align:center;
+    padding:0.8rem;
+    margin:0;
+    border-radius:0;
   }
   
- .main .navbar2  a:hover {
-  background-color:#111;
+  .main .navbar2  a:hover {
+    background-color:#111;
   }
   
   .userpanel {
@@ -564,20 +576,19 @@ table td {
 /* Start of CSS of sitemap page*/
 
 .part101 {
-display:flex;
-flex-wrap:wrap;
-flex-direction:row;
-justify-content:space-around;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:space-around;
 }
 
 .main .part10 .part101 ul a {
-  font-size:1.5rem;
+  font-size:0.8rem;
   padding:0;
   text-decoration:underline;
   background:transparent;
   color:blue;
 }
-
 
 .part10 h2 {
   text-align:center;
@@ -585,7 +596,7 @@ justify-content:space-around;
 
 .part10 {
   text-align:left;
-  font-size:1.5rem;
+  font-size:1rem;
 }
 
 /* End of CSS of sitemap page*/
