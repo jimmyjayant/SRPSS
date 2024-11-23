@@ -331,8 +331,8 @@ CREATE TABLE `researchers` (
   KEY `idx_lastname` (`lastname`),
   KEY `idx_email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-INSERT INTO researchers VALUES ('40', 'Jimmy', 'Jayant', 'Male', '1993-08-06', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'jayantjimmy49@gmail.com', 'science', '', '', 'https://www.linkedin.com/in/jimmy-jayant-8b79b61a9/', '$2y$10$NJkmU67s3kQIuIOyAbq1uuMHlSvzDWUwJhMOsLLRtnYJvgVcTVKdS', '2024-03-15 01:24:27', 'aiks40b0eedln1i5ae2pueaufq');
-INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-03-15 01:32:19', 'qbuo01rhiff2522ma6bffe1tuf');
+INSERT INTO researchers VALUES ('40', 'Jimmy', 'Jayant', 'Male', '1993-08-06', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'jayantjimmy49@gmail.com', 'science', '', '', 'https://www.linkedin.com/in/jimmy-jayant-8b79b61a9/', '$2y$10$NJkmU67s3kQIuIOyAbq1uuMHlSvzDWUwJhMOsLLRtnYJvgVcTVKdS', '2024-03-23 10:05:41', 'da64d1gm5iqcn9fbiqkicqq70k');
+INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-05-15 11:10:12', '3ikml9h33aqbu7blpcbpegc852');
 INSERT INTO researchers VALUES ('42', 'Simmy', 'Prashant', 'Male', '1995-10-13', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'simmyprashant01@gmail.com', 'science', '', '', '', '$2y$10$IC5PT7GDpOgVfJEaA7qATutTlHIBjL6sV2t7dlxZOWceUE3S25b3q', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('43', 'Ramesh', 'Singh', 'Male', '1970-01-01', 'Rohtak', '2147483647', 'ramesh@gmail.com', 'science', '', '', '', '$2y$10$6t0LODG.aev9o1vL9I3JN.LsmH7PhJ.Mf5N3jExLVtcg.g/mpM1R6', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('44', 'Puneet', 'Kumar', 'Male', '2000-01-01', 'Samalkha', '2147483647', 'puneetkumar@yahoo.com', 'mathematics', '', '', '', '$2y$10$ncKLrJ2NjaAy4ldlgceCCeEiTxJHt7C4KVGyqVIet3KisDdZP2SXW', '2024-02-14 23:29:18', 'NULL');
@@ -414,7 +414,7 @@ CREATE TABLE `scientists` (
   `scientistname` varchar(250) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 INSERT INTO scientists VALUES ('1', 'C.V. Raman', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('2', 'Meghnad Saha', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('3', 'Homi J. Bhabha', '2024-02-10 01:02:03');
@@ -460,6 +460,7 @@ INSERT INTO scientists VALUES ('42', 'Agnikumar G. Vedeshwar', '2024-02-10 01:02
 INSERT INTO scientists VALUES ('43', 'Gautam Radhakrishna Desiraju', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('44', 'Kedareswar Banerjee', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('45', 'Manjula Reddy', '2024-02-10 01:02:03');
+INSERT INTO scientists VALUES ('46', 'Venki Ramakrishnan', '2024-05-15 11:08:54');
 CREATE TABLE `telescopeworkshop` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `workshopname` varchar(255) NOT NULL,
@@ -511,6 +512,40 @@ INSERT INTO usernotif VALUES ('52', 'Ramesh', 'Singh', 'ramesh@gmail.com', 'The 
 INSERT INTO usernotif VALUES ('53', 'Sanjeev', 'Verma', 'sanjee.verma@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('54', 'Simmy', 'Prashant', 'simmyprashant01@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('55', 'Yash', 'Sharma', 'yashsharma02@outlook.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+CREATE TABLE `visitors` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `device` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `port` int(6) NOT NULL,
+  `requesttime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO visitors VALUES ('7', 'dell-vostro-15', '127.0.0.1', '56960', '2024-03-23 10:20:38', 'visitor', '');
+INSERT INTO visitors VALUES ('8', 'dell-vostro-15', '127.0.0.1', '57063', '2024-03-23 10:21:10', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('9', 'dell-vostro-15', '127.0.0.1', '57113', '2024-03-23 10:21:26', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('10', 'dell-vostro-15', '127.0.0.1', '57286', '2024-03-23 10:21:44', 'visitor', '');
+INSERT INTO visitors VALUES ('11', 'dell-vostro-15', '127.0.0.1', '57313', '2024-03-23 10:21:50', 'visitor', '');
+INSERT INTO visitors VALUES ('12', 'dell-vostro-15', '127.0.0.1', '57365', '2024-03-23 10:22:02', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('13', 'dell-vostro-15', '127.0.0.1', '57361', '2024-03-23 10:22:05', 'visitor', '');
+INSERT INTO visitors VALUES ('14', '', '192.168.0.200', '51074', '2024-03-23 20:25:02', 'visitor', '');
+INSERT INTO visitors VALUES ('15', '', '192.168.0.200', '51098', '2024-03-23 20:25:43', 'visitor', '');
+INSERT INTO visitors VALUES ('16', 'dell-vostro-15', '127.0.0.1', '59898', '2024-03-23 20:51:26', 'visitor', '');
+INSERT INTO visitors VALUES ('17', 'dell-vostro-15', '127.0.0.1', '60002', '2024-03-23 20:52:11', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('18', '192.168.0.200', '192.168.0.200', '51392', '2024-03-23 20:53:24', 'visitor', '');
+INSERT INTO visitors VALUES ('19', 'dell-vostro-15', '127.0.0.1', '60202', '2024-03-23 20:53:30', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('20', 'dell-vostro-15', '127.0.0.1', '60594', '2024-03-23 20:59:51', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('21', 'dell-vostro-15', '127.0.0.1', '60594', '2024-03-23 20:59:51', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('22', 'dell-vostro-15', '127.0.0.1', '60642', '2024-03-23 21:00:13', 'visitor', '');
+INSERT INTO visitors VALUES ('23', 'dell-vostro-15', '127.0.0.1', '60709', '2024-03-23 21:00:26', 'visitor', '');
+INSERT INTO visitors VALUES ('24', '192.168.0.200', '192.168.0.200', '51440', '2024-03-23 21:01:32', 'visitor', '');
+INSERT INTO visitors VALUES ('25', '192.168.0.200', '192.168.0.200', '57456', '2024-03-24 10:28:55', 'visitor', '');
+INSERT INTO visitors VALUES ('26', 'dell-vostro-15', '127.0.0.1', '62442', '2024-03-24 10:51:27', 'visitor', '');
+INSERT INTO visitors VALUES ('27', '192.168.0.200', '192.168.0.200', '57978', '2024-03-24 10:52:19', 'visitor', '');
+INSERT INTO visitors VALUES ('28', '192.168.0.200', '192.168.0.200', '57978', '2024-03-24 10:52:27', 'visitor', '');
+INSERT INTO visitors VALUES ('29', 'dell-vostro-15', '127.0.0.1', '60180', '2024-03-29 11:14:09', 'visitor', '');
+INSERT INTO visitors VALUES ('30', 'dell-vostro-15', '127.0.0.1', '62715', '2024-04-04 08:27:57', 'visitor', '');
 CREATE TABLE `webseries` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `webseriesname` varchar(150) NOT NULL,
