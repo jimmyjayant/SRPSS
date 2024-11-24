@@ -15,6 +15,10 @@ font-size:16px; /* Default Font Size */
   }
 }
 
+* {
+  box-sizing:border-box;
+}
+
 body {
   margin:0;
   padding:0;
@@ -23,10 +27,6 @@ body {
   -webkit-flex-direction:column;
   flex-direction:column;
   min-height:100vh;
-}
-
-* {
-  box-sizing:border-box;
 }
 
 .header {
@@ -374,6 +374,20 @@ img {
   flex-direction:column;
 }
 }
+
+@media screen and (max-width:900px) {
+  .header {
+    justify-content:space-between;
+  }
+
+  .logo {
+    margin-left:40%;
+  }
+
+  .heading {
+    display:none;
+  }
+}
 /*End of CSS of index.php*/
 
 /*Start of CSS of form*/
@@ -603,8 +617,9 @@ table td {
 /* Start of CSS of contact us page */
 
 #message {
-  width:clamp(200px, 50%, 500px);
+  width:clamp(250px, 50%, 500px);
   height:clamp(100px, 20vh, 300px);
+  resize:vertical;
 }
 
 /* End of CSS of contact us page */
