@@ -19,7 +19,7 @@ require 'headerandnavbar.php';
                 <br>
                 <br>
 
-                <img src="Images/astronomy.webp" alt="Astronomy">
+                <img src="Images/astronomy.webp" alt="Astronomy" style="aspect-ratio:16/9;">
             </p>
         </div>
 
@@ -40,7 +40,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <img src="Images/telescopemaking.jpg" width="300px" height="300px" alt="Telescope Making">
+                    <img src="Images/telescopemaking.jpg" width="300px" alt="Telescope Making" style="aspect-ratio:1/1;">
                 </p>
             </div>
 
@@ -59,7 +59,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
                     
-                    <img src="Images/starparty.jpg" width="300px" height="300px" alt="Star Party">
+                    <img src="Images/starparty.jpg" width="300px" alt="Star Party" style="aspect-ratio:1/1;">
                 </p>
             </div>
 
@@ -78,7 +78,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
                     
-                    <img src="Images/astrophotography.jpg" width="300px" height="300px" alt="Astrophotography">
+                    <img src="Images/astrophotography.jpg" width="300px" alt="Astrophotography" style="aspect-ratio:1/1;">
                 </p>
             </div>
         </div>    
