@@ -132,19 +132,23 @@ if(isset($_SESSION['attempt_again']))
         </h2>
 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
-            <label for="email">Email</label>
-            <br>
-            <input type="email" id="email" name="email" placeholder="Enter your email here" validate required>
+            <div class="row">
+                <div class="col25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col75">
+                    <input type="email" id="email" name="email" placeholder="Enter your email here" validate required>
+                </div>
+            </div>
 
-            <br>
-            <br>
-            
-            <label for="password">Password</label>
-            <br>
-            <input type="password" id="password" name="password" placeholder="Enter your password here" minlength="8" maxlength="30" required>
-
-            <br>
-            <br>
+            <div class="row">
+                <div class="col25">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col75">
+                    <input type="password" id="password" name="password" placeholder="Enter your password here" minlength="8" maxlength="30" required>
+                </div>
+            </div>
 
             <input type="submit" value="Submit" name="submit">
             <input type="reset" value="Reset">

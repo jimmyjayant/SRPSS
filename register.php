@@ -63,99 +63,122 @@ require 'headerandnavbar.php';
             </h2>
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
-                <label for="firstname">First Name</label>
-                <br>
-                <input type="text" id="firstname" name="firstname" maxlength="100" placeholder="Enter Your First Name here" required>
+                <div class="row">
+                    <div class="col25">
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="firstname" name="firstname" maxlength="100" placeholder="Enter Your First Name here" required>
+                    </div>
+                </div>
 
-                <br>
-                <br>
-
-                <label for="lastname">Last Name</label>
-                <br>
-                <input type="text" id="lastname" name="lastname"  maxlength="100" placeholder="Enter Your Last Name here" required>
-
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="lastname">Last Name</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="lastname" name="lastname"  maxlength="100" placeholder="Enter Your Last Name here" required>
+                    </div>
+                </div>
                 
-                <legend>
-                Gender
-                </legend>
-                <br>
-                <input type="radio" name="gender" id="male" value="Male">
-                <label for="male">Male</label>
-                <br>
-                <input type="radio" name="gender" id="female" value="Female">
-                <label for="female">Female</label>
+                <div class="row">
+                    <div class="col25" style="padding:1rem 0;">
+                        <label>Gender</label>
+                    </div>
+                    <div class="col75">
+                        <input type="radio" name="gender" id="male" value="Male">
+                        <label for="male">Male</label>
+                        <br>
+                        <input type="radio" name="gender" id="female" value="Female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
 
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="date">Date of Birth</label>
+                    </div>
+                    <div class="col75">
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
 
-                <label for="date">Date of Birth</label>
-                <br>
-                <input type="date" id="date" name="date" required>
+                <div class="row">
+                    <div class="col25">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="address" name="address" maxlength="300" placeholder="Enter your address here" required>
+                    </div>
+                </div>
 
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="mobile">Mobile Number</label>
+                    </div>
+                    <div class="col75">
+                        <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
 
-                <label for="address">Address</label>
-                <br>
-                <input type="text" id="address" name="address" maxlength="300" placeholder="Enter your address here" required>
+                <div class="row">
+                    <div class="col25">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col75">
+                        <input type="email" placeholder="Enter your email here" id="email" name="email" validate required>
+                    </div>
+                </div>
 
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25" style="padding:0;">
+                        <label for="category">Choose Research Category:- </label>
+                    </div>
+                    <div class="col75">
+                        <select id="category" name="category" required>
+                            <option value="">Choose Your Research Category</option>
+                            <option value="science">Science</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="engineering">Engineering</option>
+                        </select>
+                    </div>
+                </div>
 
-                <label for="mobile">Mobile Number</label>
-                <br>
-                <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required>
+                <div class="row">
+                    <div class="col25">
+                        <label for="twitter">Twitter</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="twitter" name="twitter" size="30" maxlength="100" placeholder="Enter your Twitter handle here">
+                    </div>
+                </div>
 
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="facebook">Facebook</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="facebook" name="facebook" size="30" maxlength="100" placeholder="Enter your Facebook handle here">
+                    </div>
+                </div>
 
-                <label for="email">Email</label>
-                <br>
-                <input type="email" placeholder="Enter your email here" id="email" name="email" validate required>
+                <div class="row">
+                    <div class="col25">
+                        <label for="linkedin">LinkedIn</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" id="linkedin" name="linkedin" size="30" maxlength="100" placeholder="Enter your LinkedIn handle here">
+                    </div>
+                </div>
 
-                <br>
-                <br>
-
-                <label for="category">Choose Research Category:- </label>
-                <br>
-                <select id="category" name="category" required>
-                    <option value="">Choose Your Research Category</option>
-                    <option value="science">Science</option>
-                    <option value="mathematics">Mathematics</option>
-                    <option value="engineering">Engineering</option>
-                </select>
-
-                <br>
-                <br>
-
-                <label for="twitter">Twitter</label>
-                <br>
-                <input type="text" id="twitter" name="twitter" size="30" maxlength="100" placeholder="Enter your Twitter handle here">
-
-                <br>
-                <br>
-
-                <label for="facebook">Facebook</label>
-                <br>
-                <input type="text" id="facebook" name="facebook" size="30" maxlength="100" placeholder="Enter your Facebook handle here">
-                <br>
-                <br>
-
-                <label for="linkedin">LinkedIn</label>
-                <br>
-                <input type="text" id="linkedin" name="linkedin" size="30" maxlength="100" placeholder="Enter your LinkedIn handle here">
-
-                <br>
-                <br>
-
-                <label for="password">Password</label>
-                <br>
-                <input type="password" id="password" name="password" size="30" maxlength="30" placeholder="Enter your password here" required>
-
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="col75">
+                        <input type="password" id="password" name="password" size="30" maxlength="30" placeholder="Enter your password here" required>
+                    </div>
+                </div>
 
                 <input type="submit" value="Submit" name="submit">
                 <input type="reset" value="Reset">

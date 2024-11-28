@@ -18,7 +18,7 @@ while($row = $result->fetch_assoc()) {
    echo "<tr>";
    echo "<td>" . $row['id'] . "</td>";
    echo "<td>" . $row['workshopname'] . "</td>";
-   echo "<td><a href='" . $row['link']. "' target='_blank'>" . $row['link'].  "</a></td>";
+   echo "<td><a href='" . $row['link']. "' target='_blank'>" . "Link".  "</a></td>";
    echo "</tr>";
 }
 echo "</table>";

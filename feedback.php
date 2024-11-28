@@ -33,60 +33,71 @@ else
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self" id="contactusform">
                 <div <?php echo $none; ?>>
-                <label for="name" >Name</label>
-                <br>
-                <input type="text" placeholder="Enter Your Name here" id="name" name="name" maxlength="50" required
-                <?php 
-                 if(isset($_SESSION['username']))
-                 {
-                    echo 'value="' . $_SESSION['username'] . " " . $_SESSION['username1'] . '"';
-                 }
-                ?>>
-
-                <br>
-                <br>
+                    <div class="row">
+                        <div class="col25">
+                            <label for="name" >Name</label>
+                        </div>
+                        <div class="col75">
+                            <input type="text" placeholder="Enter Your Name here" id="name" name="name" maxlength="50" required
+                            <?php 
+                            if(isset($_SESSION['username']))
+                            {
+                                echo 'value="' . $_SESSION['username'] . " " . $_SESSION['username1'] . '"';
+                            }
+                            ?>>
+                        </div>
+                    </div>
                 </div>
 
-                <label for="subject">Subject</label>
-                <br>
-                <input type="text" placeholder="Enter the Subject here" id="subject" name="subject" maxlength="100" required>
 
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="col75">
+                        <input type="text" placeholder="Enter the Subject here" id="subject" name="subject" maxlength="100" required>
+                    </div>
+                </div>
 
                 <div <?php echo $none; ?>>
-                <label for="mobile">Mobile Number</label>
-                <br>
-                <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required <?php 
-                 if(isset($_SESSION['username']))
-                 {
-                    echo 'value="' . $_SESSION['mobno']. '"';
-                 }
-                ?>>
+                    <div class="row">
+                        <div class="col25">
+                            <label for="mobile">Mobile Number</label>
+                        </div>
+                        <div class="col75">
+                            <input type="tel" id="mobile" name="mobile" placeholder="+91-xxxxxxxxxx (Omit +91)" pattern="[0-9]{10}" required <?php 
+                            if(isset($_SESSION['username']))
+                            {
+                                echo 'value="' . $_SESSION['mobno']. '"';
+                            }
+                            ?>>
+                        </div>
+                    </div>
 
-                <br>
-                <br>
-                
-                <label for="email">Email</label>
-                <br>
-                <input type="email" placeholder="Enter your email here" id="email" name="email" validate required 
-                <?php 
-                 if(isset($_SESSION['username']))
-                 {
-                    echo 'value="' . $_SESSION['email']. '"';
-                 }
-                ?>>
-                
-                <br>
-                <br>
+                    <div class="row">
+                        <div class="col25">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col75">
+                            <input type="email" placeholder="Enter your email here" id="email" name="email" validate required 
+                            <?php 
+                            if(isset($_SESSION['username']))
+                            {
+                                echo 'value="' . $_SESSION['email']. '"';
+                            }
+                            ?>>
+                        </div>
+                    </div>
                 </div>
 
-                <label for="message">Message</label>
-                <br>
-                <textarea id="message" name="message" required></textarea>
-
-                <br>
-                <br>
+                <div class="row">
+                    <div class="col25">
+                        <label for="message">Message</label>
+                    </div>
+                    <div class="col75">
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                </div>
                 
                 <input type="submit" value="Submit" name="submit">
 
