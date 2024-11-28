@@ -64,6 +64,8 @@ if(!isset($_SESSION['username']))
     <div class="part93">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
         <input type="text" name="chatmsg" id="chatmsg" size="100%" placeholder="Type your message here" required>
+        <br>
+        <br>
         <input type="submit" value="Send" name="send" id="send">
       </form>
 

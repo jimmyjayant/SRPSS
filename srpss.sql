@@ -1,3 +1,93 @@
+CREATE TABLE `afghanistan` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `institute` (`insname`),
+  UNIQUE KEY `inslink` (`link`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO afghanistan VALUES ('1', 'Public Library of the Afghanistan Science Academy', 'https://asa.gov.af/en/public-library-afghanistan-science-academy', '2024-11-27 01:59:08');
+INSERT INTO afghanistan VALUES ('2', 'Museum of Science and Technology', 'http://www.museum.af/en/home/', '2024-11-27 01:59:08');
+CREATE TABLE `albania` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(512) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `insname` (`insname`),
+  UNIQUE KEY `albanialink` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `algeria` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `algeria_insname` (`insname`),
+  UNIQUE KEY `algeria_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `andorra` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `andorra_insname` (`insname`),
+  UNIQUE KEY `andorra_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `angola` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `angola_insname` (`insname`),
+  UNIQUE KEY `angola_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `antigua_and_barbuda` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `antigua_insname` (`insname`),
+  UNIQUE KEY `antigua_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `argentina` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `argentina_insname` (`insname`),
+  UNIQUE KEY `argentina_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `armenia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `armenia_insname` (`insname`),
+  UNIQUE KEY `armenia_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `australia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestmp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `australia_insname` (`insname`),
+  UNIQUE KEY `australia_link` (`link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `austria` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `awards` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `awardsname` varchar(100) NOT NULL,
@@ -20,6 +110,174 @@ INSERT INTO awards VALUES ('13', 'Vigyan Gaurav Award', '2024-02-18 00:05:37');
 INSERT INTO awards VALUES ('14', 'Jamnalal Bajaj Award', '2024-02-18 00:05:37');
 INSERT INTO awards VALUES ('15', 'Faculty Research Awards', '2024-02-18 00:05:37');
 INSERT INTO awards VALUES ('16', 'Dr. B. C. Roy Award', '2024-02-18 00:05:37');
+CREATE TABLE `azerbaijan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bahamas` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bahrain` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bangladesh` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `barbados` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `belarus` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `belgium` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `belize` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `benin` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bhutan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bolivia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bosnia_and_herzegovina` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `botswana` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `brazil` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `brunei` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `bulgaria` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `burkina_faso` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `burundi` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cabo_verde` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cambodia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cameroon` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `canada` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `central_african_republic` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `chad` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `chat` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
@@ -36,6 +294,34 @@ INSERT INTO chat VALUES ('8', 'admin', 'Hello this is SRPSS admin here, I am gla
 INSERT INTO chat VALUES ('9', 'Jimmy', 'So the group chat feature is being enhanced more and more to accommodate new features.', '2023-09-11 00:53:59');
 INSERT INTO chat VALUES ('10', 'Jimmy', 'So the group chat feature is being enhanced more and more to accommodate new features.', '2023-09-11 00:54:45');
 INSERT INTO chat VALUES ('11', 'admin', 'Hello Everyone, a custom error page has been added to the website.', '2023-09-21 11:22:58');
+CREATE TABLE `chile` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `china` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `colombia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `comoros` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `conferences` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `conferencename` varchar(450) NOT NULL,
@@ -72,6 +358,139 @@ INSERT INTO conferences VALUES ('27', 'International Conference on Recent Advanc
 INSERT INTO conferences VALUES ('28', 'International Conference on Environment, Agriculture and Biotechnology (ICEABT)', '2024-02-10 00:54:22');
 INSERT INTO conferences VALUES ('29', 'International Conference on Control System, power and electrical engineering (ICCSPEE)', '2024-02-10 00:54:22');
 INSERT INTO conferences VALUES ('30', 'International Conference on Artificial Intelligence, Robots and Mechanical Engineering (ICAIRME)', '2024-02-10 00:54:22');
+CREATE TABLE `congo_congo_brazzaville` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `congo_democratic_republic_of_the_congo_kinshasa` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `costa_rica` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `croatia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cuba` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cyprus` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `czechia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `denmark` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `djibouti` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `dominica` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `dominican_republic` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `ecuador` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `egypt` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `el_salvador` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `equatorial_guinea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `eritrea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `estonia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `eswatini` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `ethiopia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `feedback` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `fname` varchar(150) NOT NULL,
@@ -88,6 +507,202 @@ INSERT INTO feedback VALUES ('7', 'nimmy', 'newspapers', '2147483647', 'nimmynis
 INSERT INTO feedback VALUES ('8', 'peter parker', 'culture', '2147483647', 'peterparker@gmail.com', 'Please add more info to culture section.', '1', '2024-02-13 00:19:49');
 INSERT INTO feedback VALUES ('14', 'Jimmy Jayant', 'dhfghsfth', '2147483647', 'jayantjimmy49@gmail.com', 'zdhsdfhsdhsrh', '-1', '2024-02-17 22:49:43');
 INSERT INTO feedback VALUES ('17', 'Jimmy Jayant', 'Research Papers Approval', '2147483647', 'jayantjimmy49@gmail.com', 'Please approve research papers as soon as possible.', '0', '2024-02-15 00:23:51');
+CREATE TABLE `fiji` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `finland` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `france` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `gabon` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `gambia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `georgia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `germany` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `ghana` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `greece` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `grenada` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `guatemala` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `guinea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `guinea_bissau` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `guyana` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `haiti` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `honduras` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `hungary` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `iceland` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `india` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `indonesia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `iran` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `iraq` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `ireland` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `israel` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `italy` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `jamaica` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `japan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `jordan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `journals` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `journalname` varchar(150) NOT NULL,
@@ -237,6 +852,111 @@ INSERT INTO journals VALUES ('140', 'Transactions of the Indian Ceramic Society'
 INSERT INTO journals VALUES ('141', 'Transactions of the Indian Institute of Metals', '2024-02-10 00:58:41');
 INSERT INTO journals VALUES ('142', 'Transactions of the Institute of Indian Geographers', '2024-02-10 00:58:41');
 INSERT INTO journals VALUES ('143', 'West Indian Medical Journal', '2024-02-10 00:58:41');
+CREATE TABLE `kazakhstan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `kenya` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `kiribati` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `kuwait` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `kyrgyzstan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `laos` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `latvia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `lebanon` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `lesotho` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `liberia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `libya` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `liechtenstein` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `lithuania` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `luxembourg` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `madagascar` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `magazines` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `magazinename` varchar(100) NOT NULL,
@@ -259,6 +979,111 @@ INSERT INTO magazines VALUES ('12', 'Science India Magazine', 'Vijnana Bharati',
 INSERT INTO magazines VALUES ('13', 'Everyman\'s Science', 'The Indian Science Congress Association', '2024-02-10 00:59:23');
 INSERT INTO magazines VALUES ('14', 'Scientific India', 'Scientific Planet Society', '2024-02-10 00:59:23');
 INSERT INTO magazines VALUES ('15', 'Shaastra', 'Indian Educational Institution', '2024-02-10 00:59:23');
+CREATE TABLE `malawi` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `malaysia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `maldives` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `mali` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `malta` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `marshall_islands` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `mauritania` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `mauritius` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `mexico` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `micronesia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `moldova` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `monaco` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `mongolia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `montenegro` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `morocco` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `movies` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `moviename` varchar(250) NOT NULL,
@@ -273,6 +1098,48 @@ INSERT INTO movies VALUES ('5', 'Ek Doctor Ki Maut', '2024-02-10 00:59:49');
 INSERT INTO movies VALUES ('6', 'The Quantum Indians', '2024-02-10 00:59:49');
 INSERT INTO movies VALUES ('7', 'Ramanujan', '2024-02-10 00:59:49');
 INSERT INTO movies VALUES ('8', 'Shakuntala Devi', '2024-02-10 00:59:49');
+CREATE TABLE `mozambique` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `namibia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `nauru` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `nepal` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `netherlands` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `new_zealand` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `newspapers` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `newspapername` varchar(150) NOT NULL,
@@ -285,6 +1152,48 @@ INSERT INTO newspapers VALUES ('2', 'Hindu', 'https://www.thehindu.com/', '2024-
 INSERT INTO newspapers VALUES ('3', 'Hindustan Times', 'https://www.hindustantimes.com/', '2024-02-10 01:00:16');
 INSERT INTO newspapers VALUES ('4', 'Indian Express', 'https://indianexpress.com/', '2024-02-10 01:00:16');
 INSERT INTO newspapers VALUES ('5', 'Times Of India', 'https://timesofindia.indiatimes.com/us', '2024-02-10 01:00:16');
+CREATE TABLE `nicaragua` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `niger` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `nigeria` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `north_korea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `north_macedonia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `norway` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `observatory` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `observatoryname` varchar(200) NOT NULL,
@@ -310,6 +1219,83 @@ INSERT INTO observatory VALUES ('16', 'Pachmarhi Telescope Array', '2024-02-18 0
 INSERT INTO observatory VALUES ('17', 'Trivandrum Observatory', '2024-02-18 01:00:35');
 INSERT INTO observatory VALUES ('18', 'Udaipur Solar Observatory', '2024-02-18 01:00:35');
 INSERT INTO observatory VALUES ('19', 'Ooty Radio Telescope', '2024-02-18 01:00:35');
+CREATE TABLE `oman` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `pakistan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `palau` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `panama` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `papua_new_guinea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `paraguay` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `peru` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `philippines` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `poland` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `portugal` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `qatar` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `researchers` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
@@ -332,7 +1318,7 @@ CREATE TABLE `researchers` (
   KEY `idx_email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 INSERT INTO researchers VALUES ('40', 'Jimmy', 'Jayant', 'Male', '1993-08-06', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'jayantjimmy49@gmail.com', 'science', '', '', 'https://www.linkedin.com/in/jimmy-jayant-8b79b61a9/', '$2y$10$NJkmU67s3kQIuIOyAbq1uuMHlSvzDWUwJhMOsLLRtnYJvgVcTVKdS', '2024-03-23 10:05:41', 'da64d1gm5iqcn9fbiqkicqq70k');
-INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-05-15 11:10:12', '3ikml9h33aqbu7blpcbpegc852');
+INSERT INTO researchers VALUES ('41', 'admin', '.', 'Male', '1993-08-06', 'WARD NO-7, NEAR ARYA SAMAJ MANDIR, PUNJABI RAMLILA GROUND,SAMALKHA', '0', 'admin@srpss.com', 'science', '', '', '', '$2y$10$WatDb1D44/.MgDr9iVqsCuWryT5aF3o2GmQ5TG5hv8eLcDHg4xbhO', '2024-11-27 03:12:08', 'ih6f2nrat8nd6p4m6g6194afbp');
 INSERT INTO researchers VALUES ('42', 'Simmy', 'Prashant', 'Male', '1995-10-13', 'HOUSE NO - 225, NEAR ARYA SAMAJ MANDIR', '2147483647', 'simmyprashant01@gmail.com', 'science', '', '', '', '$2y$10$IC5PT7GDpOgVfJEaA7qATutTlHIBjL6sV2t7dlxZOWceUE3S25b3q', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('43', 'Ramesh', 'Singh', 'Male', '1970-01-01', 'Rohtak', '2147483647', 'ramesh@gmail.com', 'science', '', '', '', '$2y$10$6t0LODG.aev9o1vL9I3JN.LsmH7PhJ.Mf5N3jExLVtcg.g/mpM1R6', '2024-02-14 23:29:18', 'NULL');
 INSERT INTO researchers VALUES ('44', 'Puneet', 'Kumar', 'Male', '2000-01-01', 'Samalkha', '2147483647', 'puneetkumar@yahoo.com', 'mathematics', '', '', '', '$2y$10$ncKLrJ2NjaAy4ldlgceCCeEiTxJHt7C4KVGyqVIet3KisDdZP2SXW', '2024-02-14 23:29:18', 'NULL');
@@ -409,6 +1395,41 @@ INSERT INTO researchsites VALUES ('37', 'Central Mechanical Engineering Research
 INSERT INTO researchsites VALUES ('38', 'Centre for Cellular and Molecular Biology', 'Hyderabad', '2024-02-10 01:01:36');
 INSERT INTO researchsites VALUES ('39', 'Vikram Sarabhai Space Centre', 'Thiruvananthapuram', '2024-02-10 01:01:36');
 INSERT INTO researchsites VALUES ('40', 'Uranium Corporation of India', 'Jadugoda', '2024-02-10 01:01:36');
+CREATE TABLE `romania` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `russia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `rwanda` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `sao_tome_and_principe` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `saudi_arabia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `scientists` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `scientistname` varchar(250) NOT NULL,
@@ -461,6 +1482,146 @@ INSERT INTO scientists VALUES ('43', 'Gautam Radhakrishna Desiraju', '2024-02-10
 INSERT INTO scientists VALUES ('44', 'Kedareswar Banerjee', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('45', 'Manjula Reddy', '2024-02-10 01:02:03');
 INSERT INTO scientists VALUES ('46', 'Venki Ramakrishnan', '2024-05-15 11:08:54');
+CREATE TABLE `senegal` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `serbia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `seychelles` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `sierra_leone` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `singapore` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `slovakia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `slovenia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `solomon_islands` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `somalia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `south_africa` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `south_korea` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `south_sudan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `spain` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `sri_lanka` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `sudan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `suriname` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `sweden` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `switzerland` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `tajikistan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `tanzania` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `telescopeworkshop` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `workshopname` varchar(255) NOT NULL,
@@ -484,6 +1645,104 @@ INSERT INTO telescopeworkshop VALUES ('12', 'Chinmaya Vidyalaya', 'https://blog.
 INSERT INTO telescopeworkshop VALUES ('13', 'Astron', 'https://astron-soc.in/asi2019/workshop2');
 INSERT INTO telescopeworkshop VALUES ('14', 'AICASE', 'https://aicase.in/telescope-training/');
 INSERT INTO telescopeworkshop VALUES ('15', 'Aperture Telescope', 'https://aperturetelescopes.com/contact/');
+CREATE TABLE `thailand` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `togo` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `tonga` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `trinidad_and_tobago` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `tunisia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `turkey` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `turkmenistan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `tuvalu` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `uganda` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `ukraine` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `united_arab_emirates` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `united_kingdom` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `united_states` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `uruguay` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `usernotif` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) DEFAULT NULL,
@@ -512,6 +1771,41 @@ INSERT INTO usernotif VALUES ('52', 'Ramesh', 'Singh', 'ramesh@gmail.com', 'The 
 INSERT INTO usernotif VALUES ('53', 'Sanjeev', 'Verma', 'sanjee.verma@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('54', 'Simmy', 'Prashant', 'simmyprashant01@gmail.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
 INSERT INTO usernotif VALUES ('55', 'Yash', 'Sharma', 'yashsharma02@outlook.com', 'The admin is sending notification to all users.', '2024-02-13 16:23:15');
+CREATE TABLE `uzbekistan` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `vanuatu` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `vatican_city` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `venezuela` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `vietnam` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `visitors` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `device` varchar(255) NOT NULL,
@@ -521,18 +1815,12 @@ CREATE TABLE `visitors` (
   `status` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> timer
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 INSERT INTO visitors VALUES ('7', 'dell-vostro-15', '127.0.0.1', '56960', '2024-03-23 10:20:38', 'visitor', '');
 INSERT INTO visitors VALUES ('8', 'dell-vostro-15', '127.0.0.1', '57063', '2024-03-23 10:21:10', 'user', 'admin@srpss.com');
 INSERT INTO visitors VALUES ('9', 'dell-vostro-15', '127.0.0.1', '57113', '2024-03-23 10:21:26', 'user', 'admin@srpss.com');
 INSERT INTO visitors VALUES ('10', 'dell-vostro-15', '127.0.0.1', '57286', '2024-03-23 10:21:44', 'visitor', '');
 INSERT INTO visitors VALUES ('11', 'dell-vostro-15', '127.0.0.1', '57313', '2024-03-23 10:21:50', 'visitor', '');
-<<<<<<< HEAD
-=======
 INSERT INTO visitors VALUES ('12', 'dell-vostro-15', '127.0.0.1', '57365', '2024-03-23 10:22:02', 'user', 'admin@srpss.com');
 INSERT INTO visitors VALUES ('13', 'dell-vostro-15', '127.0.0.1', '57361', '2024-03-23 10:22:05', 'visitor', '');
 INSERT INTO visitors VALUES ('14', '', '192.168.0.200', '51074', '2024-03-23 20:25:02', 'visitor', '');
@@ -552,7 +1840,110 @@ INSERT INTO visitors VALUES ('27', '192.168.0.200', '192.168.0.200', '57978', '2
 INSERT INTO visitors VALUES ('28', '192.168.0.200', '192.168.0.200', '57978', '2024-03-24 10:52:27', 'visitor', '');
 INSERT INTO visitors VALUES ('29', 'dell-vostro-15', '127.0.0.1', '60180', '2024-03-29 11:14:09', 'visitor', '');
 INSERT INTO visitors VALUES ('30', 'dell-vostro-15', '127.0.0.1', '62715', '2024-04-04 08:27:57', 'visitor', '');
->>>>>>> timer
+INSERT INTO visitors VALUES ('31', 'dell-vostro-15', '::1', '64329', '2024-11-24 01:39:07', 'visitor', '');
+INSERT INTO visitors VALUES ('32', 'dell-vostro-15', '::1', '64367', '2024-11-24 01:39:22', 'visitor', '');
+INSERT INTO visitors VALUES ('33', 'dell-vostro-15', '::1', '64371', '2024-11-24 01:39:22', 'visitor', '');
+INSERT INTO visitors VALUES ('34', 'dell-vostro-15', '::1', '64367', '2024-11-24 01:39:22', 'visitor', '');
+INSERT INTO visitors VALUES ('35', 'dell-vostro-15', '::1', '64372', '2024-11-24 01:39:22', 'visitor', '');
+INSERT INTO visitors VALUES ('36', 'dell-vostro-15', '::1', '64375', '2024-11-24 01:39:23', 'visitor', '');
+INSERT INTO visitors VALUES ('37', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:23', 'visitor', '');
+INSERT INTO visitors VALUES ('38', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:23', 'visitor', '');
+INSERT INTO visitors VALUES ('39', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:23', 'visitor', '');
+INSERT INTO visitors VALUES ('40', 'dell-vostro-15', '::1', '64373', '2024-11-24 01:39:23', 'visitor', '');
+INSERT INTO visitors VALUES ('41', 'dell-vostro-15', '::1', '64371', '2024-11-24 01:39:24', 'visitor', '');
+INSERT INTO visitors VALUES ('42', 'dell-vostro-15', '::1', '64373', '2024-11-24 01:39:24', 'visitor', '');
+INSERT INTO visitors VALUES ('43', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:24', 'visitor', '');
+INSERT INTO visitors VALUES ('44', 'dell-vostro-15', '::1', '64373', '2024-11-24 01:39:24', 'visitor', '');
+INSERT INTO visitors VALUES ('45', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:24', 'visitor', '');
+INSERT INTO visitors VALUES ('46', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:25', 'visitor', '');
+INSERT INTO visitors VALUES ('47', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:25', 'visitor', '');
+INSERT INTO visitors VALUES ('48', 'dell-vostro-15', '::1', '64373', '2024-11-24 01:39:25', 'visitor', '');
+INSERT INTO visitors VALUES ('49', 'dell-vostro-15', '::1', '64373', '2024-11-24 01:39:25', 'visitor', '');
+INSERT INTO visitors VALUES ('50', 'dell-vostro-15', '::1', '64375', '2024-11-24 01:39:26', 'visitor', '');
+INSERT INTO visitors VALUES ('51', 'dell-vostro-15', '::1', '64368', '2024-11-24 01:39:26', 'visitor', '');
+INSERT INTO visitors VALUES ('52', 'dell-vostro-15', '::1', '64367', '2024-11-24 01:39:26', 'visitor', '');
+INSERT INTO visitors VALUES ('53', 'dell-vostro-15', '::1', '64843', '2024-11-24 01:39:42', 'visitor', '');
+INSERT INTO visitors VALUES ('54', 'dell-vostro-15', '::1', '65238', '2024-11-24 01:41:40', 'visitor', '');
+INSERT INTO visitors VALUES ('55', 'dell-vostro-15', '::1', '65331', '2024-11-24 01:41:54', 'visitor', '');
+INSERT INTO visitors VALUES ('56', 'dell-vostro-15', '::1', '65374', '2024-11-24 01:42:10', 'visitor', '');
+INSERT INTO visitors VALUES ('57', '192.168.0.200', '192.168.0.200', '55736', '2024-11-24 01:53:13', 'visitor', '');
+INSERT INTO visitors VALUES ('58', '192.168.0.200', '192.168.0.200', '55798', '2024-11-24 01:54:28', 'visitor', '');
+INSERT INTO visitors VALUES ('59', 'dell-vostro-15', '::1', '52563', '2024-11-24 01:57:15', 'visitor', '');
+INSERT INTO visitors VALUES ('60', 'dell-vostro-15', '::1', '56733', '2024-11-24 02:30:59', 'visitor', '');
+INSERT INTO visitors VALUES ('61', 'dell-vostro-15', '127.0.0.1', '56854', '2024-11-24 02:32:19', 'visitor', '');
+INSERT INTO visitors VALUES ('62', '192.168.0.200', '192.168.0.200', '56428', '2024-11-24 02:36:01', 'visitor', '');
+INSERT INTO visitors VALUES ('63', 'dell-vostro-15', '::1', '58433', '2024-11-24 16:54:45', 'visitor', '');
+INSERT INTO visitors VALUES ('64', 'dell-vostro-15', '::1', '58484', '2024-11-24 16:54:51', 'visitor', '');
+INSERT INTO visitors VALUES ('65', 'dell-vostro-15', '::1', '58491', '2024-11-24 16:54:51', 'visitor', '');
+INSERT INTO visitors VALUES ('66', 'dell-vostro-15', '::1', '58489', '2024-11-24 16:54:51', 'visitor', '');
+INSERT INTO visitors VALUES ('67', 'dell-vostro-15', '::1', '58490', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('68', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('69', 'dell-vostro-15', '::1', '58487', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('70', 'dell-vostro-15', '::1', '58491', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('71', 'dell-vostro-15', '::1', '58489', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('72', 'dell-vostro-15', '::1', '58487', '2024-11-24 16:54:52', 'visitor', '');
+INSERT INTO visitors VALUES ('73', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('74', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('75', 'dell-vostro-15', '::1', '58490', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('76', 'dell-vostro-15', '::1', '58484', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('77', 'dell-vostro-15', '::1', '58491', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('78', 'dell-vostro-15', '::1', '58490', '2024-11-24 16:54:53', 'visitor', '');
+INSERT INTO visitors VALUES ('79', 'dell-vostro-15', '::1', '58491', '2024-11-24 16:54:54', 'visitor', '');
+INSERT INTO visitors VALUES ('80', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:54', 'visitor', '');
+INSERT INTO visitors VALUES ('81', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:54', 'visitor', '');
+INSERT INTO visitors VALUES ('82', 'dell-vostro-15', '::1', '58485', '2024-11-24 16:54:54', 'visitor', '');
+INSERT INTO visitors VALUES ('83', 'dell-vostro-15', '::1', '58904', '2024-11-24 16:55:10', 'visitor', '');
+INSERT INTO visitors VALUES ('84', 'dell-vostro-15', '::1', '58912', '2024-11-24 16:55:10', 'visitor', '');
+INSERT INTO visitors VALUES ('85', 'dell-vostro-15', '::1', '58908', '2024-11-24 16:55:10', 'visitor', '');
+INSERT INTO visitors VALUES ('86', 'dell-vostro-15', '::1', '58908', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('87', 'dell-vostro-15', '::1', '58911', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('88', 'dell-vostro-15', '::1', '58908', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('89', 'dell-vostro-15', '::1', '58911', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('90', 'dell-vostro-15', '::1', '58912', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('91', 'dell-vostro-15', '::1', '58907', '2024-11-24 16:55:11', 'visitor', '');
+INSERT INTO visitors VALUES ('92', 'dell-vostro-15', '::1', '58905', '2024-11-24 16:55:12', 'visitor', '');
+INSERT INTO visitors VALUES ('93', 'dell-vostro-15', '::1', '58905', '2024-11-24 16:55:12', 'visitor', '');
+INSERT INTO visitors VALUES ('94', 'dell-vostro-15', '::1', '58904', '2024-11-24 16:55:12', 'visitor', '');
+INSERT INTO visitors VALUES ('95', 'dell-vostro-15', '::1', '58907', '2024-11-24 16:55:12', 'visitor', '');
+INSERT INTO visitors VALUES ('96', 'dell-vostro-15', '::1', '59382', '2024-11-24 17:01:24', 'visitor', '');
+INSERT INTO visitors VALUES ('97', 'dell-vostro-15', '::1', '60260', '2024-11-24 17:15:17', 'visitor', '');
+INSERT INTO visitors VALUES ('98', 'dell-vostro-15', '::1', '60587', '2024-11-24 17:17:57', 'visitor', '');
+INSERT INTO visitors VALUES ('99', 'dell-vostro-15', '::1', '60703', '2024-11-24 17:21:30', 'visitor', '');
+INSERT INTO visitors VALUES ('100', 'dell-vostro-15', '::1', '60751', '2024-11-24 17:24:35', 'visitor', '');
+INSERT INTO visitors VALUES ('101', 'dell-vostro-15', '::1', '60959', '2024-11-24 17:48:36', 'visitor', '');
+INSERT INTO visitors VALUES ('102', 'dell-vostro-15', '::1', '62900', '2024-11-24 23:40:03', 'visitor', '');
+INSERT INTO visitors VALUES ('103', 'dell-vostro-15', '::1', '63398', '2024-11-24 23:42:25', 'visitor', '');
+INSERT INTO visitors VALUES ('104', 'dell-vostro-15', '127.0.0.1', '63629', '2024-11-24 23:43:41', 'visitor', '');
+INSERT INTO visitors VALUES ('105', '192.168.0.200', '192.168.0.200', '33918', '2024-11-24 23:58:49', 'visitor', '');
+INSERT INTO visitors VALUES ('106', '192.168.0.200', '192.168.0.200', '34118', '2024-11-25 00:22:24', 'visitor', '');
+INSERT INTO visitors VALUES ('107', 'dell-vostro-15', '::1', '56073', '2024-11-26 23:44:37', 'visitor', '');
+INSERT INTO visitors VALUES ('108', 'dell-vostro-15', '::1', '56171', '2024-11-26 23:47:28', 'visitor', '');
+INSERT INTO visitors VALUES ('109', 'dell-vostro-15', '::1', '56221', '2024-11-26 23:48:08', 'visitor', '');
+INSERT INTO visitors VALUES ('110', 'dell-vostro-15', '::1', '56262', '2024-11-26 23:48:38', 'visitor', '');
+INSERT INTO visitors VALUES ('111', 'dell-vostro-15', '127.0.0.1', '56331', '2024-11-26 23:48:56', 'visitor', '');
+INSERT INTO visitors VALUES ('112', 'dell-vostro-15', '127.0.0.1', '56411', '2024-11-26 23:49:59', 'visitor', '');
+INSERT INTO visitors VALUES ('113', 'dell-vostro-15', '127.0.0.1', '56412', '2024-11-26 23:50:02', 'visitor', '');
+INSERT INTO visitors VALUES ('114', 'dell-vostro-15', '127.0.0.1', '56412', '2024-11-26 23:50:02', 'visitor', '');
+INSERT INTO visitors VALUES ('115', 'dell-vostro-15', '127.0.0.1', '56418', '2024-11-26 23:50:04', 'visitor', '');
+INSERT INTO visitors VALUES ('116', 'dell-vostro-15', '127.0.0.1', '56542', '2024-11-26 23:51:26', 'visitor', '');
+INSERT INTO visitors VALUES ('117', 'dell-vostro-15', '127.0.0.1', '56543', '2024-11-26 23:51:29', 'visitor', '');
+INSERT INTO visitors VALUES ('118', 'dell-vostro-15', '127.0.0.1', '56700', '2024-11-26 23:52:07', 'visitor', '');
+INSERT INTO visitors VALUES ('119', 'dell-vostro-15', '127.0.0.1', '56758', '2024-11-26 23:53:31', 'visitor', '');
+INSERT INTO visitors VALUES ('120', 'dell-vostro-15', '127.0.0.1', '56812', '2024-11-26 23:54:27', 'visitor', '');
+INSERT INTO visitors VALUES ('121', 'dell-vostro-15', '127.0.0.1', '56824', '2024-11-26 23:54:30', 'visitor', '');
+INSERT INTO visitors VALUES ('122', 'dell-vostro-15', '127.0.0.1', '58844', '2024-11-27 01:49:09', 'visitor', '');
+INSERT INTO visitors VALUES ('123', 'dell-vostro-15', '127.0.0.1', '59243', '2024-11-27 01:55:47', 'visitor', '');
+INSERT INTO visitors VALUES ('124', 'dell-vostro-15', '127.0.0.1', '60101', '2024-11-27 02:17:41', 'visitor', '');
+INSERT INTO visitors VALUES ('125', 'dell-vostro-15', '127.0.0.1', '62931', '2024-11-27 03:05:01', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('126', 'dell-vostro-15', '127.0.0.1', '63737', '2024-11-27 03:11:36', 'user', 'admin@srpss.com');
+INSERT INTO visitors VALUES ('127', 'dell-vostro-15', '127.0.0.1', '63802', '2024-11-27 03:11:53', 'visitor', '');
+CREATE TABLE `wales` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `webseries` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `webseriesname` varchar(150) NOT NULL,
@@ -560,6 +1951,13 @@ CREATE TABLE `webseries` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 INSERT INTO webseries VALUES ('1', 'Rocket Boys', '2024-02-10 01:02:29');
+CREATE TABLE `yemen` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 CREATE TABLE `ytchannels` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `channelname` varchar(150) NOT NULL,
@@ -575,3 +1973,17 @@ INSERT INTO ytchannels VALUES ('4', 'Research Tv India', '@ResearchTvIndia', '20
 INSERT INTO ytchannels VALUES ('5', 'Universe Adventure', '@UniverseAdventure', '2024-02-10 01:02:46');
 INSERT INTO ytchannels VALUES ('6', 'Logical Science', '@VJFKIRAN', '2024-02-10 01:02:46');
 INSERT INTO ytchannels VALUES ('7', 'Indian Scientist', '@Indianscientist137', '2024-02-10 01:02:46');
+CREATE TABLE `zambia` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `zimbabwe` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `insname` varchar(100) NOT NULL,
+  `link` varchar(512) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

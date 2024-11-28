@@ -43,7 +43,7 @@ include('databaseconnection.php');
 
 // Importing SQL file 'srpss.sql' into MySQL database 'srpss'
 
-// Check if tables already exists within the srpss databse
+// Check if tables already exists within the srpss database
 $tableCheckQuery = "SHOW TABLES FROM $dbname";
 
 $tablesResult = $conn->query($tableCheckQuery);

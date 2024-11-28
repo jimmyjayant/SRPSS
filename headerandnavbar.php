@@ -72,6 +72,12 @@
     </head>
     <body>
         <div class="header">
+            <div class="hamburgermenu" onclick="nav()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
             <div class="logo">
                 <a href="index.php" alt=" Website Logo">
                   SRPSS 
@@ -156,6 +162,7 @@
         </div>
 
         <div class="navbar" id="nav">
+            <a href="#" onclick="closenav()" id="closex"><span>&times;</span></a>
             <a href="index.php">Home</a>
             <a href="register.php"
             <?php
@@ -195,7 +202,7 @@
             }
             ?>>Admin Panel</a>
             <div class="dropdown">
-              <a href="culture.php" class="dropbtn">Culture</a>
+              <a href="#" class="dropbtn">Culture</a>
                  <div class="dropdown-content">
                     <a href="magazines.php">Magazines</a>
                     <a href="newspapers.php">Newspapers</a>

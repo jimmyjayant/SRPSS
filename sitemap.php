@@ -47,6 +47,7 @@ require 'headerandnavbar.php';
                         </li>
                     </ul>
                 </li>
+                <li><a href="world.php">World</a></li>
                 <li>
                     User Logo 
                     <ul>
@@ -165,6 +166,7 @@ require 'headerandnavbar.php';
                             </li>
                         </ul>
                     </li>
+                    <li><a href="world.php">World</a></li>
                     <li>
                         User Logo 
                         <ul>
@@ -262,6 +264,7 @@ require 'headerandnavbar.php';
                             </li>
                         </ul>
                 </li>
+                <li><a href="world.php">World</a></li>
                 <li>
                     User Logo 
                     <ul>
