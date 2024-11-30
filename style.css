@@ -353,9 +353,11 @@ img {
   display:-webkit-flex;
   display:flex;
   flex-wrap:wrap;
+  position:relative;
   justify-content:center;
   background-color:#555;
   overflow:hidden;
+  z-index:3;
 }
 
 .footer a {
