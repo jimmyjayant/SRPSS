@@ -420,7 +420,11 @@ img {
 
   .dropdown-content {
     width:100%;
-    z-index:unset;
+    box-shadow:none;
+  }
+  
+  .dropdown:hover .dropbtn {
+    margin-bottom:330px;
   }
 
   .main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82, .main .part112, .main .row {
