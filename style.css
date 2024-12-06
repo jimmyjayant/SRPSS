@@ -225,7 +225,7 @@ img {
   line-height:1.5;
 }
 
-.main .part3, .main .part4, .part5, .part6, .part7, .part82, .part112  {
+.main :is(.part3, .part4, .part5, .part6, .part7, .part82, .part112)  {
   margin:0;
   padding:1rem;
   text-align:center;
@@ -280,7 +280,7 @@ img {
   flex:1;
 }
 
-.main .part8, .main .part11 {
+.main :is(.part8, .part11) {
   margin:0;
   padding:1rem;
   text-align:center;
@@ -449,7 +449,7 @@ img {
     margin-bottom:330px;
   }
 
-  .main .part3, .main .part4, .main .part5, .main .part6, .main .part7, .main .part82, .main .part112, .main .row {
+  .main :is(.part3, .part4, .part5, .part6, .part7, .part82, .part112, .row) {
     -webkit-flex-direction:column;
     flex-direction:column;
   }
@@ -480,7 +480,7 @@ img {
   background-color:#f2f2f2;
 }
 
-form label, legend {
+form:is(label, legend) {
   margin:0;
   padding:1rem;
   font-size:1rem;
@@ -667,7 +667,7 @@ table td {
   flex-direction:column;
 }
   
-.main  .navbar2 a {
+.main .navbar2 a {
   display:block;
   background:#333;
   text-decoration:none;
@@ -680,7 +680,7 @@ table td {
   border-radius:0;
 }
   
-.main .navbar2  a:hover {
+.main .navbar2 a:hover {
   background-color:#111;
 }
   
