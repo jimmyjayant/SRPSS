@@ -24,7 +24,6 @@ if(!isset($_SESSION['username']))
             <label for="category">Choose Research Category:- </label>
             <br>
             <select id="category" name="category" required>
-                <option value="">Choose Your Research Category</option>
                 <option value="science">Science</option>
                 <option value="mathematics">Mathematics</option>
                 <option value="engineering">Engineering</option>

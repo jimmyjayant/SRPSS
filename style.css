@@ -241,6 +241,10 @@ img {
   flex:1;
 }
 
+.part32 img {
+  height:100%;
+}
+
 .main a {
   display:inline-block;
   padding:0.5rem 1rem;
