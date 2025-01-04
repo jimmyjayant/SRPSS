@@ -218,7 +218,7 @@
                  </div>
             </div>
             <a href="world.php"><img src="Images/transparent globe.png" alt="Scientific Websites from around the World" style="width:1rem;height:1rem;padding:0;"></a>
-            <a href="" alt="User Session Timer" 
+            <a href="#" alt="User Session Timer" 
             <?php
             if(isset($_SESSION['sessionactive']))
             {
