@@ -1,8 +1,4 @@
 /*Start of CSS of index.php*/
-html {
-  font-size:16px; /* Default Font Size */
-}
-
 * {
   box-sizing:border-box;
 }
@@ -382,18 +378,6 @@ img {
 }
 
 /*Media queries or breakpoints*/
-@media (max-width: 800px) {
-  html {
-    font-size:14px; /* For Tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size:12px; /* For Mobile Phones */
-  }
-}
-
 @media only screen and (min-width:601px) {
   div.navbar#nav {
     display: -webkit-flex;
