@@ -22,7 +22,7 @@ body {
   padding:1rem;
   margin:0;
   text-align:center;
-  z-index:2;
+  z-index:5;
 }
 
 .hamburgermenu {
@@ -119,7 +119,7 @@ body {
   display:none;
 }
 
-.navbar#nav {
+.navbar {
   background-color:#555;
   margin:0;
   padding:0;
@@ -136,7 +136,7 @@ body {
   margin:0;
 }
 
-.navbar  a:hover {
+.navbar a:hover {
   background-color:#333;
 }
 
@@ -256,25 +256,7 @@ img {
   background-color:#55efc4;
 }
 
-.part4 div {
-  -webkit-flex:1;
-  -ms-flex:1;
-  flex:1;
-}
-
-.part5 div {
-  -webkit-flex:1;
-  -ms-flex:1;
-  flex:1;
-}
-
-.part6 div {
-  -webkit-flex:1;
-  -ms-flex:1;
-  flex:1;
-}
-
-.part7 div {
+.part4 div, .part5 div, .part6 div, .part7 div {
   -webkit-flex:1;
   -ms-flex:1;
   flex:1;
@@ -379,7 +361,7 @@ img {
 
 /*Media queries or breakpoints*/
 @media only screen and (min-width:601px) {
-  div.navbar#nav {
+  .navbar {
     display: -webkit-flex;
     display:flex;
     flex-wrap:wrap;
@@ -401,6 +383,7 @@ img {
   #closex {
     display:block;
     text-align:right;
+    font-size:2rem;
   }
 
   #closex span:hover {
@@ -408,15 +391,22 @@ img {
     background:black;
   }
 
-  .navbar#nav {
+  .navbar {
     position:fixed;
-    z-index:1;
+    z-index:4;
     overflow-x:hidden;
     text-align:center;
-    transition:0.3s;
     height:100%;
     width:0;
     padding-top:4.5rem;
+  }
+
+  .navbar:target {
+    width:calc(100vw - 2rem);
+  }
+
+  .navbar:not(:target) {
+    width:0;
   }
 
   .navbar, .footer div {

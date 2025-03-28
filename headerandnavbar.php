@@ -72,11 +72,11 @@
     </head>
     <body>
         <div class="header">
-            <div class="hamburgermenu" onclick="nav()">
+            <a class="hamburgermenu" href="#nav">
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </a>
 
             <div class="logo">
                 <a href="index.php" alt=" Website Logo">
@@ -162,7 +162,7 @@
         </div>
 
         <div class="navbar" id="nav">
-            <a href="#" onclick="closenav()" id="closex"><span>&times;</span></a>
+            <a href="#" id="closex"><span>&times;</span></a>
             <a href="index.php">Home</a>
             <a href="register.php"
             <?php

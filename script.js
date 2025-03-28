@@ -20,34 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
    }
 });
 
-/*
-var navwidth = document.getElementById("nav");
-*/
-
-// hamburger menu javascript
-function nav() {
-   document.getElementById("nav").style.width = "250px";
-}
-
-/*
-document.addEventListener("DOMContentLoaded", function() {
-   nav();
-});
-*/
-
-// closenav() javascript 'Closing the navbar'
-function closenav() {
-   document.getElementById("nav").style.width = "0";
-}
-
-// Reset the navbar when the screen size is greater than 600px 
-window.addEventListener("resize", function() {
-   if(window.innerWidth > 600) 
-      {
-         document.getElementById("nav").style.width = "";
-      } 
-}
-);
 
 // index.php javascript 
 function CreateData() {
@@ -2162,7 +2134,7 @@ function showGuinea_BissauData() {
    xmlhttp.onload = function() {
       if(this.readyState == 4 && this.status == 200) {
          var showGuinea_BissauData = document.getElementById("science_in_Guinea-Bissau");
-         if(showGuinea-BissauData)
+         if(showGuinea_BissauData)
          {
             showGuinea_BissauData.innerHTML = this.responseText;
          }
