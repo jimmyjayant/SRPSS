@@ -1,5 +1,15 @@
 <?php
 require 'sessionstart.php';
+require 'checkcookie.php';
+?>
+
+<?php
+// Access Denied for Web page DIRECT ACCESS 
+if(isset($_SESSION['username']))
+{
+    header("location: index.php");
+    die();
+}
 ?>
 
 <?php
@@ -68,7 +78,11 @@ if(isset($_SESSION['attempt_again']))
                     // store current session id of a particular user
                     session_regenerate_id();
                     $_SESSION['sessionid'] = session_id();
-                    
+
+                    $current_user_cookie = "currentuser";
+
+                    setcookie($current_user_cookie, $_SESSION['sessionid'], time() + (7 * 24 * 60 * 60), "/");
+
                     $_SESSION['username'] = $row['firstname'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username1'] = $row['lastname'];

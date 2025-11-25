@@ -1,1 +1,12 @@
-ErrorDocument 404 http://localhost/Projects/SRPSS/Website/404.php
+# Custom 404 error page 
+ErrorDocument 404 /404.php
+
+# Deny Direct Access 
+
+<Files "footer.php">
+    Require all denied
+</Files>
+
+<Files "headerandnavbar.php">
+    Require all denied
+</Files>

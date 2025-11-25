@@ -30,7 +30,7 @@ require 'sessionstart.php';
 
         // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
 
-        include('databaseconnection.php');
+        require('databaseconnection.php');
         
         $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
         VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";

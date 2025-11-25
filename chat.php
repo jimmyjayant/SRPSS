@@ -1,5 +1,6 @@
 <?php
  require 'sessionstart.php';
+ require 'checkcookie.php';
 ?>
 
 <?php
