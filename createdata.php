@@ -38,8 +38,8 @@ $conn->close();
 
 
 <?php 
-// include file 'databaseconnection.php'
-include('databaseconnection.php');
+// require file 'databaseconnection.php'
+require('databaseconnection.php');
 
 // Importing SQL file 'srpss.sql' into MySQL database 'srpss'
 

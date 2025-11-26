@@ -1,5 +1,5 @@
 <?php
-include('databaseconnection.php');
+require('databaseconnection.php');
 
 // store query in a variable
 $sql = "SELECT * FROM antigua_and_barbuda";

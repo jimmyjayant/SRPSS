@@ -1,5 +1,5 @@
 <?php
-include('databaseconnection.php');
+require('databaseconnection.php');
 
 // store query in a variable
 $sql = "SELECT * FROM researchpapers WHERE approved = 1 ORDER BY id ASC";

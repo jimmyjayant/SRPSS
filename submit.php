@@ -69,7 +69,7 @@ if(!isset($_SESSION['username']))
 
               // Create connection using MySQLi Object-Oriented
 
-                include('databaseconnection.php');
+                require('databaseconnection.php');
 
                 $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
                       VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
