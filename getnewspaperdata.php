@@ -19,7 +19,7 @@ while($row = $result->fetch_assoc()) {
    echo "<td>" . $row['id'] . "</td>";
    echo "<td>" . $row['newspapername'] . "</td>";
    echo "<td>";
-   echo "<a href='" . $row['link'] . "' target='_blank'>" . $row['link'] . "</a>";
+   echo "<a href='" . $row['link'] . "' target='_blank'>" . "Link" . "</a>";
    echo "</td>";
    echo "</tr>";
 }

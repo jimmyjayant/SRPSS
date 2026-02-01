@@ -2490,7 +2490,7 @@ function showGuinea_BissauData() {
          }
       }
    };
-   xmlhttp.open("GET", "getguineabissaudata.php", true);
+   xmlhttp.open("GET", "getguinea-bissaudata.php", true);
    xmlhttp.send();
 }
 
