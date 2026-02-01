@@ -21,25 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// index.php javascript 
-function CreateData() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showCreateDataStatus = document.getElementById("CreateDataStatus");
-         if(showCreateDataStatus)
-         {
-           showCreateDataStatus.innerHTML = this.responseText;
-         }
-      }
-    };
-    xmlhttp.open("GET", "createdata.php", true);
-    xmlhttp.send();
-    }
-
-CreateData();
-
-
 // researchsites.php javascript
 function showResearchSitesData() {
     var xmlhttp = new XMLHttpRequest();

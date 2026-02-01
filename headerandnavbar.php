@@ -230,5 +230,3 @@
             }
             ?>></a>
         </div>
-
-        <div id="CreateDataStatus"></div>

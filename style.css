@@ -247,13 +247,13 @@ img {
   font-size:1rem;
   text-decoration:none;
   text-align:center;
-  background-color:#00b894;
+  background-color:#555;
   color:white;
   border-radius:1rem;
 }
 
 .main a:hover {
-  background-color:#55efc4;
+  background-color:#111;
 }
 
 .part4 div, .part5 div, .part6 div, .part7 div {

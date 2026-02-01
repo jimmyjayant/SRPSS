@@ -6,12 +6,17 @@ $password = "";
 $dbname = "srpss";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if($conn->connect_error) {
-    $dbconnerror = "<p style='color:red;font-weight:bold;background:yellow;'>Error Connecting Database.</p><br>";
-    echo $dbconnerror;
-    die("Connection failed: " . $conn->connect_error);
+try
+{
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if($conn->connect_error)
+    {
+        throw new Exception("Error Connecting Database");
+    }
+}
+catch(Exception $e)
+{
+    $_SESSION['error'] = "<p style='color:red;'>{$e->getMessage()}</p>";
+    header("Location: login.php");
 }
 ?>
