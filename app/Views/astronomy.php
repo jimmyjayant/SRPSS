@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -20,7 +20,7 @@ require 'headerandnavbar.php';
                 <br>
                 <br>
 
-                <img src="Images/astronomy.webp" alt="Astronomy" style="aspect-ratio:16/9;">
+                <img src="images/astronomy.webp" alt="Astronomy" style="aspect-ratio:16/9;">
             </p>
         </div>
 
@@ -36,12 +36,12 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="telescopemaking.php">Telescope Course</a>
+                    <a href="<?= BASE_URL . 'telescopemaking' ?>">Telescope Course</a>
 
                     <br>
                     <br>
 
-                    <img src="Images/telescopemaking.jpg" width="300px" alt="Telescope Making" style="aspect-ratio:1/1;">
+                    <img src="images/telescopemaking.jpg" width="300px" alt="Telescope Making" style="aspect-ratio:1/1;">
                 </p>
             </div>
 
@@ -55,12 +55,12 @@ require 'headerandnavbar.php';
 
                     <br>
                     <br>
-                    <a href="starparty.php">Star Party</a>
+                    <a href="<?= BASE_URL . 'starparty' ?>">Star Party</a>
 
                     <br>
                     <br>
                     
-                    <img src="Images/starparty.jpg" width="300px" alt="Star Party" style="aspect-ratio:1/1;">
+                    <img src="images/starparty.jpg" width="300px" alt="Star Party" style="aspect-ratio:1/1;">
                 </p>
             </div>
 
@@ -74,12 +74,12 @@ require 'headerandnavbar.php';
 
                     <br>
                     <br>
-                    <a href="astrophotography.php">Astrophotography</a>
+                    <a href="<?= BASE_URL . 'astrophotography' ?>">Astrophotography</a>
 
                     <br>
                     <br>
                     
-                    <img src="Images/astrophotography.jpg" width="300px" alt="Astrophotography" style="aspect-ratio:1/1;">
+                    <img src="images/astrophotography.jpg" width="300px" alt="Astrophotography" style="aspect-ratio:1/1;">
                 </p>
             </div>
         </div>    

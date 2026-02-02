@@ -1,30 +1,30 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
-require 'headerandnavbar.php';
+ require 'headerandnavbar.php';
 ?>
 
         <div class="main">
          <h2>
-            List of Indian Scientists 
+            View the Research Papers 
          </h2>
 
          <p>
-            Here is the list of Indian Scientists:- 
+            Here is the list of Indian Scientific Research Papers:- 
          </p>
 
          <br>
          <br>
 
          <!-- Data from Database will be listed here -->
-         <div id="scientists">
+         <div id="viewpapers">
           
           </div>
 
-        
+
         </div>
 
         <?php require 'footer.php'; ?>

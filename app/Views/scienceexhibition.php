@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -29,7 +29,7 @@ require 'headerandnavbar.php';
             The goal is usually educational, meant to spark curiosity and inspire interest in science across a broad audience.
         </p>
 
-        <img src="Images/science exhibition.jpg" alt="Science Exhibition">
+        <img src="images/science exhibition.jpg" alt="Science Exhibition">
     </div>
 </div>
 

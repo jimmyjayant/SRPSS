@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -19,48 +19,48 @@ require 'headerandnavbar.php';
         <li>
             <b>When Logout</b>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="researchsites.php">Research Sites</a></li>
-                <li><a href="view.php">View</a></li>
+                <li><a href="index">Home</a></li>
+                <li><a href="register">Register</a></li>
+                <li><a href="login">Login</a></li>
+                <li><a href="researchsites">Research Sites</a></li>
+                <li><a href="view">View</a></li>
                 <li>
-                    <a href="culture.php">
+                    <a href="culture">
                     Culture
                     </a>
                     <ul>
-                        <li><a href="magazines.php">Magazines</a></li>
-                        <li><a href="newspapers.php">Newspapers</a></li>
-                        <li><a href="conferences.php">Conferences</a></li>
-                        <li><a href="channel.php">YouTube Channel</a></li>
-                        <li><a href="scientist.php">Scientist</a></li>
-                        <li><a href="movies.php">Movies</a></li>
-                        <li><a href="awards.php">Awards</a></li>
-                        <li><a href="observatories.php">Observatories</a></li>
-                        <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                        <li><a href="sciencefair.php">Science Fair</a></li>
-                        <li><a href="astronomy.php">Astronomy</a>
+                        <li><a href="magazines">Magazines</a></li>
+                        <li><a href="newspapers">Newspapers</a></li>
+                        <li><a href="conferences">Conferences</a></li>
+                        <li><a href="channel">YouTube Channel</a></li>
+                        <li><a href="scientist">Scientist</a></li>
+                        <li><a href="movies">Movies</a></li>
+                        <li><a href="awards">Awards</a></li>
+                        <li><a href="observatories">Observatories</a></li>
+                        <li><a href="scienceexhibition">Science Exhibition</a></li>
+                        <li><a href="sciencefair">Science Fair</a></li>
+                        <li><a href="astronomy">Astronomy</a>
                             <ul>
-                                <li><a href="telescopemaking.php">Telescope Making</a></li>
-                                <li><a href="starparty.php">Star Party</a></li>
-                                <li><a href="astrophotography.php">Astrophotography</a></li>
+                                <li><a href="telescopemaking">Telescope Making</a></li>
+                                <li><a href="starparty">Star Party</a></li>
+                                <li><a href="astrophotography">Astrophotography</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li><a href="world.php">World</a></li>
+                <li><a href="world">World</a></li>
                 <li>
                     User Logo 
                     <ul>
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Signup</a></li>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Signup</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Privacy</a></li>
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">Trademarks</a></li>
                 <li><a href="#">&copy;SRPSS 2024</a></li>
-                <li><a href="feedback.php">
+                <li><a href="feedback">
                 <?php
                 if(isset($_SESSION['username']))
                 {
@@ -72,7 +72,7 @@ require 'headerandnavbar.php';
                 }
                 ?>
                 </a></li>
-                <li><a href="sitemap.php">Site Map</a></li>
+                <li><a href="sitemap">Site Map</a></li>
                 
             </ul>
         </li>
@@ -84,30 +84,30 @@ require 'headerandnavbar.php';
             <li>
                 <b>When Admin Login</b>
                 <ul>
-                    <li><a href="index.php">Home (Submit visible)</a></li>
-                    <li><a href="researchsites.php">Research Sites</a></li>
+                    <li><a href="index">Home (Submit visible)</a></li>
+                    <li><a href="researchsites">Research Sites</a></li>
                     <li><a href="
                     <?php
                     if(isset($_SESSION['username']))
                     {
-                        echo "submit.php";
+                        echo "submit";
                     }
                     else 
                     {
-                        echo "login.php";
+                        echo "login";
                     }
                     ?>
                     ">Submit</a></li>
-                    <li><a href="view.php">View</a></li>
+                    <li><a href="view">View</a></li>
                     <li><a href="
                     <?php
                     if(isset($_SESSION['username']))
                     {
-                        echo "chat.php";
+                        echo "chat";
                     }
                     else 
                     {
-                        echo "login.php";
+                        echo "login";
                     }
                     ?>
                     ">Chat</a></li>
@@ -116,11 +116,11 @@ require 'headerandnavbar.php';
                         <?php
                         if(isset($_SESSION['username']) && ($_SESSION['username'] === "admin"))
                         {
-                            echo "admin.php";
+                            echo "admin";
                         }
                         else 
                         {
-                            echo "login.php";
+                            echo "login";
                         }
                         ?>
                         ">
@@ -144,30 +144,30 @@ require 'headerandnavbar.php';
                         </ul>
                     </li>
                     <li>
-                    <a href="culture.php">
+                    <a href="culture">
                     Culture
                     </a>
                         <ul>
-                            <li><a href="magazines.php">Magazines</a></li>
-                            <li><a href="newspapers.php">Newspapers</a></li>
-                            <li><a href="conferences.php">Conferences</a></li>
-                            <li><a href="channel.php">YouTube Channel</a></li>
-                            <li><a href="scientist.php">Scientist</a></li>
-                            <li><a href="movies.php">Movies</a></li>
-                            <li><a href="awards.php">Awards</a></li>
-                            <li><a href="observatories.php">Observatories</a></li>
-                            <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                            <li><a href="sciencefair.php">Science Fair</a></li>
-                            <li><a href="astronomy.php">Astronomy</a>
+                            <li><a href="magazines">Magazines</a></li>
+                            <li><a href="newspapers">Newspapers</a></li>
+                            <li><a href="conferences">Conferences</a></li>
+                            <li><a href="channel">YouTube Channel</a></li>
+                            <li><a href="scientist">Scientist</a></li>
+                            <li><a href="movies">Movies</a></li>
+                            <li><a href="awards">Awards</a></li>
+                            <li><a href="observatories">Observatories</a></li>
+                            <li><a href="scienceexhibition">Science Exhibition</a></li>
+                            <li><a href="sciencefair">Science Fair</a></li>
+                            <li><a href="astronomy">Astronomy</a>
                                 <ul>
-                                    <li><a href="telescopemaking.php">Telescope Making</a></li>
-                                    <li><a href="starparty.php">Star Party</a></li>
-                                    <li><a href="astrophotography.php">Astrophotography</a></li>
+                                    <li><a href="telescopemaking">Telescope Making</a></li>
+                                    <li><a href="starparty">Star Party</a></li>
+                                    <li><a href="astrophotography">Astrophotography</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="world.php">World</a></li>
+                    <li><a href="world">World</a></li>
                     <li>
                         User Logo 
                         <ul>
@@ -175,11 +175,11 @@ require 'headerandnavbar.php';
                             <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "changepassword.php";
+                                echo "changepassword";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                             ">Change Password</a></li>
@@ -191,7 +191,7 @@ require 'headerandnavbar.php';
                             }
                             else
                             {
-                                echo "href='login.php' style='cursor:pointer;'";
+                                echo "href='login' style='cursor:pointer;'";
                             }
                             ?>
                             >Logout</a></li>
@@ -201,8 +201,8 @@ require 'headerandnavbar.php';
                     <li><a href="#">Terms of Use</a></li>
                     <li><a href="#">Trademarks</a></li>
                     <li><a href="#">&copy;SRPSS 2024</a></li>
-                    <li><a href="feedback.php">Feedback</a></li>
-                    <li><a href="sitemap.php">Site Map</a></li>
+                    <li><a href="feedback">Feedback</a></li>
+                    <li><a href="sitemap">Site Map</a></li>
                     
                 </ul>
             </li>
@@ -214,58 +214,58 @@ require 'headerandnavbar.php';
         <li>
             <b>When User Login</b>
             <ul>
-                <li><a href="index.php">Home (Submit visible)</a></li>
-                <li><a href="researchsites.php">Research Sites</a></li>
+                <li><a href="index">Home (Submit visible)</a></li>
+                <li><a href="researchsites">Research Sites</a></li>
                 <li><a href="
                 <?php
                     if(isset($_SESSION['username']))
                     {
-                        echo "submit.php";
+                        echo "submit";
                     }
                     else 
                     {
-                        echo "login.php";
+                        echo "login";
                     }
                     ?>
                 ">Submit</a></li>
-                <li><a href="view.php">View</a></li>
+                <li><a href="view">View</a></li>
                 <li><a href="
                 <?php
                     if(isset($_SESSION['username']))
                     {
-                        echo "chat.php";
+                        echo "chat";
                     }
                     else 
                     {
-                        echo "login.php";
+                        echo "login";
                     }
                     ?>
                 ">Chat</a></li>
                 <li>
-                <a href="culture.php">
+                <a href="culture">
                     Culture
                 </a>
                         <ul>
-                            <li><a href="magazines.php">Magazines</a></li>
-                            <li><a href="newspapers.php">Newspapers</a></li>
-                            <li><a href="conferences.php">Conferences</a></li>
-                            <li><a href="channel.php">YouTube Channel</a></li>
-                            <li><a href="scientist.php">Scientist</a></li>
-                            <li><a href="movies.php">Movies</a></li>
-                            <li><a href="awards.php">Awards</a></li>
-                            <li><a href="observatories.php">Observatories</a></li>
-                            <li><a href="scienceexhibition.php">Science Exhibition</a></li>
-                            <li><a href="sciencefair.php">Science Fair</a></li>
-                            <li><a href="astronomy.php">Astronomy</a>
+                            <li><a href="magazines">Magazines</a></li>
+                            <li><a href="newspapers">Newspapers</a></li>
+                            <li><a href="conferences">Conferences</a></li>
+                            <li><a href="channel">YouTube Channel</a></li>
+                            <li><a href="scientist">Scientist</a></li>
+                            <li><a href="movies">Movies</a></li>
+                            <li><a href="awards">Awards</a></li>
+                            <li><a href="observatories">Observatories</a></li>
+                            <li><a href="scienceexhibition">Science Exhibition</a></li>
+                            <li><a href="sciencefair">Science Fair</a></li>
+                            <li><a href="astronomy">Astronomy</a>
                                 <ul>
-                                    <li><a href="telescopemaking.php">Telescope Making</a></li>
-                                    <li><a href="starparty.php">Star Party</a></li>
-                                    <li><a href="astrophotography.php">Astrophotography</a></li>
+                                    <li><a href="telescopemaking">Telescope Making</a></li>
+                                    <li><a href="starparty">Star Party</a></li>
+                                    <li><a href="astrophotography">Astrophotography</a></li>
                                 </ul>
                             </li>
                         </ul>
                 </li>
-                <li><a href="world.php">World</a></li>
+                <li><a href="world">World</a></li>
                 <li>
                     User Logo 
                     <ul>
@@ -273,11 +273,11 @@ require 'headerandnavbar.php';
                         <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "dashboard.php";
+                                echo "dashboard";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                         ">Dashboard</a>
@@ -286,11 +286,11 @@ require 'headerandnavbar.php';
                             <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "dashboard.php";
+                                echo "dashboard";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                             ">User Notifications</a></li>
@@ -298,11 +298,11 @@ require 'headerandnavbar.php';
                             <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "dashboard.php";
+                                echo "dashboard";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                             ">Submitted Research Papers</a></li>
@@ -310,11 +310,11 @@ require 'headerandnavbar.php';
                             <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "dashboard.php";
+                                echo "dashboard";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                             ">Feedback</a></li>
@@ -324,11 +324,11 @@ require 'headerandnavbar.php';
                         <?php
                             if(isset($_SESSION['username']))
                             {
-                                echo "changepassword.php";
+                                echo "changepassword";
                             }
                             else
                             {
-                                echo "login.php";
+                                echo "login";
                             }
                             ?>
                         ">Change Password</a></li>
@@ -340,7 +340,7 @@ require 'headerandnavbar.php';
                             }
                             else
                             {
-                                echo "href='login.php' style='cursor:pointer;'";
+                                echo "href='login' style='cursor:pointer;'";
                             }
                             ?>
                         >Logout</a></li>
@@ -350,8 +350,8 @@ require 'headerandnavbar.php';
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">Trademarks</a></li>
                 <li><a href="#">&copy;SRPSS 2024</a></li>
-                <li><a href="feedback.php">Feedback</a></li>
-                <li><a href="sitemap.php">Site Map</a></li>
+                <li><a href="feedback">Feedback</a></li>
+                <li><a href="sitemap">Site Map</a></li>
             </ul>
         </li>
      </ul>

@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -20,7 +20,7 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <img src="Images/culture.webp" alt="Scientific Culture">
+                        <img src="images/culture.webp" alt="Scientific Culture">
                     </p>
                 </div>
 
@@ -36,12 +36,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="magazines.php">Magazines</a>
+                            <a href="<?= BASE_URL . 'magazines' ?>">Magazines</a>
 
                             <br>
                             <br>
 
-                            <img src="Images/magazines.jpg" width="300px" height="300px" alt="Scientific Magazines">
+                            <img src="images/magazines.jpg" width="300px" height="300px" alt="Scientific Magazines">
                         </p>
                     </div>
 
@@ -55,12 +55,12 @@ require 'headerandnavbar.php';
 
                             <br>
                             <br>
-                            <a href="newspapers.php">Newspapers</a>
+                            <a href="<?= BASE_URL . 'newspapers' ?>">Newspapers</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/newspapers.jpg" width="300px" height="300px" alt="Scientific Newspapers">
+                            <img src="images/newspapers.jpg" width="300px" height="300px" alt="Scientific Newspapers">
                         </p>
                     </div>
 
@@ -75,12 +75,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="conferences.php">Conferences</a>
+                            <a href="<?= BASE_URL . 'conferences' ?>">Conferences</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/conferences.jpg" width="300px" height="300px" alt="Scientific Conferences">
+                            <img src="images/conferences.jpg" width="300px" height="300px" alt="Scientific Conferences">
                         </p>
                     </div>
 
@@ -95,12 +95,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="channel.php">YouTube Channels</a>
+                            <a href="<?= BASE_URL . 'channel' ?>">YouTube Channels</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/channels.webp" width="300px" height="300px" alt="YouTube Channels">
+                            <img src="images/channels.webp" width="300px" height="300px" alt="YouTube Channels">
                         </p>
                     </div>
 
@@ -115,12 +115,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="scientist.php">Scientist</a>
+                            <a href="<?= BASE_URL . 'scientist' ?>">Scientist</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/scientist.png" width="300px" height="300px" alt="Scientist">
+                            <img src="images/scientist.png" width="300px" height="300px" alt="Scientist">
                         </p>
                     </div>
 
@@ -135,12 +135,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="movies.php">Movies</a>
+                            <a href="<?= BASE_URL . 'movies' ?>">Movies</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/movies.jpg" width="300px" height="300px" alt="Movies">
+                            <img src="images/movies.jpg" width="300px" height="300px" alt="Movies">
                         </p>
                     </div>
 
@@ -155,12 +155,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="awards.php">Awards</a>
+                            <a href="<?= BASE_URL . 'awards' ?>">Awards</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/awards.jpg" width="300px" height="300px" alt="Awards">
+                            <img src="images/awards.jpg" width="300px" height="300px" alt="Awards">
                         </p>
                     </div>
 
@@ -175,12 +175,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="observatories.php">Observatories</a>
+                            <a href="<?= BASE_URL . 'observatories' ?>">Observatories</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/observatories.jpg" width="300px" height="300px" alt="Observatories">
+                            <img src="images/observatories.jpg" width="300px" height="300px" alt="Observatories">
                         </p>
                     </div>
 
@@ -195,12 +195,12 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="scienceexhibition.php">Science Exhibition</a>
+                            <a href="<?= BASE_URL . 'scienceexhibition' ?>">Science Exhibition</a>
 
                             <br>
                             <br>
                             
-                            <img src="Images/exhibition.jpg" width="300px" height="300px" alt="Science Exhibition">
+                            <img src="images/exhibition.jpg" width="300px" height="300px" alt="Science Exhibition">
                         </p>
                     </div>
                 </div>

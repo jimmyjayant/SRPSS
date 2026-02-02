@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php
@@ -32,7 +32,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <img src="Images/science1.jpg" alt="Science Image 1">
+                    <img src="images/science1.jpg" alt="Science Image 1">
                 </p>
             </div>
 
@@ -49,7 +49,7 @@ require 'headerandnavbar.php';
                 <br>
                 <br>
 
-                <img src="Images/science2.webp" alt="Science Image 2">
+                <img src="images/science2.webp" alt="Science Image 2">
              </p>
             </div>
             
@@ -71,12 +71,12 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="register.php">Register</a>
+                        <a href="<?= BASE_URL . 'register' ?>">Register</a>
                     </p>
                 </div>
 
                 <div class="part32">
-                    <img src="Images/register.jpg" alt="Register">
+                    <img src="images/register.jpg" alt="Register">
                 </div>
             </div>
 
@@ -98,12 +98,12 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="login.php">Login</a>
+                        <a href="<?= BASE_URL . 'login' ?>">Login</a>
                     </p>
                 </div>
 
                 <div class="part42">
-                    <img src="Images/login.png" alt="Login">
+                    <img src="images/login.png" alt="Login">
                 </div>
             </div>
 
@@ -119,12 +119,12 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="researchsites.php">Research Sites</a>
+                        <a href="<?= BASE_URL . 'researchsites' ?>">Research Sites</a>
                     </p>
                 </div>
 
                 <div class="part52">
-                    <img src="Images/science3.jpg" alt="Research Sites in India">
+                    <img src="images/science3.jpg" alt="Research Sites in India">
                 </div>
             </div>
 
@@ -146,12 +146,12 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="submit.php">Submit</a>
+                    <a href="<?= BASE_URL . 'submit' ?>">Submit</a>
                    </p>
                 </div>
 
                 <div class="part62">
-                    <img src="Images/submit.png" alt="Submit Research Papers">
+                    <img src="images/submit.png" alt="Submit Research Papers">
                 </div>
             </div>
 
@@ -167,12 +167,12 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="view.php">View</a>
+                    <a href="<?= BASE_URL . 'view' ?>">View</a>
                    </p>
                 </div>
 
                 <div class="part72">
-                    <img src="Images/view.jpg" alt="View Research Papers">
+                    <img src="images/view.jpg" alt="View Research Papers">
                 </div>
             </div>
 
@@ -188,12 +188,12 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="culture.php">Culture</a>
+                        <a href="<?= BASE_URL . 'culture' ?>">Culture</a>
 
                         <br>
                         <br>
 
-                        <img src="Images/culture.webp" alt="Scientific Culture">
+                        <img src="images/culture.webp" alt="Scientific Culture">
                     </p>
                 </div>
             </div>

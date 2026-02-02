@@ -1,12 +1,12 @@
-# Custom 404 error page 
-ErrorDocument 404 /404.php
+RewriteEngine On
+RewriteBase /Projects/SRPSS/Website/
 
-# Deny Direct Access 
+# 1. Redirect root requests to the public folder
+RewriteRule ^$ public/index.php [L]
 
-<Files "footer.php">
-    Require all denied
-</Files>
+# 2. If the request isn't for a real file or directory in the root...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-<Files "headerandnavbar.php">
-    Require all denied
-</Files>
+# 3. ...forward the request to the public folder
+RewriteRule ^(.*)$ public/$1 [L]

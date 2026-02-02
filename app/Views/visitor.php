@@ -1,6 +1,6 @@
 <?php
 // track visitors of the website
-require 'databaseconnection.php';
+require '../app/Models/databaseconnection.php';
 
 if(isset($_SESSION['username']))
 {

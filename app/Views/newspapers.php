@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -9,18 +9,18 @@ require 'headerandnavbar.php';
 
         <div class="main">
           <h2>
-            List of Indian Scientific YouTube Channels 
+            List of Scientific Newspapers in India 
           </h2>
 
           <p>
-            Here is the list of Indian Scientific YouTube Channels:- 
+            Here is the list of Indian Scientific Newspapers:- 
           </p>
 
           <br>
           <br>
 
           <!-- Data from Database will be listed here -->
-          <div id="ytchannels">
+         <div id="newspapers">
           
           </div>
 

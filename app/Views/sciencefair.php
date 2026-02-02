@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -29,7 +29,7 @@ require 'headerandnavbar.php';
             The primary aim is to foster learning and understanding of scientific concepts, often in a competitive environment where participants can earn recognition, scholarships, or prizes.
         </p>
 
-        <img src="Images/science fair.jpg" alt="Science Fair">
+        <img src="images/science fair.jpg" alt="Science Fair">
     </div>
 </div>
 

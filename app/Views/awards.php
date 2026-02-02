@@ -1,6 +1,6 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php 
@@ -9,18 +9,19 @@ require 'headerandnavbar.php';
 
 <div class="main">
     <h2>
-    List of Scientific Observatory in India  
+    List of Indian Scientific Awards  
     </h2>
 
     <p>
-    Here is the list of Indian Scientific Observatories:- 
+    Here is the list of Indian Scientific Awards:- 
     </p>
 
     <br>
     <br>
 
     <!-- Data from Database will be listed here -->
-    <div id="observatory">
+    <div id="awards">
+    
     </div>
 </div>
 
