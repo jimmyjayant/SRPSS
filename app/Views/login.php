@@ -7,7 +7,7 @@ require '../app/Models/checkcookie.php';
 // Access Denied for Web page DIRECT ACCESS 
 if(isset($_SESSION['username']))
 {
-    header("location: index.php");
+    header("location: index");
     die();
 }
 ?>
@@ -26,7 +26,7 @@ if(isset($_SESSION['attempt_again']))
 ?>
 
 <?php
-    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit'])))
+    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['login_submit'])))
     {
         function test_input($data) 
         {
@@ -38,8 +38,6 @@ if(isset($_SESSION['attempt_again']))
 
         $email = test_input($_POST['email']);
         $user_password = test_input($_POST['password']);
-
-        
 
         // set login attempts if not set
         if(!isset($_SESSION['attempt']))
@@ -56,7 +54,7 @@ if(isset($_SESSION['attempt_again']))
         {
             // Create connection using MySQLi Object-Oriented
 
-            require('databaseconnection.php');
+            require '../app/Models/databaseconnection.php';
 
             // store query in a variable
             $sql = "SELECT * FROM researchers WHERE email='$email'";
@@ -66,6 +64,8 @@ if(isset($_SESSION['attempt_again']))
 
             if($result->num_rows > 0)
             {
+                echo "<script>console.log('success');</script>";
+
                 while($row = $result->fetch_assoc())
                 {
                 // verify password
@@ -103,12 +103,12 @@ if(isset($_SESSION['attempt_again']))
                     // redirects the user to respective pages
                     if($_SESSION['username'] == "admin")
                     {
-                        header("Location: admin.php", true, 301);
+                        header("Location: admin", true, 301);
                         exit();
                     }
                     else
                     {
-                        header("Location: index.php", true, 301);
+                        header("Location: index", true, 301);
                         exit();
                     }
                 }
@@ -145,7 +145,7 @@ if(isset($_SESSION['attempt_again']))
             Log In 
         </h2>
 
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+        <form action="<?php echo 'login'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
             <div class="row">
                 <div class="col25">
                     <label for="email">Email</label>
@@ -164,7 +164,7 @@ if(isset($_SESSION['attempt_again']))
                 </div>
             </div>
 
-            <input type="submit" value="Submit" name="submit">
+            <input type="submit" value="Submit" name="login_submit">
             <input type="reset" value="Reset">
         </form> 
 

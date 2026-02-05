@@ -71,7 +71,7 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="<?= BASE_URL . 'register' ?>">Register</a>
+                        <a href="register">Register</a>
                     </p>
                 </div>
 
@@ -98,7 +98,7 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="<?= BASE_URL . 'login' ?>">Login</a>
+                        <a href="login">Login</a>
                     </p>
                 </div>
 
@@ -119,7 +119,7 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="<?= BASE_URL . 'researchsites' ?>">Research Sites</a>
+                        <a href="researchsites">Research Sites</a>
                     </p>
                 </div>
 
@@ -146,7 +146,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="<?= BASE_URL . 'submit' ?>">Submit</a>
+                    <a href="submit">Submit</a>
                    </p>
                 </div>
 
@@ -167,7 +167,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="<?= BASE_URL . 'view' ?>">View</a>
+                    <a href="view">View</a>
                    </p>
                 </div>
 
@@ -188,7 +188,7 @@ require 'headerandnavbar.php';
                         <br>
                         <br>
 
-                        <a href="<?= BASE_URL . 'culture' ?>">Culture</a>
+                        <a href="culture">Culture</a>
 
                         <br>
                         <br>

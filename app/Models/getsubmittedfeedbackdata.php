@@ -1,11 +1,11 @@
 <?php
-require 'sessionstart.php';
+require '../app/Views/sessionstart.php';
 ?>
 
 <?php
 // Connect to 'srpss' database and output necessary form information from 'feedback' table using MySQLi Object-Oriented method:- 
 
-require('databaseconnection.php');
+require 'databaseconnection.php';
 
 // sql query
 $sql = "SELECT * from feedback WHERE email='{$_SESSION['email']}' ORDER BY 'timestamp' DESC";

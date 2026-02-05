@@ -4,7 +4,7 @@
         <a href="#">Terms of Use</a>
         <a href="#">Trademarks</a>
         <a href="#">&copy;SRPSS <?php echo date("Y"); ?></a>
-        <a href="<?= BASE_URL . 'feedback' ?>">
+        <a href="<?= 'feedback' ?>">
             <?php
             if(isset($_SESSION['username']))
             {
@@ -16,7 +16,7 @@
             }
             ?>
         </a>
-        <a href="<?= BASE_URL . 'sitemap' ?>">Site Map</a>
+        <a href="<?= 'sitemap' ?>">Site Map</a>
     </div>
     <div>
         <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" width="20" height="20" alt="Facebook Logo"></a>

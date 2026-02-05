@@ -32,7 +32,7 @@ else
                 ?>
             </h2>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" target="_self" id="contactusform">
+            <form action="<?php echo 'feedback'/*htmlspecialchars($_SERVER['PHP_SELF'])*/;?>" method="post" target="_self" id="contactusform">
                 <div <?php echo $none; ?>>
                     <div class="row">
                         <div class="col25">
@@ -100,14 +100,14 @@ else
                     </div>
                 </div>
                 
-                <input type="submit" value="Submit" name="submit">
+                <input type="submit" value="Submit" name="feedback_submit">
 
                 <input type="reset" value="Reset">
             </form>
 
             <?php
 
-                if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
+                if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["feedback_submit"]))) {
                     function test_input($data) {
                         $data = trim($data);
                         $data = stripslashes($data);
@@ -115,19 +115,15 @@ else
                         return $data;
                     }
 
-
                     $name = test_input($_POST['name']);
                     $subject = test_input($_POST['subject']);
                     $mobile = test_input($_POST['mobile']);
                     $email = test_input($_POST['email']);
                     $message = test_input($_POST['message']);    
-                    
-
-                
 
                     // Connect to 'srpss' database and input necessary form information to 'feedback' table using MySQLi Object-Oriented method:- 
 
-                    require('databaseconnection.php');
+                    require '../app/Models/databaseconnection.php';
 
                     // sql to insert form data before checking if records already exists
                     $sql = "INSERT INTO feedback (fname, topic, contact, email, mess)

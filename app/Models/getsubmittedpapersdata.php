@@ -1,9 +1,9 @@
 <?php
-require 'sessionstart.php';
+require '../app/Views/sessionstart.php';
 ?>
 
 <?php
-require('databaseconnection.php');
+require 'databaseconnection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM researchpapers WHERE loggeduser='{$_SESSION['username']}' AND email='{$_SESSION['email']}' ORDER BY id ASC";

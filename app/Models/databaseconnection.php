@@ -17,6 +17,6 @@ try
 catch(Exception $e)
 {
     $_SESSION['error'] = "<p style='color:red;'>{$e->getMessage()}</p>";
-    header("Location: login.php");
+    //header("Location: login");
 }
 ?>

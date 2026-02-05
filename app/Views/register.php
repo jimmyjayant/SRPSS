@@ -3,7 +3,7 @@ require 'sessionstart.php';
 ?>
 
 <?php
-    if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["submit"]))) {
+    if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["register_submit"]))) {
 
         function test_input($data) {
             $data = trim($data);
@@ -30,7 +30,7 @@ require 'sessionstart.php';
 
         // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
 
-        require('databaseconnection.php');
+        require '../app/Models/databaseconnection.php';
         
         $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
         VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
@@ -41,7 +41,7 @@ require 'sessionstart.php';
         if($result === TRUE) {
             // Close the connection
             $conn->close();
-            header("Location: login.php", true, 301);
+            header("Location: login", true, 301);
             exit();
         }
         else {
@@ -62,7 +62,7 @@ require 'headerandnavbar.php';
                 Register Yourself 
             </h2>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+            <form action="<?php echo 'register';/*echo htmlspecialchars($_SERVER['REQUEST_URI']);*/ ?>" method="post" target="_self">
                 <div class="row">
                     <div class="col25">
                         <label for="firstname">First Name</label>
@@ -180,7 +180,7 @@ require 'headerandnavbar.php';
                     </div>
                 </div>
 
-                <input type="submit" value="Submit" name="submit">
+                <input type="submit" value="Submit" name="register_submit">
                 <input type="reset" value="Reset">
             </form>
 

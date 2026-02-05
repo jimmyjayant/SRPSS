@@ -1,13 +1,13 @@
 <?php
 require 'sessionstart.php';
-require 'checkcookie.php';
+require '../app/Models/checkcookie.php';
 ?>
 
 <?php
 // Access Denied for Web page DIRECT ACCESS 
 if(!isset($_SESSION['username']))
 {
-    header("location: login.php");
+    header("location: login");
     die();
 }
 ?>
@@ -21,7 +21,7 @@ if(!isset($_SESSION['username']))
             Submit Your Research Papers 
           </h2>
 
-          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self" enctype="multipart/form-data">
+          <form action="<?php echo 'submit'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self" enctype="multipart/form-data">
             <label for="category">Choose Research Category:- </label>
             <br>
             <select id="category" name="category" required>
@@ -69,7 +69,7 @@ if(!isset($_SESSION['username']))
 
               // Create connection using MySQLi Object-Oriented
 
-                require('databaseconnection.php');
+                require '../app/Models/databaseconnection.php';
 
                 $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
                       VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";

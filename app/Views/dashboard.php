@@ -7,7 +7,7 @@ require '../app/Models/checkcookie.php';
 // Access Denied for Web page DIRECT ACCESS 
 if(!isset($_SESSION['username']))
 {
-    header("location: login.php");
+    header("location: login");
     die();
 }
 ?>

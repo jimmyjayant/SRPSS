@@ -79,7 +79,7 @@
             </a>
 
             <div class="logo">
-                <a href="<?= BASE_URL . 'index' ?>" alt=" Website Logo">
+                <a href="index" alt=" Website Logo">
                   SRPSS 
                 </a>
             </div>
@@ -97,7 +97,7 @@
                 </div>
                 
                 <div class="userstatus">
-                        <a href="<?= BASE_URL . 'login' ?>" alt="Login" 
+                        <a href="login" alt="Login" 
                             <?php 
                                 if(isset($_SESSION['username']))
                                 {
@@ -106,7 +106,7 @@
                             ?>>
                             Login
                         </a>
-                        <a href="<?= BASE_URL . 'register' ?>" alt="Register" 
+                        <a href="register" alt="Register" 
                             <?php 
                                 if(isset($_SESSION['username']))
                                 {
@@ -130,7 +130,7 @@
                                 }
                             ?>
                         </a>
-                        <a href="<?= BASE_URL . 'dashboard' ?>" alt="User Dashboard"
+                        <a href="dashboard" alt="User Dashboard"
                             <?php
                                 if(!isset($_SESSION['username']) || ($_SESSION['username'] === "admin"))
                                 {
@@ -139,7 +139,7 @@
                             ?>>
                             Dashboard
                         </a>
-                        <a href="<?= BASE_URL . 'changepassword' ?>" alt="Change Password" 
+                        <a href="changepassword" alt="Change Password" 
                         <?php 
                         if(!isset($_SESSION['username']))
                         {
@@ -163,38 +163,38 @@
 
         <div class="navbar" id="nav">
             <a href="#" id="closex"><span>&times;</span></a>
-            <a href="<?= BASE_URL . 'index' ?>">Home</a>
-            <a href="<?= BASE_URL . 'register' ?>"
+            <a href="index">Home</a>
+            <a href="register"
             <?php
             if(isset($_SESSION['username']))
             {
                 echo "style='display:none;'";
             }
             ?>>Register</a>
-            <a href="<?= BASE_URL . 'login' ?>"
+            <a href="login"
             <?php
             if(isset($_SESSION['username']))
             {
                 echo "style='display:none;'";
             }
             ?>>Login</a>
-            <a href="<?= BASE_URL . 'researchsites' ?>">Research Sites</a>
-            <a href="<?= BASE_URL . 'submit' ?>" 
+            <a href="researchsites">Research Sites</a>
+            <a href="submit" 
             <?php
             if(!isset($_SESSION['username']))
             {
                 echo "style='display:none;'";
             }
             ?>>Submit</a>
-            <a href="<?= BASE_URL . 'view' ?>">View</a>
-            <a href="<?= BASE_URL . 'chat' ?>"
+            <a href="view">View</a>
+            <a href="chat"
             <?php
             if(!isset($_SESSION['username']))
             {
                 echo "style='display:none;'";
             }
             ?>>Chat</a>
-            <a href="<?= BASE_URL . 'admin' ?>"
+            <a href="admin"
             <?php
             if(!(isset($_SESSION['username']) && ($_SESSION['username'] == "admin")))
             {
@@ -204,20 +204,20 @@
             <div class="dropdown">
               <a href="#" class="dropbtn">Culture</a>
                  <div class="dropdown-content">
-                    <a href="<?= BASE_URL . 'magazines' ?>">Magazines</a>
-                    <a href="<?= BASE_URL . 'newspapers' ?>">Newspapers</a>
-                    <a href="<?= BASE_URL . 'conferences' ?>">Conferences</a>
-                    <a href="<?= BASE_URL . 'channel' ?>">Youtube Channel</a>
-                    <a href="<?= BASE_URL . 'scientist' ?>">Scientist</a>
-                    <a href="<?= BASE_URL . 'movies' ?>">Movies</a>
-                    <a href="<?= BASE_URL . 'awards' ?>">Awards</a>
-                    <a href="<?= BASE_URL . 'observatories' ?>">Observatories</a>
-                    <a href="<?= BASE_URL . 'scienceexhibition' ?>">Science Exhibition</a>
-                    <a href="<?= BASE_URL . 'sciencefair' ?>">Science Fair</a>
-                    <a href="<?= BASE_URL . 'astronomy' ?>">Astronomy</a>
+                    <a href="magazines">Magazines</a>
+                    <a href="newspapers">Newspapers</a>
+                    <a href="conferences">Conferences</a>
+                    <a href="channel">Youtube Channel</a>
+                    <a href="scientist">Scientist</a>
+                    <a href="movies">Movies</a>
+                    <a href="awards">Awards</a>
+                    <a href="observatories">Observatories</a>
+                    <a href="scienceexhibition">Science Exhibition</a>
+                    <a href="sciencefair">Science Fair</a>
+                    <a href="astronomy">Astronomy</a>
                  </div>
             </div>
-            <a href="<?= BASE_URL . 'world' ?>"><img src="images/transparent globe.png" alt="Scientific Websites from around the World" style="width:1rem;height:1rem;padding:0;"></a>
+            <a href="world"><img src="images/transparent globe.png" alt="Scientific Websites from around the World" style="width:1rem;height:1rem;padding:0;"></a>
             <a href="#" alt="User Session Timer" 
             <?php
             if(isset($_SESSION['sessionactive']))

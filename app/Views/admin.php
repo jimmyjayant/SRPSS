@@ -7,7 +7,7 @@ require '../app/Models/checkcookie.php';
 // Access Denied for Web page DIRECT ACCESS 
 if(!isset($_SESSION['username']) || ($_SESSION['username'] !== "admin"))
 {
-    header("location: login.php");
+    header("location: login");
     die();
 }
 ?>
@@ -67,7 +67,7 @@ require 'headerandnavbar.php';
                     Insert New Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="institute">Name of Research Site:- </label>
                     <br>
                     <input type="text" id="institute" name="institute" maxlength="500" size="50" placeholder="Enter the new research site here" required>
@@ -91,7 +91,7 @@ require 'headerandnavbar.php';
                         $location = test_input($_POST['location']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO researchsites (sitename, headquarter)
                         VALUES ('$institute', '$location')";
@@ -118,7 +118,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -135,7 +135,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "DELETE FROM researchsites
                         WHERE id='$delete'";
@@ -176,7 +176,7 @@ require 'headerandnavbar.php';
                         Delete Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -193,8 +193,8 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
-        
+                        require '../app/Models/databaseconnection.php';
+
                         $sql = "DELETE FROM researchpapers
                         WHERE id='$delete'";
         
@@ -220,7 +220,7 @@ require 'headerandnavbar.php';
                         Approve Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="approve">Approve Entry:- </label>
                     <br>
                     <input type="number" id="approve" name="approve" min="1" size="20" placeholder="Enter the entry number" required>
@@ -238,8 +238,8 @@ require 'headerandnavbar.php';
                         $approve = test_input($_POST['approve']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
-        
+                        require '../app/Models/databaseconnection.php';
+
                         $sql = "UPDATE researchpapers
                         SET approved = 1 
                         WHERE id = $approve";
@@ -280,7 +280,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="magname">Name of Magazine:- </label>
                     <br>
                     <input type="text" id="magname" name="magname" maxlength="500" size="50" placeholder="Enter the new magazine here" required>
@@ -304,7 +304,7 @@ require 'headerandnavbar.php';
                         $publisher = test_input($_POST['publisher']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO magazines (magazinename, publisher)
                         VALUES ('$magname', '$publisher')";
@@ -331,7 +331,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -348,8 +348,8 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
-        
+                        require '../app/Models/databaseconnection.php';
+
                         $sql = "DELETE FROM magazines 
                         WHERE id='$delete'";
         
@@ -389,7 +389,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="newsname">Name of Newspaper:- </label>
                     <br>
                     <input type="text" id="newsname" name="newsname" maxlength="500" size="50" placeholder="Enter the new newspaper here" required>
@@ -413,8 +413,8 @@ require 'headerandnavbar.php';
                         $url = test_input($_POST['url']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
-        
+                        require '../app/Models/databaseconnection.php';
+
                         $sql = "INSERT IGNORE INTO newspapers (newspapername, link)
                         VALUES ('$newsname', '$url')";
         
@@ -440,7 +440,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -457,8 +457,8 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
-        
+                        require '../app/Models/databaseconnection.php';
+
                         $sql = "DELETE FROM newspapers  
                         WHERE id='$delete'";
         
@@ -498,7 +498,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="confname">Name of Conference:- </label>
                     <br>
                     <input type="text" id="confname" name="confname" maxlength="1000" size="50" placeholder="Enter the new conference here" required>
@@ -515,7 +515,7 @@ require 'headerandnavbar.php';
                         $confname = test_input($_POST['confname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO conferences (conferencename)
                         VALUES ('$confname')";
@@ -542,7 +542,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -559,7 +559,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require('databaseconnection.php');
+                            require '../app/Models/databaseconnection.php';
 
                             $sql = "DELETE FROM conferences   
                             WHERE id='$delete'";
@@ -600,7 +600,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="channelname">Name of YouTube Channel:- </label>
                     <br>
                     <input type="text" id="channelname" name="channelname" maxlength="100" size="30" placeholder="Enter the new YouTube Channel here" required>
@@ -617,7 +617,7 @@ require 'headerandnavbar.php';
                             $channelname = test_input($_POST['channelname']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require('databaseconnection.php');
+                            require '../app/Models/databaseconnection.php';
             
                             $sql = "INSERT IGNORE INTO ytchannels (channelname)
                             VALUES ('$channelname')";
@@ -644,7 +644,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -661,7 +661,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require('databaseconnection.php');
+                            require '../app/Models/databaseconnection.php';
             
                             $sql = "DELETE FROM ytchannels    
                             WHERE id='$delete'";
@@ -702,7 +702,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="scientistname">Name of Scientist:- </label>
                     <br>
                     <input type="text" id="scientistname" name="scientistname" maxlength="100" size="30" placeholder="Enter the new Scientist here" required>
@@ -719,7 +719,7 @@ require 'headerandnavbar.php';
                         $scientistname = test_input($_POST['scientistname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO scientists (scientistname)
                         VALUES ('$scientistname')";
@@ -746,7 +746,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -763,7 +763,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require('databaseconnection.php');
+                            require '../app/Models/databaseconnection.php';
 
                             $sql = "DELETE FROM scientists     
                             WHERE id='$delete'";
@@ -804,7 +804,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="moviename">Name of Movie:- </label>
                     <br>
                     <input type="text" id="moviename" name="moviename" maxlength="100" size="30" placeholder="Enter the new Movie here" required>
@@ -822,7 +822,7 @@ require 'headerandnavbar.php';
                             $moviename = test_input($_POST['moviename']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require('databaseconnection.php');
+                            require '../app/Models/databaseconnection.php';
 
                             $sql = "INSERT IGNORE INTO movies (moviename)
                             VALUES ('$moviename')";
@@ -850,7 +850,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -868,7 +868,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "DELETE FROM movies      
                         WHERE id='$delete'";
@@ -911,7 +911,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="webseriesname">Name of Web Series:- </label>
                     <br>
                     <input type="text" id="webseriesname" name="webseriesname" maxlength="100" size="30" placeholder="Enter the new Web Series here" required>
@@ -928,7 +928,7 @@ require 'headerandnavbar.php';
                         $webseriesname = test_input($_POST['webseriesname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO webseries (webseriesname)
                         VALUES ('$webseriesname')";
@@ -955,7 +955,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -972,7 +972,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "DELETE FROM webseries      
                         WHERE id='$delete'";
@@ -1014,7 +1014,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="awardname">Name of Award:- </label>
                     <br>
                     <input type="text" id="awardname" name="awardname" maxlength="100" size="30" placeholder="Enter the new Award here" required>
@@ -1031,7 +1031,7 @@ require 'headerandnavbar.php';
                         $awardname = test_input($_POST['awardname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO awards (awardsname)
                         VALUES ('$awardname')";
@@ -1058,7 +1058,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="deleteaward">Delete Award:- </label>
                     <br>
                     <input type="number" id="deleteaward" name="deleteaward" min="1" size="20" placeholder="Enter the entry number" required>
@@ -1075,7 +1075,7 @@ require 'headerandnavbar.php';
                         $deleteaward = test_input($_POST['deleteaward']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "DELETE FROM awards      
                         WHERE id='$deleteaward'";
@@ -1117,7 +1117,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="observatoryname">Name of Observatory:- </label>
                     <br>
                     <input type="text" id="observatoryname" name="observatoryname" maxlength="100" size="30" placeholder="Enter the new Observatory here" required>
@@ -1134,7 +1134,7 @@ require 'headerandnavbar.php';
                         $observatoryname = test_input($_POST['observatoryname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "INSERT IGNORE INTO observatory (observatoryname)
                         VALUES ('$observatoryname')";
@@ -1161,7 +1161,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="deleteobservatory">Delete Entry:- </label>
                     <br>
                     <input type="number" id="deleteobservatory" name="deleteobservatory" min="1" size="20" placeholder="Enter the entry number" required>
@@ -1178,7 +1178,7 @@ require 'headerandnavbar.php';
                         $deleteobservatory = test_input($_POST['deleteobservatory']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "DELETE FROM observatory      
                         WHERE id='$deleteobservatory'";
@@ -1220,7 +1220,7 @@ require 'headerandnavbar.php';
                         Approve Feedback  
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="approvefeedbacknum">Approve Entry:- </label>
                     <br>
                     <input type="number" id="approvefeedbacknum" name="approvefeedbacknum" min="1" size="30" placeholder="Enter the Feedback No." required>
@@ -1237,7 +1237,7 @@ require 'headerandnavbar.php';
                         $approvefeedbacknum = test_input($_POST['approvefeedbacknum']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
                         
                         $sql = "SELECT id FROM feedback";
                         $result = $conn->query($sql);
@@ -1283,7 +1283,7 @@ require 'headerandnavbar.php';
                     Reject Feedback  
                 </h2>
 
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <label for="rejfeedbacknum">Delete Entry:- </label>
                     <br>
                     <input type="number" id="rejfeedbacknum" name="rejfeedbacknum" min="1" size="50" placeholder="Enter the Feedback No." required>
@@ -1300,7 +1300,7 @@ require 'headerandnavbar.php';
                         $rejfeedbacknum = test_input($_POST['rejfeedbacknum']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $sql = "SELECT id FROM feedback";
 
@@ -1351,7 +1351,7 @@ require 'headerandnavbar.php';
                     Export MySQL Data to File 
                     </h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
                     <input type="submit" name="export-mysqldata" value="Export">
                     </form>
 
@@ -1360,7 +1360,7 @@ require 'headerandnavbar.php';
                         {
 
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         // Path to sql file in which mysql database is exported
                         $file = 'srpss.sql';
@@ -1461,7 +1461,7 @@ require 'headerandnavbar.php';
                       else if(!empty($_POST['allregisteredusers']))
                       {
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $usernotification = test_input($_POST['notificationmessage']);
 
@@ -1501,7 +1501,7 @@ require 'headerandnavbar.php';
                       else if(!empty($_POST['selectallusers']))
                       {
                         // Connect to 'srpss' database and enter necessary information
-                        require('databaseconnection.php');
+                        require '../app/Models/databaseconnection.php';
 
                         $usernotification = test_input($_POST['notificationmessage']);
 
@@ -1532,7 +1532,7 @@ require 'headerandnavbar.php';
                   ?>
                   
 
-                  <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="_self">
+                  <form method="post" action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" target="_self">
                     <label for="allregisteredusers">
                       Dropdown menu containing all registered users:- 
                       <br>

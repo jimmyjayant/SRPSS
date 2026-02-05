@@ -13,5 +13,5 @@ session_destroy();
 setcookie("currentuser", "", time() - 3600, "/");
 
 // Redirect the user to Main webpage
-header('location: index.php');
+header('location: index');
 ?>
