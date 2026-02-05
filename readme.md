@@ -24,3 +24,6 @@ Instructions:-
 11. Click on open button.
 12. Now, click on the import button at the bottom of the phpmyadmin webpage.
 13. Wait a few seconds and you will see all the tables in the srpss database.
+14. Similarly, create a database 'world' in phpmyadmin by following above steps.
+15. And, import the 'world.sql' file following above mentioned steps.
+
