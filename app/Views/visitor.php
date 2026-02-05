@@ -1,6 +1,6 @@
 <?php
 // track visitors of the website
-require '../app/Models/databaseconnection.php';
+require '../app/Models/srpss_database_connection.php';
 
 if(isset($_SESSION['username']))
 {

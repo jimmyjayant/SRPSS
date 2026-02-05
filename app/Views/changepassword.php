@@ -6,13 +6,13 @@ require 'sessionstart.php';
 // Access Denied for Web page DIRECT ACCESS 
 if(!isset($_SESSION['username']))
 {
-    header("location: login.php");
+    header("location: login");
     die();
 }
 ?>
 
 <?php
-    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit'])))
+    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['change_pass'])))
     {
         function test_input($data) {
             $data = trim($data);
@@ -27,7 +27,7 @@ if(!isset($_SESSION['username']))
 
         // Create connection using MySQLi Object-Oriented
 
-        require('databaseconnection.php');
+        require '../app/Models/srpss_database_connection.php';
 
         $email = $_SESSION['email'];
 
@@ -70,7 +70,7 @@ if(!isset($_SESSION['username']))
             Change Password  
         </h2>
 
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
+        <form action="<?php echo 'changepassword'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
             <!--<label for="email">Email</label>
             <br>
             <input type="email" id="email" name="email" placeholder="Enter your email here" validate required>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['username']))
             <br>
             <br>
 
-            <input type="submit" value="Submit" name="submit">
+            <input type="submit" value="Submit" name="change_pass">
             <input type="reset" value="Reset">
         </form> 
         

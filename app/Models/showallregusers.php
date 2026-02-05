@@ -6,14 +6,14 @@ require 'sessionstart.php';
 // Access Denied for Web page DIRECT ACCESS 
 if(!isset($_SESSION['username']))
 {
-    header("location: login.php");
+    header("location: login");
     die();
 }
 ?>
 
 <?php
 // Create connection using MySQLi Object-Oriented
-require('databaseconnection.php');
+require 'srpss_database_connection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM researchers";

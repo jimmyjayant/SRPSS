@@ -54,7 +54,7 @@ if(isset($_SESSION['attempt_again']))
         {
             // Create connection using MySQLi Object-Oriented
 
-            require '../app/Models/databaseconnection.php';
+            require '../app/Models/srpss_database_connection.php';
 
             // store query in a variable
             $sql = "SELECT * FROM researchers WHERE email='$email'";

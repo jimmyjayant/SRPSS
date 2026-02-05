@@ -91,7 +91,7 @@ require 'headerandnavbar.php';
                         $location = test_input($_POST['location']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO researchsites (sitename, headquarter)
                         VALUES ('$institute', '$location')";
@@ -135,7 +135,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM researchsites
                         WHERE id='$delete'";
@@ -193,7 +193,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM researchpapers
                         WHERE id='$delete'";
@@ -238,7 +238,7 @@ require 'headerandnavbar.php';
                         $approve = test_input($_POST['approve']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "UPDATE researchpapers
                         SET approved = 1 
@@ -304,7 +304,7 @@ require 'headerandnavbar.php';
                         $publisher = test_input($_POST['publisher']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO magazines (magazinename, publisher)
                         VALUES ('$magname', '$publisher')";
@@ -348,7 +348,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM magazines 
                         WHERE id='$delete'";
@@ -413,7 +413,7 @@ require 'headerandnavbar.php';
                         $url = test_input($_POST['url']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO newspapers (newspapername, link)
                         VALUES ('$newsname', '$url')";
@@ -457,7 +457,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM newspapers  
                         WHERE id='$delete'";
@@ -515,7 +515,7 @@ require 'headerandnavbar.php';
                         $confname = test_input($_POST['confname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO conferences (conferencename)
                         VALUES ('$confname')";
@@ -559,7 +559,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Models/databaseconnection.php';
+                            require '../app/Models/srpss_database_connection.php';
 
                             $sql = "DELETE FROM conferences   
                             WHERE id='$delete'";
@@ -617,7 +617,7 @@ require 'headerandnavbar.php';
                             $channelname = test_input($_POST['channelname']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Models/databaseconnection.php';
+                            require '../app/Models/srpss_database_connection.php';
             
                             $sql = "INSERT IGNORE INTO ytchannels (channelname)
                             VALUES ('$channelname')";
@@ -661,7 +661,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Models/databaseconnection.php';
+                            require '../app/Models/srpss_database_connection.php';
             
                             $sql = "DELETE FROM ytchannels    
                             WHERE id='$delete'";
@@ -719,7 +719,7 @@ require 'headerandnavbar.php';
                         $scientistname = test_input($_POST['scientistname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO scientists (scientistname)
                         VALUES ('$scientistname')";
@@ -763,7 +763,7 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Models/databaseconnection.php';
+                            require '../app/Models/srpss_database_connection.php';
 
                             $sql = "DELETE FROM scientists     
                             WHERE id='$delete'";
@@ -822,7 +822,7 @@ require 'headerandnavbar.php';
                             $moviename = test_input($_POST['moviename']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Models/databaseconnection.php';
+                            require '../app/Models/srpss_database_connection.php';
 
                             $sql = "INSERT IGNORE INTO movies (moviename)
                             VALUES ('$moviename')";
@@ -868,7 +868,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM movies      
                         WHERE id='$delete'";
@@ -928,7 +928,7 @@ require 'headerandnavbar.php';
                         $webseriesname = test_input($_POST['webseriesname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO webseries (webseriesname)
                         VALUES ('$webseriesname')";
@@ -972,7 +972,7 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM webseries      
                         WHERE id='$delete'";
@@ -1031,7 +1031,7 @@ require 'headerandnavbar.php';
                         $awardname = test_input($_POST['awardname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO awards (awardsname)
                         VALUES ('$awardname')";
@@ -1075,7 +1075,7 @@ require 'headerandnavbar.php';
                         $deleteaward = test_input($_POST['deleteaward']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM awards      
                         WHERE id='$deleteaward'";
@@ -1134,7 +1134,7 @@ require 'headerandnavbar.php';
                         $observatoryname = test_input($_POST['observatoryname']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "INSERT IGNORE INTO observatory (observatoryname)
                         VALUES ('$observatoryname')";
@@ -1178,7 +1178,7 @@ require 'headerandnavbar.php';
                         $deleteobservatory = test_input($_POST['deleteobservatory']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "DELETE FROM observatory      
                         WHERE id='$deleteobservatory'";
@@ -1237,7 +1237,7 @@ require 'headerandnavbar.php';
                         $approvefeedbacknum = test_input($_POST['approvefeedbacknum']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
                         
                         $sql = "SELECT id FROM feedback";
                         $result = $conn->query($sql);
@@ -1300,7 +1300,7 @@ require 'headerandnavbar.php';
                         $rejfeedbacknum = test_input($_POST['rejfeedbacknum']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $sql = "SELECT id FROM feedback";
 
@@ -1360,7 +1360,7 @@ require 'headerandnavbar.php';
                         {
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         // Path to sql file in which mysql database is exported
                         $file = 'srpss.sql';
@@ -1461,7 +1461,7 @@ require 'headerandnavbar.php';
                       else if(!empty($_POST['allregisteredusers']))
                       {
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $usernotification = test_input($_POST['notificationmessage']);
 
@@ -1501,7 +1501,7 @@ require 'headerandnavbar.php';
                       else if(!empty($_POST['selectallusers']))
                       {
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Models/databaseconnection.php';
+                        require '../app/Models/srpss_database_connection.php';
 
                         $usernotification = test_input($_POST['notificationmessage']);
 

@@ -1,5 +1,5 @@
 <?php
-require('databaseconnection.php');
+require 'srpss_database_connection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM researchpapers WHERE approved = 1 ORDER BY id ASC";

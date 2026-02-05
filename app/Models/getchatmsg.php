@@ -1,9 +1,5 @@
 <?php
-require 'sessionstart.php';
-?>
-
-<?php
-require('databaseconnection.php');
+require 'srpss_database_connection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM chat";

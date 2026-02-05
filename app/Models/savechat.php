@@ -13,7 +13,7 @@
     
     // Create connection using MySQLi Object-Oriented
 
-    require("databaseconnection.php");
+    require 'srpss_database_connection.php';
 
     $sql = "INSERT INTO chat (username, chatmsg) 
     VALUES ('$currentuser','$chatmsg')";

@@ -8,7 +8,7 @@ if(!isset($_SESSION['username']))
 }
 else
 {
-    require 'databaseconnection.php';
+    require 'srpss_database_connection.php';
 
     // store query in a variable
     $query = "SELECT usersessionid FROM researchers WHERE email = '{$_SESSION['email']}'";

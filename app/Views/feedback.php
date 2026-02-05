@@ -123,7 +123,7 @@ else
 
                     // Connect to 'srpss' database and input necessary form information to 'feedback' table using MySQLi Object-Oriented method:- 
 
-                    require '../app/Models/databaseconnection.php';
+                    require '../app/Models/srpss_database_connection.php';
 
                     // sql to insert form data before checking if records already exists
                     $sql = "INSERT INTO feedback (fname, topic, contact, email, mess)

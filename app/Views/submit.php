@@ -65,29 +65,26 @@ if(!isset($_SESSION['username']))
 
               move_uploaded_file($file_tmp,"./researchpapers/".$file_name);
 
-              
-
               // Create connection using MySQLi Object-Oriented
 
-                require '../app/Models/databaseconnection.php';
+              require '../app/Models/srpss_database_connection.php';
 
-                $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
-                      VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
+              $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
+                    VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
 
-                $result = $conn->query($sql);
-                
-                if($result === TRUE)
-                {
-                    echo "<p style='color:green;'>Your research paper has been successfully submitted.</p>";
-                }
-                else 
-                {
-                    echo "<p style='color:red;'>Error submitting research paper.</p>";
-                }
-                
-                // Close the connection
-                $conn->close();
-
+              $result = $conn->query($sql);
+              
+              if($result === TRUE)
+              {
+                  echo "<p style='color:green;'>Your research paper has been successfully submitted.</p>";
+              }
+              else 
+              {
+                  echo "<p style='color:red;'>Error submitting research paper.</p>";
+              }
+              
+              // Close the connection
+              $conn->close();
             }
            }
             

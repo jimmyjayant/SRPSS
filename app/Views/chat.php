@@ -1,15 +1,15 @@
 <?php
- require 'sessionstart.php';
- require '../app/Models/checkcookie.php';
+  require 'sessionstart.php';
+  require '../app/Models/checkcookie.php';
 ?>
 
 <?php
-// Access Denied for Web page DIRECT ACCESS 
-if(!isset($_SESSION['username']))
-{
-    header("location: login");
-    die();
-}
+  // Access Denied for Web page DIRECT ACCESS 
+  if(!isset($_SESSION['username']))
+  {
+      header("location: login");
+      die();
+  }
 ?>
 
 <?php 
@@ -41,14 +41,6 @@ if(!isset($_SESSION['username']))
           <input type="button" value="Reset" onclick="reset()">
       </div>
 
-      <?php /*
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" target="_self">
-        <input type="text" name="chatmsg" id="chatmsg" size="100%" placeholder="Type your message here" required>
-        <br>
-        <br>
-        <input type="submit" value="Send" name="send" id="send">
-      </form>*/
-      ?>
       <?php
          if(isset($chatstatus))
          {
@@ -81,7 +73,7 @@ if(!isset($_SESSION['username']))
           console.log(this.responseText);            
         }
       };
-      xmlhttp.open("POST", "savechat.php", true);
+      xmlhttp.open("POST", "savechat", true);
       xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
       xmlhttp.send("chatmsg=" + message.value);
@@ -141,7 +133,7 @@ if(!isset($_SESSION['username']))
             }
           }
       };
-      xmlhttp.open("GET", "getchatmsg.php", true);
+      xmlhttp.open("GET", "getchatmsg", true);
       xmlhttp.send();
     }
 

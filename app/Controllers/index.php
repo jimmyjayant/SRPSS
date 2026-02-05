@@ -71,6 +71,10 @@ switch($page)
         require '../app/Views/channel.php';
         break;
 
+    case 'changepassword':
+        require '../app/Views/changepassword.php';
+        break;
+
     case 'scientist':
         require '../app/Views/scientist.php';
         break;
@@ -203,6 +207,14 @@ switch($page)
         require '../app/Models/getfeedbackdata.php';
         break;
 
+    case 'getchatmsg':
+        require '../app/Models/getchatmsg.php';
+        break;
+
+    case 'savechat':
+        require '../app/Models/savechat.php';
+        break;
+
     case 'showallregusers':
         require '../app/Models/showallregusers.php';
         break;
@@ -224,747 +236,747 @@ switch($page)
         break;
 
     case 'getafghanistandata':
-        require '../app/Models/getafghanistandata.php';
+        require '../app/Models/world/getafghanistandata.php';
         break;
 
     case 'getalbaniadata':
-        require '../app/Models/getalbaniadata.php';
+        require '../app/Models/world/getalbaniadata.php';
         break;
 
     case 'getalgeriadata':
-        require '../app/Models/getalgeriadata.php';
+        require '../app/Models/world/getalgeriadata.php';
         break;
 
     case 'getandorradata':
-        require '../app/Models/getandorradata.php';
+        require '../app/Models/world/getandorradata.php';
         break;
 
     case 'getangoladata':
-        require '../app/Models/getangoladata.php';
+        require '../app/Models/world/getangoladata.php';
         break;
 
     case 'getantiguaandbarbudadata':
-        require '../app/Models/getantiguaandbarbudadata.php';
+        require '../app/Models/world/getantiguaandbarbudadata.php';
         break;
 
     case 'getargentinadata':
-        require '../app/Models/getargentinadata.php';
+        require '../app/Models/world/getargentinadata.php';
         break;
 
     case 'getarmeniadata':
-        require '../app/Models/getarmeniadata.php';
+        require '../app/Models/world/getarmeniadata.php';
         break;
 
     case 'getaustraliadata':
-        require '../app/Models/getaustraliadata.php';
+        require '../app/Models/world/getaustraliadata.php';
         break;
 
     case 'getaustriadata':
-        require '../app/Models/getaustriadata.php';
+        require '../app/Models/world/getaustriadata.php';
         break;
 
     case 'getazerbaijandata':
-        require '../app/Models/getazerbaijandata.php';
+        require '../app/Models/world/getazerbaijandata.php';
         break;
 
     case 'getbahamasdata':
-        require '../app/Models/getbahamasdata.php';
+        require '../app/Models/world/getbahamasdata.php';
         break;
 
     case 'getbahraindata':
-        require '../app/Models/getbahraindata.php';
+        require '../app/Models/world/getbahraindata.php';
         break;
 
     case 'getbangladeshdata':
-        require '../app/Models/getbangladeshdata.php';
+        require '../app/Models/world/getbangladeshdata.php';
         break;
 
     case 'getbarbadosdata':
-        require '../app/Models/getbarbadosdata.php';
+        require '../app/Models/world/getbarbadosdata.php';
         break;
 
     case 'getbelarusdata':
-        require '../app/Models/getbelarusdata.php';
+        require '../app/Models/world/getbelarusdata.php';
         break;
 
     case 'getbelgiumdata':
-        require '../app/Models/getbelgiumdata.php';
+        require '../app/Models/world/getbelgiumdata.php';
         break;
 
     case 'getbelizedata':
-        require '../app/Models/getbelizedata.php';
+        require '../app/Models/world/getbelizedata.php';
         break;
 
     case 'getbenindata':
-        require '../app/Models/getbenindata.php';
+        require '../app/Models/world/getbenindata.php';
         break;
 
     case 'getbhutandata':
-        require '../app/Models/getbhutandata.php';
+        require '../app/Models/world/getbhutandata.php';
         break;
 
     case 'getboliviadata':
-        require '../app/Models/getboliviadata.php';
+        require '../app/Models/world/getboliviadata.php';
         break;
 
     case 'getbosniaandherzegovinadata':
-        require '../app/Models/getbosniaandherzegovinadata.php';
+        require '../app/Models/world/getbosniaandherzegovinadata.php';
         break;
 
     case 'getbotswanadata':
-        require '../app/Models/getbotswanadata.php';
+        require '../app/Models/world/getbotswanadata.php';
         break;
 
     case 'getbrazildata':
-        require '../app/Models/getbrazildata.php';
+        require '../app/Models/world/getbrazildata.php';
         break;
 
     case 'getbruneidata':
-        require '../app/Models/getbruneidata.php';
+        require '../app/Models/world/getbruneidata.php';
         break;
 
     case 'getbulgariadata':
-        require '../app/Models/getbulgariadata.php';
+        require '../app/Models/world/getbulgariadata.php';
         break;
 
     case 'getburkinafasodata':
-        require '../app/Models/getburkinafasodata.php';
+        require '../app/Models/world/getburkinafasodata.php';
         break;
 
     case 'getburundidata':
-        require '../app/Models/getburundidata.php';
+        require '../app/Models/world/getburundidata.php';
         break;
 
     case 'getcaboverdedata':
-        require '../app/Models/getcaboverdedata.php';
+        require '../app/Models/world/getcaboverdedata.php';
         break;
 
     case 'getcambodiadata':
-        require '../app/Models/getcambodiadata.php';
+        require '../app/Models/world/getcambodiadata.php';
         break;
 
     case 'getcameroondata':
-        require '../app/Models/getcameroondata.php';
+        require '../app/Models/world/getcameroondata.php';
         break;
 
     case 'getcanadadata':
-        require '../app/Models/getcanadadata.php';
+        require '../app/Models/world/getcanadadata.php';
         break;
 
     case 'getcentralafricanrepublicdata':
-        require '../app/Models/getcentralafricanrepublicdata.php';
+        require '../app/Models/world/getcentralafricanrepublicdata.php';
         break;
 
     case 'getchaddata':
-        require '../app/Models/getchaddata.php';
+        require '../app/Models/world/getchaddata.php';
         break;
 
     case 'getchiledata':
-        require '../app/Models/getchiledata.php';
+        require '../app/Models/world/getchiledata.php';
         break;
 
     case 'getchinadata':
-        require '../app/Models/getchinadata.php';
+        require '../app/Models/world/getchinadata.php';
         break;
 
     case 'getcolombiadata':
-        require '../app/Models/getcolombiadata.php';
+        require '../app/Models/world/getcolombiadata.php';
         break;
 
     case 'getcomorosdata':
-        require '../app/Models/getcomorosdata.php';
+        require '../app/Models/world/getcomorosdata.php';
         break;
 
     case 'getcongo(congo-brazzaville)data':
-        require '../app/Models/getcongo(congo-brazzaville)data.php';
+        require '../app/Models/world/getcongo(congo-brazzaville)data.php';
         break;
 
     case 'getcongo_democraticrepublicofthecongokinshasadata':
-        require '../app/Models/getcongo_democraticrepublicofthecongokinshasadata.php';
+        require '../app/Models/world/getcongo_democraticrepublicofthecongokinshasadata.php';
         break;
 
     case 'getcostaricadata':
-        require '../app/Models/getcostaricadata.php';
+        require '../app/Models/world/getcostaricadata.php';
         break;
 
     case 'getcroatiadata':
-        require '../app/Models/getcroatiadata.php';
+        require '../app/Models/world/getcroatiadata.php';
         break;
 
     case 'getcubadata':
-        require '../app/Models/getcubadata.php';
+        require '../app/Models/world/getcubadata.php';
         break;
 
     case 'getcyprusdata':
-        require '../app/Models/getcyprusdata.php';
+        require '../app/Models/world/getcyprusdata.php';
         break;
 
     case 'getczechiadata':
-        require '../app/Models/getczechiadata.php';
+        require '../app/Models/world/getczechiadata.php';
         break;
 
     case 'getdenmarkdata':
-        require '../app/Models/getdenmarkdata.php';
+        require '../app/Models/world/getdenmarkdata.php';
         break;
 
     case 'getdjiboutidata':
-        require '../app/Models/getdjiboutidata.php';
+        require '../app/Models/world/getdjiboutidata.php';
         break;
 
     case 'getdominicadata':
-        require '../app/Models/getdominicadata.php';
+        require '../app/Models/world/getdominicadata.php';
         break;
 
     case 'getdominicanrepublicdata':
-        require '../app/Models/getdominicanrepublicdata.php';
+        require '../app/Models/world/getdominicanrepublicdata.php';
         break;
 
     case 'getecuadordata':
-        require '../app/Models/getecuadordata.php';
+        require '../app/Models/world/getecuadordata.php';
         break;
 
     case 'getegyptdata':
-        require '../app/Models/getegyptdata.php';
+        require '../app/Models/world/getegyptdata.php';
         break;
 
     case 'getelsalvadordata':
-        require '../app/Models/getelsalvadordata.php';
+        require '../app/Models/world/getelsalvadordata.php';
         break;
 
     case 'getequatorialguineadata':
-        require '../app/Models/getequatorialguineadata.php';
+        require '../app/Models/world/getequatorialguineadata.php';
         break;
 
     case 'geteritreadata':
-        require '../app/Models/geteritreadata.php';
+        require '../app/Models/world/geteritreadata.php';
         break;
 
     case 'getestoniadata':
-        require '../app/Models/getestoniadata.php';
+        require '../app/Models/world/getestoniadata.php';
         break;
 
     case 'geteswatinidata':
-        require '../app/Models/geteswatinidata.php';
+        require '../app/Models/world/geteswatinidata.php';
         break;
 
     case 'getethiopiadata':
-        require '../app/Models/getethiopiadata.php';
+        require '../app/Models/world/getethiopiadata.php';
         break;
 
     case 'getfijidata':
-        require '../app/Models/getfijidata.php';
+        require '../app/Models/world/getfijidata.php';
         break;
 
     case 'getfinlanddata':
-        require '../app/Models/getfinlanddata.php';
+        require '../app/Models/world/getfinlanddata.php';
         break;
 
     case 'getfrancedata':
-        require '../app/Models/getfrancedata.php';
+        require '../app/Models/world/getfrancedata.php';
         break;
 
     case 'getgabondata':
-        require '../app/Models/getgabondata.php';
+        require '../app/Models/world/getgabondata.php';
         break;
 
     case 'getgambiadata':
-        require '../app/Models/getgambiadata.php';
+        require '../app/Models/world/getgambiadata.php';
         break;
 
     case 'getgeorgiadata':
-        require '../app/Models/getgeorgiadata.php';
+        require '../app/Models/world/getgeorgiadata.php';
         break;
 
     case 'getgermanydata':
-        require '../app/Models/getgermanydata.php';
+        require '../app/Models/world/getgermanydata.php';
         break;
 
     case 'getghanadata':
-        require '../app/Models/getghanadata.php';
+        require '../app/Models/world/getghanadata.php';
         break;
 
     case 'getgreecedata':
-        require '../app/Models/getgreecedata.php';
+        require '../app/Models/world/getgreecedata.php';
         break;
 
     case 'getgrenadadata':
-        require '../app/Models/getgrenadadata.php';
+        require '../app/Models/world/getgrenadadata.php';
         break;
 
     case 'getguatemaladata':
-        require '../app/Models/getguatemaladata.php';
+        require '../app/Models/world/getguatemaladata.php';
         break;
 
     case 'getguineadata':
-        require '../app/Models/getguineadata.php';
+        require '../app/Models/world/getguineadata.php';
         break;
 
     case 'getguinea-bissaudata':
-        require '../app/Models/getguinea-bissaudata.php';
+        require '../app/Models/world/getguinea-bissaudata.php';
         break;
 
     case 'getguyanadata':
-        require '../app/Models/getguyanadata.php';
+        require '../app/Models/world/getguyanadata.php';
         break;
 
     case 'gethaitidata':
-        require '../app/Models/gethaitidata.php';
+        require '../app/Models/world/gethaitidata.php';
         break;
 
     case 'gethondurasdata':
-        require '../app/Models/gethondurasdata.php';
+        require '../app/Models/world/gethondurasdata.php';
         break;
 
     case 'gethungarydata':
-        require '../app/Models/gethungarydata.php';
+        require '../app/Models/world/gethungarydata.php';
         break;
 
     case 'geticelanddata':
-        require '../app/Models/geticelanddata.php';
+        require '../app/Models/world/geticelanddata.php';
         break;
 
     case 'getindiadata':
-        require '../app/Models/getindiadata.php';
+        require '../app/Models/world/getindiadata.php';
         break;
 
     case 'getindonesiadata':
-        require '../app/Models/getindonesiadata.php';
+        require '../app/Models/world/getindonesiadata.php';
         break;
 
     case 'getirandata':
-        require '../app/Models/getirandata.php';
+        require '../app/Models/world/getirandata.php';
         break;
 
     case 'getiraqdata':
-        require '../app/Models/getiraqdata.php';
+        require '../app/Models/world/getiraqdata.php';
         break;
 
     case 'getirelanddata':
-        require '../app/Models/getirelanddata.php';
+        require '../app/Models/world/getirelanddata.php';
         break;
 
     case 'getisraeldata':
-        require '../app/Models/getisraeldata.php';
+        require '../app/Models/world/getisraeldata.php';
         break;
 
     case 'getitalydata':
-        require '../app/Models/getitalydata.php';
+        require '../app/Models/world/getitalydata.php';
         break;
 
     case 'getjamaicadata':
-        require '../app/Models/getjamaicadata.php';
+        require '../app/Models/world/getjamaicadata.php';
         break;
 
     case 'getjapandata':
-        require '../app/Models/getjapandata.php';
+        require '../app/Models/world/getjapandata.php';
         break;
 
     case 'getjordandata':
-        require '../app/Models/getjordandata.php';
+        require '../app/Models/world/getjordandata.php';
         break;
 
     case 'getkazakhstandata':
-        require '../app/Models/getkazakhstandata.php';
+        require '../app/Models/world/getkazakhstandata.php';
         break;
 
     case 'getkenyadata':
-        require '../app/Models/getkenyadata.php';
+        require '../app/Models/world/getkenyadata.php';
         break;
 
     case 'getkiribatidata':
-        require '../app/Models/getkiribatidata.php';
+        require '../app/Models/world/getkiribatidata.php';
         break;
 
     case 'getnorthkoreadata':
-        require '../app/Models/getnorthkoreadata.php';
+        require '../app/Models/world/getnorthkoreadata.php';
         break;
 
     case 'getsouthkoreadata':
-        require '../app/Models/getsouthkoreadata.php';
+        require '../app/Models/world/getsouthkoreadata.php';
         break;
 
     case 'getkuwaitdata':
-        require '../app/Models/getkuwaitdata.php';
+        require '../app/Models/world/getkuwaitdata.php';
         break;
 
     case 'getkyrgyzstandata':
-        require '../app/Models/getkyrgyzstandata.php';
+        require '../app/Models/world/getkyrgyzstandata.php';
         break;
 
     case 'getlaosdata':
-        require '../app/Models/getlaosdata.php';
+        require '../app/Models/world/getlaosdata.php';
         break;
 
     case 'getlatviadata':
-        require '../app/Models/getlatviadata.php';
+        require '../app/Models/world/getlatviadata.php';
         break;
 
     case 'getlebanondata':
-        require '../app/Models/getlebanondata.php';
+        require '../app/Models/world/getlebanondata.php';
         break;
 
     case 'getlesothodata':
-        require '../app/Models/getlesothodata.php';
+        require '../app/Models/world/getlesothodata.php';
         break;
 
     case 'getliberiadata':
-        require '../app/Models/getliberiadata.php';
+        require '../app/Models/world/getliberiadata.php';
         break;
 
     case 'getlibyadata':
-        require '../app/Models/getlibyadata.php';
+        require '../app/Models/world/getlibyadata.php';
         break;
 
     case 'getliechtensteindata':
-        require '../app/Models/getliechtensteindata.php';
+        require '../app/Models/world/getliechtensteindata.php';
         break;
 
     case 'getlithuaniadata':
-        require '../app/Models/getlithuaniadata.php';
+        require '../app/Models/world/getlithuaniadata.php';
         break;
 
     case 'getluxembourgdata':
-        require '../app/Models/getluxembourgdata.php';
+        require '../app/Models/world/getluxembourgdata.php';
         break;
 
     case 'getmadagascardata':
-        require '../app/Models/getmadagascardata.php';
+        require '../app/Models/world/getmadagascardata.php';
         break;
 
     case 'getmalawidata':
-        require '../app/Models/getmalawidata.php';
+        require '../app/Models/world/getmalawidata.php';
         break;
 
     case 'getmalaysiadata':
-        require '../app/Models/getmalaysiadata.php';
+        require '../app/Models/world/getmalaysiadata.php';
         break;
 
     case 'getmaldivesdata':
-        require '../app/Models/getmaldivesdata.php';
+        require '../app/Models/world/getmaldivesdata.php';
         break;
 
     case 'getmalidata':
-        require '../app/Models/getmalidata.php';
+        require '../app/Models/world/getmalidata.php';
         break;
 
     case 'getmaltadata':
-        require '../app/Models/getmaltadata.php';
+        require '../app/Models/world/getmaltadata.php';
         break;
 
     case 'getmarshallislandsdata':
-        require '../app/Models/getmarshallislandsdata.php';
+        require '../app/Models/world/getmarshallislandsdata.php';
         break;
 
     case 'getmauritaniadata':
-        require '../app/Models/getmauritaniadata.php';
+        require '../app/Models/world/getmauritaniadata.php';
         break;
 
     case 'getmauritiusdata':
-        require '../app/Models/getmauritiusdata.php';
+        require '../app/Models/world/getmauritiusdata.php';
         break;
 
     case 'getmexicodata':
-        require '../app/Models/getmexicodata.php';
+        require '../app/Models/world/getmexicodata.php';
         break;
 
     case 'getmicronesiadata':
-        require '../app/Models/getmicronesiadata.php';
+        require '../app/Models/world/getmicronesiadata.php';
         break;
 
     case 'getmoldovadata':
-        require '../app/Models/getmoldovadata.php';
+        require '../app/Models/world/getmoldovadata.php';
         break;
 
     case 'getmonacodata':
-        require '../app/Models/getmonacodata.php';
+        require '../app/Models/world/getmonacodata.php';
         break;
 
     case 'getmongoliadata':
-        require '../app/Models/getmongoliadata.php';
+        require '../app/Models/world/getmongoliadata.php';
         break;
 
     case 'getmontenegrodata':
-        require '../app/Models/getmontenegrodata.php';
+        require '../app/Models/world/getmontenegrodata.php';
         break;
 
     case 'getmoroccodata':
-        require '../app/Models/getmoroccodata.php';
+        require '../app/Models/world/getmoroccodata.php';
         break;
 
     case 'getmozambiquedata':
-        require '../app/Models/getmozambiquedata.php';
+        require '../app/Models/world/getmozambiquedata.php';
         break;
 
     case 'getnamibiadata':
-        require '../app/Models/getnamibiadata.php';
+        require '../app/Models/world/getnamibiadata.php';
         break;
 
     case 'getnaurudata':
-        require '../app/Models/getnaurudata.php';
+        require '../app/Models/world/getnaurudata.php';
         break;
 
     case 'getnepaldata':
-        require '../app/Models/getnepaldata.php';
+        require '../app/Models/world/getnepaldata.php';
         break;
 
     case 'getnetherlandsdata':
-        require '../app/Models/getnetherlandsdata.php';
+        require '../app/Models/world/getnetherlandsdata.php';
         break;
 
     case 'getnewzealanddata':
-        require '../app/Models/getnewzealanddata.php';
+        require '../app/Models/world/getnewzealanddata.php';
         break;
 
     case 'getnicaraguadata':
-        require '../app/Models/getnicaraguadata.php';
+        require '../app/Models/world/getnicaraguadata.php';
         break;
 
     case 'getnigerdata':
-        require '../app/Models/getnigerdata.php';
+        require '../app/Models/world/getnigerdata.php';
         break;
 
     case 'getnigeriadata':
-        require '../app/Models/getnigeriadata.php';
+        require '../app/Models/world/getnigeriadata.php';
         break;
 
     case 'getnorthmacedoniadata':
-        require '../app/Models/getnorthmacedoniadata.php';
+        require '../app/Models/world/getnorthmacedoniadata.php';
         break;
 
     case 'getnorwaydata':
-        require '../app/Models/getnorwaydata.php';
+        require '../app/Models/world/getnorwaydata.php';
         break;
 
     case 'getomandata':
-        require '../app/Models/getomandata.php';
+        require '../app/Models/world/getomandata.php';
         break;
 
     case 'getpakistandata':
-        require '../app/Models/getpakistandata.php';
+        require '../app/Models/world/getpakistandata.php';
         break;
 
     case 'getpalaudata':
-        require '../app/Models/getpalaudata.php';
+        require '../app/Models/world/getpalaudata.php';
         break;
 
     case 'getpanamadata':
-        require '../app/Models/getpanamadata.php';
+        require '../app/Models/world/getpanamadata.php';
         break;
 
     case 'getpapuanewguineadata':
-        require '../app/Models/getpapuanewguineadata.php';
+        require '../app/Models/world/getpapuanewguineadata.php';
         break;
 
     case 'getparaguaydata':
-        require '../app/Models/getparaguaydata.php';
+        require '../app/Models/world/getparaguaydata.php';
         break;
 
     case 'getperudata':
-        require '../app/Models/getperudata.php';
+        require '../app/Models/world/getperudata.php';
         break;
 
     case 'getphilippinesdata':
-        require '../app/Models/getphilippinesdata.php';
+        require '../app/Models/world/getphilippinesdata.php';
         break;
 
     case 'getpolanddata':
-        require '../app/Models/getpolanddata.php';
+        require '../app/Models/world/getpolanddata.php';
         break;
 
     case 'getportugaldata':
-        require '../app/Models/getportugaldata.php';
+        require '../app/Models/world/getportugaldata.php';
         break;
 
     case 'getqatardata':
-        require '../app/Models/getqatardata.php';
+        require '../app/Models/world/getqatardata.php';
         break;
 
     case 'getromaniadata':
-        require '../app/Models/getromaniadata.php';
+        require '../app/Models/world/getromaniadata.php';
         break;
 
     case 'getrussiadata':
-        require '../app/Models/getrussiadata.php';
+        require '../app/Models/world/getrussiadata.php';
         break;
 
     case 'getrwandadata':
-        require '../app/Models/getrwandadata.php';
+        require '../app/Models/world/getrwandadata.php';
         break;
 
     case 'getsaotomeandprincipedata':
-        require '../app/Models/getsaotomeandprincipedata.php';
+        require '../app/Models/world/getsaotomeandprincipedata.php';
         break;
 
     case 'getsaudiarabiadata':
-        require '../app/Models/getsaudiarabiadata.php';
+        require '../app/Models/world/getsaudiarabiadata.php';
         break;
 
     case 'getsenegaldata':
-        require '../app/Models/getsenegaldata.php';
+        require '../app/Models/world/getsenegaldata.php';
         break;
 
     case 'getserbiadata':
-        require '../app/Models/getserbiadata.php';
+        require '../app/Models/world/getserbiadata.php';
         break;
 
     case 'getseychellesdata':
-        require '../app/Models/getseychellesdata.php';
+        require '../app/Models/world/getseychellesdata.php';
         break;
 
     case 'getsierraleonedata':
-        require '../app/Models/getsierraleonedata.php';
+        require '../app/Models/world/getsierraleonedata.php';
         break;
 
     case 'getsingaporedata':
-        require '../app/Models/getsingaporedata.php';
+        require '../app/Models/world/getsingaporedata.php';
         break;
 
     case 'getslovakiadata':
-        require '../app/Models/getslovakiadata.php';
+        require '../app/Models/world/getslovakiadata.php';
         break;
 
     case 'getsloveniadata':
-        require '../app/Models/getsloveniadata.php';
+        require '../app/Models/world/getsloveniadata.php';
         break;
 
     case 'getsolomonislandsdata':
-        require '../app/Models/getsolomonislandsdata.php';
+        require '../app/Models/world/getsolomonislandsdata.php';
         break;
 
     case 'getsomaliadata':
-        require '../app/Models/getsomaliadata.php';
+        require '../app/Models/world/getsomaliadata.php';
         break;
 
     case 'getsouthafricadata':
-        require '../app/Models/getsouthafricadata.php';
+        require '../app/Models/world/getsouthafricadata.php';
         break;
 
     case 'getsouthsudandata':
-        require '../app/Models/getsouthsudandata.php';
+        require '../app/Models/world/getsouthsudandata.php';
         break;
 
     case 'getspaindata':
-        require '../app/Models/getspaindata.php';
+        require '../app/Models/world/getspaindata.php';
         break;
 
     case 'getsrilankadata':
-        require '../app/Models/getsrilankadata.php';
+        require '../app/Models/world/getsrilankadata.php';
         break;
 
     case 'getsudandata':
-        require '../app/Models/getsudandata.php';
+        require '../app/Models/world/getsudandata.php';
         break;
 
     case 'getsurinamedata':
-        require '../app/Models/getsurinamedata.php';
+        require '../app/Models/world/getsurinamedata.php';
         break;
 
     case 'getswedendata':
-        require '../app/Models/getswedendata.php';
+        require '../app/Models/world/getswedendata.php';
         break;
 
     case 'getswitzerlanddata':
-        require '../app/Models/getswitzerlanddata.php';
+        require '../app/Models/world/getswitzerlanddata.php';
         break;
 
     case 'gettajikistandata':
-        require '../app/Models/gettajikistandata.php';
+        require '../app/Models/world/gettajikistandata.php';
         break;
 
     case 'gettanzaniadata':
-        require '../app/Models/gettanzaniadata.php';
+        require '../app/Models/world/gettanzaniadata.php';
         break;
 
     case 'getthailanddata':
-        require '../app/Models/getthailanddata.php';
+        require '../app/Models/world/getthailanddata.php';
         break;
 
     case 'gettogodata':
-        require '../app/Models/gettogodata.php';
+        require '../app/Models/world/gettogodata.php';
         break;
 
     case 'gettongadata':
-        require '../app/Models/gettongadata.php';
+        require '../app/Models/world/gettongadata.php';
         break;
 
     case 'gettrinidadandtobagodata':
-        require '../app/Models/gettrinidadandtobagodata.php';
+        require '../app/Models/world/gettrinidadandtobagodata.php';
         break;
 
     case 'gettunisiadata':
-        require '../app/Models/gettunisiadata.php';
+        require '../app/Models/world/gettunisiadata.php';
         break;
 
     case 'getturkeydata':
-        require '../app/Models/getturkeydata.php';
+        require '../app/Models/world/getturkeydata.php';
         break;
 
     case 'getturkmenistandata':
-        require '../app/Models/getturkmenistandata.php';
+        require '../app/Models/world/getturkmenistandata.php';
         break;
 
     case 'gettuvaludata':
-        require '../app/Models/gettuvaludata.php';
+        require '../app/Models/world/gettuvaludata.php';
         break;
 
     case 'getugandadata':
-        require '../app/Models/getugandadata.php';
+        require '../app/Models/world/getugandadata.php';
         break;
 
     case 'getukrainedata':
-        require '../app/Models/getukrainedata.php';
+        require '../app/Models/world/getukrainedata.php';
         break;
 
     case 'getunitedarabemiratesdata':
-        require '../app/Models/getunitedarabemiratesdata.php';
+        require '../app/Models/world/getunitedarabemiratesdata.php';
         break;
 
     case 'getunitedkingdomdata':
-        require '../app/Models/getunitedkingdomdata.php';
+        require '../app/Models/world/getunitedkingdomdata.php';
         break;
 
     case 'getunitedstatesdata':
-        require '../app/Models/getunitedstatesdata.php';
+        require '../app/Models/world/getunitedstatesdata.php';
         break;
 
     case 'geturuguaydata':
-        require '../app/Models/geturuguaydata.php';
+        require '../app/Models/world/geturuguaydata.php';
         break;
 
     case 'getuzbekistandata':
-        require '../app/Models/getuzbekistandata.php';
+        require '../app/Models/world/getuzbekistandata.php';
         break;
 
     case 'getvanuatudata':
-        require '../app/Models/getvanuatudata.php';
+        require '../app/Models/world/getvanuatudata.php';
         break;
 
     case 'getvaticancitydata':
-        require '../app/Models/getvaticancitydata.php';
+        require '../app/Models/world/getvaticancitydata.php';
         break;
 
     case 'getvenezueladata':
-        require '../app/Models/getvenezueladata.php';
+        require '../app/Models/world/getvenezueladata.php';
         break;
 
     case 'getvietnamdata':
-        require '../app/Models/getvietnamdata.php';
+        require '../app/Models/world/getvietnamdata.php';
         break;
 
     case 'getwalesdata':
-        require '../app/Models/getwalesdata.php';
+        require '../app/Models/world/getwalesdata.php';
         break;
 
     case 'getyemendata':
-        require '../app/Models/getyemendata.php';
+        require '../app/Models/world/getyemendata.php';
         break;
 
     case 'getzambiadata':
-        require '../app/Models/getzambiadata.php';
+        require '../app/Models/world/getzambiadata.php';
         break;
 
     case 'getzimbabwedata':
-        require '../app/Models/getzimbabwedata.php';
+        require '../app/Models/world/getzimbabwedata.php';
         break;
 }
 ?>
