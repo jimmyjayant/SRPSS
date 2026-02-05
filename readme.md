@@ -26,4 +26,7 @@ Instructions:-
 13. Wait a few seconds and you will see all the tables in the srpss database.
 14. Similarly, create a database 'world' in phpmyadmin by following above steps.
 15. And, import the 'world.sql' file following above mentioned steps.
+16. The login credentials of Admin is:- 
+    email = admin@srpss.com
+    password = Ad@12345
 

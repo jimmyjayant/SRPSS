@@ -27,7 +27,7 @@ if(!isset($_SESSION['username']))
 
         // Create connection using MySQLi Object-Oriented
 
-        require '../app/Models/../app/Config/srpss_database_connection.php';
+        require '../app/Config/srpss_database_connection.php';
 
         $email = $_SESSION['email'];
 

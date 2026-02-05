@@ -1,5 +1,22 @@
 <?php
-require 'sessionstart.php';
+    require 'sessionstart.php';
+?>
+
+<?php
+    // Access Denied for Web page DIRECT ACCESS 
+    if(isset($_SESSION['username']))
+    {
+        header("location: index");
+        die();
+    }
+?>
+
+<?php
+    if(isset($_SESSION['error']))
+    {
+        echo "<script>alert('{$_SESSION['error']}');</script>";
+        $_SESSION['error'] = NULL;
+    }
 ?>
 
 <?php
@@ -24,37 +41,64 @@ require 'sessionstart.php';
         $facebook = test_input($_POST['facebook']);
         $linkedin = test_input($_POST['linkedin']);
         $user_password = test_input($_POST['password']);
+        
+        if(strlen($user_password) < 5)
+        {
+            $_SESSION['error'] = "Minimum Length of Password is 5 and Maximum is 30.";
+            header("Location: register");
+        }
 
         // converting the entered password into a password hash
         $hashedpassword = password_hash($user_password, PASSWORD_DEFAULT);
 
         // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
 
-        require '../app/Models/../app/Config/srpss_database_connection.php';
-        
-        $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
-        VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
+        try
+        {
+            if(!file_exists('../app/Config/srpss_database_connection.php'))
+            {
+                throw new Exception('srpss_database_connection.php is missing!');
+            }
+            else
+            {
+                require '../app/Config/srpss_database_connection.php';
+                if(isset($error))
+                {
+                    echo "<script>alert('{$error}');</script>";
+                }
+                else
+                {
+                    $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
+                    VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
 
-        // Perform query
-        $result = $conn->query($sql);
+                    // Perform query
+                    $result = $conn->query($sql);
 
-        if($result === TRUE) {
-            // Close the connection
-            $conn->close();
-            header("Location: login", true, 301);
-            exit();
+                    if($result === TRUE) 
+                    {
+                        // Close the connection
+                        $conn->close();
+                        header("Location: login", true, 301);
+                        exit();
+                    }
+                    else 
+                    {
+                        // Close the connection
+                        $conn->close();
+                        $_SESSION['error'] = "Please enter UNIQUE registration details.";
+                    }
+                }
+            }
         }
-        else {
-            // Close the connection
-            $conn->close();
-
-            $regerror = "<p style='color:red;'>Please enter UNIQUE registration details.</p>";
+        catch(Exception $e)
+        {
+            echo "<script>alert('{$e->getMessage()}');</script>";
         }
     }
 ?>
 
 <?php 
-require 'headerandnavbar.php';
+    require 'headerandnavbar.php';
 ?>
 
         <div class="main">
@@ -62,7 +106,7 @@ require 'headerandnavbar.php';
                 Register Yourself 
             </h2>
 
-            <form action="<?php echo 'register';/*echo htmlspecialchars($_SERVER['REQUEST_URI']);*/ ?>" method="post" target="_self">
+            <form action="<?php echo 'register'; ?>" method="post" target="_self">
                 <div class="row">
                     <div class="col25">
                         <label for="firstname">First Name</label>
@@ -176,25 +220,15 @@ require 'headerandnavbar.php';
                         <label for="password">Password</label>
                     </div>
                     <div class="col75">
-                        <input type="password" id="password" name="password" size="30" maxlength="30" placeholder="Enter your password here" required>
+                        <input type="password" id="password" name="password" size="30" minlength="5" maxlength="30" placeholder="Enter your password here" required>
                     </div>
                 </div>
 
                 <input type="submit" value="Submit" name="register_submit">
                 <input type="reset" value="Reset">
             </form>
-
-            <?php
-                if(isset($regerror))
-                {
-                    echo $regerror;
-                    $regerror = NULL;
-                }
-            ?>
-
         </div>
 
         <?php require 'footer.php'; ?>
     </body>
 </html>
-

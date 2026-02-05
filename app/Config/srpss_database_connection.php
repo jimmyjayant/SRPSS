@@ -16,6 +16,6 @@ try
 }
 catch(Exception $e)
 {
-    $_SESSION['error'] = "<p style='color:red;'>{$e->getMessage()}</p>";
+    $error = 'Database connection failed!';
 }
 ?>
