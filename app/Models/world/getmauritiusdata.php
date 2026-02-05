@@ -1,5 +1,5 @@
 <?php
-require 'world_database_connection.php';
+require '../app/Config/world_database_connection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM mauritius";

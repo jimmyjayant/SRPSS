@@ -3,7 +3,7 @@ require 'sessionstart.php';
 ?>
 
 <?php
-require 'srpss_database_connection.php';
+require '../app/Config/srpss_database_connection.php';
 
 // store query in a variable
 /*

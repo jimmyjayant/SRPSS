@@ -7,7 +7,7 @@ if(!isset($_SESSION['username']))
     {
         if(isset($_COOKIE['currentuser']))
         {
-            require 'srpss_database_connection.php';
+            require '../app/Config/srpss_database_connection.php';
 
             // store query in a variable
             $sql = "SELECT * FROM researchers WHERE usersessionid='{$_COOKIE['currentuser']}'";

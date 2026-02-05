@@ -13,7 +13,7 @@ if(!isset($_SESSION['username']))
 
 <?php
 // Create connection using MySQLi Object-Oriented
-require 'srpss_database_connection.php';
+require '../app/Config/srpss_database_connection.php';
 
 // store query in a variable
 $sql = "SELECT * FROM researchers";
