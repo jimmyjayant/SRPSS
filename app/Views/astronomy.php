@@ -1,11 +1,23 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
-<?php 
-require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
     <div class="part11">
@@ -36,7 +48,7 @@ require 'headerandnavbar.php';
                     <br>
                     <br>
 
-                    <a href="<?= BASE_URL . 'telescopemaking' ?>">Telescope Course</a>
+                    <a href="telescopemaking">Telescope Course</a>
 
                     <br>
                     <br>
@@ -55,7 +67,7 @@ require 'headerandnavbar.php';
 
                     <br>
                     <br>
-                    <a href="<?= BASE_URL . 'starparty' ?>">Star Party</a>
+                    <a href="starparty">Star Party</a>
 
                     <br>
                     <br>
@@ -74,7 +86,7 @@ require 'headerandnavbar.php';
 
                     <br>
                     <br>
-                    <a href="<?= BASE_URL . 'astrophotography' ?>">Astrophotography</a>
+                    <a href="astrophotography">Astrophotography</a>
 
                     <br>
                     <br>

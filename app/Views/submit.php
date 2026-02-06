@@ -1,27 +1,39 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+  require 'sessionstart.php';
+  try
+  {
+    if(!file_exists('../app/Models/checkcookie.php'))
+    {
+        throw new Exception("checkcookie.php is missing.");
+    }
+    else
+    {
+        require '../app/Models/checkcookie.php';
+    }
+  }
+  catch(Exception $e)
+  {
+    echo "<script>alert('{$e->getMessage()}');</script>";
+  }
 ?>
 
 <?php
-// Access Denied for Web page DIRECT ACCESS 
-if(!isset($_SESSION['username']))
-{
+  // Access Denied for Web page DIRECT ACCESS 
+  if(!isset($_SESSION['username']))
+  {
     header("location: login");
     die();
-}
+  }
 ?>
 
-<?php 
- require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
           <h2>
             Submit Your Research Papers 
           </h2>
 
-          <form action="<?php echo 'submit'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self" enctype="multipart/form-data">
+          <form action="submit" method="post" target="_self" enctype="multipart/form-data">
             <label for="category">Choose Research Category:- </label>
             <br>
             <select id="category" name="category" required>
@@ -50,9 +62,14 @@ if(!isset($_SESSION['username']))
           </form>
 
           <?php
-           
-
            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES['upload']['name'])) {
+            function test_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+
             $category = ($_POST['category']);
             $papername = test_input($_POST['papername']);
             $loggeduser = $_SESSION['username'];
@@ -66,38 +83,50 @@ if(!isset($_SESSION['username']))
               move_uploaded_file($file_tmp,"./researchpapers/".$file_name);
 
               // Create connection using MySQLi Object-Oriented
-
-              require '../app/Config/srpss_database_connection.php';
-
-              $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
-                    VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
-
-              $result = $conn->query($sql);
-              
-              if($result === TRUE)
+              try
               {
-                  echo "<p style='color:green;'>Your research paper has been successfully submitted.</p>";
+                  if(!file_exists('../app/Config/srpss_database_connection.php'))
+                  {
+                    throw new Exception("srpss_database_connection.php is missing.");
+                  }
+                  else
+                  {
+                    require '../app/Config/srpss_database_connection.php';
+                    if(isset($error))
+                    {
+                      echo "<script>alert($error);</script>";
+                      //exit();
+                    }
+                    else
+                    {
+                      $sql = "INSERT INTO researchpapers(loggeduser, email, category, topic, paper)
+                      VALUES ('$loggeduser', '$loggeduseremail', '$category', '$papername', '$file_name')";
+
+                      $result = $conn->query($sql);
+                      
+                      if($result === TRUE)
+                      {
+                          echo "<p style='color:green;'>Your research paper has been successfully submitted.</p>";
+                      }
+                      else 
+                      {
+                          echo "<p style='color:red;'>Error submitting research paper.</p>";
+                      }
+                      
+                      // Close the connection
+                      $conn->close();
+                    }
+                  }
               }
-              else 
+              catch(Exception $e)
               {
-                  echo "<p style='color:red;'>Error submitting research paper.</p>";
+                echo "<script>alert('{$e->getMessage()}');</script>";
               }
-              
-              // Close the connection
-              $conn->close();
             }
            }
-            
-            function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
           ?>
 
         </div>
-
         <?php require 'footer.php'; ?>
     </body>
 </html>

@@ -1,14 +1,12 @@
-<?php
-require 'sessionstart.php';
-?>
+<?php require 'sessionstart.php'; ?>
 
 <?php
-// Access Denied for Web page DIRECT ACCESS 
-if(!isset($_SESSION['username']))
-{
-    header("location: login");
-    die();
-}
+    // Access Denied for Web page DIRECT ACCESS 
+    if(!isset($_SESSION['username']))
+    {
+        header("location: login");
+        die();
+    }
 ?>
 
 <?php
@@ -21,63 +19,72 @@ if(!isset($_SESSION['username']))
             return $data;
         }
         
-        
         $oldpass = test_input($_POST['oldpass']);
         $newpass = test_input($_POST['newpass']);
 
         // Create connection using MySQLi Object-Oriented
 
-        require '../app/Config/srpss_database_connection.php';
-
-        $email = $_SESSION['email'];
-
-        $sql = "SELECT * FROM researchers WHERE email='$email' AND pass='$oldpass';";
-
-        $result = $conn->query($sql);
-        
-        if($result->num_rows > 0)
+        try
         {
-            $sql1 = "UPDATE researchers SET pass='$newpass' WHERE email='$email'";
-            $result1 = $conn->query($sql1);
-            
-            if($result1)
+            if(!file_exists('../app/Config/srpss_database_connection.php'))
             {
-                $status = "<p style='color:green;'>Your Password is changed Successfully.</p>";
+                throw new Exception("srpss_database_connection.php is missing.");
             }
-            else 
+            else
             {
-                $status = "<p style='color:red;'>Error Changing Password.</p>";
+                require '../app/Config/srpss_database_connection.php';
+                if(isset($error))
+                {
+                    echo "<script>alert($error);</script>";
+                    //exit();
+                }
+                else
+                {
+                    $email = $_SESSION['email'];
+
+                    $sql = "SELECT * FROM researchers WHERE email='$email' AND pass='$oldpass';";
+
+                    $result = $conn->query($sql);
+                    
+                    if($result->num_rows > 0)
+                    {
+                        $sql1 = "UPDATE researchers SET pass='$newpass' WHERE email='$email'";
+                        $result1 = $conn->query($sql1);
+                        
+                        if($result1)
+                        {
+                            $status = "<p style='color:green;'>Your Password is changed Successfully.</p>";
+                        }
+                        else 
+                        {
+                            $status = "<p style='color:red;'>Error Changing Password.</p>";
+                        }
+                    }
+                    else 
+                    {
+                        $status = "<p style='color:red;'>Your Email or Password is Invalid.</p>";
+                    }
+
+                    $result->free_result();
+
+                    // Close the connection
+                    $conn->close();
+                }
             }
         }
-        else 
+        catch(Exception $e)
         {
-            $status = "<p style='color:red;'>Your Email or Password is Invalid.</p>";
+            echo "<script>alert('{$e->getMessage()}');</script>";
         }
-
-        $result->free_result();
-
-        // Close the connection
-        $conn->close();
     }
 ?>
 
-<?php 
- require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
-        <h2>
-            Change Password  
-        </h2>
+        <h2>Change Password</h2>
 
-        <form action="<?php echo 'changepassword'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
-            <!--<label for="email">Email</label>
-            <br>
-            <input type="email" id="email" name="email" placeholder="Enter your email here" validate required>
-
-            <br>
-            <br>
--->
+        <form action="changepassword" method="post" target="_self">
             <label for="oldpass">Old Password</label>
             <br>
             <input type="password" id="oldpass" name="oldpass" placeholder="Enter your old password" minlength="8" maxlength="30" required>

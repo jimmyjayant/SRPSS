@@ -1,6 +1,20 @@
 <?php
   require 'sessionstart.php';
-  require '../app/Models/checkcookie.php';
+  try
+  {
+      if(!file_exists('../app/Models/checkcookie.php'))
+      {
+          throw new Exception("checkcookie.php is missing.");
+      }
+      else
+      {
+          require '../app/Models/checkcookie.php';
+      }
+  }
+  catch(Exception $e)
+  {
+      echo "<script>alert('{$e->getMessage()}');</script>";
+  }
 ?>
 
 <?php
@@ -12,9 +26,7 @@
   }
 ?>
 
-<?php 
- require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main" style="padding:0;">
   <div class="part9">
@@ -55,7 +67,6 @@
   <?php require 'footer.php'; ?>
 
   <script>
-
     var conn = new WebSocket('ws://localhost:8080');
     conn.onopen = function(e) {
       console.log("Connection established!");

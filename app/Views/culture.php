@@ -1,11 +1,23 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
-<?php 
-require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
         <div class="part8">
@@ -36,7 +48,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'magazines' ?>">Magazines</a>
+                            <a href="magazines">Magazines</a>
 
                             <br>
                             <br>
@@ -55,7 +67,7 @@ require 'headerandnavbar.php';
 
                             <br>
                             <br>
-                            <a href="<?= BASE_URL . 'newspapers' ?>">Newspapers</a>
+                            <a href="newspapers">Newspapers</a>
 
                             <br>
                             <br>
@@ -75,7 +87,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'conferences' ?>">Conferences</a>
+                            <a href="conferences">Conferences</a>
 
                             <br>
                             <br>
@@ -95,7 +107,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'channel' ?>">YouTube Channels</a>
+                            <a href="channel">YouTube Channels</a>
 
                             <br>
                             <br>
@@ -115,7 +127,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'scientist' ?>">Scientist</a>
+                            <a href="scientist">Scientist</a>
 
                             <br>
                             <br>
@@ -135,7 +147,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'movies' ?>">Movies</a>
+                            <a href="movies">Movies</a>
 
                             <br>
                             <br>
@@ -155,7 +167,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'awards' ?>">Awards</a>
+                            <a href="awards">Awards</a>
 
                             <br>
                             <br>
@@ -175,7 +187,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'observatories' ?>">Observatories</a>
+                            <a href="observatories">Observatories</a>
 
                             <br>
                             <br>
@@ -195,7 +207,7 @@ require 'headerandnavbar.php';
                             <br>
                             <br>
 
-                            <a href="<?= BASE_URL . 'scienceexhibition' ?>">Science Exhibition</a>
+                            <a href="scienceexhibition">Science Exhibition</a>
 
                             <br>
                             <br>

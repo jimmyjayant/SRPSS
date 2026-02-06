@@ -1,38 +1,50 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
 <?php
-if(isset($_SESSION['username']))
-{
-   $none = 'style="display:none;"';   
-}
-else
-{
-   $none = NULL;
-}
+    if(isset($_SESSION['username']))
+    {
+        $none = 'style="display:none;"';   
+    }
+    else
+    {
+        $none = NULL;
+    }
 ?>
 
-<?php 
- require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
             <h2>
                 <?php
-                if(isset($_SESSION['username']))
-                {
-                    echo "Feedback Form";
-                }
-                else
-                {
-                    echo "Contact Us";
-                }
+                    if(isset($_SESSION['username']))
+                    {
+                        echo "Feedback Form";
+                    }
+                    else
+                    {
+                        echo "Contact Us";
+                    }
                 ?>
             </h2>
 
-            <form action="<?php echo 'feedback'/*htmlspecialchars($_SERVER['PHP_SELF'])*/;?>" method="post" target="_self" id="contactusform">
+            <form action="feedback" method="post" target="_self" id="contactusform">
                 <div <?php echo $none; ?>>
                     <div class="row">
                         <div class="col25">
@@ -106,7 +118,6 @@ else
             </form>
 
             <?php
-
                 if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["feedback_submit"]))) {
                     function test_input($data) {
                         $data = trim($data);
@@ -122,26 +133,46 @@ else
                     $message = test_input($_POST['message']);    
 
                     // Connect to 'srpss' database and input necessary form information to 'feedback' table using MySQLi Object-Oriented method:- 
+                    try
+                    {
+                        if(!file_exists('../app/Config/srpss_database_connection.php'))
+                        {
+                            throw new Exception('srpss_database_connection.php is missing.');
+                        }
+                        else
+                        {
+                            require '../app/Config/srpss_database_connection.php';
+                            if(isset($error))
+                            {
+                                echo "<script>alert($error);</script>";
+                                //exit();
+                            }
+                            else
+                            {
+                                // sql to insert form data before checking if records already exists
+                                $sql = "INSERT INTO feedback (fname, topic, contact, email, mess)
+                                VALUES ('$name', '$subject', '$mobile', '$email', '$message')";
 
-                    require '../app/Config/srpss_database_connection.php';
 
-                    // sql to insert form data before checking if records already exists
-                    $sql = "INSERT INTO feedback (fname, topic, contact, email, mess)
-                    VALUES ('$name', '$subject', '$mobile', '$email', '$message')";
+                                // Perform query
+                                $result = $conn->query($sql);
 
+                                if($result === TRUE) {
+                                    echo "<p style='color:green;'>Your feedback has been submitted.</p>";
+                                }
+                                else {
+                                    echo "<p style='color:red;'>Please enter UNIQUE feedback.</p>";
+                                }
 
-                    // Perform query
-                    $result = $conn->query($sql);
-
-                    if($result === TRUE) {
-                        echo "<p style='color:green;'>Your feedback has been submitted.</p>";
+                                // Close the connection
+                                $conn->close();
+                            }
+                        }
                     }
-                    else {
-                        echo "<p style='color:red;'>Please enter UNIQUE feedback.</p>";
+                    catch(Exception $e)
+                    {
+                        echo "<script>alert('{$e->getMessage()}');</script>";
                     }
-
-                    // Close the connection
-                    $conn->close();
                 }
             ?>
         </div>

@@ -17,13 +17,9 @@
     }
 ?>
 
-<?php
-    require 'visitor.php';
-?>
+<?php require 'visitor.php'; ?>
 
-<?php 
-    require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
 

@@ -17,9 +17,7 @@
   }
 ?>
 
-<?php 
-  require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
           <h2>

@@ -55,7 +55,7 @@
                     clearInterval(y);
                     timerelement.innerHTML = "EXPIRED";
                     localStorage.clear();
-                    window.location.href = "<?= BASE_URL . 'logout'?>";
+                    window.location.href = "logout";
                 }
                 }
                 // function to display countdown timer in horizontal navbar 
@@ -66,9 +66,7 @@
                 var y = setInterval(function() {checklogin(); }, 10000);
             }
         </script>
-        <title>
-            Scientific Research Paper Submission System (SRPSS) 
-        </title>
+        <title>Scientific Research Paper Submission System (SRPSS)</title>
     </head>
     <body>
         <div class="header">
@@ -79,15 +77,11 @@
             </a>
 
             <div class="logo">
-                <a href="index" alt=" Website Logo">
-                  SRPSS 
-                </a>
+                <a href="index" alt=" Website Logo">SRPSS</a>
             </div>
 
             <div class="heading">
-                <h1>
-                  Scientific Research Paper Submission System (SRPSS)  
-                </h1>
+                <h1>Scientific Research Paper Submission System (SRPSS)</h1>
             </div>
             
             <div class="login">                
@@ -141,10 +135,10 @@
                         </a>
                         <a href="changepassword" alt="Change Password" 
                         <?php 
-                        if(!isset($_SESSION['username']))
-                        {
-                            echo "style='display:none;'";
-                        }
+                            if(!isset($_SESSION['username']))
+                            {
+                                echo "style='display:none;'";
+                            }
                         ?>>
                         Change Password 
                         </a>

@@ -6,9 +6,9 @@
     <meta name="author" content="Jimmy Jayant">
     <meta name="keywords" content="science, research, papers, engineering, research paper">
     <meta name="description" content="Scientific Research Paper Submission System (SRPSS) online platform allows you to submit and view research papers">
-    <link rel="icon" type="image/x-icon" href="Images/SRPSS.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/SRPSS.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
     <title>
         Scientific Research Paper Submission System (SRPSS) 
     </title>

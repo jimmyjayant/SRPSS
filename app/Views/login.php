@@ -186,7 +186,7 @@
             Log In 
         </h2>
 
-        <form action="<?php echo 'login'; ?>" method="post" target="_self">
+        <form action="login" method="post" target="_self">
             <div class="row">
                 <div class="col25">
                     <label for="email">Email</label>

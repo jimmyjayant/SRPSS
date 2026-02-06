@@ -817,7 +817,7 @@ function showAfghanistanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("afghanistan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAfghanistanData();
@@ -841,7 +841,7 @@ function showAlbaniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("albania"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAlbaniaData();
@@ -865,7 +865,7 @@ function showAlgeriaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("algeria"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAlgeriaData();
@@ -889,7 +889,7 @@ function showAndorraData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("andorra"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAndorraData();
@@ -913,7 +913,7 @@ function showAngolaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("angola"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAngolaData();
@@ -937,7 +937,7 @@ function showAntigua_and_BarbudaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("antiguaandbarbuda"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAntigua_and_BarbudaData();
@@ -961,7 +961,7 @@ function showArgentinaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("argentina"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showArgentinaData();
@@ -985,7 +985,7 @@ function showArmeniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("armenia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showArmeniaData();
@@ -1009,7 +1009,7 @@ function showAustraliaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("australia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAustraliaData();
@@ -1033,7 +1033,7 @@ function showAustriaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("austria"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAustriaData();
@@ -1057,7 +1057,7 @@ function showAzerbaijanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("azerbaijan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showAzerbaijanData();
@@ -1081,7 +1081,7 @@ function showBahamasData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bahamas"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBahamasData();
@@ -1105,7 +1105,7 @@ function showBahrainData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bahrain"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBahrainData();
@@ -1129,7 +1129,7 @@ function showBangladeshData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bangladesh"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBangladeshData();
@@ -1153,7 +1153,7 @@ function showBarbadosData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("barbados"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBarbadosData();
@@ -1178,7 +1178,7 @@ function showBelarusData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("belarus"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBelarusData();
@@ -1202,7 +1202,7 @@ function showBelgiumData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("belgium"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBelgiumData();
@@ -1226,7 +1226,7 @@ function showBelizeData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("belize"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBelizeData();
@@ -1250,7 +1250,7 @@ function showBeninData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("benin"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBeninData();
@@ -1274,7 +1274,7 @@ function showBhutanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bhutan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBhutanData();
@@ -1298,7 +1298,7 @@ function showBoliviaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bolivia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBoliviaData();
@@ -1322,7 +1322,7 @@ function showBosnia_and_HerzegovinaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bosniaandherzegovina"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBosnia_and_HerzegovinaData();
@@ -1346,7 +1346,7 @@ function showBotswanaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("botswana"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBotswanaData();
@@ -1370,7 +1370,7 @@ function showBrazilData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("brazil"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBrazilData();
@@ -1394,7 +1394,7 @@ function showBruneiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("brunei"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBruneiData();
@@ -1418,7 +1418,7 @@ function showBulgariaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("bulgaria"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBulgariaData();
@@ -1442,7 +1442,7 @@ function showBurkina_FasoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("burkinafaso"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBurkina_FasoData();
@@ -1466,7 +1466,7 @@ function showBurundiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("burundi"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showBurundiData();
@@ -1490,7 +1490,7 @@ function showCabo_VerdeData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("caboverde"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCabo_VerdeData();
@@ -1514,7 +1514,7 @@ function showCambodiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("cambodia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCambodiaData();
@@ -1538,7 +1538,7 @@ function showCameroonData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("cameroon"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCameroonData();
@@ -1562,7 +1562,7 @@ function showCanadaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("canada"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCanadaData();
@@ -1586,7 +1586,7 @@ function showCentral_African_RepublicData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("centralafricanrepublic"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCentral_African_RepublicData();
@@ -1610,7 +1610,7 @@ function showChadData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("chad"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showChadData();
@@ -1634,7 +1634,7 @@ function showChileData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("chile"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showChileData();
@@ -1658,7 +1658,7 @@ function showChinaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("china"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showChinaData();
@@ -1682,7 +1682,7 @@ function showColombiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("colombia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showColombiaData();
@@ -1706,7 +1706,7 @@ function showComorosData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("comoros"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showComorosData();
@@ -1730,7 +1730,7 @@ function showCongo_Congo_BrazzavilleData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("congo-brazzaville"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCongo_Congo_BrazzavilleData();
@@ -1754,7 +1754,7 @@ function showCongo_Democratic_Republic_of_the_Congo_KinshasaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("congo_kinshasa"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCongo_Democratic_Republic_of_the_Congo_KinshasaData();
@@ -1778,7 +1778,7 @@ function showCosta_RicaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("costa_rica"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCosta_RicaData();
@@ -1802,7 +1802,7 @@ function showCroatiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("croatia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCroatiaData();
@@ -1826,7 +1826,7 @@ function showCubaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("cuba"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCubaData();
@@ -1850,7 +1850,7 @@ function showCyprusData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("cyprus"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showCyprusData();
@@ -1874,7 +1874,7 @@ function showCzechiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("czechia"))
 {  
    document.addEventListener("DOMContentLoaded", function() {
    showCzechiaData();
@@ -1898,7 +1898,7 @@ function showDenmarkData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("denmark"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showDenmarkData();
@@ -1922,7 +1922,7 @@ function showDjiboutiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("djibouti"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showDjiboutiData();
@@ -1946,7 +1946,7 @@ function showDominicaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("dominica"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showDominicaData();
@@ -1970,7 +1970,7 @@ function showDominican_RepublicData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("dominican_republic"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showDominican_RepublicData();
@@ -1994,7 +1994,7 @@ function showEcuadorData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("ecuador"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEcuadorData();
@@ -2018,7 +2018,7 @@ function showEgyptData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("egypt"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEgyptData();
@@ -2042,7 +2042,7 @@ function showEl_SalvadorData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("el_salvador"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEl_SalvadorData();
@@ -2066,7 +2066,7 @@ function showEquatorial_GuineaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("equatorial_guinea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEquatorial_GuineaData();
@@ -2090,7 +2090,7 @@ function showEritreaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("eritrea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEritreaData();
@@ -2114,7 +2114,7 @@ function showEstoniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("estonia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEstoniaData();
@@ -2138,7 +2138,7 @@ function showEswatiniData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("eswatini"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEswatiniData();
@@ -2162,7 +2162,7 @@ function showEthiopiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("ethiopia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showEthiopiaData();
@@ -2186,7 +2186,7 @@ function showFijiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("fiji"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showFijiData();
@@ -2210,7 +2210,7 @@ function showFinlandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("finland"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showFinlandData();
@@ -2234,7 +2234,7 @@ function showFranceData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("france"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showFranceData();
@@ -2258,7 +2258,7 @@ function showGabonData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("gabon"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGabonData();
@@ -2282,7 +2282,7 @@ function showGambiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("gambia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGambiaData();
@@ -2306,7 +2306,7 @@ function showGeorgiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("georgia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGeorgiaData();
@@ -2330,7 +2330,7 @@ function showGermanyData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("germany"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGermanyData();
@@ -2354,7 +2354,7 @@ function showGhanaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("ghana"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGhanaData();
@@ -2379,7 +2379,7 @@ function showGreeceData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("greece"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGreeceData();
@@ -2403,7 +2403,7 @@ function showGrenadaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("grenada"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGrenadaData();
@@ -2427,7 +2427,7 @@ function showGuatemalaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("guatemala"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGuatemalaData();
@@ -2451,7 +2451,7 @@ function showGuineaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("guinea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGuineaData();
@@ -2475,7 +2475,7 @@ function showGuinea_BissauData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("guinea_bissau"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGuinea_BissauData();
@@ -2499,7 +2499,7 @@ function showGuyanaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("guyana"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showGuyanaData();
@@ -2524,7 +2524,7 @@ function showHaitiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("haiti"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showHaitiData();
@@ -2548,7 +2548,7 @@ function showHondurasData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("honduras"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showHondurasData();
@@ -2572,7 +2572,7 @@ function showHungaryData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("hungary"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showHungaryData();
@@ -2596,7 +2596,7 @@ function showIcelandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("iceland"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIcelandData();
@@ -2620,7 +2620,7 @@ function showIndiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("india"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIndiaData();
@@ -2644,7 +2644,7 @@ function showIndonesiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("indonesia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIndonesiaData();
@@ -2668,7 +2668,7 @@ function showIranData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("iran"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIranData();
@@ -2692,7 +2692,7 @@ function showIraqData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("iraq"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIraqData();
@@ -2717,7 +2717,7 @@ function showIrelandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("ireland"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIrelandData();
@@ -2741,7 +2741,7 @@ function showIsraelData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("israel"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showIsraelData();
@@ -2765,7 +2765,7 @@ function showItalyData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("italy"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showItalyData();
@@ -2790,7 +2790,7 @@ function showJamaicaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("jamaica"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showJamaicaData();
@@ -2814,7 +2814,7 @@ function showJapanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("japan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showJapanData();
@@ -2838,7 +2838,7 @@ function showJordanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("jordan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showJordanData();
@@ -2862,7 +2862,7 @@ function showKazakhstanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("kazakhstan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showKazakhstanData();
@@ -2886,7 +2886,7 @@ function showKenyaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("kenya"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showKenyaData();
@@ -2911,7 +2911,7 @@ function showKiribatiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("kiribati"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showKiribatiData();
@@ -2935,7 +2935,7 @@ function showNorth_KoreaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("north_korea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNorth_KoreaData();
@@ -2960,7 +2960,7 @@ function showSouth_KoreaData() {
 }
 
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("south_korea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSouth_KoreaData();
@@ -2984,7 +2984,7 @@ function showKuwaitData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("kuwait"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showKuwaitData();
@@ -3008,7 +3008,7 @@ function showKyrgyzstanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("kyrgyzstan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showKyrgyzstanData();
@@ -3032,7 +3032,7 @@ function showLaosData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("laos"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLaosData();
@@ -3056,7 +3056,7 @@ function showLatviaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("latvia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLatviaData();
@@ -3079,7 +3079,7 @@ function showLebanonData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("lebanon"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLebanonData();
@@ -3103,7 +3103,7 @@ function showLesothoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("lesotho"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLesothoData();
@@ -3127,7 +3127,7 @@ function showLiberiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("liberia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLiberiaData();
@@ -3151,7 +3151,7 @@ function showLibyaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("libya"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLibyaData();
@@ -3175,7 +3175,7 @@ function showLiechtensteinData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("liechtenstein"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLiechtensteinData();
@@ -3199,7 +3199,7 @@ function showLithuaniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("lithuania"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLithuaniaData();
@@ -3223,7 +3223,7 @@ function showLuxembourgData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("luxembourg"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showLuxembourgData();
@@ -3247,7 +3247,7 @@ function showMadagascarData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("madagascar"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMadagascarData();
@@ -3272,7 +3272,7 @@ function showMalawiData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("malawi"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMalawiData();
@@ -3296,7 +3296,7 @@ function showMalaysiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("malaysia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMalaysiaData();
@@ -3320,7 +3320,7 @@ function showMaldivesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("maldives"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMaldivesData();
@@ -3344,7 +3344,7 @@ function showMaliData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mali"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMaliData();
@@ -3368,7 +3368,7 @@ function showMaltaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("malta"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMaltaData();
@@ -3392,7 +3392,7 @@ function showMarshall_IslandsData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("marshall_islands"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMarshall_IslandsData();
@@ -3416,7 +3416,7 @@ function showMauritaniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mauritania"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMauritaniaData();
@@ -3440,7 +3440,7 @@ function showMauritiusData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mauritius"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMauritiusData();
@@ -3464,7 +3464,7 @@ function showMexicoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mexico"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMexicoData();
@@ -3488,7 +3488,7 @@ function showMicronesiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("micronesia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMicronesiaData();
@@ -3512,7 +3512,7 @@ function showMoldovaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("moldova"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMoldovaData();
@@ -3536,7 +3536,7 @@ function showMonacoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("monaco"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMonacoData();
@@ -3560,7 +3560,7 @@ function showMongoliaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mongolia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMongoliaData();
@@ -3584,7 +3584,7 @@ function showMontenegroData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("montenegro"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMontenegroData();
@@ -3608,7 +3608,7 @@ function showMoroccoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("morocco"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMoroccoData();
@@ -3632,7 +3632,7 @@ function showMozambiqueData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("mozambique"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showMozambiqueData();
@@ -3656,7 +3656,7 @@ function showNamibiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("namibia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNamibiaData();
@@ -3680,7 +3680,7 @@ function showNauruData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("nauru"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNauruData();
@@ -3704,7 +3704,7 @@ function showNepalData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("nepal"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNepalData();
@@ -3729,7 +3729,7 @@ function showNetherlandsData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("netherlands"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNetherlandsData();
@@ -3753,7 +3753,7 @@ function showNew_ZealandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("new_zealand"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNew_ZealandData();
@@ -3777,7 +3777,7 @@ function showNicaraguaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("nicaragua"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNicaraguaData();
@@ -3801,7 +3801,7 @@ function showNigerData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("niger"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNigerData();
@@ -3825,7 +3825,7 @@ function showNigeriaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("nigeria"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNigeriaData();
@@ -3849,7 +3849,7 @@ function showNorth_MacedoniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("north_macedonia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNorth_MacedoniaData();
@@ -3873,7 +3873,7 @@ function showNorwayData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("norway"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showNorwayData();
@@ -3897,7 +3897,7 @@ function showOmanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("oman"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showOmanData();
@@ -3922,7 +3922,7 @@ function showPakistanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("pakistan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPakistanData();
@@ -3946,7 +3946,7 @@ function showPalauData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("palau"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPalauData();
@@ -3970,7 +3970,7 @@ function showPanamaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("panama"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPanamaData();
@@ -3994,7 +3994,7 @@ function showPapua_New_GuineaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("papua_new_guinea"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPapua_New_GuineaData();
@@ -4018,7 +4018,7 @@ function showParaguayData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("paraguay"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showParaguayData();
@@ -4042,7 +4042,7 @@ function showPeruData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("peru"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPeruData();
@@ -4066,7 +4066,7 @@ function showPhilippinesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("philippines"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPhilippinesData();
@@ -4090,7 +4090,7 @@ function showPolandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("poland"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPolandData();
@@ -4114,7 +4114,7 @@ function showPortugalData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("portugal"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showPortugalData();
@@ -4138,7 +4138,7 @@ function showQatarData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("qatar"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showQatarData();
@@ -4162,7 +4162,7 @@ function showRomaniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("romania"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showRomaniaData();
@@ -4186,7 +4186,7 @@ function showRussiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("russia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showRussiaData();
@@ -4210,7 +4210,7 @@ function showRwandaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("rwanda"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showRwandaData();
@@ -4234,7 +4234,7 @@ function showSao_Tome_and_PrincipeData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("sao_tome_and_principe"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSao_Tome_and_PrincipeData();
@@ -4258,7 +4258,7 @@ function showSaudi_ArabiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("saudi_arabia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSaudi_ArabiaData();
@@ -4282,7 +4282,7 @@ function showSenegalData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("senegal"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSenegalData();
@@ -4306,7 +4306,7 @@ function showSerbiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("serbia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSerbiaData();
@@ -4330,7 +4330,7 @@ function showSeychellesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("seychelles"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSeychellesData();
@@ -4354,7 +4354,7 @@ function showSierra_LeoneData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("sierra_leone"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSierra_LeoneData();
@@ -4378,7 +4378,7 @@ function showSingaporeData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("singapore"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSingaporeData();
@@ -4402,7 +4402,7 @@ function showSlovakiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("slovakia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSlovakiaData();
@@ -4426,7 +4426,7 @@ function showSloveniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("slovenia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSloveniaData();
@@ -4450,7 +4450,7 @@ function showSolomon_IslandsData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("solomon_islands"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSolomon_IslandsData();
@@ -4474,7 +4474,7 @@ function showSomaliaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("somalia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSomaliaData();
@@ -4498,7 +4498,7 @@ function showSouth_AfricaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("south_africa"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSouth_AfricaData();
@@ -4522,7 +4522,7 @@ function showSouth_SudanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("south_sudan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSouth_SudanData();
@@ -4546,7 +4546,7 @@ function showSpainData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("spain"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSpainData();
@@ -4570,7 +4570,7 @@ function showSri_LankaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("sri_lanka"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSri_LankaData();
@@ -4594,7 +4594,7 @@ function showSudanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("sudan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSudanData();
@@ -4618,7 +4618,7 @@ function showSurinameData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("suriname"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSurinameData();
@@ -4642,7 +4642,7 @@ function showSwedenData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("sweden"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSwedenData();
@@ -4667,7 +4667,7 @@ function showSwitzerlandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("switzerland"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showSwitzerlandData();
@@ -4691,7 +4691,7 @@ function showTajikistanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("tajikistan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTajikistanData();
@@ -4715,7 +4715,7 @@ function showTanzaniaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("tanzania"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTanzaniaData();
@@ -4739,7 +4739,7 @@ function showThailandData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("thailand"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showThailandData();
@@ -4763,7 +4763,7 @@ function showTogoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("togo"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTogoData();
@@ -4787,7 +4787,7 @@ function showTongaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("tonga"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTongaData();
@@ -4811,7 +4811,7 @@ function showTrinidad_and_TobagoData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("trinidad_and_tobago"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTrinidad_and_TobagoData();
@@ -4835,7 +4835,7 @@ function showTunisiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("tunisia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTunisiaData();
@@ -4859,7 +4859,7 @@ function showTurkeyData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("turkey"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTurkeyData();
@@ -4883,7 +4883,7 @@ function showTurkmenistanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("turkmenistan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTurkmenistanData();
@@ -4907,7 +4907,7 @@ function showTuvaluData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("tuvalu"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showTuvaluData();
@@ -4931,7 +4931,7 @@ function showUgandaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("uganda"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUgandaData();
@@ -4955,7 +4955,7 @@ function showUkraineData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("ukraine"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUkraineData();
@@ -4979,7 +4979,7 @@ function showUnited_Arab_EmiratesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("united_arab_emirates"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUnited_Arab_EmiratesData();
@@ -5003,7 +5003,7 @@ function showUnited_KingdomData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("united_kingdom"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUnited_KingdomData();
@@ -5027,7 +5027,7 @@ function showUnited_StatesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("united_states"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUnited_StatesData();
@@ -5051,7 +5051,7 @@ function showUruguayData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("uruguay"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUruguayData();
@@ -5075,7 +5075,7 @@ function showUzbekistanData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("uzbekistan"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showUzbekistanData();
@@ -5099,7 +5099,7 @@ function showVanuatuData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("vanuatu"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showVanuatuData();
@@ -5123,7 +5123,7 @@ function showVatican_CityData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("vatican_city"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showVatican_CityData();
@@ -5147,7 +5147,7 @@ function showVenezuelaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("venezuela"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showVenezuelaData();
@@ -5171,7 +5171,7 @@ function showVietnamData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("vietnam"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showVietnamData();
@@ -5195,7 +5195,7 @@ function showWalesData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("wales"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showWalesData();
@@ -5219,7 +5219,7 @@ function showYemenData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("yemen"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showYemenData();
@@ -5243,7 +5243,7 @@ function showZambiaData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("zambia"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showZambiaData();
@@ -5267,7 +5267,7 @@ function showZimbabweData() {
    xmlhttp.send();
 }
 
-if(window.location.pathname.includes("world"))
+if(window.location.pathname.includes("zimbabwe"))
 {
    document.addEventListener("DOMContentLoaded", function() {
    showZimbabweData();

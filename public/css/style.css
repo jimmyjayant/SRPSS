@@ -706,3 +706,25 @@ table td {
 }
 
 /* End of CSS of contact us page */
+
+/* Start of CSS of World page*/
+
+.list_of_countries > div {
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1rem;
+}
+
+.list_of_countries > div a {
+  background-color:transparent;
+  color:black;
+}
+
+.list_of_countries > div a:hover {
+  background-color:transparent;
+  text-decoration:underline;
+}
+
+/* End of CSS of World page*/

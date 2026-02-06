@@ -1,5 +1,19 @@
 <?php
-require '../app/Config/srpss_database_connection.php';
+try
+{
+   if(!file_exists('../app/Config/srpss_database_connection.php'))
+   {
+      throw new Exception("srpss_database_connection.php is missing.");
+   }
+   else
+   {
+      require '../app/Config/srpss_database_connection.php';
+   }
+}
+catch(Exception $e)
+{
+   echo "<script>alert('{$e->getMessage()}');</script>";
+}
 
 // store query in a variable
 $sql = "SELECT * FROM chat";

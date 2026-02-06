@@ -17,9 +17,7 @@
    }
 ?>
 
-<?php 
-   require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
          <h2>
@@ -37,8 +35,6 @@
          <div id="scientists">
           
           </div>
-
-        
         </div>
 
         <?php require 'footer.php'; ?>

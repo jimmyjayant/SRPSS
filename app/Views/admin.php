@@ -1,15 +1,29 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
 <?php
-// Access Denied for Web page DIRECT ACCESS 
-if(!isset($_SESSION['username']) || ($_SESSION['username'] !== "admin"))
-{
-    header("location: login");
-    die();
-}
+    // Access Denied for Web page DIRECT ACCESS 
+    if(!isset($_SESSION['username']) || ($_SESSION['username'] !== "admin"))
+    {
+        header("location: login");
+        die();
+    }
 ?>
 
 <?php
@@ -21,9 +35,7 @@ if(!isset($_SESSION['username']) || ($_SESSION['username'] !== "admin"))
     }
 ?>
 
-<?php 
-require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main" id="adminbody">
             <div class="navbar1">
@@ -67,7 +79,7 @@ require 'headerandnavbar.php';
                     Insert New Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="institute">Name of Research Site:- </label>
                     <br>
                     <input type="text" id="institute" name="institute" maxlength="500" size="50" placeholder="Enter the new research site here" required>
@@ -91,23 +103,44 @@ require 'headerandnavbar.php';
                         $location = test_input($_POST['location']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "INSERT IGNORE INTO researchsites (sitename, headquarter)
+                                    VALUES ('$institute', '$location')";
 
-                        $sql = "INSERT IGNORE INTO researchsites (sitename, headquarter)
-                        VALUES ('$institute', '$location')";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>New research site inserted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New researchsite inserted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
                     }
                 ?>
 
@@ -118,7 +151,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -135,23 +168,44 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM researchsites
+                                    WHERE id='$delete'";
 
-                        $sql = "DELETE FROM researchsites
-                        WHERE id='$delete'";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $delete . " research site deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " research site deleted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
+                        }                     
                     }
                 ?>
                 </div>
@@ -176,7 +230,7 @@ require 'headerandnavbar.php';
                         Delete Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -193,23 +247,44 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM researchpapers
+                                    WHERE id='$delete'";
+                    
+                                    // Perform query
+                                    $result = $conn->query($sql);
+                    
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $delete . " research paper deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        $sql = "DELETE FROM researchpapers
-                        WHERE id='$delete'";
-        
-                        // Perform query
-                        $result = $conn->query($sql);
-        
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " research paper deleted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
+                        }                        
                     }
                 ?>
 
@@ -220,7 +295,7 @@ require 'headerandnavbar.php';
                         Approve Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="approve">Approve Entry:- </label>
                     <br>
                     <input type="number" id="approve" name="approve" min="1" size="20" placeholder="Enter the entry number" required>
@@ -238,24 +313,45 @@ require 'headerandnavbar.php';
                         $approve = test_input($_POST['approve']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "UPDATE researchpapers
+                                    SET approved = 1 
+                                    WHERE id = $approve";
+                    
+                                    // Perform query
+                                    $result = $conn->query($sql);
+                    
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $approve . " research paper approved.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        $sql = "UPDATE researchpapers
-                        SET approved = 1 
-                        WHERE id = $approve";
-        
-                        // Perform query
-                        $result = $conn->query($sql);
-        
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $approve . " research paper approved.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
                     }
                 ?>
                 </div>
@@ -280,7 +376,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="magname">Name of Magazine:- </label>
                     <br>
                     <input type="text" id="magname" name="magname" maxlength="500" size="50" placeholder="Enter the new magazine here" required>
@@ -304,23 +400,44 @@ require 'headerandnavbar.php';
                         $publisher = test_input($_POST['publisher']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "INSERT IGNORE INTO magazines (magazinename, publisher)
+                                    VALUES ('$magname', '$publisher')";
 
-                        $sql = "INSERT IGNORE INTO magazines (magazinename, publisher)
-                        VALUES ('$magname', '$publisher')";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>New magazine inserted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New magazine inserted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
                     }
                 ?>
 
@@ -331,7 +448,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -348,23 +465,44 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        $sql = "DELETE FROM magazines 
-                        WHERE id='$delete'";
-        
-                        // Perform query
-                        $result = $conn->query($sql);
-        
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " magazine deleted.</p>";
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM magazines 
+                                    WHERE id='$delete'";
+                    
+                                    // Perform query
+                                    $result = $conn->query($sql);
+                    
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $delete . " magazine deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
+                    
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
-        
-                        // Close the connection
-                        $conn->close();
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
+                        }                        
                     }
                 ?>
                 </div>
@@ -389,7 +527,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="newsname">Name of Newspaper:- </label>
                     <br>
                     <input type="text" id="newsname" name="newsname" maxlength="500" size="50" placeholder="Enter the new newspaper here" required>
@@ -413,23 +551,44 @@ require 'headerandnavbar.php';
                         $url = test_input($_POST['url']);
         
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "INSERT IGNORE INTO newspapers (newspapername, link)
+                                    VALUES ('$newsname', '$url')";
+                    
+                                    // Perform query
+                                    $result = $conn->query($sql);
+                    
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>New newspaper inserted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                    }
 
-                        $sql = "INSERT IGNORE INTO newspapers (newspapername, link)
-                        VALUES ('$newsname', '$url')";
-        
-                        // Perform query
-                        $result = $conn->query($sql);
-        
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New newspaper inserted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
                     }
                     ?> 
 
@@ -440,7 +599,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -454,26 +613,47 @@ require 'headerandnavbar.php';
                 <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-newspaper'])))
                         {
-                        $delete = test_input($_POST['delete']);
-        
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        $sql = "DELETE FROM newspapers  
-                        WHERE id='$delete'";
-        
-                        // Perform query
-                        $result = $conn->query($sql);
-        
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " newspaper deleted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
-        
-                        // Close the connection
-                        $conn->close();
+                            $delete = test_input($_POST['delete']);
+            
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "DELETE FROM newspapers  
+                                        WHERE id='$delete'";
+                        
+                                        // Perform query
+                                        $result = $conn->query($sql);
+                        
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>No. " . $delete . " newspaper deleted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                        }
+                        
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }                        
                         }
                 ?>
                 </div>
@@ -498,7 +678,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="confname">Name of Conference:- </label>
                     <br>
                     <input type="text" id="confname" name="confname" maxlength="1000" size="50" placeholder="Enter the new conference here" required>
@@ -512,26 +692,47 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-conference'])))
                         {
-                        $confname = test_input($_POST['confname']);
+                            $confname = test_input($_POST['confname']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO conferences (conferencename)
+                                        VALUES ('$confname')";
 
-                        $sql = "INSERT IGNORE INTO conferences (conferencename)
-                        VALUES ('$confname')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New conference inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New conference inserted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }
                         }
                     ?>
 
@@ -542,7 +743,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -559,23 +760,44 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Config/srpss_database_connection.php';
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "DELETE FROM conferences   
+                                        WHERE id='$delete'";
 
-                            $sql = "DELETE FROM conferences   
-                            WHERE id='$delete'";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                            // Perform query
-                            $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>No. " . $delete . " conference deleted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                        }
 
-                            if($result === TRUE) {
-                                echo "<p style='color:green;'>No. " . $delete . " conference deleted.</p>";
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
                             }
-                            else {
-                                echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                            }
-
-                            // Close the connection
-                            $conn->close();
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }                         
                         }
                 ?>
                 </div>
@@ -600,7 +822,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="channelname">Name of YouTube Channel:- </label>
                     <br>
                     <input type="text" id="channelname" name="channelname" maxlength="100" size="30" placeholder="Enter the new YouTube Channel here" required>
@@ -617,23 +839,44 @@ require 'headerandnavbar.php';
                             $channelname = test_input($_POST['channelname']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Config/srpss_database_connection.php';
-            
-                            $sql = "INSERT IGNORE INTO ytchannels (channelname)
-                            VALUES ('$channelname')";
-            
-                            // Perform query
-                            $result = $conn->query($sql);
-            
-                            if($result === TRUE) {
-                                echo "<p style='color:green;'>New YouTube Channel inserted.</p>";
-                            }
-                            else {
-                                echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                            }
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO ytchannels (channelname)
+                                        VALUES ('$channelname')";
+                        
+                                        // Perform query
+                                        $result = $conn->query($sql);
+                        
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New YouTube Channel inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                            // Close the connection
-                            $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }
                         }
                     ?>
 
@@ -644,7 +887,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -661,23 +904,44 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
             
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Config/srpss_database_connection.php';
-            
-                            $sql = "DELETE FROM ytchannels    
-                            WHERE id='$delete'";
-            
-                            // Perform query
-                            $result = $conn->query($sql);
-            
-                            if($result === TRUE) {
-                                echo "<p style='color:green;'>No. " . $delete . " YouTube Channel deleted.</p>";
-                            }
-                            else {
-                                echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                            }
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "DELETE FROM ytchannels    
+                                        WHERE id='$delete'";
+                        
+                                        // Perform query
+                                        $result = $conn->query($sql);
+                        
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>No. " . $delete . " YouTube Channel deleted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                        }
 
-                            // Close the connection
-                            $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }          
                         }
                 ?>
                 </div>
@@ -702,7 +966,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="scientistname">Name of Scientist:- </label>
                     <br>
                     <input type="text" id="scientistname" name="scientistname" maxlength="100" size="30" placeholder="Enter the new Scientist here" required>
@@ -716,26 +980,47 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-scientist-name'])))
                         {
-                        $scientistname = test_input($_POST['scientistname']);
+                            $scientistname = test_input($_POST['scientistname']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO scientists (scientistname)
+                                        VALUES ('$scientistname')";
 
-                        $sql = "INSERT IGNORE INTO scientists (scientistname)
-                        VALUES ('$scientistname')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New Scientist inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New Scientist inserted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }                        
                         }
                     ?>
 
@@ -746,7 +1031,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -763,23 +1048,44 @@ require 'headerandnavbar.php';
                             $delete = test_input($_POST['delete']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Config/srpss_database_connection.php';
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "DELETE FROM scientists     
+                                        WHERE id='$delete'";
 
-                            $sql = "DELETE FROM scientists     
-                            WHERE id='$delete'";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                            // Perform query
-                            $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>No. " . $delete . " Scientist Name deleted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                        }
 
-                            if($result === TRUE) {
-                                echo "<p style='color:green;'>No. " . $delete . " Scientist Name deleted.</p>";
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
                             }
-                            else {
-                                echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
                             }
-
-                            // Close the connection
-                            $conn->close();
                         }
                 ?>
                 </div>
@@ -804,7 +1110,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="moviename">Name of Movie:- </label>
                     <br>
                     <input type="text" id="moviename" name="moviename" maxlength="100" size="30" placeholder="Enter the new Movie here" required>
@@ -822,24 +1128,44 @@ require 'headerandnavbar.php';
                             $moviename = test_input($_POST['moviename']);
 
                             // Connect to 'srpss' database and enter necessary information
-                            require '../app/Config/srpss_database_connection.php';
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO movies (moviename)
+                                        VALUES ('$moviename')";
 
-                            $sql = "INSERT IGNORE INTO movies (moviename)
-                            VALUES ('$moviename')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                            // Perform query
-                            $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New Movie inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                            if($result === TRUE) {
-                                echo "<p style='color:green;'>New Movie inserted.</p>";
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
                             }
-                            else {
-                                echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
                             }
-
-
-                            // Close the connection
-                            $conn->close();
                         }
                     ?>
 
@@ -850,7 +1176,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -868,25 +1194,44 @@ require 'headerandnavbar.php';
                         $delete = test_input($_POST['delete']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM movies      
+                                    WHERE id='$delete'";
 
-                        $sql = "DELETE FROM movies      
-                        WHERE id='$delete'";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $delete . " Movie deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " Movie deleted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-
-                        // Close the connection
-                        $conn->close();
-
                     }
                 ?>
                 </div>
@@ -911,7 +1256,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="webseriesname">Name of Web Series:- </label>
                     <br>
                     <input type="text" id="webseriesname" name="webseriesname" maxlength="100" size="30" placeholder="Enter the new Web Series here" required>
@@ -925,26 +1270,47 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-webseries'])))
                         {
-                        $webseriesname = test_input($_POST['webseriesname']);
+                            $webseriesname = test_input($_POST['webseriesname']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO webseries (webseriesname)
+                                        VALUES ('$webseriesname')";
 
-                        $sql = "INSERT IGNORE INTO webseries (webseriesname)
-                        VALUES ('$webseriesname')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New Web Series inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New Web Series inserted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }                   
                         }
                     ?>
 
@@ -955,7 +1321,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="delete">Delete Entry:- </label>
                     <br>
                     <input type="number" id="delete" name="delete" min="1" size="20" placeholder="Enter the entry number" required>
@@ -969,27 +1335,47 @@ require 'headerandnavbar.php';
                 <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-webseries'])))
                         {
-                        $delete = test_input($_POST['delete']);
+                            $delete = test_input($_POST['delete']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "DELETE FROM webseries      
+                                        WHERE id='$delete'";
 
-                        $sql = "DELETE FROM webseries      
-                        WHERE id='$delete'";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>No. " . $delete . " Webseries deleted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $delete . " Webseries deleted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
-
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }
                         }
                 ?>
                 </div>
@@ -1014,7 +1400,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="awardname">Name of Award:- </label>
                     <br>
                     <input type="text" id="awardname" name="awardname" maxlength="100" size="30" placeholder="Enter the new Award here" required>
@@ -1028,26 +1414,47 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-award'])))
                         {
-                        $awardname = test_input($_POST['awardname']);
+                            $awardname = test_input($_POST['awardname']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO awards (awardsname)
+                                        VALUES ('$awardname')";
 
-                        $sql = "INSERT IGNORE INTO awards (awardsname)
-                        VALUES ('$awardname')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New Award inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New Award inserted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }
                         }
                     ?>
 
@@ -1058,7 +1465,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="deleteaward">Delete Award:- </label>
                     <br>
                     <input type="number" id="deleteaward" name="deleteaward" min="1" size="20" placeholder="Enter the entry number" required>
@@ -1070,30 +1477,50 @@ require 'headerandnavbar.php';
                 </form>
 
                 <?php
-                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-award'])))
-                        {
+                    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-award'])))
+                    {
                         $deleteaward = test_input($_POST['deleteaward']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM awards      
+                                    WHERE id='$deleteaward'";
 
-                        $sql = "DELETE FROM awards      
-                        WHERE id='$deleteaward'";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $deleteaward . " Award deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $deleteaward . " Award deleted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
-
-                        }
+                    }
                 ?>
                 </div>
 
@@ -1117,7 +1544,7 @@ require 'headerandnavbar.php';
                         Insert New Entry 
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="observatoryname">Name of Observatory:- </label>
                     <br>
                     <input type="text" id="observatoryname" name="observatoryname" maxlength="100" size="30" placeholder="Enter the new Observatory here" required>
@@ -1131,26 +1558,47 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-observatory'])))
                         {
-                        $observatoryname = test_input($_POST['observatoryname']);
+                            $observatoryname = test_input($_POST['observatoryname']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                            // Connect to 'srpss' database and enter necessary information
+                            try
+                            {
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "INSERT IGNORE INTO observatory (observatoryname)
+                                        VALUES ('$observatoryname')";
 
-                        $sql = "INSERT IGNORE INTO observatory (observatoryname)
-                        VALUES ('$observatoryname')";
+                                        // Perform query
+                                        $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                        if($result === TRUE) {
+                                            echo "<p style='color:green;'>New Observatory inserted.</p>";
+                                        }
+                                        else {
+                                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
+                                        }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>New Observatory inserted.</p>";
-                        }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE details.</p>";
-                        }
-
-                        // Close the connection
-                        $conn->close();
+                                        // Close the connection
+                                        $conn->close();
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
+                            {
+                                echo "<script>alert('{$e->getMessage()}');</script>";
+                            }                   
                         }
                     ?>
 
@@ -1161,7 +1609,7 @@ require 'headerandnavbar.php';
                     Delete Entry 
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="deleteobservatory">Delete Entry:- </label>
                     <br>
                     <input type="number" id="deleteobservatory" name="deleteobservatory" min="1" size="20" placeholder="Enter the entry number" required>
@@ -1173,30 +1621,50 @@ require 'headerandnavbar.php';
                 </form>
 
                 <?php
-                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-observatory'])))
-                        {
+                    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-observatory'])))
+                    {
                         $deleteobservatory = test_input($_POST['deleteobservatory']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
+                        try
+                        {
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
+                            {
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
+                                }
+                                else
+                                {
+                                    $sql = "DELETE FROM observatory      
+                                    WHERE id='$deleteobservatory'";
 
-                        $sql = "DELETE FROM observatory      
-                        WHERE id='$deleteobservatory'";
+                                    // Perform query
+                                    $result = $conn->query($sql);
 
-                        // Perform query
-                        $result = $conn->query($sql);
+                                    if($result === TRUE) {
+                                        echo "<p style='color:green;'>No. " . $deleteobservatory . " Observatory deleted.</p>";
+                                    }
+                                    else {
+                                        echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                                    }
 
-                        if($result === TRUE) {
-                            echo "<p style='color:green;'>No. " . $deleteobservatory . " Observatory deleted.</p>";
+                                    // Close the connection
+                                    $conn->close();
+                                }
+                            }
                         }
-                        else {
-                            echo "<p style='color:red;'>Please enter UNIQUE number.</p>";
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
-
-                        // Close the connection
-                        $conn->close();
-
-                        }
+                    }
                 ?>
                 </div>
 
@@ -1220,7 +1688,7 @@ require 'headerandnavbar.php';
                         Approve Feedback  
                     </h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="approvefeedbacknum">Approve Entry:- </label>
                     <br>
                     <input type="number" id="approvefeedbacknum" name="approvefeedbacknum" min="1" size="30" placeholder="Enter the Feedback No." required>
@@ -1234,45 +1702,66 @@ require 'headerandnavbar.php';
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['submit-feedback'])))
                         {
-                        $approvefeedbacknum = test_input($_POST['approvefeedbacknum']);
+                            $approvefeedbacknum = test_input($_POST['approvefeedbacknum']);
 
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-                        
-                        $sql = "SELECT id FROM feedback";
-                        $result = $conn->query($sql);
-
-                        // Error Variable 
-                        $res = 2;
-
-                        while($row = $result->fetch_assoc())
-                        {
-                            if($approvefeedbacknum == $row['id'])
+                            // Connect to 'srpss' database and enter necessary information
+                            try
                             {
-                                $sql1 = "UPDATE feedback SET approved = 1 WHERE id = $approvefeedbacknum";
-                                $result1 = $conn->query($sql1);
-                
-                                if($result1 === TRUE) {
-                                    echo "<p style='color:green;'>No. " . $approvefeedbacknum . " Feedback approved.</p>";
-                                    $res = 0;
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
                                 }
-                                else {
-                                    echo "<p style='color:red;'>Error Approving Feedback.</p>";
-                                    $res = 1;
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        $sql = "SELECT id FROM feedback";
+                                        $result = $conn->query($sql);
+
+                                        // Error Variable 
+                                        $res = 2;
+
+                                        while($row = $result->fetch_assoc())
+                                        {
+                                            if($approvefeedbacknum == $row['id'])
+                                            {
+                                                $sql1 = "UPDATE feedback SET approved = 1 WHERE id = $approvefeedbacknum";
+                                                $result1 = $conn->query($sql1);
+                                
+                                                if($result1 === TRUE) {
+                                                    echo "<p style='color:green;'>No. " . $approvefeedbacknum . " Feedback approved.</p>";
+                                                    $res = 0;
+                                                }
+                                                else {
+                                                    echo "<p style='color:red;'>Error Approving Feedback.</p>";
+                                                    $res = 1;
+                                                }
+                                            }
+                                        }
+                                        
+                                        if($res != 0 && $res != 1)
+                                            {
+                                                echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
+                                            }
+
+                                        $result->free_result();
+                                        //$result1->free_result();
+
+                                        // Close the connection
+                                        $conn->close();
+                                    }
                                 }
                             }
-                        }
-                        
-                        if($res != 0 && $res != 1)
+                            catch(Exception $e)
                             {
-                                echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
+                                echo "<script>alert('{$e->getMessage()}');</script>";
                             }
-
-                        $result->free_result();
-                        //$result1->free_result();
-
-                        // Close the connection
-                        $conn->close();
                         }
                     ?>
 
@@ -1283,7 +1772,7 @@ require 'headerandnavbar.php';
                     Reject Feedback  
                 </h2>
 
-                <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
+                <form action="<?= 'admin'; ?>" method="post" target="_self">
                     <label for="rejfeedbacknum">Delete Entry:- </label>
                     <br>
                     <input type="number" id="rejfeedbacknum" name="rejfeedbacknum" min="1" size="50" placeholder="Enter the Feedback No." required>
@@ -1295,130 +1784,164 @@ require 'headerandnavbar.php';
                 </form>
 
                 <?php
-                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-feedback'])))
-                        {
+                    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['delete-feedback'])))
+                    {
                         $rejfeedbacknum = test_input($_POST['rejfeedbacknum']);
 
                         // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        $sql = "SELECT id FROM feedback";
-
-                        // Perform query
-                        $result = $conn->query($sql);
-
-                        // Error Variable 
-                        $res1 = 2;
-
-                        while($row = $result->fetch_assoc())
+                        try
                         {
-                            if($rejfeedbacknum == $row['id'])
+                            if(!file_exists('../app/Config/srpss_database_connection.php'))
                             {
-                                $sql1 = "UPDATE feedback SET approved = -1 WHERE id = $rejfeedbacknum";
-                                $result1 = $conn->query($sql1);
-                
-                                if($result1 === TRUE) {
-                                    echo "<p style='color:green;'>No. " . $rejfeedbacknum . " Feedback rejected.</p>";
-                                    $res1 = 0;
+                                throw new Exception('srpss_database_connection.php is missing.');
+                            }
+                            else
+                            {
+                                require '../app/Config/srpss_database_connection.php';
+                                if(isset($error))
+                                {
+                                    echo "<script>alert($error);</script>";
+                                    //exit();
                                 }
-                                else {
-                                    echo "<p style='color:red;'>Error Rejecting Feedback.</p>";
-                                    $res1 = 1;
+                                else
+                                {
+                                    $sql = "SELECT id FROM feedback";
+
+                                    // Perform query
+                                    $result = $conn->query($sql);
+
+                                    // Error Variable 
+                                    $res1 = 2;
+
+                                    while($row = $result->fetch_assoc())
+                                    {
+                                        if($rejfeedbacknum == $row['id'])
+                                        {
+                                            $sql1 = "UPDATE feedback SET approved = -1 WHERE id = $rejfeedbacknum";
+                                            $result1 = $conn->query($sql1);
+                            
+                                            if($result1 === TRUE) {
+                                                echo "<p style='color:green;'>No. " . $rejfeedbacknum . " Feedback rejected.</p>";
+                                                $res1 = 0;
+                                            }
+                                            else {
+                                                echo "<p style='color:red;'>Error Rejecting Feedback.</p>";
+                                                $res1 = 1;
+                                            }
+                                        }
+                                    }
+                    
+                                    if($res1 != 0 && $res1 != 1)
+                                        {
+                                            echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
+                                        }
+
+                                    $result->free_result();
+                                    //$result1->free_result();
+
+                                    // Close the connection
+                                    $conn->close();
                                 }
                             }
                         }
-                        
-                        if($res1 != 0 && $res1 != 1)
-                            {
-                                echo "<p style='color:red;>Please enter correct Feedback Number.</p>";
-                            }
-
-                        $result->free_result();
-                        //$result1->free_result();
-
-                       
-
-                        // Close the connection
-                        $conn->close();
-
+                        catch(Exception $e)
+                        {
+                            echo "<script>alert('{$e->getMessage()}');</script>";
                         }
+                    }
                 ?>
                 </div>
 
                 <!-- Export MySQL Data to 'srpss.sql' File-->
                 <div class="class13 hide" id="exportmysqltofile">
-                    <h2>
-                    Export MySQL Data to File 
-                    </h2>
+                    <h2>Export MySQL Data to File</h2>
 
-                    <form action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" method="post" target="_self">
-                    <input type="submit" name="export-mysqldata" value="Export">
+                    <form action="<?= 'admin'; ?>" method="post" target="_self">
+                        <input type="submit" name="export-mysqldata" value="Export">
                     </form>
 
                     <?php
                         if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['export-mysqldata'])))
                         {
-
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        // Path to sql file in which mysql database is exported
-                        $file = 'srpss.sql';
-
-                        // Get the list of tables
-                        $result = $conn->query("SHOW TABLES");
-                        $tables = [];
-                        while($row = $result->fetch_row())
-                        {
-                            $tables[] = $row[0];
-                        }
-
-                        // Create SQL file or open it if it already exists
-                        $handle = fopen($file, "w");
-
-                        if($handle === false)
-                        {
-                            die("Error opening output file.");
-                        }
-
-                        // Iterate through tables and export structure and data
-                        foreach($tables as $table)
-                        {
-                            // Structure
-                            $structure = $conn->query("SHOW CREATE TABLE $table");
-                            if($structure === false)
+                            // Connect to 'srpss' database and enter necessary information
+                            try
                             {
-                                die("Error getting structure for table $table: " . $conn->error);
-                            }
-                            $createTableSQL = $structure->fetch_row()[1];
-                            fwrite($handle, "$createTableSQL;\n");
+                                if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                {
+                                    throw new Exception('srpss_database_connection.php is missing.');
+                                }
+                                else
+                                {
+                                    require '../app/Config/srpss_database_connection.php';
+                                    if(isset($error))
+                                    {
+                                        echo "<script>alert($error);</script>";
+                                        //exit();
+                                    }
+                                    else
+                                    {
+                                        // Path to sql file in which mysql database is exported
+                                        $file = 'srpss.sql';
 
-                            // Data
-                            $data = $conn->query("SELECT * FROM $table");
-                            if($data === false)
+                                        // Get the list of tables
+                                        $result = $conn->query("SHOW TABLES");
+                                        $tables = [];
+                                        while($row = $result->fetch_row())
+                                        {
+                                            $tables[] = $row[0];
+                                        }
+
+                                        // Create SQL file or open it if it already exists
+                                        $handle = fopen($file, "w");
+
+                                        if($handle === false)
+                                        {
+                                            die("Error opening output file.");
+                                        }
+
+                                        // Iterate through tables and export structure and data
+                                        foreach($tables as $table)
+                                        {
+                                            // Structure
+                                            $structure = $conn->query("SHOW CREATE TABLE $table");
+                                            if($structure === false)
+                                            {
+                                                die("Error getting structure for table $table: " . $conn->error);
+                                            }
+                                            $createTableSQL = $structure->fetch_row()[1];
+                                            fwrite($handle, "$createTableSQL;\n");
+
+                                            // Data
+                                            $data = $conn->query("SELECT * FROM $table");
+                                            if($data === false)
+                                            {
+                                                die("Error getting data for table $table: " . $conn->error);
+                                            }
+                                            while($row = $data->fetch_assoc())
+                                            {
+                                                // Escape each value in $row if it's not null
+                                                $escaped_row = array_map(function($value) use ($conn) {
+                                                    return ($value !== null) ? $conn->real_escape_string($value) : 'NULL';
+                                                }, $row);
+                                                $values = implode("', '", $escaped_row);
+                                                //$values = implode("', '", array_map([$conn, 'real_escape_string'], $row));
+                                                fwrite($handle, "INSERT INTO $table VALUES ('$values');\n");
+                                            }
+                                        }
+
+                                        fclose($handle);
+
+                                        // Close the connection
+                                        $conn->close();
+
+                                        echo "<p style='color:green'>Export Successful to srpss.sql file!</p>";
+                                    }
+                                }
+                            }
+                            catch(Exception $e)
                             {
-                                die("Error getting data for table $table: " . $conn->error);
+                                echo "<script>alert('{$e->getMessage()}');</script>";
                             }
-                            while($row = $data->fetch_assoc())
-                            {
-                                // Escape each value in $row if it's not null
-                                $escaped_row = array_map(function($value) use ($conn) {
-                                    return ($value !== null) ? $conn->real_escape_string($value) : 'NULL';
-                                }, $row);
-                                $values = implode("', '", $escaped_row);
-                                //$values = implode("', '", array_map([$conn, 'real_escape_string'], $row));
-                                fwrite($handle, "INSERT INTO $table VALUES ('$values');\n");
-                            }
-                        }
-
-                        fclose($handle);
-                        
-
-                        // Close the connection
-                        $conn->close();
-
-                        echo "<p style='color:green'>Export Successful to srpss.sql file!</p>";
-
                         }
                     ?>
 
@@ -1435,104 +1958,135 @@ require 'headerandnavbar.php';
                   </p>
 
                   <?php
-                    // define Error messages variables and set to empty values
-                    $textareaErr = "";
-                    $selectedUsersErr = "";
+                        // define Error messages variables and set to empty values
+                        $textareaErr = "";
+                        $selectedUsersErr = "";
 
-                    // define user notification send status message
-                    $sendmessage = "";
-                    
-                    if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['sendnotification'])))
-                    {
-                      if(empty($_POST['allregisteredusers']) && empty($_POST['selectallusers']))
-                      {
-                        $selectedUsersErr = "No User Selected. Please select users through Dropdown or Checkbox.";
-                      }
-                      else if(!empty($_POST['allregisteredusers']) && !empty($_POST['selectallusers']))
-                      {
-                        $selectedUsersErr = "You cannot select BOTH Dropdown and Checkbox. Please select one."; 
-                      }
-                      
-                      else if(($_POST['notificationmessage']) == "")
-                      {
-                        $textareaErr = "Please provide notification message.";
-                      }
-                      
-                      else if(!empty($_POST['allregisteredusers']))
-                      {
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        $usernotification = test_input($_POST['notificationmessage']);
-
-                        $usrs = ($_POST['allregisteredusers']);
-                        foreach($usrs as $key => $value)
+                        // define user notification send status message
+                        $sendmessage = "";
+                        
+                        if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['sendnotification'])))
                         {
-                            // store query in a variable
-                            $sql = "SELECT firstname, lastname FROM researchers WHERE email='$value'";
-
-                            // perform query and store result in a variable
-                            $result = $conn->query($sql);
-
-                            if($result->num_rows > 0)
+                            if(empty($_POST['allregisteredusers']) && empty($_POST['selectallusers']))
                             {
-                                while($row = $result->fetch_assoc())
+                                $selectedUsersErr = "No User Selected. Please select users through Dropdown or Checkbox.";
+                            }
+                            else if(!empty($_POST['allregisteredusers']) && !empty($_POST['selectallusers']))
+                            {
+                                $selectedUsersErr = "You cannot select BOTH Dropdown and Checkbox. Please select one."; 
+                            }
+                            else if(($_POST['notificationmessage']) == "")
+                            {
+                                $textareaErr = "Please provide notification message.";
+                            }
+                            else if(!empty($_POST['allregisteredusers']))
+                            {
+                                // Connect to 'srpss' database and enter necessary information
+                                try
                                 {
-                                    // store query in a variable
-                                    $sql3 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
-                                             VALUES ('{$row['firstname']}', '{$row['lastname']}', '$value', '$usernotification')";
-
-                                    // perform query and store the result in a variable
-                                    $result2 = $conn->query($sql3);
-
-                                    /*
-                                    if($result2 === TRUE)
+                                    if(!file_exists('../app/Config/srpss_database_connection.php'))
                                     {
-
+                                        throw new Exception('srpss_database_connection.php is missing.');
                                     }
-                                    */
-                                    
+                                    else
+                                    {
+                                        require '../app/Config/srpss_database_connection.php';
+                                        if(isset($error))
+                                        {
+                                            echo "<script>alert($error);</script>";
+                                            //exit();
+                                        }
+                                        else
+                                        {
+                                            $usernotification = test_input($_POST['notificationmessage']);
+
+                                            $usrs = ($_POST['allregisteredusers']);
+                                            foreach($usrs as $key => $value)
+                                            {
+                                                // store query in a variable
+                                                $sql = "SELECT firstname, lastname FROM researchers WHERE email='$value'";
+
+                                                // perform query and store result in a variable
+                                                $result = $conn->query($sql);
+
+                                                if($result->num_rows > 0)
+                                                {
+                                                    while($row = $result->fetch_assoc())
+                                                    {
+                                                        // store query in a variable
+                                                        $sql3 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
+                                                                VALUES ('{$row['firstname']}', '{$row['lastname']}', '$value', '$usernotification')";
+
+                                                        // perform query and store the result in a variable
+                                                        $result2 = $conn->query($sql3);
+                                                    }
+                                                }
+                                            }
+                                            $sendmessage = "Users Notifications Send Successfully.";
+                                        }
+                                    }
                                 }
+                                catch(Exception $e)
+                                {
+                                    echo "<script>alert('{$e->getMessage()}');</script>";
+                                }                        
                             }
-                        }
-                        $sendmessage = "Users Notifications Send Successfully.";
-                      }
-
-                      else if(!empty($_POST['selectallusers']))
-                      {
-                        // Connect to 'srpss' database and enter necessary information
-                        require '../app/Config/srpss_database_connection.php';
-
-                        $usernotification = test_input($_POST['notificationmessage']);
-
-                        // store query in a variable
-                        $sql4 = "SELECT firstname, lastname, email FROM researchers";
-
-                        // perform query and store the result in a variable
-                        $result4 = $conn->query($sql4);
-
-                        if($result4->num_rows > 0)
-                        {
-                            while($row = $result4->fetch_assoc())
+                            else if(!empty($_POST['selectallusers']))
                             {
-                              // skip the admin
-                              if($row['firstname'] == "admin")
-                              continue;
-                              // store query in a variable
-                              $sql5 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
-                                       VALUES ('{$row['firstname']}', '{$row['lastname']}', '{$row['email']}', '$usernotification')";
+                                // Connect to 'srpss' database and enter necessary information
+                                try
+                                {
+                                    if(!file_exists('../app/Config/srpss_database_connection.php'))
+                                    {
+                                        throw new Exception('srpss_database_connection.php is missing.');
+                                    }
+                                    else
+                                    {
+                                        require '../app/Config/srpss_database_connection.php';
+                                        if(isset($error))
+                                        {
+                                            echo "<script>alert($error);</script>";
+                                            //exit();
+                                        }
+                                        else
+                                        {
+                                            $usernotification = test_input($_POST['notificationmessage']);
 
-                              // perform query and store result in a variable
-                              $result5 = $conn->query($sql5);
+                                            // store query in a variable
+                                            $sql4 = "SELECT firstname, lastname, email FROM researchers";
+
+                                            // perform query and store the result in a variable
+                                            $result4 = $conn->query($sql4);
+
+                                            if($result4->num_rows > 0)
+                                            {
+                                                while($row = $result4->fetch_assoc())
+                                                {
+                                                // skip the admin
+                                                if($row['firstname'] == "admin")
+                                                continue;
+                                                // store query in a variable
+                                                $sql5 = "INSERT INTO usernotif (firstname, lastname, email, usrnotification)
+                                                        VALUES ('{$row['firstname']}', '{$row['lastname']}', '{$row['email']}', '$usernotification')";
+
+                                                // perform query and store result in a variable
+                                                $result5 = $conn->query($sql5);
+                                                }
+                                            }
+                                            $sendmessage = "Users Notifications Send Successfully.";
+                                        }
+                                    }
+                                }
+                                catch(Exception $e)
+                                {
+                                    echo "<script>alert('{$e->getMessage()}');</script>";
+                                }                        
                             }
                         }
-                        $sendmessage = "Users Notifications Send Successfully.";
-                      }
-                    }
                   ?>
-                  
+                
 
-                  <form method="post" action="<?php echo 'admin'/*htmlspecialchars($_SERVER['PHP_SELF'])*/; ?>" target="_self">
+                  <form method="post" action="<?= 'admin'; ?>" target="_self">
                     <label for="allregisteredusers">
                       Dropdown menu containing all registered users:- 
                       <br>

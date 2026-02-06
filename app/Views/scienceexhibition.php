@@ -1,11 +1,23 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
-<?php 
-require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
     <div class="part12">
@@ -22,7 +34,7 @@ require 'headerandnavbar.php';
         </p>
 
         <p>
-            There may be multiple exhibits or booths where different projects or inventions are presented. These could be curated by institutions, universities, companies, or schools. It’s not always competitive and could feature more passive viewing, where people can learn about the subject matter.
+            There may be multiple exhibits or booths where different projects or inventions are presented. These could be curated by institutions, universities, companies, or schools. It's not always competitive and could feature more passive viewing, where people can learn about the subject matter.
         </p>
 
         <p>

@@ -1,6 +1,4 @@
-<?php
-    require 'sessionstart.php';
-?>
+<?php require 'sessionstart.php'; ?>
 
 <?php
     // Access Denied for Web page DIRECT ACCESS 
@@ -97,16 +95,14 @@
     }
 ?>
 
-<?php 
-    require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
             <h2>
                 Register Yourself 
             </h2>
 
-            <form action="<?php echo 'register'; ?>" method="post" target="_self">
+            <form action="register" method="post" target="_self">
                 <div class="row">
                     <div class="col25">
                         <label for="firstname">First Name</label>

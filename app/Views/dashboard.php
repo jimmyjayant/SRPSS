@@ -1,20 +1,32 @@
 <?php
-require 'sessionstart.php';
-require '../app/Models/checkcookie.php';
+    require 'sessionstart.php';
+    try
+    {
+        if(!file_exists('../app/Models/checkcookie.php'))
+        {
+            throw new Exception("checkcookie.php is missing.");
+        }
+        else
+        {
+            require '../app/Models/checkcookie.php';
+        }
+    }
+    catch(Exception $e)
+    {
+        echo "<script>alert('{$e->getMessage()}');</script>";
+    }
 ?>
 
 <?php
-// Access Denied for Web page DIRECT ACCESS 
-if(!isset($_SESSION['username']))
-{
-    header("location: login");
-    die();
-}
+    // Access Denied for Web page DIRECT ACCESS 
+    if(!isset($_SESSION['username']))
+    {
+        header("location: login");
+        die();
+    }
 ?>
 
-<?php 
-require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main" id="userdashboard">
     <div class="navbar2">

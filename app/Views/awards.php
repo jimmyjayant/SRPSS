@@ -17,18 +17,12 @@
     }
 ?>
 
-<?php 
-    require 'headerandnavbar.php';
-?>
+<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
-    <h2>
-    List of Indian Scientific Awards  
-    </h2>
+    <h2>List of Indian Scientific Awards</h2>
 
-    <p>
-    Here is the list of Indian Scientific Awards:- 
-    </p>
+    <p>Here is the list of Indian Scientific Awards:-</p>
 
     <br>
     <br>
