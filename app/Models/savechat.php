@@ -17,34 +17,41 @@
     {
       if(!file_exists('../app/Config/srpss_database_connection.php'))
       {
-          throw new Exception("srpss_database_connection.php is missing.");
+        throw new Exception("srpss_database_connection.php is missing.");
       }
       else
       {
-          require '../app/Config/srpss_database_connection.php';
+        require '../app/Config/srpss_database_connection.php';
+        if(isset($error))
+        {
+            echo "<script>alert($error);</script>";
+            //exit();
+        }
+        else
+        {
+          $sql = "INSERT INTO chat (username, chatmsg) 
+          VALUES ('$currentuser','$chatmsg')";
+
+          // Perform query
+          $result = $conn->query($sql);
+
+          if($result === FALSE) 
+          {
+              echo "Message Storage Failed!";
+          }
+          else
+          {
+              echo "Message Stored Successfully.";
+          }
+
+          // Close the connection
+          $conn->close();
+        }
       }
     }
     catch(Exception $e)
     {
       echo "<script>alert('{$e->getMessage()}');</script>";
     }
-
-    $sql = "INSERT INTO chat (username, chatmsg) 
-    VALUES ('$currentuser','$chatmsg')";
-
-    // Perform query
-    $result = $conn->query($sql);
-
-    if($result === FALSE) 
-    {
-        echo "Message Storage Failed!";
-    }
-    else
-    {
-        echo "Message Stored Successfully.";
-    }
-
-    // Close the connection
-    $conn->close();
   }
 ?>

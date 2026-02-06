@@ -1,48 +1,64 @@
 <?php
-   require '../app/Config/srpss_database_connection.php';
-   if(isset($error))
+   try
    {
-      echo $error;
-      exit();
-   }
-
-   // store query in a variable
-   $sql = "SELECT * FROM researchpapers WHERE approved = 1 ORDER BY id ASC";
-
-   // perform query and store result in a variable
-   $result = $conn->query($sql);
-
-   if($result->num_rows > 0)
-   {
-      echo "<table>
-      <tr>
-      <th>S.N.</th>
-      <th>Category</th>
-      <th>Researcher</th>
-      <th>Topic</th>
-      <th>Paper</th>
-      </tr>";
-
-      while($row = $result->fetch_assoc()) {
-         echo "<tr>";
-         echo "<td>" . $row['id'] . "</td>";
-         echo "<td>" . $row['category'] . "</td>";
-         echo "<td>" . $row['loggeduser'] . "</td>";
-         echo "<td>" . $row['topic'] . "</td>";
-         echo "<td>";
-         echo "<a href='" .  "displaypaperdata.php?pdf=" . $row['paper'] . "' target='_blank'>"  . $row['topic'] . "</a>";
-         echo "</td>";
-         echo "</tr>";
+      if(!file_exists('../app/Config/srpss_database_connection.php'))
+      {
+         throw new Exception("srpss_database_connection.php is missing.");
       }
-      echo "</table>";
+      else
+      {
+         require '../app/Config/srpss_database_connection.php';
+         if(isset($error))
+         {
+            echo "<script>alert($error);</script>";
+            //exit();
+         }
+         else
+         {
+            // store query in a variable
+            $sql = "SELECT * FROM researchpapers WHERE approved = 1 ORDER BY id ASC";
+
+            // perform query and store result in a variable
+            $result = $conn->query($sql);
+
+            if($result->num_rows > 0)
+            {
+               echo "<table>
+               <tr>
+               <th>S.N.</th>
+               <th>Category</th>
+               <th>Researcher</th>
+               <th>Topic</th>
+               <th>Paper</th>
+               </tr>";
+
+               while($row = $result->fetch_assoc()) {
+                  echo "<tr>";
+                  echo "<td>" . $row['id'] . "</td>";
+                  echo "<td>" . $row['category'] . "</td>";
+                  echo "<td>" . $row['loggeduser'] . "</td>";
+                  echo "<td>" . $row['topic'] . "</td>";
+                  echo "<td>";
+                  echo "<a href='" .  "displaypaperdata.php?pdf=" . $row['paper'] . "' target='_blank'>"  . $row['topic'] . "</a>";
+                  echo "</td>";
+                  echo "</tr>";
+               }
+               echo "</table>";
+            }
+            else 
+            {
+               echo "<p style='color:red;'>No Research Papers Approved.</p>";
+            }
+
+            $result->free_result();
+
+            // close the connection
+            $conn->close();
+         }
+      }
    }
-   else 
+   catch(Exception $e)
    {
-      echo "<p style='color:red;'>No Research Papers Approved.</p>";
+      echo "<script>alert('{$e->getMessage()}');</script>";
    }
-
-   $result->free_result();
-
-   // close the connection
-   $conn->close();
 ?>
