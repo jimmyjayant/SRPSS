@@ -91,66 +91,20 @@
                 </div>
                 
                 <div class="userstatus">
-                        <a href="login" alt="Login" 
-                            <?php 
-                                if(isset($_SESSION['username']))
-                                {
-                                    echo "style='display:none;'";
-                                }
-                            ?>>
-                            Login
-                        </a>
-                        <a href="register" alt="Register" 
-                            <?php 
-                                if(isset($_SESSION['username']))
-                                {
-                                    echo "style='display:none;'";
-                                }
-                            ?>>
-                            Signup
-                        </a>
-                        <a href="#" alt="Current User" 
-                            <?php
-                                if(!isset($_SESSION['username']))
-                                {
-                                    echo "style='display:none;'";
-                                }
-                            ?>>
-                            Hi! 
-                            <?php 
-                                if(isset($_SESSION['username']))
-                                {
-                                    echo $_SESSION['username'];
-                                }
-                            ?>
-                        </a>
-                        <a href="dashboard" alt="User Dashboard"
-                            <?php
-                                if(!isset($_SESSION['username']) || ($_SESSION['username'] === "admin"))
-                                {
-                                    echo "style='display:none;'";
-                                }
-                            ?>>
-                            Dashboard
-                        </a>
-                        <a href="changepassword" alt="Change Password" 
-                        <?php 
-                            if(!isset($_SESSION['username']))
-                            {
-                                echo "style='display:none;'";
-                            }
-                        ?>>
-                        Change Password 
-                        </a>
-                        <a alt="Logout" 
-                            <?php
-                                if(!(isset($_SESSION['username'])))
-                                {
-                                    echo "style='display:none;'";
-                                }
-                            ?> onclick="logout()" style='cursor:pointer;'>
-                            Logout
-                        </a>
+                    <?php 
+                        if(!isset($_SESSION['username']))
+                        {
+                            echo "<a href='login' alt='Login'>Login</a>";
+                            echo "<a href='register' alt='Register'>Signup</a>";
+                        }
+                        else
+                        {
+                            echo "<a alt='Current User'>Hi! {$_SESSION['username']}</a>";
+                            echo "<a href='dashboard' alt='User Dashboard'>Dashboard</a>";
+                            echo "<a href='changepassword' alt='Change Password'>Change Password</a>";
+                            echo "<a alt='Logout' onclick='logout()' style='cursor:pointer;'>Logout</a>";
+                        }
+                    ?>                            
                 </div>
             </div>
         </div>
@@ -158,43 +112,24 @@
         <div class="navbar" id="nav">
             <a href="#" id="closex"><span>&times;</span></a>
             <a href="index">Home</a>
-            <a href="register"
             <?php
-            if(isset($_SESSION['username']))
-            {
-                echo "style='display:none;'";
-            }
-            ?>>Register</a>
-            <a href="login"
-            <?php
-            if(isset($_SESSION['username']))
-            {
-                echo "style='display:none;'";
-            }
-            ?>>Login</a>
+                if(!isset($_SESSION['username']))
+                {
+                    echo "<a href='register'>Register</a>";
+                    echo "<a href='login'>Login</a>";
+                }
+                else
+                {
+                    echo "<a href='submit'>Submit</a>";
+                    echo "<a href='chat'>Chat</a>";
+                    if(!($_SESSION['username'] == "admin"))
+                    {
+                        echo "<a href='admin'>Admin Panel</a>";
+                    }
+                }
+            ?>
             <a href="researchsites">Research Sites</a>
-            <a href="submit" 
-            <?php
-            if(!isset($_SESSION['username']))
-            {
-                echo "style='display:none;'";
-            }
-            ?>>Submit</a>
             <a href="view">View</a>
-            <a href="chat"
-            <?php
-            if(!isset($_SESSION['username']))
-            {
-                echo "style='display:none;'";
-            }
-            ?>>Chat</a>
-            <a href="admin"
-            <?php
-            if(!(isset($_SESSION['username']) && ($_SESSION['username'] == "admin")))
-            {
-                echo "style='display:none;'";
-            }
-            ?>>Admin Panel</a>
             <div class="dropdown">
               <a href="#" class="dropbtn">Culture</a>
                  <div class="dropdown-content">
@@ -212,15 +147,10 @@
                  </div>
             </div>
             <a href="world"><img src="images/transparent globe.png" alt="Scientific Websites from around the World" style="width:1rem;height:1rem;padding:0;"></a>
-            <a href="#" alt="User Session Timer" 
             <?php
-            if(isset($_SESSION['sessionactive']))
-            {
-                echo "id='timer'";
-            }
-            else
-            {
-                echo "style='display:none;'";
-            }
-            ?>></a>
+                if(isset($_SESSION['sessionactive']))
+                {
+                    echo "<a href='#' alt='User Session Timer' id='timer'></a>";
+                }
+            ?>
         </div>
