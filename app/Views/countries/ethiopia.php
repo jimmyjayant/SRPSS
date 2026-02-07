@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Ethiopia Data 
+function showEthiopiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEthiopiaData = document.getElementById("science_in_Ethiopia");
+         if(showEthiopiaData)
+         {
+            showEthiopiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getethiopiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEthiopiaData();
+});
+</script>
     </body>
 </html>

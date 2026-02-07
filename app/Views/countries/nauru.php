@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Nauru Data 
+function showNauruData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNauruData = document.getElementById("science_in_Nauru");
+         if(showNauruData)
+         {
+            showNauruData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnaurudata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNauruData();
+});
+</script>
     </body>
 </html>

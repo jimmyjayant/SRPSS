@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Niger Data 
+function showNigerData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNigerData = document.getElementById("science_in_Niger");
+         if(showNigerData)
+         {
+            showNigerData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnigerdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNigerData();
+});
+</script>
     </body>
 </html>

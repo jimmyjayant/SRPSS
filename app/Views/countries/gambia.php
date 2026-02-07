@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Gambia Data 
+function showGambiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGambiaData = document.getElementById("science_in_Gambia");
+         if(showGambiaData)
+         {
+            showGambiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getgambiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGambiaData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Georgia Data 
+function showGeorgiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGeorgiaData = document.getElementById("science_in_Georgia");
+         if(showGeorgiaData)
+         {
+            showGeorgiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getgeorgiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGeorgiaData();
+});
+</script>
     </body>
 </html>

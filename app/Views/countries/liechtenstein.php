@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Liechtenstein Data 
+function showLiechtensteinData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLiechtensteinData = document.getElementById("science_in_Liechtenstein");
+         if(showLiechtensteinData)
+         {
+            showLiechtensteinData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getliechtensteindata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLiechtensteinData();
+});
+</script>
     </body>
 </html>

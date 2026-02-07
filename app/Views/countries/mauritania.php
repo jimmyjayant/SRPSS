@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Mauritania Data 
+function showMauritaniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMauritaniaData = document.getElementById("science_in_Mauritania");
+         if(showMauritaniaData)
+         {
+            showMauritaniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmauritaniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMauritaniaData();
+});
+</script>
     </body>
 </html>

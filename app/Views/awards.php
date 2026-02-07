@@ -28,11 +28,30 @@
     <br>
 
     <!-- Data from Database will be listed here -->
-    <div id="awards">
-    
-    </div>
+    <div id="awards"></div>
 </div>
 
 <?php require 'footer.php'; ?>
+<script>
+// awards.php
+function showAwardsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAwardsData = document.getElementById("awards");
+         if(showAwardsData)
+         {
+            showAwardsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getawards", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAwardsData();
+});
+</script>
     </body>
 </html>

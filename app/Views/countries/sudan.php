@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Sudan Data 
+function showSudanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSudanData = document.getElementById("science_in_Sudan");
+         if(showSudanData)
+         {
+            showSudanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsudandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSudanData();
+});
+</script>
     </body>
 </html>

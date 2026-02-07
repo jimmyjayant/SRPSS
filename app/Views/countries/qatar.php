@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Qatar Data 
+function showQatarData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showQatarData = document.getElementById("science_in_Qatar");
+         if(showQatarData)
+         {
+            showQatarData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getqatardata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showQatarData();
+});
+</script>
     </body>
 </html>

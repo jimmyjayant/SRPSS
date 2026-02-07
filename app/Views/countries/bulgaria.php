@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bulgaria Data 
+function showBulgariaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBulgariaData = document.getElementById("science_in_Bulgaria");
+         if(showBulgariaData)
+         {
+            showBulgariaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbulgariadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBulgariaData();
+});
+</script>
     </body>
 </html>

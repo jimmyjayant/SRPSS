@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Sierra_Leone Data 
+function showSierra_LeoneData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSierra_LeoneData = document.getElementById("science_in_Sierra_Leone");
+         if(showSierra_LeoneData)
+         {
+            showSierra_LeoneData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsierraleonedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSierra_LeoneData();
+});
+</script>
     </body>
 </html>

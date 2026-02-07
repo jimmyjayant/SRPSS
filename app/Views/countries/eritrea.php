@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Eritrea Data 
+function showEritreaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEritreaData = document.getElementById("science_in_Eritrea");
+         if(showEritreaData)
+         {
+            showEritreaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "geteritreadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEritreaData();
+});
+</script>
     </body>
 </html>

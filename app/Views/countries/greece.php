@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Greece Data 
+function showGreeceData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGreeceData = document.getElementById("science_in_Greece");
+         if(showGreeceData)
+         {
+            showGreeceData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getgreecedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGreeceData();
+});
+</script>
     </body>
 </html>

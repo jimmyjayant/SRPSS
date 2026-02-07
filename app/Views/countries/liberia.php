@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Liberia Data 
+function showLiberiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLiberiaData = document.getElementById("science_in_Liberia");
+         if(showLiberiaData)
+         {
+            showLiberiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getliberiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLiberiaData();
+});
+</script>
     </body>
 </html>

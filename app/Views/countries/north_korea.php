@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // North_Korea Data 
+function showNorth_KoreaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNorth_KoreaData = document.getElementById("science_in_North_Korea");
+         if(showNorth_KoreaData)
+         {
+            showNorth_KoreaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnorthkoreadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNorth_KoreaData();
+});
+</script>
     </body>
 </html>

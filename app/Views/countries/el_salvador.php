@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // El_Salvador Data 
+function showEl_SalvadorData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEl_SalvadorData = document.getElementById("science_in_El_Salvador");
+         if(showEl_SalvadorData)
+         {
+            showEl_SalvadorData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getelsalvadordata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEl_SalvadorData();
+});
+</script>
     </body>
 </html>

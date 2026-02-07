@@ -44,5 +44,26 @@
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+         // researchsites.php javascript
+         function showResearchSitesData() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+               if(this.readyState == 4 && this.status == 200) {
+                  var showResearchSitesData = document.getElementById("researchsites");
+                  if(showResearchSitesData)
+                  {
+                     showResearchSitesData.innerHTML = this.responseText;
+                  }
+               }
+            };
+            xmlhttp.open("GET", "getresearchsitedata", true);
+            xmlhttp.send();
+         }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showResearchSitesData();
+         });
+        </script>
     </body>
 </html>

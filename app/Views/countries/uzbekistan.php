@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Uzbekistan Data 
+function showUzbekistanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showUzbekistanData = document.getElementById("science_in_Uzbekistan");
+         if(showUzbekistanData)
+         {
+            showUzbekistanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getuzbekistandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showUzbekistanData();
+});
+</script>
     </body>
 </html>

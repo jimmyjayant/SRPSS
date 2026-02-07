@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Madagascar Data 
+function showMadagascarData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMadagascarData = document.getElementById("science_in_Madagascar");
+         if(showMadagascarData)
+         {
+            showMadagascarData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmadagascardata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMadagascarData();
+});
+</script>
     </body>
 </html>

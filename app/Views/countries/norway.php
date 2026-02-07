@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Norway Data 
+function showNorwayData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNorwayData = document.getElementById("science_in_Norway");
+         if(showNorwayData)
+         {
+            showNorwayData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnorwaydata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNorwayData();
+});
+</script>
     </body>
 </html>

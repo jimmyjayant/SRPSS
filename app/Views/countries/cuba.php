@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Cuba Data 
+function showCubaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCubaData = document.getElementById("science_in_Cuba");
+         if(showCubaData)
+         {
+            showCubaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcubadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCubaData();
+});
+</script>
     </body>
 </html>

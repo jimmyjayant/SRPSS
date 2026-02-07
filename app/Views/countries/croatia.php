@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Croatia Data 
+function showCroatiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCroatiaData = document.getElementById("science_in_Croatia");
+         if(showCroatiaData)
+         {
+            showCroatiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcroatiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCroatiaData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Netherlands Data 
+function showNetherlandsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNetherlandsData = document.getElementById("science_in_Netherlands");
+         if(showNetherlandsData)
+         {
+            showNetherlandsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnetherlandsdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNetherlandsData();
+});
+</script>
     </body>
 </html>

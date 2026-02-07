@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Egypt Data 
+function showEgyptData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEgyptData = document.getElementById("science_in_Egypt");
+         if(showEgyptData)
+         {
+            showEgyptData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getegyptdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEgyptData();
+});
+</script>
     </body>
 </html>

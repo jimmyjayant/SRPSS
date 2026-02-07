@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Israel Data 
+function showIsraelData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showIsraelData = document.getElementById("science_in_Israel");
+         if(showIsraelData)
+         {
+            showIsraelData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getisraeldata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showIsraelData();
+});
+</script>
     </body>
 </html>

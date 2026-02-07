@@ -64,5 +64,45 @@
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+            // magazines.php javascript
+            function showMagazinesData() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var showMagazinesData = document.getElementById("magazines");
+                    if(showMagazinesData)
+                    {
+                        showMagazinesData.innerHTML = this.responseText;
+                    }
+                }
+                };
+                xmlhttp.open("GET", "getmagazinedata", true);
+                xmlhttp.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showMagazinesData();
+            });
+
+            function showJournalsData() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                var showJournalsData = document.getElementById("journals");
+                if(showJournalsData)
+                {
+                    showJournalsData.innerHTML = this.responseText;
+                }
+            }
+            };
+            xmlhttp.open("GET", "getjournaldata", true);
+            xmlhttp.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showJournalsData();
+            });
+        </script>
     </body>
 </html>

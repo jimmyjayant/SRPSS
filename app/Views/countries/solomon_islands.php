@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Solomon_Islands Data 
+function showSolomon_IslandsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSolomon_IslandsData = document.getElementById("science_in_Solomon_Islands");
+         if(showSolomon_IslandsData)
+         {
+            showSolomon_IslandsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsolomonislandsdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSolomon_IslandsData();
+});
+</script>
     </body>
 </html>

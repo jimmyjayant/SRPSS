@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Mauritius Data 
+function showMauritiusData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMauritiusData = document.getElementById("science_in_Mauritius");
+         if(showMauritiusData)
+         {
+            showMauritiusData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmauritiusdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMauritiusData();
+});
+</script>
     </body>
 </html>

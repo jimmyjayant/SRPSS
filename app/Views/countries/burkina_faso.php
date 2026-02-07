@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Burkina_Faso Data 
+function showBurkina_FasoData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBurkina_FasoData = document.getElementById("science_in_Burkina_Faso");
+         if(showBurkina_FasoData)
+         {
+            showBurkina_FasoData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getburkinafasodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBurkina_FasoData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Kuwait Data 
+function showKuwaitData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showKuwaitData = document.getElementById("science_in_Kuwait");
+         if(showKuwaitData)
+         {
+            showKuwaitData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getkuwaitdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showKuwaitData();
+});
+</script>
     </body>
 </html>

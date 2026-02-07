@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Kiribati Data 
+function showKiribatiData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showKiribatiData = document.getElementById("science_in_Kiribati");
+         if(showKiribatiData)
+         {
+            showKiribatiData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getkiribatidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showKiribatiData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Latvia Data 
+function showLatviaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLatviaData = document.getElementById("science_in_Latvia");
+         if(showLatviaData)
+         {
+            showLatviaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlatviadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLatviaData();
+});
+</script>
     </body>
 </html>

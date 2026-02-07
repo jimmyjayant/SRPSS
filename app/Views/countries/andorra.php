@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Andorra Data 
+function showAndorraData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAndorraData = document.getElementById("science_in_Andorra");
+         if(showAndorraData)
+         {
+            showAndorraData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getandorradata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAndorraData();
+});
+</script>
     </body>
 </html>

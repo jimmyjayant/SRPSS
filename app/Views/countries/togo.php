@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Togo Data 
+function showTogoData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTogoData = document.getElementById("science_in_Togo");
+         if(showTogoData)
+         {
+            showTogoData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettogodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTogoData();
+});
+</script>
     </body>
 </html>

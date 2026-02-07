@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Somalia Data 
+function showSomaliaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSomaliaData = document.getElementById("science_in_Somalia");
+         if(showSomaliaData)
+         {
+            showSomaliaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsomaliadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSomaliaData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Maldives Data 
+function showMaldivesData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMaldivesData = document.getElementById("science_in_Maldives");
+         if(showMaldivesData)
+         {
+            showMaldivesData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmaldivesdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMaldivesData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bolivia Data 
+function showBoliviaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBoliviaData = document.getElementById("science_in_Bolivia");
+         if(showBoliviaData)
+         {
+            showBoliviaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getboliviadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBoliviaData();
+});
+</script>
     </body>
 </html>

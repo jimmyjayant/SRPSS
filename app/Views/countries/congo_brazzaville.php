@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Congo_Congo-Brazzaville Data 
+function showCongo_Congo_BrazzavilleData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCongo_Congo_BrazzavilleData = document.getElementById("science_in_Congo_Congo-Brazzaville");
+         if(showCongo_Congo_BrazzavilleData)
+         {
+            showCongo_Congo_BrazzavilleData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcongo(congo-brazzaville)data", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCongo_Congo_BrazzavilleData();
+});
+</script>
     </body>
 </html>

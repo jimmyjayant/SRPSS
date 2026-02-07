@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Rwanda Data 
+function showRwandaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showRwandaData = document.getElementById("science_in_Rwanda");
+         if(showRwandaData)
+         {
+            showRwandaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getrwandadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showRwandaData();
+});
+</script>
     </body>
 </html>

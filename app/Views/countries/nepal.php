@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Nepal Data 
+function showNepalData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNepalData = document.getElementById("science_in_Nepal");
+         if(showNepalData)
+         {
+            showNepalData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnepaldata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNepalData();
+});
+</script>
     </body>
 </html>

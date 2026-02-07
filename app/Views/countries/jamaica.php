@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Jamaica Data 
+function showJamaicaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showJamaicaData = document.getElementById("science_in_Jamaica");
+         if(showJamaicaData)
+         {
+            showJamaicaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getjamaicadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showJamaicaData();
+});
+</script>
     </body>
 </html>

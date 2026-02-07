@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Laos Data 
+function showLaosData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLaosData = document.getElementById("science_in_Laos");
+         if(showLaosData)
+         {
+            showLaosData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlaosdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLaosData();
+});
+</script>
     </body>
 </html>

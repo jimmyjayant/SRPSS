@@ -49,9 +49,7 @@
             <br>
 
             <!-- Data from 'usernotif' table will be listed here -->
-            <div id="usernotifications">
-
-            </div>
+            <div id="usernotifications"></div>
         </div>
 
         <!-- Submitted Research Papers by the User -->
@@ -64,9 +62,7 @@
             <br>
 
             <!-- Data from Database will be listed here -->
-            <div id="papersubmittedbyuser">
-
-            </div>
+            <div id="papersubmittedbyuser"></div>
         </div>
 
         <!-- Feedback by the User -->
@@ -79,9 +75,7 @@
             <br>
 
             <!-- Data from 'feedback' table will be listed here -->
-            <div id="feedbackbyuser">
-
-            </div>
+            <div id="feedbackbyuser"></div>
         </div>
     </div>
 </div>

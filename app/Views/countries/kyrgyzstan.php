@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Kyrgyzstan Data 
+function showKyrgyzstanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showKyrgyzstanData = document.getElementById("science_in_Kyrgyzstan");
+         if(showKyrgyzstanData)
+         {
+            showKyrgyzstanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getkyrgyzstandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showKyrgyzstanData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Nigeria Data 
+function showNigeriaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNigeriaData = document.getElementById("science_in_Nigeria");
+         if(showNigeriaData)
+         {
+            showNigeriaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnigeriadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNigeriaData();
+});
+</script>
     </body>
 </html>

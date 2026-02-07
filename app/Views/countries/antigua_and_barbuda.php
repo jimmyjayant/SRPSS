@@ -28,5 +28,27 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Antigua_and_Barbuda Data 
+function showAntigua_and_BarbudaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAntigua_and_BarbudaData = document.getElementById("science_in_Antigua_and_Barbuda");
+         if(showAntigua_and_BarbudaData)
+         {
+            showAntigua_and_BarbudaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getantiguaandbarbudadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAntigua_and_BarbudaData();
+});
+
+</script>
     </body>
 </html>

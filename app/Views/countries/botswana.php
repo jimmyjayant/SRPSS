@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Botswana Data 
+function showBotswanaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBotswanaData = document.getElementById("science_in_Botswana");
+         if(showBotswanaData)
+         {
+            showBotswanaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbotswanadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBotswanaData();
+});
+</script>
     </body>
 </html>

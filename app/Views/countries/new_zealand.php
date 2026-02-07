@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // New_Zealand Data 
+function showNew_ZealandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNew_ZealandData = document.getElementById("science_in_New_Zealand");
+         if(showNew_ZealandData)
+         {
+            showNew_ZealandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnewzealanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNew_ZealandData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,27 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+
+<script>
+    // Afghanistan Data 
+    function showAfghanistanData() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            var showAfghanistanData = document.getElementById("science_in_Afghanistan");
+            if(showAfghanistanData)
+            {
+                showAfghanistanData.innerHTML = this.responseText;
+            }
+        }
+    };
+    xmlhttp.open("GET", "getafghanistandata", true);
+    xmlhttp.send();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    showAfghanistanData();
+    });
+</script>
     </body>
 </html>

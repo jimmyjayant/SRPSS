@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // United_States Data 
+function showUnited_StatesData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showUnited_StatesData = document.getElementById("science_in_United_States");
+         if(showUnited_StatesData)
+         {
+            showUnited_StatesData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getunitedstatesdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showUnited_StatesData();
+});
+</script>
     </body>
 </html>

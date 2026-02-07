@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Jordan Data 
+function showJordanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showJordanData = document.getElementById("science_in_Jordan");
+         if(showJordanData)
+         {
+            showJordanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getjordandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showJordanData();
+});
+</script>
     </body>
 </html>

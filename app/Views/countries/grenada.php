@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Grenada Data 
+function showGrenadaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGrenadaData = document.getElementById("science_in_Grenada");
+         if(showGrenadaData)
+         {
+            showGrenadaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getgrenadadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGrenadaData();
+});
+</script>
     </body>
 </html>

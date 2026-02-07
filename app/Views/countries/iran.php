@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Iran Data 
+function showIranData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showIranData = document.getElementById("science_in_Iran");
+         if(showIranData)
+         {
+            showIranData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getirandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showIranData();
+});
+</script>
     </body>
 </html>

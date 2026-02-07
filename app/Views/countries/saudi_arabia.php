@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Saudi_Arabia Data 
+function showSaudi_ArabiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSaudi_ArabiaData = document.getElementById("science_in_Saudi_Arabia");
+         if(showSaudi_ArabiaData)
+         {
+            showSaudi_ArabiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsaudiarabiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSaudi_ArabiaData();
+});
+</script>
     </body>
 </html>

@@ -32,11 +32,30 @@
           <br>
 
           <!-- Data from Database will be listed here -->
-          <div id="ytchannels">
-          
-          </div>
+          <div id="ytchannels"></div>
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+            // channel.php javascript
+            function showYouTubeChannelsData() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                  if(this.readyState == 4 && this.status == 200) {
+                    var showYouTubeChannelsData = document.getElementById("ytchannels");
+                    if(showYouTubeChannelsData)
+                    {
+                      showYouTubeChannelsData.innerHTML = this.responseText;
+                    }
+                  }
+                };
+                xmlhttp.open("GET", "getytchanneldata", true);
+                xmlhttp.send();
+              }
+
+              document.addEventListener("DOMContentLoaded", function() {
+              showYouTubeChannelsData();
+              });
+        </script>
     </body>
 </html>

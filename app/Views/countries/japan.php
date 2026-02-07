@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Japan Data 
+function showJapanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showJapanData = document.getElementById("science_in_Japan");
+         if(showJapanData)
+         {
+            showJapanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getjapandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showJapanData();
+});
+</script>
     </body>
 </html>

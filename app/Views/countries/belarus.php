@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Belarus Data 
+function showBelarusData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBelarusData = document.getElementById("science_in_Belarus");
+         if(showBelarusData)
+         {
+            showBelarusData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbelarusdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBelarusData();
+});
+</script>
     </body>
 </html>

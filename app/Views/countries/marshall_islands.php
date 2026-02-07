@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Marshall_Islands Data 
+function showMarshall_IslandsData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMarshall_IslandsData = document.getElementById("science_in_Marshall_Islands");
+         if(showMarshall_IslandsData)
+         {
+            showMarshall_IslandsData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmarshallislandsdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMarshall_IslandsData();
+});
+</script>
     </body>
 </html>

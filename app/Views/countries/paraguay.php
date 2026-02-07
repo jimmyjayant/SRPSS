@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Paraguay Data 
+function showParaguayData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showParaguayData = document.getElementById("science_in_Paraguay");
+         if(showParaguayData)
+         {
+            showParaguayData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getparaguaydata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showParaguayData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Estonia Data 
+function showEstoniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEstoniaData = document.getElementById("science_in_Estonia");
+         if(showEstoniaData)
+         {
+            showEstoniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getestoniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEstoniaData();
+});
+</script>
     </body>
 </html>

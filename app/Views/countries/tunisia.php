@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Tunisia Data 
+function showTunisiaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTunisiaData = document.getElementById("science_in_Tunisia");
+         if(showTunisiaData)
+         {
+            showTunisiaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettunisiadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTunisiaData();
+});
+</script>
     </body>
 </html>

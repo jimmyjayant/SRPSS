@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Dominica Data 
+function showDominicaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showDominicaData = document.getElementById("science_in_Dominica");
+         if(showDominicaData)
+         {
+            showDominicaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getdominicadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showDominicaData();
+});
+</script>
     </body>
 </html>

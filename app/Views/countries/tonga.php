@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Tonga Data 
+function showTongaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTongaData = document.getElementById("science_in_Tonga");
+         if(showTongaData)
+         {
+            showTongaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettongadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTongaData();
+});
+</script>
     </body>
 </html>

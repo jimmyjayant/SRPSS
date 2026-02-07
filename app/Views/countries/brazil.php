@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Brazil Data 
+function showBrazilData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBrazilData = document.getElementById("science_in_Brazil");
+         if(showBrazilData)
+         {
+            showBrazilData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbrazildata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBrazilData();
+});
+</script>
     </body>
 </html>

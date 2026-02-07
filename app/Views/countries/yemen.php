@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Yemen Data 
+function showYemenData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showYemenData = document.getElementById("science_in_Yemen");
+         if(showYemenData)
+         {
+            showYemenData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getyemendata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showYemenData();
+});
+</script>
     </body>
 </html>

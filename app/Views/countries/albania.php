@@ -28,5 +28,27 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+
+<script>
+    // Albania Data 
+    function showAlbaniaData() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            var showAlbaniaData = document.getElementById("science_in_Albania");
+            if(showAlbaniaData)
+            {
+                showAlbaniaData.innerHTML = this.responseText;
+            }
+        }
+    };
+    xmlhttp.open("GET", "getalbaniadata", true);
+    xmlhttp.send();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    showAlbaniaData();
+    });
+</script>
     </body>
 </html>

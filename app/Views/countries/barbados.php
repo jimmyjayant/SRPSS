@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Barbados Data 
+function showBarbadosData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBarbadosData = document.getElementById("science_in_Barbados");
+         if(showBarbadosData)
+         {
+            showBarbadosData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbarbadosdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBarbadosData();
+});
+</script>
     </body>
 </html>

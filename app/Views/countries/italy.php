@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Italy Data 
+function showItalyData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showItalyData = document.getElementById("science_in_Italy");
+         if(showItalyData)
+         {
+            showItalyData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getitalydata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showItalyData();
+});
+</script>
     </body>
 </html>

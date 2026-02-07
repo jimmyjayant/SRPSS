@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Ghana Data 
+function showGhanaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGhanaData = document.getElementById("science_in_Ghana");
+         if(showGhanaData)
+         {
+            showGhanaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getghanadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGhanaData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Australia Data 
+function showAustraliaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAustraliaData = document.getElementById("science_in_Australia");
+         if(showAustraliaData)
+         {
+            showAustraliaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getaustraliadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAustraliaData();
+});
+</script>
     </body>
 </html>

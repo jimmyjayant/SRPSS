@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Poland Data 
+function showPolandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showPolandData = document.getElementById("science_in_Poland");
+         if(showPolandData)
+         {
+            showPolandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getpolanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showPolandData();
+});
+</script>
     </body>
 </html>

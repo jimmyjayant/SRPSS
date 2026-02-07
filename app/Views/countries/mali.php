@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Mali Data 
+function showMaliData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMaliData = document.getElementById("science_in_Mali");
+         if(showMaliData)
+         {
+            showMaliData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmalidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMaliData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Equatorial_Guinea Data 
+function showEquatorial_GuineaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEquatorial_GuineaData = document.getElementById("science_in_Equatorial_Guinea");
+         if(showEquatorial_GuineaData)
+         {
+            showEquatorial_GuineaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getequatorialguineadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEquatorial_GuineaData();
+});
+</script>
     </body>
 </html>

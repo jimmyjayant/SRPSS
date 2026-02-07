@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Ireland Data 
+function showIrelandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showIrelandData = document.getElementById("science_in_Ireland");
+         if(showIrelandData)
+         {
+            showIrelandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getirelanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showIrelandData();
+});
+</script>
     </body>
 </html>

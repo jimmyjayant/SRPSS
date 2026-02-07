@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Lithuania Data 
+function showLithuaniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLithuaniaData = document.getElementById("science_in_Lithuania");
+         if(showLithuaniaData)
+         {
+            showLithuaniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlithuaniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLithuaniaData();
+});
+</script>
     </body>
 </html>

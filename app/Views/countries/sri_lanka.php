@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Sri_Lanka Data 
+function showSri_LankaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSri_LankaData = document.getElementById("science_in_Sri_Lanka");
+         if(showSri_LankaData)
+         {
+            showSri_LankaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsrilankadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSri_LankaData();
+});
+</script>
     </body>
 </html>

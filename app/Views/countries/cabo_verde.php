@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Cabo_Verde Data 
+function showCabo_VerdeData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCabo_VerdeData = document.getElementById("science_in_Cabo_Verde");
+         if(showCabo_VerdeData)
+         {
+            showCabo_VerdeData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcaboverdedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCabo_VerdeData();
+});
+</script>
     </body>
 </html>

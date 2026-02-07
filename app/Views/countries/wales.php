@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Wales Data 
+function showWalesData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showWalesData = document.getElementById("science_in_Wales");
+         if(showWalesData)
+         {
+            showWalesData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getwalesdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showWalesData();
+});
+</script>
     </body>
 </html>

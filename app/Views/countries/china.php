@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // China Data 
+function showChinaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showChinaData = document.getElementById("science_in_China");
+         if(showChinaData)
+         {
+            showChinaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getchinadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showChinaData();
+});
+</script>
     </body>
 </html>

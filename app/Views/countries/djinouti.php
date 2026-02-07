@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Djibouti Data 
+function showDjiboutiData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showDjiboutiData = document.getElementById("science_in_Djibouti");
+         if(showDjiboutiData)
+         {
+            showDjiboutiData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getdjiboutidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showDjiboutiData();
+});
+</script>
     </body>
 </html>

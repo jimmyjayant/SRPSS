@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Kazakhstan Data 
+function showKazakhstanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showKazakhstanData = document.getElementById("science_in_Kazakhstan");
+         if(showKazakhstanData)
+         {
+            showKazakhstanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getkazakhstandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showKazakhstanData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Comoros Data 
+function showComorosData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showComorosData = document.getElementById("science_in_Comoros");
+         if(showComorosData)
+         {
+            showComorosData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcomorosdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showComorosData();
+});
+</script>
     </body>
 </html>

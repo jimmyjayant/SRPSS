@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Romania Data 
+function showRomaniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showRomaniaData = document.getElementById("science_in_Romania");
+         if(showRomaniaData)
+         {
+            showRomaniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getromaniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showRomaniaData();
+});
+</script>
     </body>
 </html>

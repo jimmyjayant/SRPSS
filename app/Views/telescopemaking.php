@@ -33,5 +33,26 @@
 
 
 <?php require 'footer.php'; ?>
+<script>
+    // telescopemaking.php
+    function showTelescopeWorkshopData() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            var showTelescopeWorkshopData = document.getElementById("telescopeworkshop");
+            if(showTelescopeWorkshopData)
+            {
+                showTelescopeWorkshopData.innerHTML = this.responseText;
+            }
+        }
+    };
+    xmlhttp.open("GET", "gettelescopeworkshop", true);
+    xmlhttp.send();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    showTelescopeWorkshopData();
+    });
+</script>
     </body>
 </html>

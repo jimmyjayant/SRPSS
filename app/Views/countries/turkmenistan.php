@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Turkmenistan Data 
+function showTurkmenistanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTurkmenistanData = document.getElementById("science_in_Turkmenistan");
+         if(showTurkmenistanData)
+         {
+            showTurkmenistanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getturkmenistandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTurkmenistanData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Tanzania Data 
+function showTanzaniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTanzaniaData = document.getElementById("science_in_Tanzania");
+         if(showTanzaniaData)
+         {
+            showTanzaniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettanzaniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTanzaniaData();
+});
+</script>
     </body>
 </html>

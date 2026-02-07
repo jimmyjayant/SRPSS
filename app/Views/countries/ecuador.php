@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Ecuador Data 
+function showEcuadorData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEcuadorData = document.getElementById("science_in_Ecuador");
+         if(showEcuadorData)
+         {
+            showEcuadorData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getecuadordata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEcuadorData();
+});
+</script>
     </body>
 </html>

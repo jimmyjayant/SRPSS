@@ -32,11 +32,30 @@
           <br>
 
           <!-- Data from Database will be listed here -->
-          <div id="newspapers">
-          
-          </div>
+          <div id="newspapers"></div>
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+          // newspapers.php javascript
+          function showNewspapersData() {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onload = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                  var showNewspapersData = document.getElementById("newspapers");
+                  if(showNewspapersData)
+                  {
+                      showNewspapersData.innerHTML = this.responseText;
+                  }
+                }
+              };
+              xmlhttp.open("GET", "getnewspaperdata", true);
+              xmlhttp.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showNewspapersData();
+            });
+        </script>
     </body>
 </html>

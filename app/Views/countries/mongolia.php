@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Mongolia Data 
+function showMongoliaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMongoliaData = document.getElementById("science_in_Mongolia");
+         if(showMongoliaData)
+         {
+            showMongoliaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmongoliadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMongoliaData();
+});
+</script>
     </body>
 </html>

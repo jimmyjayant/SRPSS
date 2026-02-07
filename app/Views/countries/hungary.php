@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Hungary Data 
+function showHungaryData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showHungaryData = document.getElementById("science_in_Hungary");
+         if(showHungaryData)
+         {
+            showHungaryData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gethungarydata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showHungaryData();
+});
+</script>
     </body>
 </html>

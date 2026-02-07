@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Haiti Data 
+function showHaitiData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showHaitiData = document.getElementById("science_in_Haiti");
+         if(showHaitiData)
+         {
+            showHaitiData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gethaitidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showHaitiData();
+});
+</script>
     </body>
 </html>

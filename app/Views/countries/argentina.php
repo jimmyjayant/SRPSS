@@ -28,5 +28,27 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Argentina Data 
+function showArgentinaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showArgentinaData = document.getElementById("science_in_Argentina");
+         if(showArgentinaData)
+         {
+            showArgentinaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getargentinadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showArgentinaData();
+});
+
+</script>
     </body>
 </html>

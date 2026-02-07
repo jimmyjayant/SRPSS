@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Eswatini Data 
+function showEswatiniData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showEswatiniData = document.getElementById("science_in_Eswatini");
+         if(showEswatiniData)
+         {
+            showEswatiniData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "geteswatinidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showEswatiniData();
+});
+</script>
     </body>
 </html>

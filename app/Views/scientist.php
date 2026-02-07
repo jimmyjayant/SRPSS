@@ -32,11 +32,30 @@
          <br>
 
          <!-- Data from Database will be listed here -->
-         <div id="scientists">
-          
-          </div>
+         <div id="scientists"></div>
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+         // scientist.php javascript
+         function showScientistsData() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+               if(this.readyState == 4 && this.status == 200) {
+                  var showScientistsData = document.getElementById("scientists");
+                  if(showScientistsData)
+                  {
+                     showScientistsData.innerHTML = this.responseText;
+                  }
+               }
+            };
+            xmlhttp.open("GET", "getscientistdata", true);
+            xmlhttp.send();
+         }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showScientistsData();
+            });
+        </script>
     </body>
 </html>

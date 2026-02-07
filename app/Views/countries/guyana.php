@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Guyana Data 
+function showGuyanaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGuyanaData = document.getElementById("science_in_Guyana");
+         if(showGuyanaData)
+         {
+            showGuyanaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getguyanadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGuyanaData();
+});
+</script>
     </body>
 </html>

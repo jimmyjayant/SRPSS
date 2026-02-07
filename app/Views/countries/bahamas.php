@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bahamas Data 
+function showBahamasData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBahamasData = document.getElementById("science_in_Bahamas");
+         if(showBahamasData)
+         {
+            showBahamasData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbahamasdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBahamasData();
+});
+</script>
     </body>
 </html>

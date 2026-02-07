@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Armenia Data 
+function showArmeniaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showArmeniaData = document.getElementById("science_in_Armenia");
+         if(showArmeniaData)
+         {
+            showArmeniaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getarmeniadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showArmeniaData();
+});
+</script>
     </body>
 </html>

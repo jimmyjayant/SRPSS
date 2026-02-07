@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Dominican_Republic Data 
+function showDominican_RepublicData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showDominican_RepublicData = document.getElementById("science_in_Dominican_Republic");
+         if(showDominican_RepublicData)
+         {
+            showDominican_RepublicData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getdominicanrepublicdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showDominican_RepublicData();
+});
+</script>
     </body>
 </html>

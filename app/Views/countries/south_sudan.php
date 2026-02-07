@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // South_Sudan Data 
+function showSouth_SudanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSouth_SudanData = document.getElementById("science_in_South_Sudan");
+         if(showSouth_SudanData)
+         {
+            showSouth_SudanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsouthsudandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSouth_SudanData();
+});
+</script>
     </body>
 </html>

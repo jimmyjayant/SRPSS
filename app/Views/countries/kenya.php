@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Kenya Data 
+function showKenyaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showKenyaData = document.getElementById("science_in_Kenya");
+         if(showKenyaData)
+         {
+            showKenyaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getkenyadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showKenyaData();
+});
+</script>
     </body>
 </html>

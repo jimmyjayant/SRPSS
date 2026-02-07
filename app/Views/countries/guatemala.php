@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Guatemala Data 
+function showGuatemalaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGuatemalaData = document.getElementById("science_in_Guatemala");
+         if(showGuatemalaData)
+         {
+            showGuatemalaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getguatemaladata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGuatemalaData();
+});
+</script>
     </body>
 </html>

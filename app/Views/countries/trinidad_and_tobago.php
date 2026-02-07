@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Trinidad_and_Tobago Data 
+function showTrinidad_and_TobagoData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTrinidad_and_TobagoData = document.getElementById("science_in_Trinidad_and_Tobago");
+         if(showTrinidad_and_TobagoData)
+         {
+            showTrinidad_and_TobagoData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettrinidadandtobagodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTrinidad_and_TobagoData();
+});
+</script>
     </body>
 </html>

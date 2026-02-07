@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Nicaragua Data 
+function showNicaraguaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showNicaraguaData = document.getElementById("science_in_Nicaragua");
+         if(showNicaraguaData)
+         {
+            showNicaraguaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getnicaraguadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showNicaraguaData();
+});
+</script>
     </body>
 </html>

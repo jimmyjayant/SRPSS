@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Gabon Data 
+function showGabonData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showGabonData = document.getElementById("science_in_Gabon");
+         if(showGabonData)
+         {
+            showGabonData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getgabondata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showGabonData();
+});
+</script>
     </body>
 </html>

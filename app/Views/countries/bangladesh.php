@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bangladesh Data 
+function showBangladeshData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBangladeshData = document.getElementById("science_in_Bangladesh");
+         if(showBangladeshData)
+         {
+            showBangladeshData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbangladeshdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBangladeshData();
+});
+</script>
     </body>
 </html>

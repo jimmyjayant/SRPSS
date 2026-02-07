@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Malta Data 
+function showMaltaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMaltaData = document.getElementById("science_in_Malta");
+         if(showMaltaData)
+         {
+            showMaltaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmaltadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMaltaData();
+});
+</script>
     </body>
 </html>

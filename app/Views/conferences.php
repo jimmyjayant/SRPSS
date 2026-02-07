@@ -32,11 +32,30 @@
             <br>
 
             <!-- Data from Database will be listed here -->
-            <div id="conferences">
-          
-            </div>
+            <div id="conferences"></div>
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+            // conferences.php javascript
+            function showConferencesData() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onload = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var showConferencesData = document.getElementById("conferences");
+                    if(showConferencesData)
+                    {
+                        showConferencesData.innerHTML = this.responseText;
+                    }
+                }
+                };
+                xmlhttp.open("GET", "getconferencedata", true);
+                xmlhttp.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showConferencesData();
+            });
+        </script>
     </body>
 </html>

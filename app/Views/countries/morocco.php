@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Morocco Data 
+function showMoroccoData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMoroccoData = document.getElementById("science_in_Morocco");
+         if(showMoroccoData)
+         {
+            showMoroccoData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmoroccodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMoroccoData();
+});
+</script>
     </body>
 </html>

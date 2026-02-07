@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Libya Data 
+function showLibyaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLibyaData = document.getElementById("science_in_Libya");
+         if(showLibyaData)
+         {
+            showLibyaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlibyadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLibyaData();
+});
+</script>
     </body>
 </html>

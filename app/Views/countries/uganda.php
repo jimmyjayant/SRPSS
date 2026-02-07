@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Uganda Data 
+function showUgandaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showUgandaData = document.getElementById("science_in_Uganda");
+         if(showUgandaData)
+         {
+            showUgandaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getugandadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showUgandaData();
+});
+</script>
     </body>
 </html>

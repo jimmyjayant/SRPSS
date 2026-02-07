@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // South_Korea Data 
+function showSouth_KoreaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSouth_KoreaData = document.getElementById("science_in_South_Korea");
+         if(showSouth_KoreaData)
+         {
+            showSouth_KoreaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsouthkoreadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSouth_KoreaData();
+});
+</script>
     </body>
 </html>

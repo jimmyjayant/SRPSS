@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Canada Data 
+function showCanadaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCanadaData = document.getElementById("science_in_Canada");
+         if(showCanadaData)
+         {
+            showCanadaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcanadadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCanadaData();
+});
+</script>
     </body>
 </html>

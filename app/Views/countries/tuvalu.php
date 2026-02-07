@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Tuvalu Data 
+function showTuvaluData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showTuvaluData = document.getElementById("science_in_Tuvalu");
+         if(showTuvaluData)
+         {
+            showTuvaluData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gettuvaludata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showTuvaluData();
+});
+</script>
     </body>
 </html>

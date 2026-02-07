@@ -33,8 +33,7 @@
                 <br>
 
                 <!-- Data from Database will be listed here -->
-                <div id="movies">
-                </div>         
+                <div id="movies"></div>         
             </div>
 
             <br>
@@ -62,5 +61,45 @@
         </div>
 
         <?php require 'footer.php'; ?>
+        <script>
+            // movies.php javascript
+            function showMoviesData() {
+                var xmlhttp1 = new XMLHttpRequest();
+                xmlhttp1.onload = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var showMoviesData = document.getElementById("movies");
+                    if(showMoviesData) 
+                    {
+                        showMoviesData.innerHTML = this.responseText;
+                    }
+                }
+                };
+                xmlhttp1.open("GET", "getmoviedata", true);
+                xmlhttp1.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showMoviesData();
+            });
+
+            function showWebSeriesData() {
+            var xmlhttp2 = new XMLHttpRequest();
+            xmlhttp2.onload = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                var showWebSeriesData = document.getElementById("webseries");
+                if(showWebSeriesData)
+                {
+                    showWebSeriesData.innerHTML = this.responseText;
+                }
+            }
+            };
+            xmlhttp2.open("GET", "getwebseriesdata", true);
+            xmlhttp2.send();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            showWebSeriesData();
+            });
+        </script>
     </body>
 </html>

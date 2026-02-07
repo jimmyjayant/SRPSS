@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Honduras Data 
+function showHondurasData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showHondurasData = document.getElementById("science_in_Honduras");
+         if(showHondurasData)
+         {
+            showHondurasData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "gethondurasdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showHondurasData();
+});
+</script>
     </body>
 </html>

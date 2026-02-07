@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Pakistan Data 
+function showPakistanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showPakistanData = document.getElementById("science_in_Pakistan");
+         if(showPakistanData)
+         {
+            showPakistanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getpakistandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showPakistanData();
+});
+</script>
     </body>
 </html>

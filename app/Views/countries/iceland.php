@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Iceland Data 
+function showIcelandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showIcelandData = document.getElementById("science_in_Iceland");
+         if(showIcelandData)
+         {
+            showIcelandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "geticelanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showIcelandData();
+});
+</script>
     </body>
 </html>

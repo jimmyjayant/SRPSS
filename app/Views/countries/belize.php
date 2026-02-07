@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Belize Data 
+function showBelizeData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBelizeData = document.getElementById("science_in_Belize");
+         if(showBelizeData)
+         {
+            showBelizeData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbelizedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBelizeData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Brunei Data 
+function showBruneiData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBruneiData = document.getElementById("science_in_Brunei");
+         if(showBruneiData)
+         {
+            showBruneiData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbruneidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBruneiData();
+});
+</script>
     </body>
 </html>

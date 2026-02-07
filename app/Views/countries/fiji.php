@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Fiji Data 
+function showFijiData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showFijiData = document.getElementById("science_in_Fiji");
+         if(showFijiData)
+         {
+            showFijiData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getfijidata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showFijiData();
+});
+</script>
     </body>
 </html>

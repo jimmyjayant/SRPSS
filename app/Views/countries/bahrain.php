@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bahrain Data 
+function showBahrainData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBahrainData = document.getElementById("science_in_Bahrain");
+         if(showBahrainData)
+         {
+            showBahrainData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbahraindata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBahrainData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Moldova Data 
+function showMoldovaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMoldovaData = document.getElementById("science_in_Moldova");
+         if(showMoldovaData)
+         {
+            showMoldovaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmoldovadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMoldovaData();
+});
+</script>
     </body>
 </html>

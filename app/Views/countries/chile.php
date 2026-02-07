@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Chile Data 
+function showChileData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showChileData = document.getElementById("science_in_Chile");
+         if(showChileData)
+         {
+            showChileData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getchiledata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showChileData();
+});
+</script>
     </body>
 </html>

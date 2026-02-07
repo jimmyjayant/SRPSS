@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Luxembourg Data 
+function showLuxembourgData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLuxembourgData = document.getElementById("science_in_Luxembourg");
+         if(showLuxembourgData)
+         {
+            showLuxembourgData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getluxembourgdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLuxembourgData();
+});
+</script>
     </body>
 </html>

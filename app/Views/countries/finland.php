@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Finland Data 
+function showFinlandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showFinlandData = document.getElementById("science_in_Finland");
+         if(showFinlandData)
+         {
+            showFinlandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getfinlanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showFinlandData();
+});
+</script>
     </body>
 </html>

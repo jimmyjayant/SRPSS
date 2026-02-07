@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // South_Africa Data 
+function showSouth_AfricaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSouth_AfricaData = document.getElementById("science_in_South_Africa");
+         if(showSouth_AfricaData)
+         {
+            showSouth_AfricaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsouthafricadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSouth_AfricaData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Oman Data 
+function showOmanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showOmanData = document.getElementById("science_in_Oman");
+         if(showOmanData)
+         {
+            showOmanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getomandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showOmanData();
+});
+</script>
     </body>
 </html>

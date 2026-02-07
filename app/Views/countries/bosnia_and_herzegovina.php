@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Bosnia_and_Herzegovina Data 
+function showBosnia_and_HerzegovinaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBosnia_and_HerzegovinaData = document.getElementById("science_in_Bosnia_and_Herzegovina");
+         if(showBosnia_and_HerzegovinaData)
+         {
+            showBosnia_and_HerzegovinaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbosniaandherzegovinadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBosnia_and_HerzegovinaData();
+});
+</script>
     </body>
 </html>

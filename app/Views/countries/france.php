@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // France Data 
+function showFranceData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showFranceData = document.getElementById("science_in_France");
+         if(showFranceData)
+         {
+            showFranceData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getfrancedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showFranceData();
+});
+</script>
     </body>
 </html>

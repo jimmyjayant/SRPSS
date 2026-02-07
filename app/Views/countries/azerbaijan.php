@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Azerbaijan Data 
+function showAzerbaijanData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAzerbaijanData = document.getElementById("science_in_Azerbaijan");
+         if(showAzerbaijanData)
+         {
+            showAzerbaijanData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getazerbaijandata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAzerbaijanData();
+});
+</script>
     </body>
 </html>

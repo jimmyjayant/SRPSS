@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Panama Data 
+function showPanamaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showPanamaData = document.getElementById("science_in_Panama");
+         if(showPanamaData)
+         {
+            showPanamaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getpanamadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showPanamaData();
+});
+</script>
     </body>
 </html>

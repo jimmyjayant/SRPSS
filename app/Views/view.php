@@ -30,5 +30,26 @@
          <div id="viewpapers"></div>
         </div>
         <?php require 'footer.php'; ?>
+        <script>
+         // view.php javascript
+         function viewPapers() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+               if(this.readyState == 4 && this.status == 200) {
+                  var viewPapers = document.getElementById("viewpapers");
+                  if(viewPapers)
+                  {
+                     viewPapers.innerHTML = this.responseText;
+                  }
+               }
+            };
+            xmlhttp.open("GET", "getpapersdata", true);
+            xmlhttp.send();
+         }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            viewPapers();
+         });
+        </script>
     </body>
 </html>

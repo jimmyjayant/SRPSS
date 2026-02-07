@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Cyprus Data 
+function showCyprusData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showCyprusData = document.getElementById("science_in_Cyprus");
+         if(showCyprusData)
+         {
+            showCyprusData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getcyprusdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showCyprusData();
+});
+</script>
     </body>
 </html>

@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Montenegro Data 
+function showMontenegroData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showMontenegroData = document.getElementById("science_in_Montenegro");
+         if(showMontenegroData)
+         {
+            showMontenegroData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getmontenegrodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showMontenegroData();
+});
+</script>
     </body>
 </html>

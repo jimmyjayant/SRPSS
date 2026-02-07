@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Lebanon Data 
+function showLebanonData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLebanonData = document.getElementById("science_in_Lebanon");
+         if(showLebanonData)
+         {
+            showLebanonData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlebanondata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLebanonData();
+});
+</script>
     </body>
 </html>

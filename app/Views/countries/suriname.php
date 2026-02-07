@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Suriname Data 
+function showSurinameData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSurinameData = document.getElementById("science_in_Suriname");
+         if(showSurinameData)
+         {
+            showSurinameData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsurinamedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSurinameData();
+});
+</script>
     </body>
 </html>

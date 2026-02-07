@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Lesotho Data 
+function showLesothoData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showLesothoData = document.getElementById("science_in_Lesotho");
+         if(showLesothoData)
+         {
+            showLesothoData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getlesothodata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showLesothoData();
+});
+</script>
     </body>
 </html>

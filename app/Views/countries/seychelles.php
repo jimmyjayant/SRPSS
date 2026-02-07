@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Seychelles Data 
+function showSeychellesData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSeychellesData = document.getElementById("science_in_Seychelles");
+         if(showSeychellesData)
+         {
+            showSeychellesData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getseychellesdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSeychellesData();
+});
+</script>
     </body>
 </html>

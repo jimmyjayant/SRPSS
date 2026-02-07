@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Philippines Data 
+function showPhilippinesData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showPhilippinesData = document.getElementById("science_in_Philippines");
+         if(showPhilippinesData)
+         {
+            showPhilippinesData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getphilippinesdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showPhilippinesData();
+});
+</script>
     </body>
 </html>

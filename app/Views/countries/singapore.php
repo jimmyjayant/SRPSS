@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Singapore Data 
+function showSingaporeData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showSingaporeData = document.getElementById("science_in_Singapore");
+         if(showSingaporeData)
+         {
+            showSingaporeData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getsingaporedata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showSingaporeData();
+});
+</script>
     </body>
 </html>

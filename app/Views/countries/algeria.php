@@ -28,5 +28,27 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+
+<script>
+    // Algeria Data 
+function showAlgeriaData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showAlgeriaData = document.getElementById("science_in_Algeria");
+         if(showAlgeriaData)
+         {
+            showAlgeriaData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getalgeriadata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showAlgeriaData();
+});
+</script>
     </body>
 </html>

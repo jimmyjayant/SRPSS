@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Thailand Data 
+function showThailandData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showThailandData = document.getElementById("science_in_Thailand");
+         if(showThailandData)
+         {
+            showThailandData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getthailanddata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showThailandData();
+});
+</script>
     </body>
 </html>

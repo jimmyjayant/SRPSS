@@ -28,5 +28,26 @@
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
+<script>
+    // Belgium Data 
+function showBelgiumData() {
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() {
+      if(this.readyState == 4 && this.status == 200) {
+         var showBelgiumData = document.getElementById("science_in_Belgium");
+         if(showBelgiumData)
+         {
+            showBelgiumData.innerHTML = this.responseText;
+         }
+      }
+   };
+   xmlhttp.open("GET", "getbelgiumdata", true);
+   xmlhttp.send();
+}
+
+   document.addEventListener("DOMContentLoaded", function() {
+   showBelgiumData();
+});
+</script>
     </body>
 </html>
