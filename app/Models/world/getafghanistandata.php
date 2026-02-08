@@ -20,7 +20,7 @@
             // perform query and store result in a variable
             $result = $conn->query($sql);
 
-            if($result)
+            if($result->num_rows > 0)
             {
                echo "<table>
                <tr>
@@ -39,10 +39,14 @@
                   echo "</tr>";
                }
                echo "</table>";
+            }
+            else
+            {
+               echo "No record found at the moment.";
+            }
 
                // close the connection
                $conn->close();
-            }
          }
       }
    }
