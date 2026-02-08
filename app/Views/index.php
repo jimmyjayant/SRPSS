@@ -62,60 +62,57 @@
                 <img src="images/science2.webp" alt="Science Image 2">
              </p>
             </div>
-            
-            <div class="part3"
-                <?php
-                if(isset($_SESSION['username']))
+
+            <?php
+                if(!isset($_SESSION['username']))
                 {
-                    echo "style='display:none;'";
+                    $html = <<<'NOWDOC'
+                        <div class="part3">
+                            <div class="part31">
+                                <h2>
+                                    Register  
+                                </h2>
+
+                                <p>
+                                    Register to become a part of the website  
+
+                                    <br>
+                                    <br>
+
+                                    <a href="register">Register</a>
+                                </p>
+                            </div>
+
+                            <div class="part32">
+                                <img src="images/register.jpg" alt="Register">
+                            </div>
+                        </div>
+
+                        <div class="part4">
+                            <div class="part41">
+                                <h2>
+                                    Login  
+                                </h2>
+
+                                <p>
+                                    Login to the platform  
+
+                                    <br>
+                                    <br>
+
+                                    <a href="login">Login</a>
+                                </p>
+                            </div>
+
+                            <div class="part42">
+                                <img src="images/login.png" alt="Login">
+                            </div>
+                        </div>
+                    NOWDOC;
+
+                    echo $html;
                 }
-                ?>>
-                <div class="part31">
-                    <h2>
-                        Register  
-                    </h2>
-
-                    <p>
-                        Register to become a part of the website  
-
-                        <br>
-                        <br>
-
-                        <a href="register">Register</a>
-                    </p>
-                </div>
-
-                <div class="part32">
-                    <img src="images/register.jpg" alt="Register">
-                </div>
-            </div>
-
-            <div class="part4"
-                <?php
-                if(isset($_SESSION['username']))
-                {
-                    echo "style='display:none;'";
-                }
-                ?>>
-                <div class="part41">
-                    <h2>
-                        Login  
-                    </h2>
-
-                    <p>
-                        Login to the platform  
-
-                        <br>
-                        <br>
-
-                        <a href="login">Login</a>
-                    </p>
-                </div>
-
-                <div class="part42">
-                    <img src="images/login.png" alt="Login">
-                </div>
-            </div>
+            ?>
 
             <div class="part5">
                 <div class="part51">
@@ -137,47 +134,47 @@
                     <img src="images/science3.jpg" alt="Research Sites in India">
                 </div>
             </div>
-
-            <div class="part6" 
             <?php
-                if(!isset($_SESSION['username']))
+                if(isset($_SESSION['username']))
                 {
-                    echo "style='display:none;'";
+                    $html = <<<'NOWDOC'
+                        <div class="part6">
+                            <div class="part61">
+                            <h2>
+                                Submit Research Papers 
+                            </h2>
+
+                            <p>
+                                Submit your Research Papers on this platform 
+
+                                <br>
+                                <br>
+
+                                <a href="submit">Submit</a>
+                            </p>
+                            </div>
+
+                            <div class="part62">
+                                <img src="images/submit.png" alt="Submit Research Papers">
+                            </div>
+                        </div>
+                        NOWDOC;
+
+                    echo $html;
                 }
-                ?>>
-                <div class="part61">
-                   <h2>
-                    Submit Research Papers 
-                   </h2>
-
-                   <p>
-                    Submit your Research Papers on this platform 
-
-                    <br>
-                    <br>
-
-                    <a href="submit">Submit</a>
-                   </p>
-                </div>
-
-                <div class="part62">
-                    <img src="images/submit.png" alt="Submit Research Papers">
-                </div>
-            </div>
+            ?>
 
             <div class="part7">
                 <div class="part71">
-                   <h2>
-                    View Research Papers 
-                   </h2>
+                   <h2>View Research Papers</h2>
 
                    <p>
-                    View the Research Papers on this platform 
+                        View the Research Papers on this platform 
 
-                    <br>
-                    <br>
+                        <br>
+                        <br>
 
-                    <a href="view">View</a>
+                        <a href="view">View</a>
                    </p>
                 </div>
 
