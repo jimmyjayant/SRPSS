@@ -31,18 +31,7 @@
 <?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
-            <h2>
-                <?php
-                    if(isset($_SESSION['username']))
-                    {
-                        echo "Feedback Form";
-                    }
-                    else
-                    {
-                        echo "Contact Us";
-                    }
-                ?>
-            </h2>
+            <h2>Contact Us</h2>
 
             <form action="feedback" method="post" target="_self" id="contactusform">
                 <div <?php echo $none; ?>>
