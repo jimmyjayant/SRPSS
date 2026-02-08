@@ -24,7 +24,7 @@
         Indonesia
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Indonesia"></div>
+    <div id="science_in_Indonesia"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

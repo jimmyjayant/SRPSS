@@ -24,7 +24,7 @@
         United Arab Emirates
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_United_Arab_Emirates"></div>
+    <div id="science_in_United_Arab_Emirates"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

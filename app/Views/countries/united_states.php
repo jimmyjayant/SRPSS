@@ -24,7 +24,7 @@
         United States
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_United_States"></div>
+    <div id="science_in_United_States"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

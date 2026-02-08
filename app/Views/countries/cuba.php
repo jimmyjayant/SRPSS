@@ -24,7 +24,7 @@
         Cuba
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Cuba"></div>
+    <div id="science_in_Cuba"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

@@ -24,7 +24,7 @@
         Congo (Congo-Brazzaville)
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Congo_Congo-Brazzaville"></div>
+    <div id="science_in_Congo_Congo-Brazzaville"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

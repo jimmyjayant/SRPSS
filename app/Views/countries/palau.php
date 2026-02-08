@@ -24,7 +24,7 @@
         Palau
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Palau"></div>
+    <div id="science_in_Palau"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

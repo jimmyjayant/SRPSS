@@ -24,7 +24,7 @@
         Uzbekistan
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Uzbekistan"></div>
+    <div id="science_in_Uzbekistan"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

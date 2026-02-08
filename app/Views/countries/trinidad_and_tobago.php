@@ -24,7 +24,7 @@
         Trinidad and Tobago
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Trinidad_and_Tobago"></div>
+    <div id="science_in_Trinidad_and_Tobago"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

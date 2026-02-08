@@ -24,7 +24,7 @@
         Antigua and Barbuda
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Antigua_and_Barbuda"></div>
+    <div id="science_in_Antigua_and_Barbuda"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

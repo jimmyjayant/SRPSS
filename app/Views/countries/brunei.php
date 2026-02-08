@@ -24,7 +24,7 @@
         Brunei
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Brunei"></div>
+    <div id="science_in_Brunei"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

@@ -24,7 +24,7 @@
         Albania
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Albania"></div>
+    <div id="science_in_Albania"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

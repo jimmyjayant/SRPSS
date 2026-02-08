@@ -6,15 +6,12 @@
 body {
   margin:0;
   padding:0;
-  display: -webkit-flex;
   display:flex;
-  -webkit-flex-direction:column;
   flex-direction:column;
   min-height:100vh;
 }
 
 .header {
-  display: -webkit-flex;
   display:flex;
   flex-wrap:nowrap;
   justify-content:space-around;
@@ -185,8 +182,6 @@ body {
   margin:0;
   padding:1rem;
   text-align:center;
-  -webkit-flex:1;
-  -ms-flex:1;
   flex:1;
   line-height:1.5;
 }
@@ -226,14 +221,11 @@ img {
   padding:1rem;
   text-align:center;
   line-height:1.5;
-  display:-webkit-flex;
   display:flex;
   flex-wrap:wrap;
 }
 
 .part3 div {
-  -webkit-flex:1;
-  -ms-flex:1;
   flex:1;
 }
 
@@ -257,8 +249,6 @@ img {
 }
 
 .part4 div, .part5 div, .part6 div, .part7 div {
-  -webkit-flex:1;
-  -ms-flex:1;
   flex:1;
 }
 
@@ -270,8 +260,6 @@ img {
 }
 
 .part82 div, .part112 div {
-  -webkit-flex:30%;
-  -ms-flex:30%;
   flex:30%;
 }
 
@@ -287,8 +275,6 @@ img {
 
 .part92 {
   background:darkgrey;
-  -webkit-flex:1;
-  -ms-flex:1;
   flex:1;
   overflow-x:auto;
   overflow-y:scroll;
@@ -332,7 +318,6 @@ img {
 }
 
 .footer div {
-  display:-webkit-flex;
   display:flex;
   flex-wrap:wrap;
   position:relative;
@@ -362,10 +347,8 @@ img {
 /*Media queries or breakpoints*/
 @media only screen and (min-width:601px) {
   .navbar {
-    display: -webkit-flex;
     display:flex;
     flex-wrap:wrap;
-    -webkit-flex-direction:row;
     flex-direction:row;
     width:100%;
   }
@@ -410,7 +393,6 @@ img {
   }
 
   .navbar, .footer div {
-    -webkit-flex-direction:column;
     flex-direction:column;
   }
 
@@ -428,7 +410,6 @@ img {
   }
 
   .main :is(.part3, .part4, .part5, .part6, .part7, .part82, .part112, .row) {
-    -webkit-flex-direction:column;
     flex-direction:column;
   }
   
@@ -591,7 +572,6 @@ table td {
   background-color:#333;
   margin:0;
   padding:0;
-  display: -webkit-flex;
   display:flex;
   flex-wrap:wrap;
   flex-direction:column;
@@ -639,7 +619,6 @@ table td {
   background-color:#333;
   margin:0;
   padding:0;
-  display: -webkit-flex;
   display:flex;
   flex-wrap:wrap;
   flex-direction:column;
@@ -725,6 +704,38 @@ table td {
 .list_of_countries > div a:hover {
   background-color:transparent;
   text-decoration:underline;
+}
+
+.world_preloader {
+  width:5rem;
+  height:5rem;
+  margin-left:auto;
+  margin-right:auto;
+  border:1rem solid grey;
+  border-top:1rem solid lightgrey;
+  border-radius:50%;
+  -webkit-animation:world_preloader 4s linear infinite;
+  animation:world_preloader 4s linear infinite;
+}
+
+@-webkit-keyframes world_preloader {
+  from {
+    transform:rotate(0deg);
+  }
+
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes world_preloader {
+  from {
+    transform:rotate(0deg);
+  }
+
+  to {
+    transform:rotate(360deg);
+  }
 }
 
 /* End of CSS of World page*/

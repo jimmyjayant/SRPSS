@@ -24,7 +24,7 @@
         Congo, Democratic Republic of the (Congo-Kinshasa)
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Congo_Democratic_Republic_of_the_Congo-Kinshasa"></div>
+    <div id="science_in_Congo_Democratic_Republic_of_the_Congo-Kinshasa"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

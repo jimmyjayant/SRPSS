@@ -24,7 +24,7 @@
         South Sudan
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_South_Sudan"></div>
+    <div id="science_in_South_Sudan"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

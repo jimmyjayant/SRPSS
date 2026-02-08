@@ -24,7 +24,7 @@
         Dominican Republic
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Dominican_Republic"></div>
+    <div id="science_in_Dominican_Republic"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

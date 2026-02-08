@@ -24,7 +24,7 @@
         Russia
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Russia"></div>
+    <div id="science_in_Russia"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

@@ -24,7 +24,7 @@
         Burkina Faso
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Burkina_Faso"></div>
+    <div id="science_in_Burkina_Faso"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

@@ -24,7 +24,7 @@
         Vatican City
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Vatican_City"></div>
+    <div id="science_in_Vatican_City"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

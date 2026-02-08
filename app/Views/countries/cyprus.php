@@ -24,7 +24,7 @@
         Cyprus
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Cyprus"></div>
+    <div id="science_in_Cyprus"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>

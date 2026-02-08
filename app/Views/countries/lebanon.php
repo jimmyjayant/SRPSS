@@ -24,7 +24,7 @@
         Lebanon
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Lebanon"></div>
+    <div id="science_in_Lebanon"><div class="world_preloader"></div></div>
 </div>
 
 <?php require '../app/Views/footer.php'; ?>
