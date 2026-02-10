@@ -18,36 +18,46 @@
 ?>
 
 <?php require '../app/Views/headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "congo_kinshasa_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start();
+    $html = <<<HEREDOC
 <div class="main">
     <h3>
         Congo, Democratic Republic of the (Congo-Kinshasa)
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Congo_Democratic_Republic_of_the_Congo-Kinshasa"><div class="world_preloader"></div></div>
-</div>
+    <div id="science_in_Congo_Democratic_Republic_of_the_Congo-Kinshasa">
+HEREDOC;
+
+echo $html;
+    
+require '../app/Models/world/getcongo_democraticrepublicofthecongokinshasadata.php';
+$html1 = <<<HEREDOC
+</div></div>
+HEREDOC;
+
+echo $html1;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$congo_kinshasa_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $congo_kinshasa_main_body;
+}
+?>
 
 <?php require '../app/Views/footer.php'; ?>
-<script>
-    // Congo_Democratic_Republic_of_the_Congo-Kinshasa Data 
-function showCongo_Democratic_Republic_of_the_Congo_KinshasaData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showCongo_Democratic_Republic_of_the_Congo_KinshasaData = document.getElementById("science_in_Congo_Democratic_Republic_of_the_Congo-Kinshasa");
-         if(showCongo_Democratic_Republic_of_the_Congo_KinshasaData)
-         {
-            showCongo_Democratic_Republic_of_the_Congo_KinshasaData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getcongo_democraticrepublicofthecongokinshasadata", true);
-   xmlhttp.send();
-}
-
-   document.addEventListener("DOMContentLoaded", function() {
-   showCongo_Democratic_Republic_of_the_Congo_KinshasaData();
-});
-</script>
     </body>
 </html>

@@ -688,6 +688,11 @@ table td {
 
 /* Start of CSS of World page*/
 
+.list_of_countries {
+  display:flex;
+  flex-wrap:wrap;
+}
+
 .list_of_countries > div {
   display:flex;
   flex-direction:column;

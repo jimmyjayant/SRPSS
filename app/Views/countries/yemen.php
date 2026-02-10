@@ -18,36 +18,46 @@
 ?>
 
 <?php require '../app/Views/headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "yemen_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start();
+    $html = <<<HEREDOC
 <div class="main">
     <h3>
         Yemen
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Yemen"><div class="world_preloader"></div></div>
-</div>
+    <div id="science_in_Yemen">
+HEREDOC;
+
+echo $html;
+
+require '../app/Models/world/getyemendata.php';
+$html1 = <<<HEREDOC
+</div></div>
+HEREDOC;
+
+echo $html1;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$yemen_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $yemen_main_body;
+}
+?>
 
 <?php require '../app/Views/footer.php'; ?>
-<script>
-    // Yemen Data 
-function showYemenData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showYemenData = document.getElementById("science_in_Yemen");
-         if(showYemenData)
-         {
-            showYemenData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getyemendata", true);
-   xmlhttp.send();
-}
-
-   document.addEventListener("DOMContentLoaded", function() {
-   showYemenData();
-});
-</script>
     </body>
 </html>

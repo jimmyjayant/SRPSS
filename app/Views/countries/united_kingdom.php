@@ -18,36 +18,46 @@
 ?>
 
 <?php require '../app/Views/headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "united_kingdom_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start();
+    $html = <<<HEREDOC
 <div class="main">
     <h3>
         United Kingdom
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_United_Kingdom"><div class="world_preloader"></div></div>
-</div>
+    <div id="science_in_United_Kingdom">
+HEREDOC;
+
+echo $html;
+
+require '../app/Models/world/getunitedkingdomdata.php';
+$html1 = <<<HEREDOC
+</div></div>
+HEREDOC;
+
+echo $html1;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$united_kingdom_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $united_kingdom_main_body;
+}
+?>
 
 <?php require '../app/Views/footer.php'; ?>
-<script>
-    // United_Kingdom Data 
-function showUnited_KingdomData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showUnited_KingdomData = document.getElementById("science_in_United_Kingdom");
-         if(showUnited_KingdomData)
-         {
-            showUnited_KingdomData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getunitedkingdomdata", true);
-   xmlhttp.send();
-}
-
-   document.addEventListener("DOMContentLoaded", function() {
-   showUnited_KingdomData();
-});
-</script>
     </body>
 </html>

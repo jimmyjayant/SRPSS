@@ -18,36 +18,46 @@
 ?>
 
 <?php require '../app/Views/headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "eswatini_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start();
+    $html = <<<HEREDOC
 <div class="main">
     <h3>
         Eswatini
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Eswatini"><div class="world_preloader"></div></div>
-</div>
+    <div id="science_in_Eswatini">
+HEREDOC;
+
+echo $html;
+
+require '../app/Models/world/geteswatinidata.php';
+$html1 = <<<HEREDOC
+</div></div>
+HEREDOC;
+
+echo $html;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$eswatini_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $eswatini_main_body;
+}
+?>
 
 <?php require '../app/Views/footer.php'; ?>
-<script>
-    // Eswatini Data 
-function showEswatiniData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showEswatiniData = document.getElementById("science_in_Eswatini");
-         if(showEswatiniData)
-         {
-            showEswatiniData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "geteswatinidata", true);
-   xmlhttp.send();
-}
-
-   document.addEventListener("DOMContentLoaded", function() {
-   showEswatiniData();
-});
-</script>
     </body>
 </html>
