@@ -18,36 +18,46 @@
 ?>
 
 <?php require '../app/Views/headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "congo_brazzaville_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start();
+    $html = <<<HEREDOC
 <div class="main">
     <h3>
         Congo (Congo-Brazzaville)
     </h3>
     <!-- Data from Database will be listed here -->
-    <div id="science_in_Congo_Congo-Brazzaville"><div class="world_preloader"></div></div>
-</div>
+    <div id="science_in_Congo_Congo-Brazzaville">
+HEREDOC;
+
+echo $html;
+
+require '../app/Models/world/getcongo(congo-brazzaville)data.php';
+$html1 = <<<HEREDOC
+</div></div>
+HEREDOC;
+
+echo $html1;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$congo_brazzaville_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $congo_brazzaville_main_body;
+}
+?>
 
 <?php require '../app/Views/footer.php'; ?>
-<script>
-    // Congo_Congo-Brazzaville Data 
-function showCongo_Congo_BrazzavilleData() {
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onload = function() {
-      if(this.readyState == 4 && this.status == 200) {
-         var showCongo_Congo_BrazzavilleData = document.getElementById("science_in_Congo_Congo-Brazzaville");
-         if(showCongo_Congo_BrazzavilleData)
-         {
-            showCongo_Congo_BrazzavilleData.innerHTML = this.responseText;
-         }
-      }
-   };
-   xmlhttp.open("GET", "getcongo(congo-brazzaville)data", true);
-   xmlhttp.send();
-}
-
-   document.addEventListener("DOMContentLoaded", function() {
-   showCongo_Congo_BrazzavilleData();
-});
-</script>
     </body>
 </html>
