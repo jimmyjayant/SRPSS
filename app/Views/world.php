@@ -18,7 +18,19 @@
 ?>
 
 <?php require 'headerandnavbar.php'; ?>
-
+<?php
+$cachefile = "../writable/cache/" . "world_main_body.php" . ".cache";
+$cachetime = 3600; // 1 hour (cache time in seconds)
+// If the cache file exists and is younger than the cache time, then include it
+if(file_exists($cachefile) && (filemtime($cachefile) + $cachetime > time()))
+{
+    require($cachefile);
+    //exit();
+}
+else
+{
+    ob_start(); // Start the output buffer
+    $html = <<<HEREDOC
 <div class="main">
     <h2>
        Scientific Websites from around the World:- 
@@ -283,24 +295,7 @@
             <h2>W</h2>
             <a href="wales" target="_self">Wales</a>
         </div>
-        <!--
-        <div class="x">
-            <h2>X</h2>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-            <a href="" target="_self"></a>
-        </div>
--->
+
         <div class="y">
             <h2>Y</h2>
             <a href="yemen" target="_self">Yemen</a>
@@ -312,7 +307,19 @@
         </div>
     </div>
 </div>
+HEREDOC;
 
+echo $html;
+
+// Save the contents of the output buffer to the cached file
+$fp = fopen($cachefile, "w");
+fwrite($fp, ob_get_contents());
+fclose($fp);
+//ob_end_flush();
+$world_main_body = ob_get_clean(); // clean or empty the buffer 
+echo $world_main_body;
+}
+?>
 <?php require 'footer.php'; ?>
     </body>
 </html>
