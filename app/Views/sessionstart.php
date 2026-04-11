@@ -5,4 +5,7 @@
   
   // Start the session
   session_start();
+
+  // Update the current session id with a new one and makes the session even more stronger 
+  session_regenerate_id(true);
 ?>
