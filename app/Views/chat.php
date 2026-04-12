@@ -2,66 +2,58 @@
   require 'sessionstart.php';
   try
   {
-      if(!file_exists('../app/Models/checkcookie.php'))
-      {
-          throw new Exception("checkcookie.php is missing.");
-      }
-      else
-      {
-          require '../app/Models/checkcookie.php';
-      }
+    if(!file_exists('../app/Models/checkcookie.php'))
+    {
+      throw new Exception("checkcookie.php is missing.");
+    }
+    else
+    {
+      require '../app/Models/checkcookie.php';
+    }
   }
   catch(Exception $e)
   {
-      echo "<script>alert('{$e->getMessage()}');</script>";
+    echo "<script>alert('{$e->getMessage()}');</script>";
   }
-?>
 
-<?php
   // Access Denied for Web page DIRECT ACCESS 
   if(!isset($_SESSION['username']))
   {
-      header("location: login");
-      die();
+    header("location: login");
+    die();
   }
+  require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main" style="padding:0;">
   <div class="part9">
     <div class="part91">
-      <h2>
-        Group Chat 
-      </h2>
+      <h2>Group Chat</h2>
     </div>
 
     <div class="part92">
       <!-- Group Chat messages will be displayed here -->
-      <div id="groupchat">
-         
-      </div>
+      <div id="groupchat"><div>
     </div>
     <div class="part93">
 
       <div id="form">
-          <legend>Please enter your message:-</legend>
-          <input type="text" id="msg">
-          <br>
-          <br>
-          <input type="button" id="btn" value="Send">
-          <input type="button" value="Reset" onclick="reset()">
+        <legend>Please enter your message:-</legend>
+        <input type="text" id="msg">
+        <br>
+        <br>
+        <input type="button" id="btn" value="Send">
+        <input type="button" value="Reset" onclick="reset()">
       </div>
 
       <?php
-         if(isset($chatstatus))
-         {
-          echo $chatstatus;
-         }
+        if(isset($chatstatus))
+        {
+        echo $chatstatus;
+        }
       ?>
     </div>
   </div>
-  
 </div>
 
   <?php require 'footer.php'; ?>

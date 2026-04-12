@@ -1,6 +1,6 @@
-<?php require 'sessionstart.php'; ?>
+<?php 
+    require 'sessionstart.php';
 
-<?php
     // Remove all the session variables
     session_unset();
 

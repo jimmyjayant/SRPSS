@@ -15,9 +15,8 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
     <h2>Telescope Making Workshop</h2>
@@ -30,7 +29,6 @@
     <!-- Data from Database will be listed here -->
     <div id="telescopeworkshop"></div>
 </div>
-
 
 <?php require 'footer.php'; ?>
 <script>

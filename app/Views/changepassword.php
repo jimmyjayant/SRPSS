@@ -1,18 +1,17 @@
-<?php require 'sessionstart.php'; ?>
+<?php 
+    require 'sessionstart.php';
 
-<?php
     // Access Denied for Web page DIRECT ACCESS 
     if(!isset($_SESSION['username']))
     {
         header("location: login");
         die();
     }
-?>
 
-<?php
     if(($_SERVER['REQUEST_METHOD'] == "POST") && (isset($_POST['change_pass'])))
     {
-        function test_input($data) {
+        function test_input($data) 
+        {
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
@@ -77,11 +76,10 @@
             echo "<script>alert('{$e->getMessage()}');</script>";
         }
     }
+    require 'headerandnavbar.php'; 
 ?>
 
-<?php require 'headerandnavbar.php'; ?>
-
-<div class="main">
+    <div class="main">
         <h2>Change Password</h2>
 
         <form action="changepassword" method="post" target="_self">
@@ -109,9 +107,7 @@
                 echo $status;
             }
         ?>
-
     </div>
-
         <?php require 'footer.php'; ?>
     </body>
 </html>

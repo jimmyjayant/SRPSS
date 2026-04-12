@@ -15,23 +15,18 @@
   {
     echo "<script>alert('{$e->getMessage()}');</script>";
   }
-?>
 
-<?php
   // Access Denied for Web page DIRECT ACCESS 
   if(!isset($_SESSION['username']))
   {
     header("location: login");
     die();
   }
+  require 'headerandnavbar.php'; 
 ?>
 
-<?php require 'headerandnavbar.php'; ?>
-
         <div class="main">
-          <h2>
-            Submit Your Research Papers 
-          </h2>
+          <h2>Submit Your Research Papers</h2>
 
           <form action="submit" method="post" target="_self" enctype="multipart/form-data">
             <label for="category">Choose Research Category:- </label>

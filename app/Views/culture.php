@@ -15,12 +15,11 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'headerandnavbar.php'; 
 ?>
 
-<?php require 'headerandnavbar.php'; ?>
-
         <div class="main">
-        <div class="part8">
+            <div class="part8">
                 <div class="part81">
                     <h2>
                         Culture 

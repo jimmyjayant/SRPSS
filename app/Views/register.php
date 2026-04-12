@@ -1,106 +1,110 @@
-<?php require 'sessionstart.php'; ?>
+<?php 
+    require 'sessionstart.php';
 
-<?php
     // Access Denied for Web page DIRECT ACCESS 
     if(isset($_SESSION['username']))
     {
         header("location: index");
         die();
     }
-?>
 
-<?php
     if(isset($_SESSION['error']))
     {
         echo "<script>alert('{$_SESSION['error']}');</script>";
         $_SESSION['error'] = NULL;
     }
-?>
 
-<?php
-    if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["register_submit"]))) {
-
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-
-        $firstname = test_input($_POST['firstname']);
-        $lastname = test_input($_POST['lastname']);
-        $gender = test_input($_POST['gender']);
-        $date = test_input($_POST['date']);
-        $address = test_input($_POST['address']);
-        $mobile = test_input($_POST['mobile']);
-        $email = test_input($_POST['email']);
-        $category = test_input($_POST['category']);
-        $twitter = test_input($_POST['twitter']);
-        $facebook = test_input($_POST['facebook']);
-        $linkedin = test_input($_POST['linkedin']);
-        $user_password = test_input($_POST['password']);
-        
-        if(strlen($user_password) < 5)
+    if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["register_submit"]))) 
+    {
+        if(isset($_SESSION['csrf_token'], $_POST['csrf_token']) && ($_SESSION['csrf_token'] === $_POST['csrf_token']))
         {
-            $_SESSION['error'] = "Minimum Length of Password is 5 and Maximum is 30.";
-            header("Location: register");
-        }
-
-        // converting the entered password into a password hash
-        $hashedpassword = password_hash($user_password, PASSWORD_DEFAULT);
-
-        // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
-
-        try
-        {
-            if(!file_exists('../app/Config/srpss_database_connection.php'))
+            function test_input($data) 
             {
-                throw new Exception('srpss_database_connection.php is missing!');
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
             }
-            else
+
+            $firstname = test_input($_POST['firstname']);
+            $lastname = test_input($_POST['lastname']);
+            $gender = test_input($_POST['gender']);
+            $date = test_input($_POST['date']);
+            $address = test_input($_POST['address']);
+            $mobile = test_input($_POST['mobile']);
+            $email = test_input($_POST['email']);
+            $category = test_input($_POST['category']);
+            $twitter = test_input($_POST['twitter']);
+            $facebook = test_input($_POST['facebook']);
+            $linkedin = test_input($_POST['linkedin']);
+            $user_password = test_input($_POST['password']);
+        
+            if(strlen($user_password) < 5)
             {
-                require '../app/Config/srpss_database_connection.php';
-                if(isset($error))
+                $_SESSION['error'] = "Minimum Length of Password is 5 and Maximum is 30.";
+                header("Location: register");
+            }
+
+            // converting the entered password into a password hash
+            $hashedpassword = password_hash($user_password, PASSWORD_DEFAULT);
+
+            // Connect to 'srpss' database and input necessary form information to 'researchers' table using MySQLi Object-Oriented method:- 
+
+            try
+            {
+                if(!file_exists('../app/Config/srpss_database_connection.php'))
                 {
-                    echo "<script>alert('{$error}');</script>";
+                    throw new Exception('srpss_database_connection.php is missing!');
                 }
                 else
                 {
-                    $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
-                    VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
-
-                    // Perform query
-                    $result = $conn->query($sql);
-
-                    if($result === TRUE) 
+                    require '../app/Config/srpss_database_connection.php';
+                    if(isset($error))
                     {
-                        // Close the connection
-                        $conn->close();
-                        header("Location: login", true, 301);
-                        exit();
+                        echo "<script>alert('{$error}');</script>";
                     }
-                    else 
+                    else
                     {
-                        // Close the connection
-                        $conn->close();
-                        $_SESSION['error'] = "Please enter UNIQUE registration details.";
+                        $sql = "INSERT IGNORE INTO researchers (firstname, lastname, gender, dob, addr, contact, email, researchcategory, twitter, facebook, linkedin, pass)
+                        VALUES ('$firstname', '$lastname', '$gender', '$date', '$address', '$mobile', '$email', '$category', '$twitter', '$facebook', '$linkedin', '$hashedpassword')";
+
+                        // Perform query
+                        $result = $conn->query($sql);
+
+                        if($result === TRUE) 
+                        {
+                            // Close the connection
+                            $conn->close();
+                            // Destroy the variable
+                            unset($_SESSION['csrf_token']);
+                            // Redirect to login.php webpage
+                            header("Location: login", true, 301);
+                            exit();
+                        }
+                        else 
+                        {
+                            // Close the connection
+                            $conn->close();
+                            $_SESSION['error'] = "Please enter UNIQUE registration details.";
+                        }
                     }
                 }
             }
+            catch(Exception $e)
+            {
+                echo "<script>alert('{$e->getMessage()}');</script>";
+            }
         }
-        catch(Exception $e)
+        else
         {
-            echo "<script>alert('{$e->getMessage()}');</script>";
+            echo "<script>alert('Your session has expired. Please refresh the page and try again.');</script>";
         }
     }
+    require 'headerandnavbar.php'; 
 ?>
 
-<?php require 'headerandnavbar.php'; ?>
-
         <div class="main">
-            <h2>
-                Register Yourself 
-            </h2>
+            <h2>Register Yourself</h2>
 
             <form action="register" method="post" target="_self">
                 <div class="row">
@@ -217,6 +221,7 @@
                     </div>
                     <div class="col75">
                         <input type="password" id="password" name="password" size="30" minlength="5" maxlength="30" placeholder="Enter your password here" required>
+                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
                     </div>
                 </div>
 

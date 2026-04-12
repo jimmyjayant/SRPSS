@@ -15,19 +15,13 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'visitor.php'; 
+    require 'headerandnavbar.php'; 
 ?>
 
-<?php require 'visitor.php'; ?>
-
-<?php require 'headerandnavbar.php'; ?>
-
         <div class="main">
-
             <div class="part1">
-                <h2>
-                    Welcome To SRPSS 
-                </h2>
-
+                <h2>Welcome To SRPSS</h2>
                 <p>
                     This web portal is designed specially for scientific researchers in India country. 
                     <br>
@@ -116,16 +110,12 @@
 
             <div class="part5">
                 <div class="part51">
-                    <h2>
-                        Research Sites in India 
-                    </h2>
+                    <h2>Research Sites in India</h2>
 
                     <p>
                         Check out the Research Places in India 
-
                         <br>
                         <br>
-
                         <a href="researchsites">Research Sites</a>
                     </p>
                 </div>
@@ -170,10 +160,8 @@
 
                    <p>
                         View the Research Papers on this platform 
-
                         <br>
                         <br>
-
                         <a href="view">View</a>
                    </p>
                 </div>
@@ -185,9 +173,7 @@
 
             <div class="part8">
                 <div class="part81">
-                    <h2>
-                        Culture 
-                    </h2>
+                    <h2>Culture </h2>
 
                     <p>
                         Check out the Culture Section 

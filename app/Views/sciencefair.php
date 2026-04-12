@@ -15,15 +15,12 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
     <div class="part13">
-        <h2>
-            Science Fair 
-        </h2>
+        <h2>Science Fair</h2>
 
         <p>
             A science fair usually involves students or individuals presenting their own scientific projects or research. These projects often involve experimentation, hypothesis testing, and the scientific method.

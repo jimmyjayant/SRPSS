@@ -15,9 +15,8 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main"></div>
 

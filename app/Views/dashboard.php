@@ -15,18 +15,15 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
-?>
 
-<?php
     // Access Denied for Web page DIRECT ACCESS 
     if(!isset($_SESSION['username']))
     {
         header("location: login");
         die();
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main" id="userdashboard">
     <div class="navbar2">
@@ -35,15 +32,11 @@
         <a href="#" onclick="usernavbar3()">Feedback</a>
     </div>
     <div class="userpanel">
-        <h2>
-            Welcome to the User Dashboard 
-        </h2>
+        <h2>Welcome to the User Dashboard</h2>
 
         <!-- User Notifications -->
         <div class="class20">
-            <h2>
-                User Notifications 
-            </h2>
+            <h2>User Notifications</h2>
 
             <br>
             <br>
@@ -54,9 +47,7 @@
 
         <!-- Submitted Research Papers by the User -->
         <div class="class21">
-            <h2>
-                Submitted Research Papers 
-            </h2>
+            <h2>Submitted Research Papers</h2>
 
             <br>
             <br>
@@ -67,9 +58,7 @@
 
         <!-- Feedback by the User -->
         <div class="class22">
-            <h2>
-                Submitted Feedback 
-            </h2>
+            <h2>Submitted Feedback</h2>
 
             <br>
             <br>
