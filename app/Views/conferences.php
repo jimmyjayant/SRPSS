@@ -15,10 +15,9 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
-?>
+    require 'headerandnavbar.php'; 
 
-<?php require 'headerandnavbar.php'; ?>
-<?php
+// Page Caching code
 $cachefile = "../writable/cache/" . "conferences_main_body.php" . ".cache";
 $cachetime = 3600; // 1 hour (cache time in seconds)
 // If the cache file exists and is younger than the cache time, then include it
@@ -67,6 +66,6 @@ echo $conferences_main_body;
 }
 ?>
 
-        <?php require 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
     </body>
 </html>

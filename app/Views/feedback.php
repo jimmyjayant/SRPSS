@@ -15,9 +15,7 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
-?>
 
-<?php
     if(isset($_SESSION['username']))
     {
         $none = 'style="display:none;"';   
@@ -26,15 +24,14 @@
     {
         $none = NULL;
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
         <div class="main">
             <h2>Contact Us</h2>
 
             <form action="feedback" method="post" target="_self" id="contactusform">
-                <div <?php echo $none; ?>>
+                <div <?= $none; ?>>
                     <div class="row">
                         <div class="col25">
                             <label for="name" >Name</label>
@@ -51,7 +48,6 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col25">
                         <label for="subject">Subject</label>
@@ -61,7 +57,7 @@
                     </div>
                 </div>
 
-                <div <?php echo $none; ?>>
+                <div <?= $none; ?>>
                     <div class="row">
                         <div class="col25">
                             <label for="mobile">Mobile Number</label>
@@ -102,13 +98,14 @@
                 </div>
                 
                 <input type="submit" value="Submit" name="feedback_submit">
-
                 <input type="reset" value="Reset">
             </form>
 
             <?php
-                if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["feedback_submit"]))) {
-                    function test_input($data) {
+                if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST["feedback_submit"]))) 
+                {
+                    function test_input($data) 
+                    {
                         $data = trim($data);
                         $data = stripslashes($data);
                         $data = htmlspecialchars($data);

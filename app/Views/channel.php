@@ -15,9 +15,9 @@
   {
     echo "<script>alert('{$e->getMessage()}');</script>";
   }
-?>
 
-<?php require 'headerandnavbar.php'; ?>
+  require 'headerandnavbar.php'; 
+?>
 <?php
 $cachefile = "../writable/cache/" . "channel_main_body.php" . ".cache";
 $cachetime = 3600; // 1 hour (cache time in seconds)
@@ -64,6 +64,6 @@ $channel_main_body = ob_get_clean(); // clean or empty the buffer
 echo $channel_main_body;
 }
 ?>
-        <?php require 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
     </body>
 </html>

@@ -15,10 +15,8 @@
    {
       echo "<script>alert('{$e->getMessage()}');</script>";
    }
-?>
-
-<?php require 'headerandnavbar.php'; ?>
-<?php
+   require 'headerandnavbar.php'; 
+// Page caching code
 $cachefile = "../writable/cache/" . "scientist_main_body.php" . ".cache";
 $cachetime = 3600; // 1 hour (cache time in seconds)
 // If the cache file exists and is younger than the cache time, then include it

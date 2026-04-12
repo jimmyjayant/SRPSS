@@ -15,15 +15,12 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+    require 'headerandnavbar.php'; 
 ?>
-
-<?php require 'headerandnavbar.php'; ?>
 
 <div class="main">
     <div class="part12">
-        <h2>
-            Science Exhibition 
-        </h2>
+        <h2>Science Exhibition</h2>
 
         <p>
             A science exhibition is typically an event where scientific knowledge, discoveries, and innovations are showcased. It may focus on a specific theme or scientific topic and can involve a wide range of displays, including models, interactive exhibits, demonstrations, and informational posters.

@@ -15,10 +15,9 @@
    {
       echo "<script>alert('{$e->getMessage()}');</script>";
    }
-?>
-
-   <?php require 'headerandnavbar.php'; ?>
-   <?php
+   require 'headerandnavbar.php'; 
+      
+   // Page caching code
       $cachefile = "../writable/cache/" . "researchsites_main_body.php" . ".cache";
       $cachetime = 3600; // 1 hour (cache time in seconds)
       // If the cache file exists and is younger than the cache time, then include it
@@ -52,23 +51,23 @@
 HEREDOC;
          echo $html;
 
-require '../app/Models/getresearchsitedata.php';
+         require '../app/Models/getresearchsitedata.php';
 
          $html1 = <<<HEREDOC
          </div>
                </div>
 HEREDOC;
 
-echo $html1;
+         echo $html1;
 
-// Save the contents of the output buffer to the cached file
-$fp = fopen($cachefile, "w");
-fwrite($fp, ob_get_contents());
-fclose($fp);
-//ob_end_flush();
-$researchsites_main_body = ob_get_clean(); // clean or empty the buffer 
-echo $researchsites_main_body;
-   }
+         // Save the contents of the output buffer to the cached file
+         $fp = fopen($cachefile, "w");
+         fwrite($fp, ob_get_contents());
+         fclose($fp);
+         //ob_end_flush();
+         $researchsites_main_body = ob_get_clean(); // clean or empty the buffer 
+         echo $researchsites_main_body;
+     }
 ?>
 
    <?php require 'footer.php'; ?>
