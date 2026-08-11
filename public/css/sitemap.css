@@ -1,0 +1,23 @@
+.part101 {
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+.main .part10 .part101 ul a {
+  font-size:0.8rem;
+  padding:0;
+  text-decoration:underline;
+  background:transparent;
+  color:blue;
+}
+
+.part10 h2 {
+  text-align:center;
+}
+
+.part10 {
+  text-align:left;
+  font-size:1rem;
+}

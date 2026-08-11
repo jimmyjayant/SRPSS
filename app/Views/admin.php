@@ -29,6 +29,9 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/adminpanel.css", "css/table.css", "css/form.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 

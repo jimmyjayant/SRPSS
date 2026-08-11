@@ -1,0 +1,19 @@
+        <div class="main">
+            <h2>
+                List of Scientific Conferences in India 
+            </h2>
+
+            <p>
+                Here is the list of Indian Scientific Conferences:- 
+            </p>
+
+            <br>
+            <br>
+
+            <!-- Data from Database will be listed here -->
+            <div id="conferences"><table>
+            <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            </tr><tr><td>1</td><td>International Conference on Inventive Material Science Applications (ICIMA)</td></tr><tr><td>2</td><td>International Conference on Mechanical, Aerospace and Production Engineering (ICMAPE)</td></tr><tr><td>3</td><td>International Conference on Educational Technology, Learning and Social Science (ICETLSS)</td></tr><tr><td>4</td><td>International Conference on Environmental Science and Biotechnology (ICESB)</td></tr><tr><td>5</td><td>International Conference on Food Technology, Agriculture and Fisheries (ICFTAF)</td></tr><tr><td>6</td><td>International Conference on Medical and Health Sciences (ICMHS)</td></tr><tr><td>7</td><td>International Conference on Recent Innovations in Computer Science, Engineering and Technology (ICRICSET)</td></tr><tr><td>8</td><td>International Conference on Business Management and Humanities (ICBEMH)</td></tr><tr><td>9</td><td>International Conference on Applied Science Mathematics and Statistics (ICASMS)</td></tr><tr><td>10</td><td>International Conference on Industrial Engineering and Operations Management (ICIEOM)</td></tr><tr><td>11</td><td>International Conference on Artificial Intelligence (ICAI)</td></tr><tr><td>12</td><td>International Conference on Robotics and Automation (ICRA)</td></tr><tr><td>13</td><td>International Conference on Teaching, Education and new learning Technologies (ICTENLT)</td></tr><tr><td>14</td><td>International Conference on social science and humanities (ICSSH)</td></tr><tr><td>15</td><td>International Conference on Physics (ICP)</td></tr><tr><td>16</td><td>Global Conference on Renewable Energy and Climate Change (GCRECC)</td></tr><tr><td>17</td><td>International Conference on Agricultural and Biological Sciences (ICABS)</td></tr><tr><td>18</td><td>International Conference on Recent Advances in Engineering, Technology and Science (ICRAETS)</td></tr><tr><td>19</td><td>International Conference on Business Management and Social Innovation (ICBMSI)</td></tr><tr><td>20</td><td>International Conference on arts and humanities (ICAH)</td></tr><tr><td>21</td><td>International Conference on Astronomy, Astrophysics, Space Science (ICAASS)</td></tr><tr><td>22</td><td>International Conference on Mathematical, Physics, and Dynamics (ICMPD)</td></tr><tr><td>23</td><td>International Conference on Big Data and Smart Computing (ICBDSC)</td></tr><tr><td>24</td><td>International Research Conference on Arts, Commerce, and Business Management (IRCACBM)</td></tr><tr><td>25</td><td>International Conference on Software Engineering and Computer Science (ICSECS)</td></tr><tr><td>26</td><td>International Conference on Recent Developments in Social Science and Business Management (ICRDSSBM)</td></tr><tr><td>27</td><td>International Conference on Recent Advances in Science, Technology & Engineering (ICRASTE)</td></tr><tr><td>28</td><td>International Conference on Environment, Agriculture and Biotechnology (ICEABT)</td></tr><tr><td>29</td><td>International Conference on Control System, power and electrical engineering (ICCSPEE)</td></tr><tr><td>30</td><td>International Conference on Artificial Intelligence, Robots and Mechanical Engineering (ICAIRME)</td></tr></table></div>
+</div>

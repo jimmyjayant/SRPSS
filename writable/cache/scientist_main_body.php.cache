@@ -1,0 +1,19 @@
+<div class="main">
+<h2>
+   List of Indian Scientists 
+</h2>
+
+<p>
+   Here is the list of Indian Scientists:- 
+</p>
+
+<br>
+<br>
+
+<!-- Data from Database will be listed here -->
+<div id="scientists"><table>
+            <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            </tr><tr><td>1</td><td>C.V. Raman</td></tr><tr><td>2</td><td>Meghnad Saha</td></tr><tr><td>3</td><td>Homi J. Bhabha</td></tr><tr><td>4</td><td>A.P.J. Abdul Kalam</td></tr><tr><td>5</td><td>Srinivasa Ramanujan</td></tr><tr><td>6</td><td>Satyendra Nath Bose</td></tr><tr><td>7</td><td>Jagadish Chandra Bose</td></tr><tr><td>8</td><td>Har Gobind Khorana</td></tr><tr><td>9</td><td>Vikram Sarabhai</td></tr><tr><td>10</td><td>Subrahmanyan Chandrasekhar</td></tr><tr><td>11</td><td>Prasanta Chandra Mahalanobis</td></tr><tr><td>12</td><td>Salim Ali</td></tr><tr><td>13</td><td>Birbal Sahni</td></tr><tr><td>14</td><td>Venkatraman Radhakrishnan</td></tr><tr><td>15</td><td>Asima Chatterjee</td></tr><tr><td>16</td><td>Mokshagundam Visvesvaraya</td></tr><tr><td>17</td><td>Prafulla Chandra Ray</td></tr><tr><td>18</td><td>Radha Balakrishnan</td></tr><tr><td>19</td><td>M.S. Swaminathan</td></tr><tr><td>20</td><td>Ashoke Sen</td></tr><tr><td>21</td><td>Ambarish Ghosh</td></tr><tr><td>22</td><td>Archana Bhattacharyya</td></tr><tr><td>23</td><td>Amar Gupta</td></tr><tr><td>24</td><td>Amal Kumar Raychaudhuri</td></tr><tr><td>25</td><td>Animesh Chakravorty</td></tr><tr><td>26</td><td>Ajoy Ghatak</td></tr><tr><td>27</td><td>Amitava Raychaudhuri</td></tr><tr><td>28</td><td>Anil Kakodkar</td></tr><tr><td>29</td><td>Aditi Pant</td></tr><tr><td>30</td><td>Amartya Sen</td></tr><tr><td>31</td><td>G.N. Ramachandran</td></tr><tr><td>32</td><td>Abhik Ghosh</td></tr><tr><td>33</td><td>Asoke Nath Mitra</td></tr><tr><td>34</td><td>Janaki Ammal</td></tr><tr><td>35</td><td>A. Sivathanu Pillai</td></tr><tr><td>36</td><td>A.S. Kiran Kumar</td></tr><tr><td>37</td><td>Abhay Ashtekar</td></tr><tr><td>38</td><td>A.P. Balachandran</td></tr><tr><td>39</td><td>Arun K. Pati</td></tr><tr><td>40</td><td>A.S. Rao</td></tr><tr><td>41</td><td>Anna Mani</td></tr><tr><td>42</td><td>Agnikumar G. Vedeshwar</td></tr><tr><td>43</td><td>Gautam Radhakrishna Desiraju</td></tr><tr><td>44</td><td>Kedareswar Banerjee</td></tr><tr><td>45</td><td>Manjula Reddy</td></tr><tr><td>46</td><td>Venki Ramakrishnan</td></tr></table></div>
+</div>

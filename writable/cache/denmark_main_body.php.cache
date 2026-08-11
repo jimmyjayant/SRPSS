@@ -1,0 +1,6 @@
+<div class="main">
+    <h3>
+        Denmark
+    </h3>
+    <!-- Data from Database will be listed here -->
+    <div id="science_in_Denmark">No record found at the moment.</div></div>

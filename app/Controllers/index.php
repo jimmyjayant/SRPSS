@@ -1722,5 +1722,10 @@ switch($page)
     case 'getzimbabwedata':
         require '../app/Models/world/getzimbabwedata.php';
         break;
+
+    default:
+        http_response_code(404);
+        require '../app/Views/404.php';
+        break;
 }
 ?>

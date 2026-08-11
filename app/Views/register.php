@@ -100,6 +100,9 @@
             echo "<script>alert('Your session has expired. Please refresh the page and try again.');</script>";
         }
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/form.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 

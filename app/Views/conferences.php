@@ -15,6 +15,9 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/table.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 
 // Page Caching code

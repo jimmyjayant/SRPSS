@@ -24,6 +24,9 @@
     {
         $none = NULL;
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/form.css", "css/contactus.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 

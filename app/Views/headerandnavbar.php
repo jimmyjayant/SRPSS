@@ -7,7 +7,24 @@
         <meta name="keywords" content="science, research, papers, engineering, research paper">
         <meta name="description" content="Scientific Research Paper Submission System (SRPSS) online platform allows you to submit and view research papers">
         <link rel="icon" type="image/x-icon" href="images/SRPSS.png">
-        <link rel="stylesheet" href="css/style.css">
+        <?php
+            if(isset($js) && (count($js) > 0))
+            {
+                foreach($js as $script)
+                {
+                    echo "<script type='module' src='{$script}'></script>";
+                }
+            }
+
+            if(isset($css) && (count($css) > 0))
+            {
+                foreach($css as $style)
+                {
+                    echo "<link rel='stylesheet' href='{$style}'>";
+                }
+            }
+        ?>
+        <!--<link rel="stylesheet" href="css/style.css">-->
         <script src="script/script.js"></script>
         <script>
             var starttimer = <?php 

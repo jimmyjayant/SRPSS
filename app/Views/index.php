@@ -15,7 +15,10 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
-    require 'visitor.php'; 
+    require 'visitor.php';
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 

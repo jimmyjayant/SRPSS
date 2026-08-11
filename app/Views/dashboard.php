@@ -22,6 +22,9 @@
         header("location: login");
         die();
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/userdashboard.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 
