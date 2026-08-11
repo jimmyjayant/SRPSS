@@ -15,9 +15,12 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/table.css", "css/footer.css"];
+
+    require '../app/Views/headerandnavbar.php'; 
 ?>
 
-<?php require '../app/Views/headerandnavbar.php'; ?>
 <?php
 $cachefile = "../writable/cache/" . "chile_main_body.php" . ".cache";
 $cachetime = 3600; // 1 hour (cache time in seconds)

@@ -1,0 +1,20 @@
+<div class="main">
+<h2>
+  List of Scientific Newspapers in India 
+</h2>
+
+<p>
+  Here is the list of Indian Scientific Newspapers:- 
+</p>
+
+<br>
+<br>
+
+<!-- Data from Database will be listed here -->
+<div id="newspapers"><table>
+            <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>URL</th>
+            </tr><tr><td>1</td><td>Economic Times</td><td><a href='https://economictimes.indiatimes.com/' target='_blank'>Link</a></td></tr><tr><td>2</td><td>Hindu</td><td><a href='https://www.thehindu.com/' target='_blank'>Link</a></td></tr><tr><td>3</td><td>Hindustan Times</td><td><a href='https://www.hindustantimes.com/' target='_blank'>Link</a></td></tr><tr><td>4</td><td>Indian Express</td><td><a href='https://indianexpress.com/' target='_blank'>Link</a></td></tr><tr><td>5</td><td>Times Of India</td><td><a href='https://timesofindia.indiatimes.com/us' target='_blank'>Link</a></td></tr></table></div>
+</div>

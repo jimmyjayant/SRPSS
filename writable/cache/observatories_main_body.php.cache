@@ -1,0 +1,18 @@
+<div class="main">
+<h2>
+List of Scientific Observatory in India  
+</h2>
+
+<p>
+Here is the list of Indian Scientific Observatories:- 
+</p>
+
+<br>
+<br>
+
+<!-- Data from Database will be listed here -->
+<div id="observatory"><table>
+            <tr>
+            <th>S.N.</th>
+            <th>Observatory Name</th>
+            </tr><tr><td>1</td><td>Kodaikanal Solar Observatory Museum</td></tr><tr><td>2</td><td>Gauribidanuru Radio Observatory</td></tr><tr><td>3</td><td>Vainu Bappu Observatory</td></tr><tr><td>4</td><td>Madras Observatory</td></tr><tr><td>5</td><td>Girawali Observatory - IUCAA</td></tr><tr><td>6</td><td>Allahabad Observatory</td></tr><tr><td>7</td><td>Mount Abu InfraRed Observatory</td></tr><tr><td>8</td><td>Devasthal Observatory</td></tr><tr><td>9</td><td>Aryabhatta Research Institute of Observational Sciences</td></tr><tr><td>10</td><td>Colaba Observatory</td></tr><tr><td>11</td><td>Giant Metrewave Radio Telescope</td></tr><tr><td>12</td><td>Indian Astronomical Observatory</td></tr><tr><td>13</td><td>International Liquid Mirror Telescope</td></tr><tr><td>14</td><td>Madhava Observatory</td></tr><tr><td>15</td><td>Major Atmospheric Cerenkov Experiment Telescope</td></tr><tr><td>16</td><td>Pachmarhi Telescope Array</td></tr><tr><td>17</td><td>Trivandrum Observatory</td></tr><tr><td>18</td><td>Udaipur Solar Observatory</td></tr><tr><td>19</td><td>Ooty Radio Telescope</td></tr></table></div></div>

@@ -15,6 +15,9 @@
     {
         echo "<script>alert('{$e->getMessage()}');</script>";
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/world.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 // Page caching code
 $cachefile = "../writable/cache/" . "world_main_body.php" . ".cache";

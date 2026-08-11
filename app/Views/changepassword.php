@@ -76,6 +76,9 @@
             echo "<script>alert('{$e->getMessage()}');</script>";
         }
     }
+
+    $css = ["css/index.css", "css/headerandnavbar.css", "css/form.css", "css/footer.css"];
+
     require 'headerandnavbar.php'; 
 ?>
 

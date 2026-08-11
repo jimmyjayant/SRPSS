@@ -1,0 +1,24 @@
+                  <div class="main">
+                  <h2>
+                     List of Important Research Centres in India 
+                  </h2>
+
+                  <p>
+                     The development of a country depends on the availability of research centres in various fields. There are several research centers in India in many diversified fields. Every centre plays its very crucial role in its key area. 
+
+                     <br>
+                     <br>
+
+                     <b>Here is the list of Important Research Institute of various fields in India: </b>
+                  </p>
+
+                  <br>
+                  <br>
+                  <!-- Data from Database will be listed here -->
+                  <div id="researchsites"><table>
+                <tr>
+                <th>S.N.</th>
+                <th>Name of Institute</th>
+                <th>Head Quarter</th>
+                </tr><tr><td>1</td><td>Indian Agriculture Research Institute</td><td>New delhi</td></tr><tr><td>2</td><td>Central Rice Research Institute</td><td>Cuttack</td></tr><tr><td>3</td><td>Central Sugarcane Research Institute</td><td>Coimbatore</td></tr><tr><td>4</td><td>Central Potato Research Institute</td><td>Shimla</td></tr><tr><td>5</td><td>Central Tobacco Research Institute</td><td>Rajamundry</td></tr><tr><td>6</td><td>Central Road Research Institute</td><td>New delhi</td></tr><tr><td>7</td><td>National sugar Research Institute</td><td>Kanpur</td></tr><tr><td>8</td><td>Indian Lac Research Institute</td><td>Ranchi</td></tr><tr><td>9</td><td>National Dairy Research Institute</td><td>Karnal (Haryana)</td></tr><tr><td>10</td><td>Central Fuel Research Institute</td><td>Dhanbad</td></tr><tr><td>11</td><td>Central Leather Research Institute</td><td>Chennai</td></tr><tr><td>12</td><td>Central Mining Research Institute</td><td>Dhanbad</td></tr><tr><td>13</td><td>Central Drug Research Institute</td><td>Lucknow</td></tr><tr><td>14</td><td>Indian Meteorological Observatory</td><td>Pune & Delhi</td></tr><tr><td>15</td><td>Raman Research Institute</td><td>Bangalore</td></tr><tr><td>16</td><td>Central Scientific Industrial Organsation</td><td>Chandigarh</td></tr><tr><td>17</td><td>Central Salt and Marine Chemical Research Institute</td><td>Bhavnagar</td></tr><tr><td>18</td><td>Archeological Survey of India</td><td>Kolkata</td></tr><tr><td>19</td><td>Central Jute Technological Research Institute</td><td>Kolkata</td></tr><tr><td>20</td><td>Central Coconut Research Institute</td><td>Kasergod, Kerala</td></tr><tr><td>21</td><td>Textile Research Institute</td><td>Ahmadabad</td></tr><tr><td>22</td><td>All Indian Institute of Medical Science</td><td>New Delhi</td></tr><tr><td>23</td><td>National Aeronautical Laboratory</td><td>Bangalore</td></tr><tr><td>24</td><td>National Institute of Oceanography</td><td>Panaji</td></tr><tr><td>25</td><td>National Geophysics Research Institute</td><td>Hyderabad</td></tr><tr><td>26</td><td>Indian Institute of Petroleum</td><td>Dehradun</td></tr><tr><td>27</td><td>Central Building Research Institute</td><td>Roorkee</td></tr><tr><td>28</td><td>Tata Institute of Fundamental Research</td><td>Mumbai</td></tr><tr><td>29</td><td>High Altitude Research Laboratory</td><td>Gulmarg</td></tr><tr><td>30</td><td>National Botanical Research Institute</td><td>Lucknow</td></tr><tr><td>31</td><td>Central Food Technological Research Institute</td><td>Mysore</td></tr><tr><td>32</td><td>Central Glass and Ceramic Research Institute</td><td>Kolkata</td></tr><tr><td>33</td><td>National environmental engineering research institute</td><td>Nagpur</td></tr><tr><td>34</td><td>Central Electro Chemical Research Institute</td><td>Karaikudi (Tamil Nadu)</td></tr><tr><td>35</td><td>Indian Institute of Chemical Biology</td><td>Kolkata</td></tr><tr><td>36</td><td>Industrial Toxicology Research Centre</td><td>Lucknow</td></tr><tr><td>37</td><td>Central Mechanical Engineering Research Institute</td><td>Durgapur</td></tr><tr><td>38</td><td>Centre for Cellular and Molecular Biology</td><td>Hyderabad</td></tr><tr><td>39</td><td>Vikram Sarabhai Space Centre</td><td>Thiruvananthapuram</td></tr><tr><td>40</td><td>Uranium Corporation of India</td><td>Jadugoda</td></tr></table>         </div>
+               </div>

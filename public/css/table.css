@@ -1,0 +1,20 @@
+table {
+  width:50%;
+  border:0.1rem solid black;
+  border-collapse:collapse;
+  font-size:1rem;
+  margin:auto;
+}
+
+table tr {
+  height:2rem;
+}
+
+table tr:nth-child(even) {
+  background-color:#f1f1f1;
+}
+
+table td {
+  padding:0.5rem;
+  text-align:center;
+}

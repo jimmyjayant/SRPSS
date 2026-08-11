@@ -12,4 +12,5 @@
 
     // Redirect the user to Main webpage
     header('location: index');
+    exit();
 ?>
