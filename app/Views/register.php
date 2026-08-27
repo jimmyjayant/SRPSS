@@ -5,7 +5,7 @@
     if(isset($_SESSION['username']))
     {
         header("location: index");
-        die();
+        exit();
     }
 
     if(isset($_SESSION['error']))

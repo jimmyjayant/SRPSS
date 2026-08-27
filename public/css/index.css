@@ -149,6 +149,10 @@ img {
   margin:1rem;
 }
 
+.red_font {
+  color:red;
+}
+
 /*Media queries or breakpoints*/
 @media only screen and (max-width:600px) {
   .main :is(.part3, .part4, .part5, .part6, .part7, .part82, .part112, .row) {

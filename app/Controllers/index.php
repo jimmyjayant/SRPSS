@@ -231,6 +231,10 @@ switch($page)
         require '../app/Models/getsubmittedfeedbackdata.php';
         break;
 
+    case 'getuserlogindata':
+        require '../app/Models/getuserlogindata.php';
+        break;
+
     case 'checklogin':
         require '../app/Models/checklogin.php';
         break;

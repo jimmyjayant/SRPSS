@@ -1,0 +1,186 @@
+<?php
+    // PHP script for getting user login data.
+    // Used by login page
+
+    // IF request method is not post
+    if(($_SERVER['REQUEST_METHOD'] !== "POST") && (!isset($_POST['login_submit'])))
+    {
+        $_SESSION['login_error'] = "Request Method is not POST!";
+        header("Location: login");
+        exit();
+    }
+
+    // If session csrf_token and post csrf_token does not match
+    if(!isset($_SESSION['csrf_token'], $_POST['csrf_token']) &&
+        !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']))
+    {
+        $_SESSION['login_error'] = "Session expired. Please refresh the webpage!";
+        header("Location: login");
+        exit();
+    }
+
+    // Function for checking and sanitizing the user input
+    function test_input($data) 
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    $email = test_input($_POST['email']);
+
+    // Checking user provided email
+    if(empty($email))
+    {
+        $_SESSION['email_error'] = "Email cannot be empty!";
+        header("Location: login");
+        exit();
+    }
+    else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+        $_SESSION['email_error'] = "Invalid Email Address!";
+        header("Location: login");
+        exit();
+    }
+
+    $user_password = test_input($_POST['password']);
+
+    // Checking user provided password
+    if(empty($user_password))
+    {
+        $_SESSION['pass_error'] = "Password cannot be empty!";
+        header("Location: login");
+        exit();
+    }
+    else if(strlen($user_password) < 6 || strlen($user_password) > 12)
+    {
+        $_SESSION['pass_error'] = "Password Length must be between 6-12";
+        header("Location: login");
+        exit();
+    }
+
+    // set login attempts if not set
+    if(!isset($_SESSION['attempt']))
+    {
+        $_SESSION['attempt'] = 0;
+    }
+
+    // check if 3 attempts are done
+    if($_SESSION['attempt'] == 3)
+    {
+        $_SESSION['login_error'] = "Attempt Limit Reach. Please try again after 5 mins.";
+        header("Location: login");
+        exit();
+    }
+    else
+    {
+        // Create connection using MySQLi Object-Oriented
+        try
+        {
+            if(!file_exists('../app/Config/srpss_database_connection.php'))
+            {
+                throw new Exception('srpss_database_connection.php is missing!');
+            }
+            else
+            {
+                require '../app/Config/srpss_database_connection.php';
+                if(isset($error))
+                {
+                    $_SESSION['login_error'] = $error;
+                    header("Location: login");
+                    exit();
+                }
+                else
+                {
+                    // store query in a variable
+                    $sql = "SELECT * FROM researchers WHERE email='$email'";
+
+                    // perform query and store result in a variable
+                    $result = $conn->query($sql);
+
+                    if($result->num_rows == 1)
+                    {
+                        $row = $result->fetch_assoc();
+                        
+                        // verify password
+                        // password_verify() function will work only if the password in database is stored as hash
+                        // it will not work on plaintext stored password in database 
+                        if(password_verify($user_password, $row['pass']))
+                        {
+                            // action after a successful attempt
+                            $_SESSION['attempt'] = NULL;
+                            // store current session id of a particular user
+                            session_regenerate_id();
+                            $_SESSION['sessionid'] = session_id();
+
+                            $current_user_cookie = "currentuser";
+
+                            setcookie($current_user_cookie, $_SESSION['sessionid'], time() + (7 * 24 * 60 * 60), "/");
+
+                            $_SESSION['username'] = $row['firstname'];
+                            $_SESSION['email'] = $row['email'];
+                            $_SESSION['username1'] = $row['lastname'];
+                            $_SESSION['mobno'] = $row['contact'];
+                            
+                            $_SESSION['sessionactive'] = true;
+
+                            if(isset($_SESSION['sessionid']) && isset($_SESSION['email']))
+                            {
+                                // store query in a variable
+                                $sql1 = "UPDATE researchers 
+                                        SET usersessionid = '{$_SESSION['sessionid']}'
+                                        WHERE email = '{$_SESSION['email']}'";
+
+                                $result1 = $conn->query($sql1);
+                            }
+
+                            // Destroy the csrf_token session variable
+                            unset($_SESSION['csrf_token']);
+                            // redirects the user to respective pages
+                            if($_SESSION['username'] == "admin")
+                            {
+                                header("Location: admin", true, 301);
+                                exit();
+                            }
+                            else
+                            {
+                                header("Location: index", true, 301);
+                                exit();
+                            }
+                        }
+                        else
+                        {
+                            $_SESSION['login_error'] = "Password Incorrect!";
+
+                            // this is where we put our 3 attempt limit
+                            $_SESSION['attempt'] += 1;
+
+                            // set time limit to login if third attempt is reach
+                            if($_SESSION['attempt'] == 3)
+                            {
+                                // if attempt limit is reached, then set 4th attempt after 5 mins. 
+                                $_SESSION['attempt_again'] = time() + (5*60);
+                            }
+
+                            header("Location: login");
+                            exit();
+                        }
+                    }
+                    else
+                    {
+                        $_SESSION['login_error'] = "No account with that email.";
+                        header("Location: login");
+                        exit();
+                    }
+                }
+            }
+        }
+        catch(Exception $e)
+        {
+            $_SESSION['login_error'] = $e->getMessage();
+            header("Location: login");
+            exit();
+        }
+    }  
+?>
