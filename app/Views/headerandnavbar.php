@@ -130,12 +130,7 @@
             <a href="#" id="closex"><span>&times;</span></a>
             <a href="index">Home</a>
             <?php
-                if(!isset($_SESSION['username']))
-                {
-                    echo "<a href='register'>Register</a>";
-                    echo "<a href='login'>Login</a>";
-                }
-                else
+                if(isset($_SESSION['username']))
                 {
                     echo "<a href='submit'>Submit</a>";
                     echo "<a href='chat'>Chat</a>";

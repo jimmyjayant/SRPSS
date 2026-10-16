@@ -1,7 +1,7 @@
 <?php
 
-define('BASE_URL', '/Projects/SRPSS/Website/public/');
-define('BASE_DIR', '/Projects/SRPSS/Website');
+// define('BASE_URL', '/Projects/SRPSS/Website/public/');
+// define('BASE_DIR', '/Projects/SRPSS/Website');
 
 //$request = $_SERVER['REQUEST_URI'];
 //echo "request uri is:- " . $request . "<br>";

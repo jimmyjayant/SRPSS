@@ -2,6 +2,8 @@
     // PHP script for getting user login data.
     // Used by login page
 
+    require '../app/Views/sessionstart.php';
+
     // IF request method is not post
     if(($_SERVER['REQUEST_METHOD'] !== "POST") && (!isset($_POST['login_submit'])))
     {
