@@ -324,7 +324,7 @@ INSERT INTO `magazines` (`id`, `magazinename`, `publisher`, `timestamp`) VALUES
 (10, 'Vigyan Pragati (Hindi)', 'NISCAIR', '2024-02-09 19:29:23'),
 (11, 'Bulletin of Materials Science', 'Indian Academy of Sciences', '2024-02-09 19:29:23'),
 (12, 'Science India Magazine', 'Vijnana Bharati', '2024-02-09 19:29:23'),
-(13, 'Everyman\'s Science', 'The Indian Science Congress Association', '2024-02-09 19:29:23'),
+(13, "Everyman's Science", 'The Indian Science Congress Association', '2024-02-09 19:29:23'),
 (14, 'Scientific India', 'Scientific Planet Society', '2024-02-09 19:29:23'),
 (15, 'Shaastra', 'Indian Educational Institution', '2024-02-09 19:29:23');
 
@@ -444,8 +444,7 @@ CREATE TABLE `researchers` (
 --
 
 INSERT INTO `researchers` (`id`, `firstname`, `lastname`, `gender`, `dob`, `addr`, `contact`, `email`, `researchcategory`, `twitter`, `facebook`, `linkedin`, `pass`, `timestamp`, `usersessionid`) VALUES
-(57, 'John', 'Doe', 'Male', '2000-01-01', 'house no-1, gwalior, madhya pradesh', 2147483647, 'johndoe@gmail.com', 'science', '', '', '', '$2y$12$H7vmzhkMDgUCk3HLtetpZ.bQiuyGABfKpIcqrHjw9FdPJ6aKPM8r.', '2026-02-04 09:10:37', 'aa975d743a82e812f555e12837cdb721'),
-(58, 'admin', '.', 'Male', '0000-00-00', 'house no-1', 0, 'admin@srpss.com', '', NULL, NULL, NULL, 'Ad@12345', '2026-02-05 06:45:07', NULL);
+(1, 'admin', '.', 'Male', '1999-01-01', 'location of srpss.com company', 2147483647, 'admin@srpss.com', 'science', NULL, NULL, NULL, '$2y$12$u51FLi0XLcBjA21.Wl80A.hnyGXX1SkSZbwaTDDe2tBa1E5co8ga.', '2026-02-05 06:45:07', NULL);
 
 -- --------------------------------------------------------
 
